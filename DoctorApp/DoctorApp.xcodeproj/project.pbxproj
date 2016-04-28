@@ -18,7 +18,29 @@
 		38947DDB1CCFE2050008049A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; };
 		38947DDC1CCFE2050008049A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD81CCFE2050008049A /* SwiftyJSON.framework */; };
 		38B36E861CCFC763009820D2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; };
+		D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD51CCFE2050008049A /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD61CCFE2050008049A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D99378F51CD0BD0D00EEF391 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD81CCFE2050008049A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D99378F61CD0BD0E00EEF391 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D99378F11CD0BCFF00EEF391 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */,
+				D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */,
+				D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */,
+				D99378F51CD0BD0D00EEF391 /* SwiftyJSON.framework in CopyFiles */,
+				D99378F61CD0BD0E00EEF391 /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		38758BA81CCE710B00AEC3BB /* DoctorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +127,7 @@
 				38758BA41CCE710B00AEC3BB /* Sources */,
 				38758BA61CCE710B00AEC3BB /* Resources */,
 				38758BA51CCE710B00AEC3BB /* Frameworks */,
+				D99378F11CD0BCFF00EEF391 /* CopyFiles */,
 			);
 			buildRules = (
 			);

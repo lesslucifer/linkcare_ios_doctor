@@ -1,3 +1,5 @@
 DoctorApp/Carthage
+DoctorApp/Cartfile.resolved
 Breakpoints_v2.xcbkptlist
-UserInterfaceState.xcuserstate
+.DS_Store
+*.xcuserstate
