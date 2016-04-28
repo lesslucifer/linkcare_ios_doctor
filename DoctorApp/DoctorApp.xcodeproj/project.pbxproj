@@ -12,6 +12,7 @@
 		38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38758BAF1CCE710C00AEC3BB /* Main.storyboard */; };
 		38758BB31CCE710C00AEC3BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38758BB21CCE710C00AEC3BB /* Assets.xcassets */; };
 		38758BB61CCE710C00AEC3BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38758BB41CCE710C00AEC3BB /* LaunchScreen.storyboard */; };
+		3882FBFC1CD122DA006B69FC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882FBFB1CD122DA006B69FC /* API.swift */; };
 		38947DD91CCFE2050008049A /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD51CCFE2050008049A /* PKHUD.framework */; };
 		38947DDA1CCFE2050008049A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD61CCFE2050008049A /* Realm.framework */; };
 		38947DDB1CCFE2050008049A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; };
@@ -27,6 +28,7 @@
 		38758BB21CCE710C00AEC3BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38758BB51CCE710C00AEC3BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38758BB71CCE710C00AEC3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3882FBFB1CD122DA006B69FC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		38947DD51CCFE2050008049A /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		38947DD61CCFE2050008049A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		38947DD71CCFE2050008049A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		38758BAA1CCE710C00AEC3BB /* DoctorApp */ = {
 			isa = PBXGroup;
 			children = (
+				3882FBFA1CD12278006B69FC /* API */,
 				38758BAB1CCE710C00AEC3BB /* AppDelegate.swift */,
 				38758BAD1CCE710C00AEC3BB /* ViewController.swift */,
 				38758BAF1CCE710C00AEC3BB /* Main.storyboard */,
@@ -82,6 +85,14 @@
 				38758BB71CCE710C00AEC3BB /* Info.plist */,
 			);
 			path = DoctorApp;
+			sourceTree = "<group>";
+		};
+		3882FBFA1CD12278006B69FC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3882FBFB1CD122DA006B69FC /* API.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */,
+				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
