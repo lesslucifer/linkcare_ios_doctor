@@ -100,13 +100,13 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
     
     //MARK: Action handler
     @IBAction func loginPressed(sender: AnyObject) {
-//        let nav_mainApp = UINavigationController()
-//        let vc_dashboard = HomeViewController(nibName: "HomeViewController", bundle: nil)
-//        
-//        nav_mainApp.viewControllers = [vc_dashboard]
-//        nav_mainApp.setNavigationBarHidden(true, animated: false)
-//        
-//        self.presentViewController(nav_mainApp, animated: true, completion: nil)
+        let nav_mainApp = UINavigationController()
+        let vc_dashboard = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        
+        nav_mainApp.viewControllers = [vc_dashboard]
+        nav_mainApp.setNavigationBarHidden(true, animated: false)
+        
+        self.presentViewController(nav_mainApp, animated: true, completion: nil)
         
     }
     

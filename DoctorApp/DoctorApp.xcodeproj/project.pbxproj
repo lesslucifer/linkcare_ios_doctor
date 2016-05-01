@@ -35,6 +35,24 @@
 		D967D9F01CD5B70C002E4C0F /* Reachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D967D9ED1CD5B702002E4C0F /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9F31CD5B739002E4C0F /* LoginViewController.swift */; };
 		D967D9F61CD5B739002E4C0F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967D9F41CD5B739002E4C0F /* LoginViewController.xib */; };
+		D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9FB1CD5BECE002E4C0F /* HomeCell.swift */; };
+		D967DA001CD5BECE002E4C0F /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967D9FC1CD5BECE002E4C0F /* HomeCell.xib */; };
+		D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9FD1CD5BECE002E4C0F /* HomeViewController.swift */; };
+		D967DA021CD5BECE002E4C0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967D9FE1CD5BECE002E4C0F /* HomeViewController.xib */; };
+		D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA031CD5BF56002E4C0F /* BaseMenuViewController.swift */; };
+		D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA041CD5BF56002E4C0F /* BaseViewController.swift */; };
+		D967DA081CD5C455002E4C0F /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D967DA071CD5C455002E4C0F /* Spring.framework */; };
+		D967DA091CD5C46E002E4C0F /* Spring.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D967DA071CD5C455002E4C0F /* Spring.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA0B1CD5C511002E4C0F /* BorderedView.swift */; };
+		D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA0D1CD5C511002E4C0F /* MenuCell.swift */; };
+		D967DA151CD5C511002E4C0F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA0E1CD5C511002E4C0F /* MenuCell.xib */; };
+		D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA0F1CD5C511002E4C0F /* MenuView.swift */; };
+		D967DA171CD5C511002E4C0F /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA101CD5C511002E4C0F /* MenuView.xib */; };
+		D967DA181CD5C511002E4C0F /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA111CD5C511002E4C0F /* NavigationBarView.swift */; };
+		D967DA191CD5C511002E4C0F /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA121CD5C511002E4C0F /* NavigationBarView.xib */; };
+		D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA1A1CD5C581002E4C0F /* Constants.swift */; };
+		D967DA1F1CD5C634002E4C0F /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA1D1CD5C634002E4C0F /* AppointmentViewController.swift */; };
+		D967DA201CD5C634002E4C0F /* AppointmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */; };
 		D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD51CCFE2050008049A /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD61CCFE2050008049A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,6 +67,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D967DA091CD5C46E002E4C0F /* Spring.framework in CopyFiles */,
 				3876AB711CD4CDB10087E5AC /* ObjectMapper.framework in CopyFiles */,
 				D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */,
 				D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */,
@@ -89,6 +108,23 @@
 		D967D9ED1CD5B702002E4C0F /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
 		D967D9F31CD5B739002E4C0F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D967D9F41CD5B739002E4C0F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		D967D9FB1CD5BECE002E4C0F /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		D967D9FC1CD5BECE002E4C0F /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		D967D9FD1CD5BECE002E4C0F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D967D9FE1CD5BECE002E4C0F /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		D967DA031CD5BF56002E4C0F /* BaseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
+		D967DA041CD5BF56002E4C0F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D967DA071CD5C455002E4C0F /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = Carthage/Build/iOS/Spring.framework; sourceTree = "<group>"; };
+		D967DA0B1CD5C511002E4C0F /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
+		D967DA0D1CD5C511002E4C0F /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		D967DA0E1CD5C511002E4C0F /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		D967DA0F1CD5C511002E4C0F /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		D967DA101CD5C511002E4C0F /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		D967DA111CD5C511002E4C0F /* NavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		D967DA121CD5C511002E4C0F /* NavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
+		D967DA1A1CD5C581002E4C0F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D967DA1D1CD5C634002E4C0F /* AppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
+		D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +137,7 @@
 				38947DDA1CCFE2050008049A /* Realm.framework in Frameworks */,
 				D967D9EF1CD5B70C002E4C0F /* Reachability.framework in Frameworks */,
 				38947DDB1CCFE2050008049A /* RealmSwift.framework in Frameworks */,
+				D967DA081CD5C455002E4C0F /* Spring.framework in Frameworks */,
 				38947DDC1CCFE2050008049A /* SwiftyJSON.framework in Frameworks */,
 				38B36E861CCFC763009820D2 /* Alamofire.framework in Frameworks */,
 				D967D9EE1CD5B702002E4C0F /* Reachability.framework in Frameworks */,
@@ -113,6 +150,7 @@
 		38758B9F1CCE710B00AEC3BB = {
 			isa = PBXGroup;
 			children = (
+				D967DA071CD5C455002E4C0F /* Spring.framework */,
 				3876AB6F1CD4CDA30087E5AC /* ObjectMapper.framework */,
 				38947DD51CCFE2050008049A /* PKHUD.framework */,
 				38947DD61CCFE2050008049A /* Realm.framework */,
@@ -141,6 +179,7 @@
 				38CEE8321CD26335000010D2 /* Utils */,
 				3882FBFA1CD12278006B69FC /* API */,
 				3876AB681CD4BF810087E5AC /* Model */,
+				D967DA0A1CD5C511002E4C0F /* Views */,
 				D967D9F11CD5B739002E4C0F /* ViewControllers */,
 				38758BAB1CCE710C00AEC3BB /* AppDelegate.swift */,
 				38758BAD1CCE710C00AEC3BB /* ViewController.swift */,
@@ -184,6 +223,7 @@
 		38CEE8351CD2683B000010D2 /* Glob */ = {
 			isa = PBXGroup;
 			children = (
+				D967DA1A1CD5C581002E4C0F /* Constants.swift */,
 				38CEE8361CD2685F000010D2 /* HC.swift */,
 			);
 			path = Glob;
@@ -201,7 +241,11 @@
 		D967D9F11CD5B739002E4C0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D967DA031CD5BF56002E4C0F /* BaseMenuViewController.swift */,
+				D967DA041CD5BF56002E4C0F /* BaseViewController.swift */,
+				D967DA1C1CD5C634002E4C0F /* Appointment */,
 				D967D9F21CD5B739002E4C0F /* Login */,
+				D967D9F91CD5BECE002E4C0F /* Home */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +257,56 @@
 				D967D9F41CD5B739002E4C0F /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		D967D9F91CD5BECE002E4C0F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D967D9FA1CD5BECE002E4C0F /* Cell */,
+				D967D9FD1CD5BECE002E4C0F /* HomeViewController.swift */,
+				D967D9FE1CD5BECE002E4C0F /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D967D9FA1CD5BECE002E4C0F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D967D9FB1CD5BECE002E4C0F /* HomeCell.swift */,
+				D967D9FC1CD5BECE002E4C0F /* HomeCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D967DA0A1CD5C511002E4C0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D967DA0C1CD5C511002E4C0F /* Menu */,
+				D967DA0B1CD5C511002E4C0F /* BorderedView.swift */,
+				D967DA111CD5C511002E4C0F /* NavigationBarView.swift */,
+				D967DA121CD5C511002E4C0F /* NavigationBarView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D967DA0C1CD5C511002E4C0F /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				D967DA0D1CD5C511002E4C0F /* MenuCell.swift */,
+				D967DA0E1CD5C511002E4C0F /* MenuCell.xib */,
+				D967DA0F1CD5C511002E4C0F /* MenuView.swift */,
+				D967DA101CD5C511002E4C0F /* MenuView.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		D967DA1C1CD5C634002E4C0F /* Appointment */ = {
+			isa = PBXGroup;
+			children = (
+				D967DA1D1CD5C634002E4C0F /* AppointmentViewController.swift */,
+				D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */,
+			);
+			path = Appointment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +370,14 @@
 			files = (
 				D967D9F61CD5B739002E4C0F /* LoginViewController.xib in Resources */,
 				38758BB61CCE710C00AEC3BB /* LaunchScreen.storyboard in Resources */,
+				D967DA201CD5C634002E4C0F /* AppointmentViewController.xib in Resources */,
+				D967DA151CD5C511002E4C0F /* MenuCell.xib in Resources */,
 				38758BB31CCE710C00AEC3BB /* Assets.xcassets in Resources */,
+				D967DA191CD5C511002E4C0F /* NavigationBarView.xib in Resources */,
 				38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */,
+				D967DA171CD5C511002E4C0F /* MenuView.xib in Resources */,
+				D967DA001CD5BECE002E4C0F /* HomeCell.xib in Resources */,
+				D967DA021CD5BECE002E4C0F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,20 +388,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D967DA1F1CD5C634002E4C0F /* AppointmentViewController.swift in Sources */,
 				3876AB651CD492370087E5AC /* TimingsAPI.swift in Sources */,
 				38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */,
+				D967DA181CD5C511002E4C0F /* NavigationBarView.swift in Sources */,
 				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
 				3876AB6E1CD4C4F50087E5AC /* Reflectable.swift in Sources */,
+				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
+				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
+				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
+				D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */,
+				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				3876AB6C1CD4C0D20087E5AC /* BaseJSONModel.swift in Sources */,
 				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
+				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
 				38CEE8371CD2685F000010D2 /* HC.swift in Sources */,
+				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
 				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
+				D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

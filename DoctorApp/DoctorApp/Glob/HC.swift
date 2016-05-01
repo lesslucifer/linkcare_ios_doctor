@@ -15,3 +15,4 @@ class HC: NSObject {
     static let TYPE_CLINIC = 0
     static let TYPE_PATIENT_HOME = 1
 }
+
