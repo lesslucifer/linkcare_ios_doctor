@@ -3,3 +3,4 @@ github "SwiftyJSON/SwiftyJSON" ~> 2.3.0
 github "realm/realm-cocoa" ~> 0.99.1
 github "pkluz/PKHUD" ~> 3.0.0
 github "Hearst-DD/ObjectMapper" ~> 1.2
+github "ashleymills/Reachability.swift"

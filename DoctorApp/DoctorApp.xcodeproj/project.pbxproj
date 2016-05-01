@@ -28,6 +28,13 @@
 		38CEE8341CD26342000010D2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8331CD26342000010D2 /* Utils.swift */; };
 		38CEE8371CD2685F000010D2 /* HC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8361CD2685F000010D2 /* HC.swift */; };
 		38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8381CD269D0000010D2 /* LoginAPI.swift */; };
+		D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */; };
+		D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */; };
+		D967D9EE1CD5B702002E4C0F /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D967D9ED1CD5B702002E4C0F /* Reachability.framework */; };
+		D967D9EF1CD5B70C002E4C0F /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D967D9ED1CD5B702002E4C0F /* Reachability.framework */; };
+		D967D9F01CD5B70C002E4C0F /* Reachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D967D9ED1CD5B702002E4C0F /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9F31CD5B739002E4C0F /* LoginViewController.swift */; };
+		D967D9F61CD5B739002E4C0F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967D9F41CD5B739002E4C0F /* LoginViewController.xib */; };
 		D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD51CCFE2050008049A /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD61CCFE2050008049A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -48,6 +55,7 @@
 				D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */,
 				D99378F51CD0BD0D00EEF391 /* SwiftyJSON.framework in CopyFiles */,
 				D99378F61CD0BD0E00EEF391 /* Alamofire.framework in CopyFiles */,
+				D967D9F01CD5B70C002E4C0F /* Reachability.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +84,11 @@
 		38CEE8331CD26342000010D2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38CEE8361CD2685F000010D2 /* HC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HC.swift; sourceTree = "<group>"; };
 		38CEE8381CD269D0000010D2 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Helpers.swift"; sourceTree = "<group>"; };
+		D967D9ED1CD5B702002E4C0F /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		D967D9F31CD5B739002E4C0F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D967D9F41CD5B739002E4C0F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +99,11 @@
 				3876AB701CD4CDA30087E5AC /* ObjectMapper.framework in Frameworks */,
 				38947DD91CCFE2050008049A /* PKHUD.framework in Frameworks */,
 				38947DDA1CCFE2050008049A /* Realm.framework in Frameworks */,
+				D967D9EF1CD5B70C002E4C0F /* Reachability.framework in Frameworks */,
 				38947DDB1CCFE2050008049A /* RealmSwift.framework in Frameworks */,
 				38947DDC1CCFE2050008049A /* SwiftyJSON.framework in Frameworks */,
 				38B36E861CCFC763009820D2 /* Alamofire.framework in Frameworks */,
+				D967D9EE1CD5B702002E4C0F /* Reachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +119,7 @@
 				38947DD71CCFE2050008049A /* RealmSwift.framework */,
 				38947DD81CCFE2050008049A /* SwiftyJSON.framework */,
 				38B36E851CCFC763009820D2 /* Alamofire.framework */,
+				D967D9ED1CD5B702002E4C0F /* Reachability.framework */,
 				38758BAA1CCE710C00AEC3BB /* DoctorApp */,
 				38758BA91CCE710B00AEC3BB /* Products */,
 			);
@@ -120,10 +136,12 @@
 		38758BAA1CCE710C00AEC3BB /* DoctorApp */ = {
 			isa = PBXGroup;
 			children = (
+				D967D9E81CD5B46B002E4C0F /* Extensions */,
 				38CEE8351CD2683B000010D2 /* Glob */,
 				38CEE8321CD26335000010D2 /* Utils */,
 				3882FBFA1CD12278006B69FC /* API */,
 				3876AB681CD4BF810087E5AC /* Model */,
+				D967D9F11CD5B739002E4C0F /* ViewControllers */,
 				38758BAB1CCE710C00AEC3BB /* AppDelegate.swift */,
 				38758BAD1CCE710C00AEC3BB /* ViewController.swift */,
 				38758BAF1CCE710C00AEC3BB /* Main.storyboard */,
@@ -169,6 +187,32 @@
 				38CEE8361CD2685F000010D2 /* HC.swift */,
 			);
 			path = Glob;
+			sourceTree = "<group>";
+		};
+		D967D9E81CD5B46B002E4C0F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */,
+				D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D967D9F11CD5B739002E4C0F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D967D9F21CD5B739002E4C0F /* Login */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D967D9F21CD5B739002E4C0F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D967D9F31CD5B739002E4C0F /* LoginViewController.swift */,
+				D967D9F41CD5B739002E4C0F /* LoginViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D967D9F61CD5B739002E4C0F /* LoginViewController.xib in Resources */,
 				38758BB61CCE710C00AEC3BB /* LaunchScreen.storyboard in Resources */,
 				38758BB31CCE710C00AEC3BB /* Assets.xcassets in Resources */,
 				38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */,
@@ -245,15 +290,18 @@
 			files = (
 				3876AB651CD492370087E5AC /* TimingsAPI.swift in Sources */,
 				38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */,
+				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
 				3876AB6E1CD4C4F50087E5AC /* Reflectable.swift in Sources */,
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				3876AB6C1CD4C0D20087E5AC /* BaseJSONModel.swift in Sources */,
+				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
 				38CEE8371CD2685F000010D2 /* HC.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
+				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
