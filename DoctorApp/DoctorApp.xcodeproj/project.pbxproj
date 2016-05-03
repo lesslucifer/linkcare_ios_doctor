@@ -53,6 +53,8 @@
 		D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA1A1CD5C581002E4C0F /* Constants.swift */; };
 		D967DA1F1CD5C634002E4C0F /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA1D1CD5C634002E4C0F /* AppointmentViewController.swift */; };
 		D967DA201CD5C634002E4C0F /* AppointmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */; };
+		D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */; };
+		D967DA251CD711BC002E4C0F /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */; };
 		D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD51CCFE2050008049A /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD61CCFE2050008049A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -125,6 +127,8 @@
 		D967DA1A1CD5C581002E4C0F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D967DA1D1CD5C634002E4C0F /* AppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
+		D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,11 +245,12 @@
 		D967D9F11CD5B739002E4C0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D967DA031CD5BF56002E4C0F /* BaseMenuViewController.swift */,
-				D967DA041CD5BF56002E4C0F /* BaseViewController.swift */,
+				D967DA211CD71116002E4C0F /* Schedule */,
 				D967DA1C1CD5C634002E4C0F /* Appointment */,
 				D967D9F21CD5B739002E4C0F /* Login */,
 				D967D9F91CD5BECE002E4C0F /* Home */,
+				D967DA031CD5BF56002E4C0F /* BaseMenuViewController.swift */,
+				D967DA041CD5BF56002E4C0F /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -307,6 +312,15 @@
 				D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */,
 			);
 			path = Appointment;
+			sourceTree = "<group>";
+		};
+		D967DA211CD71116002E4C0F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */,
+				D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +390,7 @@
 				D967DA191CD5C511002E4C0F /* NavigationBarView.xib in Resources */,
 				38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */,
 				D967DA171CD5C511002E4C0F /* MenuView.xib in Resources */,
+				D967DA251CD711BC002E4C0F /* ScheduleViewController.xib in Resources */,
 				D967DA001CD5BECE002E4C0F /* HomeCell.xib in Resources */,
 				D967DA021CD5BECE002E4C0F /* HomeViewController.xib in Resources */,
 			);
@@ -403,6 +418,7 @@
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
+				D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */,
 				3876AB6C1CD4C0D20087E5AC /* BaseJSONModel.swift in Sources */,
 				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,

@@ -107,9 +107,13 @@ extension BaseMenuViewController {
     }
     
     func goToSchedule() {
+        let navController = self.navigationController
+        let vcDestination = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
+        navController?.pushViewController(vcDestination, animated: true)
     }
     
     func signout() {
+        
     }
 }
 

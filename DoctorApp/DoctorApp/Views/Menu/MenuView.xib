@@ -31,7 +31,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eab-Jr-2t1">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                             <inset key="contentEdgeInsets" minX="15" minY="10" maxX="0.0" maxY="0.0"/>
-                            <state key="highlighted" image="nav-icon-menu-big"/>
                             <connections>
                                 <action selector="hideMenuClicked:" destination="-1" eventType="touchUpInside" id="EMc-JI-YeT"/>
                             </connections>
@@ -71,6 +70,5 @@
     </objects>
     <resources>
         <image name="icon-menu-selected" width="371" height="371"/>
-        <image name="nav-icon-menu-big" width="127" height="26"/>
     </resources>
 </document>
