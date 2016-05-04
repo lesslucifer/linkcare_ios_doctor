@@ -23,7 +23,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wo7-gl-oqf">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-Yu-SSh">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-Yu-SSh" userLabel="vlogin">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TÀI KHOẢN" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="viW-b6-fD8">
