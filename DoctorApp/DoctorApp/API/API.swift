@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import ObjectMapper
 
 typealias APIMethod = Alamofire.Method
 typealias APIData = JSON
@@ -37,10 +38,28 @@ struct APIHandler {
         
         return nil
     }
+    
+    static func toSuccess<T: Mappable>(keyPath: String = "", genericHandler: APIGenericHandler<T>.Single) -> APIHandler.Success {
+        let mapper = Mapper<T>()
+        return { (data: APIData) in
+            let subData = data.query(keyPath)
+            let obj: T? = mapper.map(subData.dictionaryObject)
+            genericHandler(obj: obj)
+        }
+    }
+    
+    static func toSuccess<T: Mappable>(keyPath: String = "", genericHandler: APIGenericHandler<T>.Arr) -> APIHandler.Success {
+        let mapper = Mapper<T>()
+        return { (data: APIData) in
+            let subData = data.query(keyPath)
+            let arr: [T] = mapper.mapArray(subData.arrayObject) ?? []
+            genericHandler(arr: arr)
+        }
+    }
 }
 
 struct APIGenericHandler<T> {
-    typealias Single = (obj: T) -> Void
+    typealias Single = (obj: T?) -> Void
     typealias Arr = (arr: [T]) -> Void
 }
 

@@ -11,13 +11,9 @@ import ObjectMapper
 
 extension API {
     class func getTimings(success: APIGenericHandler<Timings>.Arr, failure: APIHandler.Failure?) {
-        return self.baseAPI(.GET, path: "/timings", body: nil, success: { (data) in
-            
-            let mapper = Mapper<Timings>()
-            let timings: [Timings] = mapper.mapArray(data["timings"].arrayObject) ?? []
-            success(arr: timings)
-            
-        }, failure: failure)
+        return self.baseAPI(.GET, path: "/timings", body: nil,
+                            success: APIHandler.toSuccess("timings", genericHandler: success),
+                            failure: failure)
     }
     
     class func setTimings(timings: [Timings], finish: APIHandler.Result?) {

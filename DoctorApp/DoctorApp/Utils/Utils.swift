@@ -46,4 +46,28 @@ class Utils: NSObject {
             alpha: CGFloat(1.0)
         )
     }
+    
+    
+    static func createFormatter(formatString: String) -> NSDateFormatter {
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.dateFormat = formatString
+        return formatter
+    }
+    
+    static func createDateTransformer(formatter: NSDateFormatter) -> TransformOf<NSDate, String> {
+        return TransformOf<NSDate, String>(fromJSON: { s in
+            if Utils.isEmpty(s) {
+                return nil
+            }
+            
+            return formatter.dateFromString(s!)
+            }, toJSON: { d in
+                if Utils.isEmpty(d) {
+                    return nil
+                }
+                
+                return formatter.stringFromDate(d!)
+        })
+    }
 }
