@@ -25,6 +25,11 @@
 		38947DDB1CCFE2050008049A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; };
 		38947DDC1CCFE2050008049A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD81CCFE2050008049A /* SwiftyJSON.framework */; };
 		38B36E861CCFC763009820D2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; };
+		38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B370461CDCDA2F00B51011 /* BlockVacation.swift */; };
+		38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B370481CDCE52100B51011 /* BlockVacationAPI.swift */; };
+		38C95A4C1CDBA0C000A6CBA7 /* CacheModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */; };
+		38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */; };
+		38C95A501CDBA81C00A6CBA7 /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */; };
 		38CEE8341CD26342000010D2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8331CD26342000010D2 /* Utils.swift */; };
 		38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8381CD269D0000010D2 /* LoginAPI.swift */; };
 		38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E61DB61CD72009008D1870 /* AppointmentAPI.swift */; };
@@ -102,6 +107,11 @@
 		38947DD71CCFE2050008049A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		38947DD81CCFE2050008049A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		38B36E851CCFC763009820D2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		38B370461CDCDA2F00B51011 /* BlockVacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVacation.swift; sourceTree = "<group>"; };
+		38B370481CDCE52100B51011 /* BlockVacationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVacationAPI.swift; sourceTree = "<group>"; };
+		38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheModel.swift; sourceTree = "<group>"; };
+		38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionAPI.swift; sourceTree = "<group>"; };
+		38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
 		38CEE8331CD26342000010D2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38CEE8381CD269D0000010D2 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		38E61DB61CD72009008D1870 /* AppointmentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentAPI.swift; sourceTree = "<group>"; };
@@ -200,6 +210,9 @@
 			children = (
 				3876AB691CD4C0C30087E5AC /* Timings.swift */,
 				386B7A9F1CD798FE00BC28BA /* Appointment.swift */,
+				38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */,
+				38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */,
+				38B370461CDCDA2F00B51011 /* BlockVacation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +224,8 @@
 				38CEE8381CD269D0000010D2 /* LoginAPI.swift */,
 				3876AB641CD492370087E5AC /* TimingsAPI.swift */,
 				38E61DB61CD72009008D1870 /* AppointmentAPI.swift */,
+				38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */,
+				38B370481CDCE52100B51011 /* BlockVacationAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -406,22 +421,28 @@
 				D967DA1F1CD5C634002E4C0F /* AppointmentViewController.swift in Sources */,
 				3876AB651CD492370087E5AC /* TimingsAPI.swift in Sources */,
 				38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */,
+				38C95A501CDBA81C00A6CBA7 /* Prescription.swift in Sources */,
 				386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */,
+				38C95A4C1CDBA0C000A6CBA7 /* CacheModel.swift in Sources */,
 				D967DA181CD5C511002E4C0F /* NavigationBarView.swift in Sources */,
 				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
+				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
 				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
 				D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */,
 				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
+				38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */,
+				D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */,
 				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
+				38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
 				386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */,

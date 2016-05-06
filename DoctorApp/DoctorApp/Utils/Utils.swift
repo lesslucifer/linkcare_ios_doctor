@@ -22,7 +22,7 @@ class Utils: NSObject {
         return false
     }
     
-    class func validField(clazz: AnyClass, map: Map, ignoredFields: String...) -> Bool {
+    class func validField(clazz: AnyClass, map: Map, ignoredFields: Set<String> = [], required: [String] = []) -> Bool {
         let properties = NSObject.propertyNames(clazz)
         for property in properties {
             if ignoredFields.contains(property) {
@@ -30,6 +30,12 @@ class Utils: NSObject {
             }
             
             if map[property].value() == nil {
+                return false
+            }
+        }
+        
+        for reqField in required {
+            if map[reqField].value() == nil {
                 return false
             }
         }

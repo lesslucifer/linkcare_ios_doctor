@@ -23,6 +23,7 @@ enum RightMenu {
 struct DateFormat {
     static let dateTimeFormatFull = "dd MMMM yyyy          h : mm a"
     static let dateFormat = "dd-MM-yyyy"
+    static let dateTimeFormat = "dd-MM-yyyy hh:mm"
     
     static var dateTimeFullFormatter: NSDateFormatter {
         struct Static {
@@ -39,6 +40,10 @@ struct DateFormat {
     
     static let dateFormatter: NSDateFormatter = Utils.createFormatter(dateFormat)
     static let dateTransformer = Utils.createDateTransformer(dateFormatter)
+    
+    
+    static let dateTimeFormatter = Utils.createFormatter(dateTimeFormat)
+    static let dateTimeTransformer = Utils.createDateTransformer(dateTimeFormatter)
 }
 
 class HC: NSObject {
