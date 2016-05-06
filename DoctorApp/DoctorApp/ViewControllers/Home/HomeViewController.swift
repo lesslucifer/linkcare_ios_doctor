@@ -65,7 +65,7 @@ class HomeViewController: BaseMenuViewController {
         tableViewHeight += CGFloat(3) * hardCodedTableViewSectionFooterHeight
         tableViewHeight += CGFloat(3) * hardCodedTableViewSectionHeaderHeight
         
-        for index : Int in 0 ..< 3
+        for _ : Int in 0 ..< 3
         {
             //add total height of rows for each section
             tableViewHeight += CGFloat(3) * hardCodedTableViewRowHeight

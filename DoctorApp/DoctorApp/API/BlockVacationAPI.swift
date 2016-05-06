@@ -33,7 +33,8 @@ class BlockVacationAPI {
     }
     
     class func deleteBlockVacation(id: Int, result: APIHandler.Result?) {
-        
-        
+        API.baseAPI(.PUT, path: "/block_vacations/\(id)/delete", body: nil,
+                    success: APIHandler.toSuccess(result),
+                    failure: APIHandler.toFailure(result))
     }
 }

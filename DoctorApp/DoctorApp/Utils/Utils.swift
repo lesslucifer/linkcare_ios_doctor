@@ -43,6 +43,16 @@ class Utils: NSObject {
         return true
     }
     
+    class func checkMap(map: Map, fields: String...) -> Bool {
+        for field in fields {
+            if map[field].value() == nil {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
     //MARK: Color
     class func UIColorFromRGB(red red: Int, green:Int, blue:Int) -> UIColor {
         return UIColor(

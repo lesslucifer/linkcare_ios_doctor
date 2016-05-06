@@ -65,6 +65,11 @@
 		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F51CD0BD0D00EEF391 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD81CCFE2050008049A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F61CD0BD0E00EEF391 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E61CDCF02F005BE9F0 /* Profile.swift */; };
+		E370F8E91CDCF03D005BE9F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */; };
+		E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */; };
+		E370F8ED1CDCF61F005BE9F0 /* NotificationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */; };
+		E370F8EF1CDCF625005BE9F0 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EE1CDCF625005BE9F0 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -139,6 +144,11 @@
 		D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
 		D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		E370F8E61CDCF02F005BE9F0 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicarProfile.swift; sourceTree = "<group>"; };
+		E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationAPI.swift; sourceTree = "<group>"; };
+		E370F8EE1CDCF625005BE9F0 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +223,9 @@
 				38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */,
 				38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */,
 				38B370461CDCDA2F00B51011 /* BlockVacation.swift */,
+				E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */,
+				E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */,
+				E370F8EE1CDCF625005BE9F0 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +239,8 @@
 				38E61DB61CD72009008D1870 /* AppointmentAPI.swift */,
 				38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */,
 				38B370481CDCE52100B51011 /* BlockVacationAPI.swift */,
+				E370F8E61CDCF02F005BE9F0 /* Profile.swift */,
+				E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -427,6 +442,7 @@
 				D967DA181CD5C511002E4C0F /* NavigationBarView.swift in Sources */,
 				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
+				E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */,
 				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
 				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
@@ -443,8 +459,12 @@
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
 				38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */,
+				E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
+				E370F8ED1CDCF61F005BE9F0 /* NotificationAPI.swift in Sources */,
+				E370F8E91CDCF03D005BE9F0 /* UserProfile.swift in Sources */,
+				E370F8EF1CDCF625005BE9F0 /* Notification.swift in Sources */,
 				386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */,
 				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
 				D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */,

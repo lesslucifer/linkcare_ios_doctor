@@ -72,3 +72,14 @@ enum Gender: Int {
     
     static let Transformer = TransformOf<Gender, Int>(fromJSON: {$0 == nil ? nil : Gender(rawValue: $0!)}, toJSON: {$0?.rawValue})
 }
+
+enum NotificationType: Int {
+    case Msg = 0
+    case AppointmentBooking = 1
+    case AppointmentApproved = 2
+    case AppointmentRejected = 3
+    case AppointmentCancelled = 4
+    case AppointmentFinished =  5
+    
+    static let Transformer = TransformOf<NotificationType, Int>(fromJSON: {$0 == nil ? nil : NotificationType(rawValue: $0!)}, toJSON: {$0?.rawValue})
+}
