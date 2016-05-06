@@ -15,12 +15,6 @@ class BlockVacationAPI {
                     success: APIHandler.toSuccess(genericHandler: success), failure: failure)
     }
     
-    class func addBlockVacation(blockVacation: BlockVacation, result: APIHandler.Result?) {
-        API.baseAPI(.POST, path: "/block_vacations", body: nil,
-                    success: APIHandler.toSuccess(result),
-                    failure: APIHandler.toFailure(result))
-    }
-    
     class func getBlockVacation(ids: [Int], success: APIGenericHandler<BlockVacation>.Arr, failure: APIHandler.Failure?) {
         if ids.isEmpty {
             success(arr: [])
@@ -30,5 +24,16 @@ class BlockVacationAPI {
         let query = ids.map({String($0)}).joinWithSeparator(",")
         API.baseAPI(.GET, path: "/block_vacations/\(query)", body: nil,
                     success: APIHandler.toSuccess(genericHandler: success), failure: failure)
+    }
+    
+    class func addBlockVacation(blockVacation: BlockVacation, result: APIHandler.Result?) {
+        API.baseAPI(.POST, path: "/block_vacations", body: nil,
+                    success: APIHandler.toSuccess(result),
+                    failure: APIHandler.toFailure(result))
+    }
+    
+    class func deleteBlockVacation(id: Int, result: APIHandler.Result?) {
+        
+        
     }
 }
