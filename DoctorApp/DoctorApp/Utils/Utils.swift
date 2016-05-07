@@ -46,4 +46,34 @@ class Utils: NSObject {
             alpha: CGFloat(1.0)
         )
     }
+    
+    //
+    class func invokeLater(block: dispatch_block_t) {
+        dispatch_async(dispatch_get_main_queue(), block)
+    }
+}
+
+
+//MARK: Alert Helper
+extension Utils {
+    class func showAlertWithError(error: String) {
+        let v_alert: UIAlertView = UIAlertView(title: "", message: error, delegate: nil, cancelButtonTitle: "Ok")
+        v_alert.show()
+    }
+    
+    class func showAlertWithError(error: String, delegate: UIAlertViewDelegate) {
+        let v_alert: UIAlertView = UIAlertView(title: "", message: error, delegate: delegate, cancelButtonTitle: "Yes", otherButtonTitles: "No")
+        v_alert.tag = 20000
+        v_alert.show()
+    }
+}
+
+//MARK: Date time helper
+extension Utils {
+    class func getNowTimestamp() -> Double {
+        let currentDateTime = NSDate()
+        
+        return currentDateTime.timeIntervalSince1970
+    }
+    
 }

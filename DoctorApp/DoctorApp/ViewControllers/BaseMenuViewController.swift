@@ -109,6 +109,7 @@ extension BaseMenuViewController {
     func goToSchedule() {
         let navController = self.navigationController
         let vcDestination = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
+//        let vcDestination = MMClinicTimingViewController(nibName: "MMClinicTimingViewController", bundle: nil)
         navController?.pushViewController(vcDestination, animated: true)
     }
     

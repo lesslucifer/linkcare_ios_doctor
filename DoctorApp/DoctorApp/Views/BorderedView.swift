@@ -12,8 +12,8 @@ class BorderedView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = Utils.UIColorFromRGB(red: 224, green: 224, blue: 224).CGColor
+        self.layer.borderWidth = 2.0
+        self.layer.borderColor = Utils.UIColorFromRGB(red: 84, green: 160, blue: 191).CGColor
     }
 }
 

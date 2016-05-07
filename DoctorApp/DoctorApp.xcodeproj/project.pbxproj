@@ -60,6 +60,16 @@
 		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F51CD0BD0D00EEF391 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD81CCFE2050008049A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F61CD0BD0E00EEF391 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E151CDDA21900340EE9 /* ClinicalViewController.swift */; };
+		D9950E181CDDA21900340EE9 /* ClinicalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9950E161CDDA21900340EE9 /* ClinicalViewController.xib */; };
+		D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E191CDDA22E00340EE9 /* PrescriptionViewController.swift */; };
+		D9950E1C1CDDA22E00340EE9 /* PrescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9950E1A1CDDA22E00340EE9 /* PrescriptionViewController.xib */; };
+		D9950E201CDDDF0400340EE9 /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E1E1CDDDF0400340EE9 /* AppointmentCell.swift */; };
+		D9950E211CDDDF0400340EE9 /* AppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9950E1F1CDDDF0400340EE9 /* AppointmentCell.xib */; };
+		D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E221CDDEBF800340EE9 /* ContainerView.swift */; };
+		D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */; };
+		D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E261CDDED3B00340EE9 /* NoteViewController.swift */; };
+		D9950E291CDDED7000340EE9 /* NoteStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,6 +139,16 @@
 		D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
 		D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		D9950E151CDDA21900340EE9 /* ClinicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalViewController.swift; sourceTree = "<group>"; };
+		D9950E161CDDA21900340EE9 /* ClinicalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClinicalViewController.xib; sourceTree = "<group>"; };
+		D9950E191CDDA22E00340EE9 /* PrescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionViewController.swift; sourceTree = "<group>"; };
+		D9950E1A1CDDA22E00340EE9 /* PrescriptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionViewController.xib; sourceTree = "<group>"; };
+		D9950E1E1CDDDF0400340EE9 /* AppointmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentCell.swift; sourceTree = "<group>"; };
+		D9950E1F1CDDDF0400340EE9 /* AppointmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentCell.xib; sourceTree = "<group>"; };
+		D9950E221CDDEBF800340EE9 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
+		D9950E261CDDED3B00340EE9 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoteStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,12 +265,14 @@
 		D967D9F11CD5B739002E4C0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9950E0A1CDD083400340EE9 /* Note */,
 				D967DA211CD71116002E4C0F /* Schedule */,
 				D967DA1C1CD5C634002E4C0F /* Appointment */,
 				D967D9F21CD5B739002E4C0F /* Login */,
 				D967D9F91CD5BECE002E4C0F /* Home */,
 				D967DA031CD5BF56002E4C0F /* BaseMenuViewController.swift */,
 				D967DA041CD5BF56002E4C0F /* BaseViewController.swift */,
+				D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -308,6 +330,7 @@
 		D967DA1C1CD5C634002E4C0F /* Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				D9950E1D1CDDDF0400340EE9 /* Cell */,
 				D967DA1D1CD5C634002E4C0F /* AppointmentViewController.swift */,
 				D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */,
 			);
@@ -321,6 +344,29 @@
 				D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		D9950E0A1CDD083400340EE9 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */,
+				D9950E261CDDED3B00340EE9 /* NoteViewController.swift */,
+				D9950E221CDDEBF800340EE9 /* ContainerView.swift */,
+				D9950E151CDDA21900340EE9 /* ClinicalViewController.swift */,
+				D9950E161CDDA21900340EE9 /* ClinicalViewController.xib */,
+				D9950E191CDDA22E00340EE9 /* PrescriptionViewController.swift */,
+				D9950E1A1CDDA22E00340EE9 /* PrescriptionViewController.xib */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		D9950E1D1CDDDF0400340EE9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D9950E1E1CDDDF0400340EE9 /* AppointmentCell.swift */,
+				D9950E1F1CDDDF0400340EE9 /* AppointmentCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,16 +429,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D967D9F61CD5B739002E4C0F /* LoginViewController.xib in Resources */,
+				D9950E181CDDA21900340EE9 /* ClinicalViewController.xib in Resources */,
 				38758BB61CCE710C00AEC3BB /* LaunchScreen.storyboard in Resources */,
 				D967DA201CD5C634002E4C0F /* AppointmentViewController.xib in Resources */,
+				D9950E211CDDDF0400340EE9 /* AppointmentCell.xib in Resources */,
 				D967DA151CD5C511002E4C0F /* MenuCell.xib in Resources */,
 				38758BB31CCE710C00AEC3BB /* Assets.xcassets in Resources */,
 				D967DA191CD5C511002E4C0F /* NavigationBarView.xib in Resources */,
 				38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */,
+				D9950E1C1CDDA22E00340EE9 /* PrescriptionViewController.xib in Resources */,
 				D967DA171CD5C511002E4C0F /* MenuView.xib in Resources */,
 				D967DA251CD711BC002E4C0F /* ScheduleViewController.xib in Resources */,
 				D967DA001CD5BECE002E4C0F /* HomeCell.xib in Resources */,
 				D967DA021CD5BECE002E4C0F /* HomeViewController.xib in Resources */,
+				D9950E291CDDED7000340EE9 /* NoteStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,24 +459,30 @@
 				D967DA181CD5C511002E4C0F /* NavigationBarView.swift in Sources */,
 				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
 				3876AB6E1CD4C4F50087E5AC /* Reflectable.swift in Sources */,
+				D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
 				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
 				D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */,
 				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,
+				D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */,
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
+				D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */,
 				3876AB6C1CD4C0D20087E5AC /* BaseJSONModel.swift in Sources */,
 				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
+				D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */,
+				D9950E201CDDDF0400340EE9 /* AppointmentCell.swift in Sources */,
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
 				38CEE8371CD2685F000010D2 /* HC.swift in Sources */,
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
 				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
+				D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */,
 				D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

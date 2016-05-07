@@ -18,4 +18,10 @@ extension UIView {
         layer.shadowOpacity = 0.4
         layer.shadowRadius = 5
     }
+    
+    public func removeAllSubviews() {
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+    }
 }
