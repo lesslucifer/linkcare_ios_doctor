@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 struct Constants {
     
@@ -21,6 +22,8 @@ enum RightMenu {
 
 struct DateFormat {
     static let dateTimeFormatFull = "dd MMMM yyyy          h : mm a"
+    static let dateFormat = "dd-MM-yyyy"
+    static let dateTimeFormat = "dd-MM-yyyy hh:mm"
     
     static var dateTimeFullFormatter: NSDateFormatter {
         struct Static {
@@ -29,16 +32,56 @@ struct DateFormat {
         }
         
         dispatch_once(&Static.token) {
-            Static.instance = NSDateFormatter()
-            Static.instance?.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-            Static.instance?.dateFormat = DateFormat.dateTimeFormatFull
+            Static.instance = Utils.createFormatter(DateFormat.dateTimeFormatFull)
         }
         
         return Static.instance!
     }
     
-
+    static let dateFormatter: NSDateFormatter = Utils.createFormatter(dateFormat)
+    static let dateTransformer = Utils.createDateTransformer(dateFormatter)
     
+    
+    static let dateTimeFormatter = Utils.createFormatter(dateTimeFormat)
+    static let dateTimeTransformer = Utils.createDateTransformer(dateTimeFormatter)
+}
+
+class HC: NSObject {
+    static let ROLE_DOCTOR = 2
+    static let ROLE_NURSE = 3
+    
+    static let TYPE_CLINIC = 0
+    static let TYPE_PATIENT_HOME = 1
+}
+
+enum AppointmentStatus: Int {
+    case Waiting = 0
+    case Approved = 1
+    case Rejected = 2
+    case Processing = 3
+    case Cancelled = 4
+    case Finished = 5
+    case Rated = 6
+    
+    static let Transformer = TransformOf<AppointmentStatus, Int>(fromJSON: {$0 == nil ? nil : AppointmentStatus(rawValue: $0!)}, toJSON: {$0?.rawValue})
+}
+
+enum Gender: Int {
+    case Male = 0
+    case Female = 1
+    
+    static let Transformer = TransformOf<Gender, Int>(fromJSON: {$0 == nil ? nil : Gender(rawValue: $0!)}, toJSON: {$0?.rawValue})
+}
+
+enum NotificationType: Int {
+    case Msg = 0
+    case AppointmentBooking = 1
+    case AppointmentApproved = 2
+    case AppointmentRejected = 3
+    case AppointmentCancelled = 4
+    case AppointmentFinished =  5
+    
+    static let Transformer = TransformOf<NotificationType, Int>(fromJSON: {$0 == nil ? nil : NotificationType(rawValue: $0!)}, toJSON: {$0?.rawValue})
 }
 
 struct MMColor {

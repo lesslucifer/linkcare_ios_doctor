@@ -9,15 +9,11 @@
 import UIKit
 import ObjectMapper
 
-extension API {
+class TimingsAPI {
     class func getTimings(success: APIGenericHandler<Timings>.Arr, failure: APIHandler.Failure?) {
-        return self.baseAPI(.GET, path: "/timings", body: nil, success: { (data) in
-            
-            let mapper = Mapper<Timings>()
-            let timings: [Timings] = mapper.mapArray(data["timings"].arrayObject) ?? []
-            success(arr: timings)
-            
-        }, failure: failure)
+        return API.baseAPI(.GET, path: "/timings", body: nil,
+                            success: APIHandler.toSuccess("timings", genericHandler: success),
+                            failure: failure)
     }
     
     class func setTimings(timings: [Timings], finish: APIHandler.Result?) {
@@ -25,7 +21,7 @@ extension API {
         let timingsJSON = mapper.toJSONArray(timings)
         let body: APIData = ["timings": timingsJSON]
         
-        return self.baseAPI(.POST, path: "/timings", body: body,
+        return API.baseAPI(.POST, path: "/timings", body: body,
                             success: APIHandler.toSuccess(finish),
                             failure: APIHandler.toFailure(finish))
     }

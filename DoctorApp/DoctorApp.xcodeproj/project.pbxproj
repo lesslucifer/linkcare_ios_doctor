@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7A9F1CD798FE00BC28BA /* Appointment.swift */; };
+		386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7AA31CD7994700BC28BA /* Reflectable.swift */; };
 		38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38758BAB1CCE710C00AEC3BB /* AppDelegate.swift */; };
 		38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38758BAD1CCE710C00AEC3BB /* ViewController.swift */; };
 		38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38758BAF1CCE710C00AEC3BB /* Main.storyboard */; };
@@ -15,8 +17,6 @@
 		3876AB651CD492370087E5AC /* TimingsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3876AB641CD492370087E5AC /* TimingsAPI.swift */; };
 		3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3876AB661CD4BDA30087E5AC /* APIData+Safe.swift */; };
 		3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3876AB691CD4C0C30087E5AC /* Timings.swift */; };
-		3876AB6C1CD4C0D20087E5AC /* BaseJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3876AB6B1CD4C0D20087E5AC /* BaseJSONModel.swift */; };
-		3876AB6E1CD4C4F50087E5AC /* Reflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3876AB6D1CD4C4F50087E5AC /* Reflectable.swift */; };
 		3876AB701CD4CDA30087E5AC /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3876AB6F1CD4CDA30087E5AC /* ObjectMapper.framework */; };
 		3876AB711CD4CDB10087E5AC /* ObjectMapper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3876AB6F1CD4CDA30087E5AC /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3882FBFC1CD122DA006B69FC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882FBFB1CD122DA006B69FC /* API.swift */; };
@@ -25,9 +25,14 @@
 		38947DDB1CCFE2050008049A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; };
 		38947DDC1CCFE2050008049A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD81CCFE2050008049A /* SwiftyJSON.framework */; };
 		38B36E861CCFC763009820D2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; };
+		38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B370461CDCDA2F00B51011 /* BlockVacation.swift */; };
+		38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B370481CDCE52100B51011 /* BlockVacationAPI.swift */; };
+		38C95A4C1CDBA0C000A6CBA7 /* CacheModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */; };
+		38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */; };
+		38C95A501CDBA81C00A6CBA7 /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */; };
 		38CEE8341CD26342000010D2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8331CD26342000010D2 /* Utils.swift */; };
-		38CEE8371CD2685F000010D2 /* HC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8361CD2685F000010D2 /* HC.swift */; };
 		38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8381CD269D0000010D2 /* LoginAPI.swift */; };
+		38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E61DB61CD72009008D1870 /* AppointmentAPI.swift */; };
 		D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */; };
 		D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */; };
 		D967D9EE1CD5B702002E4C0F /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D967D9ED1CD5B702002E4C0F /* Reachability.framework */; };
@@ -70,6 +75,11 @@
 		D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */; };
 		D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E261CDDED3B00340EE9 /* NoteViewController.swift */; };
 		D9950E291CDDED7000340EE9 /* NoteStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */; };
+		E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E61CDCF02F005BE9F0 /* Profile.swift */; };
+		E370F8E91CDCF03D005BE9F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */; };
+		E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */; };
+		E370F8ED1CDCF61F005BE9F0 /* NotificationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */; };
+		E370F8EF1CDCF625005BE9F0 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EE1CDCF625005BE9F0 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,6 +103,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		386B7A9F1CD798FE00BC28BA /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		386B7AA31CD7994700BC28BA /* Reflectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reflectable.swift; sourceTree = "<group>"; };
 		38758BA81CCE710B00AEC3BB /* DoctorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38758BAB1CCE710C00AEC3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38758BAD1CCE710C00AEC3BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,8 +115,6 @@
 		3876AB641CD492370087E5AC /* TimingsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingsAPI.swift; sourceTree = "<group>"; };
 		3876AB661CD4BDA30087E5AC /* APIData+Safe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIData+Safe.swift"; sourceTree = "<group>"; };
 		3876AB691CD4C0C30087E5AC /* Timings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timings.swift; sourceTree = "<group>"; };
-		3876AB6B1CD4C0D20087E5AC /* BaseJSONModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseJSONModel.swift; sourceTree = "<group>"; };
-		3876AB6D1CD4C4F50087E5AC /* Reflectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reflectable.swift; sourceTree = "<group>"; };
 		3876AB6F1CD4CDA30087E5AC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		3882FBFB1CD122DA006B69FC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		38947DD51CCFE2050008049A /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
@@ -112,9 +122,14 @@
 		38947DD71CCFE2050008049A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		38947DD81CCFE2050008049A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		38B36E851CCFC763009820D2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		38B370461CDCDA2F00B51011 /* BlockVacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVacation.swift; sourceTree = "<group>"; };
+		38B370481CDCE52100B51011 /* BlockVacationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVacationAPI.swift; sourceTree = "<group>"; };
+		38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheModel.swift; sourceTree = "<group>"; };
+		38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionAPI.swift; sourceTree = "<group>"; };
+		38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
 		38CEE8331CD26342000010D2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		38CEE8361CD2685F000010D2 /* HC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HC.swift; sourceTree = "<group>"; };
 		38CEE8381CD269D0000010D2 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		38E61DB61CD72009008D1870 /* AppointmentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentAPI.swift; sourceTree = "<group>"; };
 		D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Helpers.swift"; sourceTree = "<group>"; };
 		D967D9ED1CD5B702002E4C0F /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
@@ -149,6 +164,11 @@
 		D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
 		D9950E261CDDED3B00340EE9 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoteStoryboard.storyboard; sourceTree = "<group>"; };
+		E370F8E61CDCF02F005BE9F0 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicarProfile.swift; sourceTree = "<group>"; };
+		E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationAPI.swift; sourceTree = "<group>"; };
+		E370F8EE1CDCF625005BE9F0 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,8 +239,13 @@
 			isa = PBXGroup;
 			children = (
 				3876AB691CD4C0C30087E5AC /* Timings.swift */,
-				3876AB6B1CD4C0D20087E5AC /* BaseJSONModel.swift */,
-				3876AB6D1CD4C4F50087E5AC /* Reflectable.swift */,
+				386B7A9F1CD798FE00BC28BA /* Appointment.swift */,
+				38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */,
+				38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */,
+				38B370461CDCDA2F00B51011 /* BlockVacation.swift */,
+				E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */,
+				E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */,
+				E370F8EE1CDCF625005BE9F0 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +256,11 @@
 				3882FBFB1CD122DA006B69FC /* API.swift */,
 				38CEE8381CD269D0000010D2 /* LoginAPI.swift */,
 				3876AB641CD492370087E5AC /* TimingsAPI.swift */,
+				38E61DB61CD72009008D1870 /* AppointmentAPI.swift */,
+				38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */,
+				38B370481CDCE52100B51011 /* BlockVacationAPI.swift */,
+				E370F8E61CDCF02F005BE9F0 /* Profile.swift */,
+				E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -240,6 +270,7 @@
 			children = (
 				38CEE8331CD26342000010D2 /* Utils.swift */,
 				3876AB661CD4BDA30087E5AC /* APIData+Safe.swift */,
+				386B7AA31CD7994700BC28BA /* Reflectable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -248,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				D967DA1A1CD5C581002E4C0F /* Constants.swift */,
-				38CEE8361CD2685F000010D2 /* HC.swift */,
 			);
 			path = Glob;
 			sourceTree = "<group>";
@@ -456,31 +486,42 @@
 				D967DA1F1CD5C634002E4C0F /* AppointmentViewController.swift in Sources */,
 				3876AB651CD492370087E5AC /* TimingsAPI.swift in Sources */,
 				38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */,
+				38C95A501CDBA81C00A6CBA7 /* Prescription.swift in Sources */,
+				386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */,
+				38C95A4C1CDBA0C000A6CBA7 /* CacheModel.swift in Sources */,
 				D967DA181CD5C511002E4C0F /* NavigationBarView.swift in Sources */,
 				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
 				3876AB6E1CD4C4F50087E5AC /* Reflectable.swift in Sources */,
 				D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
+				E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */,
+				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
 				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
 				D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */,
 				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,
 				D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */,
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
+				38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
 				D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
+				38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */,
 				D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */,
-				3876AB6C1CD4C0D20087E5AC /* BaseJSONModel.swift in Sources */,
 				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
 				D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */,
 				D9950E201CDDDF0400340EE9 /* AppointmentCell.swift in Sources */,
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
-				38CEE8371CD2685F000010D2 /* HC.swift in Sources */,
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
+				38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */,
+				E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
+				E370F8ED1CDCF61F005BE9F0 /* NotificationAPI.swift in Sources */,
+				E370F8E91CDCF03D005BE9F0 /* UserProfile.swift in Sources */,
+				E370F8EF1CDCF625005BE9F0 /* Notification.swift in Sources */,
+				386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */,
 				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
 				D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */,
 				D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */,

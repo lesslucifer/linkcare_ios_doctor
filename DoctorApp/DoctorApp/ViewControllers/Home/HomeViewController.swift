@@ -47,9 +47,6 @@ class HomeViewController: BaseMenuViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-//        sv_container.contentSize = CGSize(width: sv_container.contentSize.width,
-//                                          height: totalViewHeight)
     }
 }
 //MARK: Set Layout

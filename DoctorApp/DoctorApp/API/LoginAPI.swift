@@ -8,10 +8,10 @@
 
 import UIKit
 
-extension API {
+class LoginAPI {
     class func login(idcard: String, password: String, success: APIHandler.Success, failure: APIHandler.Failure? = nil) {
         let body: APIData = ["loginName": idcard, "password": password]
-        self.baseAPI(.POST, path: "/account/login", body: body, success: success, failure: failure)
+        API.baseAPI(.POST, path: "/account/login", body: body, success: success, failure: failure)
     }
     
     class func logout(success: APIHandler.Success, failure: APIHandler.Failure? = nil) {
@@ -20,7 +20,7 @@ extension API {
             return
         }
         
-        self.baseAPI(.POST, path: "/account/logout", body: [:], success: { data in
+        API.baseAPI(.POST, path: "/account/logout", body: [:], success: { data in
             API.auth = API.Auth()
             success(data: data)
             }, failure: failure)

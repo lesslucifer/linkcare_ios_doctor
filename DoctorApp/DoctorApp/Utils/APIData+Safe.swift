@@ -40,6 +40,20 @@ extension APIData {
         
         return []
     }
+    
+    func query(keyPath: String) -> APIData {
+        if keyPath.isEmpty {
+            return self
+        }
+        
+        let keys = keyPath.componentsSeparatedByString(".")
+        var data = self
+        for key in keys {
+            data = data[key]
+        }
+        
+        return data
+    }
 }
 
 extension APIData {

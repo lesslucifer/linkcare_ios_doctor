@@ -22,7 +22,7 @@ class Utils: NSObject {
         return false
     }
     
-    class func validField(clazz: AnyClass, map: Map, ignoredFields: String...) -> Bool {
+    class func validField(clazz: AnyClass, map: Map, ignoredFields: Set<String> = [], required: [String] = []) -> Bool {
         let properties = NSObject.propertyNames(clazz)
         for property in properties {
             if ignoredFields.contains(property) {
@@ -30,6 +30,22 @@ class Utils: NSObject {
             }
             
             if map[property].value() == nil {
+                return false
+            }
+        }
+        
+        for reqField in required {
+            if map[reqField].value() == nil {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    class func checkMap(map: Map, fields: String...) -> Bool {
+        for field in fields {
+            if map[field].value() == nil {
                 return false
             }
         }
@@ -47,6 +63,7 @@ class Utils: NSObject {
         )
     }
     
+
     //
     class func invokeLater(block: dispatch_block_t) {
         dispatch_async(dispatch_get_main_queue(), block)
@@ -76,4 +93,27 @@ extension Utils {
         return currentDateTime.timeIntervalSince1970
     }
     
+    
+    static func createFormatter(formatString: String) -> NSDateFormatter {
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.dateFormat = formatString
+        return formatter
+    }
+    
+    static func createDateTransformer(formatter: NSDateFormatter) -> TransformOf<NSDate, String> {
+        return TransformOf<NSDate, String>(fromJSON: { s in
+            if Utils.isEmpty(s) {
+                return nil
+            }
+            
+            return formatter.dateFromString(s!)
+            }, toJSON: { d in
+                if Utils.isEmpty(d) {
+                    return nil
+                }
+                
+                return formatter.stringFromDate(d!)
+        })
+    }
 }
