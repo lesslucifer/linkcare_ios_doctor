@@ -10,12 +10,12 @@ import UIKit
 
 protocol ClinicTimingCellDelegate {
     func didAddTiming(clinicId: Int)
-    func didTapTiming(clinicTiming: ClinicTiming, timing: MMTiming)
+    func didTapTiming(clinicTiming: ClinicTiming, timing: Timing)
 }
 
 class ClinicTimingCell: UITableViewCell {
     @IBOutlet weak var lb_clinicName: UILabel!
-    var ma_Timing = Array<MMTiming>()
+    var ma_Timing = Array<Timing>()
     //---
     var delegate: ClinicTimingCellDelegate!
     //---
@@ -29,7 +29,7 @@ class ClinicTimingCell: UITableViewCell {
     @IBOutlet var v_sunday: UIView!
     
     var clinicTimingSelected = ClinicTiming()
-    var timingSelected = MMTiming()
+    var timingSelected = Timing()
     //----
     let arrDay = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
     

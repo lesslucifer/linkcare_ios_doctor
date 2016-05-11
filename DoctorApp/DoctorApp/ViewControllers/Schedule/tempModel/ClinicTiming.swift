@@ -15,7 +15,7 @@ class ClinicTiming: Object {
     dynamic var mct_name: String = ""
     dynamic var mct_address: String = ""
     dynamic var mct_displayName: String = ""
-    var mct_timings = List<MMTiming>()
+    var mct_timings = List<Timing>()
     
     override class func primaryKey() -> String {
         return "mct_id"
@@ -36,7 +36,7 @@ class ClinicTiming: Object {
         if (!Utils.isEmpty(data["display_name"])) {self.mct_displayName = data["display_name"] as! String}
     }
     
-//    func mct_update(name: String, address: String, listTimings: List<MMTiming>) {
+//    func mct_update(name: String, address: String, listTimings: List<Timing>) {
 //        MMRealmHelper.sharedInstance.db_updateObject({
 //            self.mct_name = name
 //            self.mct_address = address
@@ -44,7 +44,7 @@ class ClinicTiming: Object {
 //        })
 //    }
 //    
-//    func mct_appendTiming(timing: MMTiming) {
+//    func mct_appendTiming(timing: Timing) {
 //        MMRealmHelper.sharedInstance.db_updateObject {
 //            let idx = self.indexOfTiming(timing)
 //            if idx >= 0 {
@@ -55,7 +55,7 @@ class ClinicTiming: Object {
 //        }
 //    }
     
-//    func indexOfTiming(timing: MMTiming) -> Int {
+//    func indexOfTiming(timing: Timing) -> Int {
 //        for (index, cTiming) in self.mct_timings.enumerate() {
 //            if cTiming.mt_Id == timing.mt_Id {
 //                return index

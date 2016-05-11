@@ -28,8 +28,8 @@ class ScheduleViewController: BaseMenuViewController {
     @IBOutlet private var v_timePicker: TimePicker!
     //----
     var ma_clinicTimings: Array<ClinicTiming>?
-    var ma_timingTemps: Array<MMTimingTemp>?
-    var ma_walkinTiming = Array<MMTiming>()
+    var ma_timingTemps: Array<TimingTemp>?
+    var ma_walkinTiming = Array<Timing>()
     
     //---
     let panRec = UIPanGestureRecognizer()
@@ -209,17 +209,17 @@ extension ScheduleViewController: ClinicTimingCellDelegate {
         showAddClinicTimingView(clinicId)
     }
     
-    func didTapTiming(clinicTiming: ClinicTiming, timing: MMTiming){
+    func didTapTiming(clinicTiming: ClinicTiming, timing: Timing){
         showEditClinicTimingView(clinicTiming, timing: timing)
     }
     
-    func getTimingTemp(day: String)-> MMTimingTemp{
+    func getTimingTemp(day: String)-> TimingTemp{
         for timingTemp in self.ma_timingTemps!{
             if timingTemp.mtt_day == day{
                 return timingTemp
             }
         }
-        return MMTimingTemp()
+        return TimingTemp()
     }
     
 }
@@ -248,7 +248,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         v_addClinicTiming.view.animate()
     }
     
-    func showEditClinicTimingView(clinic: ClinicTiming, timing: MMTiming) {
+    func showEditClinicTimingView(clinic: ClinicTiming, timing: Timing) {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let frame = CGRectMake(0, 0, screenSize.width * 0.9, screenSize.height/3*2)
         v_addClinicTiming = AddClinicTimingView(type: .EditTimeSlot ,timing: timing, clinicTiming: clinic, frame: frame)
@@ -295,7 +295,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
     func addClinicTimingViewDidClose() {
 //        MMAPI.getClinicTiming({ (listClinicTiming) -> Void in
 //            MMRealmHelper.sharedInstance.db_syncObjects(listClinicTiming, deleteUnexisted: true)
-//            var timings = [MMTiming]()
+//            var timings = [Timing]()
 //            for clinicTiming in listClinicTiming {
 //                timings.appendContentsOf(clinicTiming.mct_timings)
 //            }
@@ -344,7 +344,7 @@ extension ScheduleViewController {
 //MARK: timing Temp
 
 extension ScheduleViewController {
-    func maxNumTimingForArrayTemp(arrTemp: Array<MMTimingTemp>) -> Int{
+    func maxNumTimingForArrayTemp(arrTemp: Array<TimingTemp>) -> Int{
         var max = 0
         for timingTemp in arrTemp{
             max = timingTemp.mtt_timingList.count > max ? timingTemp.mtt_timingList.count : max
@@ -354,7 +354,7 @@ extension ScheduleViewController {
     
     func getArrayTimingTempForClinic (clinic: ClinicTiming) {
         ma_timingTemps = []
-        var arrTiming = Array<MMTiming>()
+        var arrTiming = Array<Timing>()
         for timing in clinic.mct_timings{
             arrTiming.append(timing)
         }

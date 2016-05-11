@@ -34,8 +34,8 @@ class AddClinicTimingView: UIView {
     //--
     private var ma_ClinicTiming = Array<ClinicTiming>()
     var mClinicTiming: ClinicTiming!
-    var ma_Timing = Array<MMTiming>()
-    var mEditingTiming: MMTiming?
+    var ma_Timing = Array<Timing>()
+    var mEditingTiming: Timing?
 //    var repeatDates = [String]()
     //------
     var screenType = AddClinicTimingType.AddTimeSlot
@@ -83,7 +83,7 @@ class AddClinicTimingView: UIView {
 //        reloadDateButtons()
     }
     
-    convenience init(type: AddClinicTimingType, timing: MMTiming, clinicTiming: ClinicTiming, frame: CGRect){
+    convenience init(type: AddClinicTimingType, timing: Timing, clinicTiming: ClinicTiming, frame: CGRect){
         self.init(frame: frame)
         screenType = type
         //-----
@@ -113,7 +113,7 @@ extension AddClinicTimingView {
     func btnAddNewBlockPressed(sender: AnyObject?){
         //------------
 //        if screenType == .AddTimeSlot {
-//            let timing = MMTiming.mt_addNew(mClinicTiming)
+//            let timing = Timing.mt_addNew(mClinicTiming)
 //            ma_Timing.append(timing)
 //            tv_addClinicTiming.insertRowsAtIndexPaths([NSIndexPath(forRow: ma_Timing.count-1, inSection: 0)], withRowAnimation: .Automatic)
 //        }
