@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     
@@ -35,8 +36,8 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
     }
     
     func setupLayout() {
-        tfUsername.underlineTextField()
-        tfPassword.underlineTextField()
+//        tfUsername.underlineTextField()
+//        tfPassword.underlineTextField()
     }
     
     func registerForKeyboardNotifications()
@@ -46,41 +47,42 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func keyboardWasShown(notification: NSNotification)
-    {
-        //Need to calculate keyboard exact size due to Apple suggestions
-        self.scrollView.scrollEnabled = true
-        let info : NSDictionary = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+    func keyboardWasShown(notification: NSNotification){
+        print("keyhboard was shown")
         
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        keyboardFrame = self.view.convertRect(keyboardFrame, fromView: nil)
         
-        var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
-        if let _ = activeField
-        {
-            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
-            {
-                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
-            }
-        }
+        var contentInset:UIEdgeInsets = scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+        
+//        //test
+//        var aRect : CGRect = self.view.frame
+//        aRect.size.height -= keyboardFrame.size.height
+//        if let _ = activeField
+//        {
+//            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
+//            {
+//                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
+//            }
+//        }
+
     }
     
-    
-    func keyboardWillBeHidden(notification: NSNotification)
-    {
-        //Once keyboard disappears, restore original positions
-        let info : NSDictionary = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        self.view.endEditing(true)
-        self.scrollView.scrollEnabled = false
+    func keyboardWillBeHidden(notification: NSNotification){
+        print("keyboard will be hidden")
         
+        let info : NSDictionary = notification.userInfo!
+        let keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.frame
+        let heightInsets = (keyboardSize == nil) ? 0.0 : keyboardSize!.height
+        let insets: UIEdgeInsets = UIEdgeInsetsMake(scrollView.contentInset.top, 0, heightInsets, 0)
+        
+        scrollView.contentInset = insets
+        scrollView.scrollIndicatorInsets = insets
     }
+    
     
     func textFieldDidBeginEditing(textField: UITextField)
     {
@@ -103,10 +105,19 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
         let nav_mainApp = UINavigationController()
         let vc_dashboard = HomeViewController(nibName: "HomeViewController", bundle: nil)
         
-        nav_mainApp.viewControllers = [vc_dashboard]
-        nav_mainApp.setNavigationBarHidden(true, animated: false)
-        
-        self.presentViewController(nav_mainApp, animated: true, completion: nil)
+        LoginAPI.login(self.tfUsername.text!, password: self.tfPassword.text!, success: { (data) in
+            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            API.auth = API.Auth(sess: data["session"].safeString)
+            nav_mainApp.viewControllers = [vc_dashboard]
+            nav_mainApp.setNavigationBarHidden(true, animated: false)
+            
+            self.presentViewController(nav_mainApp, animated: true, completion: nil)
+            
+            }, failure: { code, msg, params in
+                PKHUD.sharedHUD.hide(animated: false, completion: nil)
+                Utils.showAlertWithError(msg)
+                
+        })
         
     }
     

@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuView" customModule="DoctorApp" customModuleProvider="target">
@@ -18,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iUY-MI-L2w">
-                    <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                    <rect key="frame" x="0.0" y="78" width="600" height="522"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="IqX-eq-iaJ"/>
@@ -26,17 +27,17 @@
                     </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRc-k5-TVN">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eab-Jr-2t1">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                             <inset key="contentEdgeInsets" minX="15" minY="10" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="hideMenuClicked:" destination="-1" eventType="touchUpInside" id="EMc-JI-YeT"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-menu-selected" translatesAutoresizingMaskIntoConstraints="NO" id="O4q-so-qmg">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="O4q-so-qmg" secondAttribute="height" multiplier="1:1" id="aXi-j8-fgC"/>
                             </constraints>
@@ -52,10 +53,16 @@
                         <constraint firstAttribute="bottom" secondItem="O4q-so-qmg" secondAttribute="bottom" id="wOp-dR-K6R"/>
                         <constraint firstItem="O4q-so-qmg" firstAttribute="top" secondItem="HRc-k5-TVN" secondAttribute="top" id="xlH-fI-f02"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="PVG-xG-MgF"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="HRc-k5-TVN" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.13" id="8Sp-Wg-n7i"/>
                 <constraint firstItem="iUY-MI-L2w" firstAttribute="top" secondItem="HRc-k5-TVN" secondAttribute="bottom" id="Ag7-DW-l8N"/>
                 <constraint firstItem="iUY-MI-L2w" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PGi-7s-PcS"/>
                 <constraint firstAttribute="trailing" secondItem="Eab-Jr-2t1" secondAttribute="trailing" id="VTt-Z9-cFG"/>

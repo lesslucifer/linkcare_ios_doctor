@@ -29,13 +29,13 @@ class Utils: NSObject {
                 continue
             }
             
-            if map[property].value() == nil {
+            if map.JSONDictionary[property] == nil {
                 return false
             }
         }
         
         for reqField in required {
-            if map[reqField].value() == nil {
+            if map.JSONDictionary[reqField] == nil {
                 return false
             }
         }

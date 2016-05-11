@@ -8,18 +8,20 @@
 
 import UIKit
 import ObjectMapper
+import RealmSwift
 
-class UserProfile: NSObject, Mappable {
+class UserProfile: Object, Mappable {
     
-    var id = 0
-    var fullName = ""
-    var age = 0
-    var yearOfBirth = 0
-    var idCard = ""
-    var sex: Gender = .Male
-    var address = ""
+    dynamic var id = 0
+    dynamic var fullName = ""
+    dynamic var age = 0
+    dynamic var yearOfBirth = 0
+    dynamic var idCard = ""
+    dynamic var sex: Gender = .Male
+    dynamic var address = ""
     
-    required init?(_ map: Map) {
+    required convenience init?(_ map: Map) {
+        self.init()
         if !Utils.validField(UserProfile.self, map: map) {
             return nil
         }

@@ -9,14 +9,13 @@
 import Foundation
 import UIKit
 
-class AppointmentViewController: BaseMenuViewController {
-    @IBOutlet var tbAppointment: UITableView!
-    
+class AppointmentViewController: BaseTabViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         
         setupNavigationBar()
-        configureTableView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,6 +37,30 @@ class AppointmentViewController: BaseMenuViewController {
     }
 }
 
+extension AppointmentViewController: BaseTabViewControllerDelegate{
+    func tabViewWillClose(index: Int, tab: UIViewController?) {
+        
+    }
+    
+    func tabViewDidChanged(index: Int, tab: UIViewController?) {
+        tab?.view.endEditing(true)
+    }
+    
+    func createViewControllerForTabButton(btn: UIButton, atIndex index: Int) -> UIViewController? {
+        switch (index) {
+        case 0:
+            return AppointmentTodayViewController(nibName:"AppointmentTodayViewController", bundle: nil)
+        case 1:
+            return AppointmentApproveViewController(nibName: "AppointmentApproveViewController", bundle: nil)
+        case 2:
+            return AppointmentStartViewController(nibName: "AppointmentStartViewController", bundle: nil)
+        default:
+            return nil
+        }
+    }
+}
+
+/*
 extension AppointmentViewController: UITableViewDataSource, UITableViewDelegate {
     func configureTableView() {
         tbAppointment.registerNib(UINib(nibName: "AppointmentCell", bundle: nil), forCellReuseIdentifier: "AppointmentCell")
@@ -58,3 +81,4 @@ extension AppointmentViewController: UITableViewDataSource, UITableViewDelegate 
         self.notedClicked()
     }
 }
+ */

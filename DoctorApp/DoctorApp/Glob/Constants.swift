@@ -18,6 +18,7 @@ enum RightMenu {
     case Appointments
     case Schedule
     case SignOut
+    case Notification
 }
 
 struct DateFormat {
@@ -66,6 +67,7 @@ enum AppointmentStatus: Int {
     static let Transformer = TransformOf<AppointmentStatus, Int>(fromJSON: {$0 == nil ? nil : AppointmentStatus(rawValue: $0!)}, toJSON: {$0?.rawValue})
 }
 
+@objc
 enum Gender: Int {
     case Male = 0
     case Female = 1

@@ -18,6 +18,8 @@ class HomeViewController: BaseMenuViewController {
     @IBOutlet var img_doctor: UIImageView!
     @IBOutlet weak var lb_time: UILabel!
 
+    var profile = UserProfile()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,11 +27,22 @@ class HomeViewController: BaseMenuViewController {
         setupNavigationBar()
         updateTime()
         configureTableView()
+        
+        loadData()
     }
-    
+
+    func loadData() {
+        ProfileAPI.getUserProfile({ (obj) in
+            print(obj)
+            self.profile = obj!
+            
+            self.setupLayout()
+        }) { (code, msg, params) in
+            
+        }
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.setupLayout()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -52,7 +65,7 @@ class HomeViewController: BaseMenuViewController {
 //MARK: Set Layout
 extension HomeViewController{
     func setupLayout(){
-        self.lb_welcome.text = "Xin chào, bác sĩ A!"
+        self.lb_welcome.text = "Xin chào, Bác sĩ \(profile.fullName)!"
     }
 }
 
@@ -67,7 +80,7 @@ extension HomeViewController {
         let time = NSDate()
         let formatter = DateFormat.dateTimeFullFormatter
         
-        let text = "Today, \(formatter.stringFromDate(time))"
+        let text = "\(formatter.stringFromDate(time))"
         self.lb_time.text = text
     }
 }

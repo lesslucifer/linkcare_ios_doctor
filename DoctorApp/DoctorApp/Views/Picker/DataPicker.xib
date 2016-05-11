@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DataPicker" customModule="DoctorApp" customModuleProvider="target">
+            <connections>
+                <outlet property="v_picker" destination="tpc-ob-hmY" id="Enl-QQ-3cO"/>
+                <outlet property="view" destination="z4f-2r-YHp" id="u08-Tj-aTM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="z4f-2r-YHp" customClass="SpringView" customModule="Spring">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="260"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-N8-fOn">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="5rM-8M-nZr"/>
+                    </constraints>
+                    <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <items>
+                        <navigationItem id="t23-aF-Wsw">
+                            <barButtonItem key="rightBarButtonItem" title="Done" id="It8-vt-x8e">
+                                <connections>
+                                    <action selector="doneClicked:" destination="-1" id="MEI-ae-ID2"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpc-ob-hmY">
+                    <rect key="frame" x="0.0" y="44" width="600" height="216"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="yAM-m8-tde"/>
+                        <outlet property="delegate" destination="-1" id="K7l-b1-1lt"/>
+                    </connections>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="tpc-ob-hmY" secondAttribute="bottom" id="1Rx-rX-cSk"/>
+                <constraint firstAttribute="trailing" secondItem="5dr-N8-fOn" secondAttribute="trailing" id="1yW-Pl-mjF"/>
+                <constraint firstItem="5dr-N8-fOn" firstAttribute="leading" secondItem="z4f-2r-YHp" secondAttribute="leading" id="GA2-9n-dht"/>
+                <constraint firstItem="tpc-ob-hmY" firstAttribute="leading" secondItem="z4f-2r-YHp" secondAttribute="leading" id="J2Z-mp-svi"/>
+                <constraint firstItem="tpc-ob-hmY" firstAttribute="top" secondItem="5dr-N8-fOn" secondAttribute="bottom" id="LPY-pr-y0L"/>
+                <constraint firstAttribute="trailing" secondItem="tpc-ob-hmY" secondAttribute="trailing" id="e20-u6-yE8"/>
+                <constraint firstItem="5dr-N8-fOn" firstAttribute="top" secondItem="z4f-2r-YHp" secondAttribute="top" id="t1W-mj-xp8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="1212" y="263"/>
+        </view>
+    </objects>
+</document>

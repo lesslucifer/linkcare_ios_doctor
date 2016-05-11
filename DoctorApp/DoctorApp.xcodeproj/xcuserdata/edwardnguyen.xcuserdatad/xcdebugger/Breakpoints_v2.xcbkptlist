@@ -14,16 +14,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DoctorApp/ViewControllers/BaseMenuViewController.swift"
-            timestampString = "484243610.35802"
+            filePath = "DoctorApp/API/API.swift"
+            timestampString = "484320479.740811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "menuClicked(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "toSuccess(_:genericHandler:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -33,13 +33,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DoctorApp/ViewControllers/BaseMenuViewController.swift"
-            timestampString = "484243613.292152"
+            filePath = "DoctorApp/Utils/Utils.swift"
+            timestampString = "484320743.380412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "setupNavigationBar()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "validField(_:map:ignoredFields:required:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DoctorApp/Utils/Utils.swift"
+            timestampString = "484320745.762385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "validField(_:map:ignoredFields:required:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DoctorApp/ViewControllers/Appointment/AppointmentTodayViewController.swift"
+            timestampString = "484598956.075202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "notedClicked()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

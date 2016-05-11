@@ -22,7 +22,7 @@ class MenuView: UIView {
     
     var delegate: RightMenuDelegate!
     
-    var listMenuTitle: NSMutableArray = ["TRANG CHỦ", "LỊCH HẸN", "LỊCH LÀM VIỆC", "ĐĂNG XUẤT"]
+    var listMenuTitle: NSMutableArray = ["TRANG CHỦ", "LỊCH HẸN", "LỊCH LÀM VIỆC", "THÔNG BÁO", "ĐĂNG XUẤT"]
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -99,6 +99,9 @@ extension MenuView: UITableViewDelegate, UITableViewDataSource {
             self.delegate.menu_didSelect(.Schedule)
             break
         case 3:
+            self.delegate.menu_didSelect(.Notification)
+            break
+        case 4:
             self.delegate.menu_didSelect(.SignOut)
             break
         default:

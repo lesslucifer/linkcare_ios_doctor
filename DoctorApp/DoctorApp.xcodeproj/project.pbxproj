@@ -33,6 +33,16 @@
 		38CEE8341CD26342000010D2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8331CD26342000010D2 /* Utils.swift */; };
 		38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8381CD269D0000010D2 /* LoginAPI.swift */; };
 		38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E61DB61CD72009008D1870 /* AppointmentAPI.swift */; };
+		D915C8C01CE1888B00C499CD /* AppointmentTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8BE1CE1888B00C499CD /* AppointmentTodayViewController.swift */; };
+		D915C8C11CE1888B00C499CD /* AppointmentTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915C8BF1CE1888B00C499CD /* AppointmentTodayViewController.xib */; };
+		D915C8C41CE188D000C499CD /* AppointmentApproveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8C21CE188D000C499CD /* AppointmentApproveViewController.swift */; };
+		D915C8C51CE188D000C499CD /* AppointmentApproveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915C8C31CE188D000C499CD /* AppointmentApproveViewController.xib */; };
+		D915C8C81CE188F100C499CD /* AppointmentStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8C61CE188F100C499CD /* AppointmentStartViewController.swift */; };
+		D915C8C91CE188F100C499CD /* AppointmentStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915C8C71CE188F100C499CD /* AppointmentStartViewController.xib */; };
+		D92166A61CE24298004FA64C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92166A41CE24298004FA64C /* NotificationViewController.swift */; };
+		D92166A71CE24298004FA64C /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92166A51CE24298004FA64C /* NotificationViewController.xib */; };
+		D92166B01CE2C6BF004FA64C /* AddClinicTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92166AE1CE2C6BF004FA64C /* AddClinicTimingView.swift */; };
+		D92166B11CE2C6BF004FA64C /* AddClinicTimingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92166AF1CE2C6BF004FA64C /* AddClinicTimingView.xib */; };
 		D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */; };
 		D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */; };
 		D967D9EE1CD5B702002E4C0F /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D967D9ED1CD5B702002E4C0F /* Reachability.framework */; };
@@ -65,6 +75,16 @@
 		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F51CD0BD0D00EEF391 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD81CCFE2050008049A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F61CD0BD0E00EEF391 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D99396831CE2D6760091DCE3 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993967F1CE2D6760091DCE3 /* DataPicker.swift */; };
+		D99396841CE2D6760091DCE3 /* DataPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99396801CE2D6760091DCE3 /* DataPicker.xib */; };
+		D99396851CE2D6760091DCE3 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99396811CE2D6760091DCE3 /* TimePicker.swift */; };
+		D99396861CE2D6760091DCE3 /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99396821CE2D6760091DCE3 /* TimePicker.xib */; };
+		D99396891CE2D7F30091DCE3 /* ClinicTimingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99396871CE2D7F30091DCE3 /* ClinicTimingCell.swift */; };
+		D993968A1CE2D7F30091DCE3 /* ClinicTimingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99396881CE2D7F30091DCE3 /* ClinicTimingCell.xib */; };
+		D993968D1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993968B1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift */; };
+		D993968E1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993968C1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib */; };
+		D99396951CE2D9540091DCE3 /* ClinicTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99396941CE2D9540091DCE3 /* ClinicTiming.swift */; };
+		D99396971CE2DA0D0091DCE3 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99396961CE2DA0D0091DCE3 /* Timing.swift */; };
 		D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E151CDDA21900340EE9 /* ClinicalViewController.swift */; };
 		D9950E181CDDA21900340EE9 /* ClinicalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9950E161CDDA21900340EE9 /* ClinicalViewController.xib */; };
 		D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E191CDDA22E00340EE9 /* PrescriptionViewController.swift */; };
@@ -75,6 +95,8 @@
 		D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */; };
 		D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E261CDDED3B00340EE9 /* NoteViewController.swift */; };
 		D9950E291CDDED7000340EE9 /* NoteStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */; };
+		D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C154611CDF205C0010B989 /* AppDataHelper.swift */; };
+		D9C154641CDF2F570010B989 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C154631CDF2F570010B989 /* RealmHelper.swift */; };
 		E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E61CDCF02F005BE9F0 /* Profile.swift */; };
 		E370F8E91CDCF03D005BE9F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */; };
 		E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */; };
@@ -130,6 +152,16 @@
 		38CEE8331CD26342000010D2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38CEE8381CD269D0000010D2 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		38E61DB61CD72009008D1870 /* AppointmentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentAPI.swift; sourceTree = "<group>"; };
+		D915C8BE1CE1888B00C499CD /* AppointmentTodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentTodayViewController.swift; sourceTree = "<group>"; };
+		D915C8BF1CE1888B00C499CD /* AppointmentTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentTodayViewController.xib; sourceTree = "<group>"; };
+		D915C8C21CE188D000C499CD /* AppointmentApproveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentApproveViewController.swift; sourceTree = "<group>"; };
+		D915C8C31CE188D000C499CD /* AppointmentApproveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentApproveViewController.xib; sourceTree = "<group>"; };
+		D915C8C61CE188F100C499CD /* AppointmentStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentStartViewController.swift; sourceTree = "<group>"; };
+		D915C8C71CE188F100C499CD /* AppointmentStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentStartViewController.xib; sourceTree = "<group>"; };
+		D92166A41CE24298004FA64C /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		D92166A51CE24298004FA64C /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		D92166AE1CE2C6BF004FA64C /* AddClinicTimingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClinicTimingView.swift; path = DoctorApp/ViewControllers/Schedule/AddClinicTimingView.swift; sourceTree = SOURCE_ROOT; };
+		D92166AF1CE2C6BF004FA64C /* AddClinicTimingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddClinicTimingView.xib; path = DoctorApp/ViewControllers/Schedule/AddClinicTimingView.xib; sourceTree = SOURCE_ROOT; };
 		D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Helpers.swift"; sourceTree = "<group>"; };
 		D967D9ED1CD5B702002E4C0F /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
@@ -154,6 +186,16 @@
 		D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
 		D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		D993967F1CE2D6760091DCE3 /* DataPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
+		D99396801CE2D6760091DCE3 /* DataPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPicker.xib; sourceTree = "<group>"; };
+		D99396811CE2D6760091DCE3 /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		D99396821CE2D6760091DCE3 /* TimePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePicker.xib; sourceTree = "<group>"; };
+		D99396871CE2D7F30091DCE3 /* ClinicTimingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicTimingCell.swift; sourceTree = "<group>"; };
+		D99396881CE2D7F30091DCE3 /* ClinicTimingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClinicTimingCell.xib; sourceTree = "<group>"; };
+		D993968B1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicTimeSlotCell.swift; sourceTree = "<group>"; };
+		D993968C1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClinicTimeSlotCell.xib; sourceTree = "<group>"; };
+		D99396941CE2D9540091DCE3 /* ClinicTiming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicTiming.swift; sourceTree = "<group>"; };
+		D99396961CE2DA0D0091DCE3 /* Timing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
 		D9950E151CDDA21900340EE9 /* ClinicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalViewController.swift; sourceTree = "<group>"; };
 		D9950E161CDDA21900340EE9 /* ClinicalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClinicalViewController.xib; sourceTree = "<group>"; };
 		D9950E191CDDA22E00340EE9 /* PrescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +206,8 @@
 		D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
 		D9950E261CDDED3B00340EE9 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoteStoryboard.storyboard; sourceTree = "<group>"; };
+		D9C154611CDF205C0010B989 /* AppDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataHelper.swift; sourceTree = "<group>"; };
+		D9C154631CDF2F570010B989 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		E370F8E61CDCF02F005BE9F0 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicarProfile.swift; sourceTree = "<group>"; };
@@ -271,6 +315,8 @@
 				38CEE8331CD26342000010D2 /* Utils.swift */,
 				3876AB661CD4BDA30087E5AC /* APIData+Safe.swift */,
 				386B7AA31CD7994700BC28BA /* Reflectable.swift */,
+				D9C154611CDF205C0010B989 /* AppDataHelper.swift */,
+				D9C154631CDF2F570010B989 /* RealmHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -281,6 +327,15 @@
 				D967DA1A1CD5C581002E4C0F /* Constants.swift */,
 			);
 			path = Glob;
+			sourceTree = "<group>";
+		};
+		D921669F1CE2423D004FA64C /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				D92166A41CE24298004FA64C /* NotificationViewController.swift */,
+				D92166A51CE24298004FA64C /* NotificationViewController.xib */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		D967D9E81CD5B46B002E4C0F /* Extensions */ = {
@@ -295,6 +350,7 @@
 		D967D9F11CD5B739002E4C0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D921669F1CE2423D004FA64C /* Notification */,
 				D9950E0A1CDD083400340EE9 /* Note */,
 				D967DA211CD71116002E4C0F /* Schedule */,
 				D967DA1C1CD5C634002E4C0F /* Appointment */,
@@ -338,6 +394,7 @@
 		D967DA0A1CD5C511002E4C0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D993967E1CE2D6760091DCE3 /* Picker */,
 				D967DA0C1CD5C511002E4C0F /* Menu */,
 				D967DA0B1CD5C511002E4C0F /* BorderedView.swift */,
 				D967DA111CD5C511002E4C0F /* NavigationBarView.swift */,
@@ -363,6 +420,12 @@
 				D9950E1D1CDDDF0400340EE9 /* Cell */,
 				D967DA1D1CD5C634002E4C0F /* AppointmentViewController.swift */,
 				D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */,
+				D915C8BE1CE1888B00C499CD /* AppointmentTodayViewController.swift */,
+				D915C8BF1CE1888B00C499CD /* AppointmentTodayViewController.xib */,
+				D915C8C21CE188D000C499CD /* AppointmentApproveViewController.swift */,
+				D915C8C31CE188D000C499CD /* AppointmentApproveViewController.xib */,
+				D915C8C61CE188F100C499CD /* AppointmentStartViewController.swift */,
+				D915C8C71CE188F100C499CD /* AppointmentStartViewController.xib */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -370,10 +433,34 @@
 		D967DA211CD71116002E4C0F /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				D993968F1CE2D8F30091DCE3 /* tempModel */,
+				D9950E2A1CDDF53500340EE9 /* cell */,
+				D92166AE1CE2C6BF004FA64C /* AddClinicTimingView.swift */,
+				D92166AF1CE2C6BF004FA64C /* AddClinicTimingView.xib */,
 				D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */,
 				D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		D993967E1CE2D6760091DCE3 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				D993967F1CE2D6760091DCE3 /* DataPicker.swift */,
+				D99396801CE2D6760091DCE3 /* DataPicker.xib */,
+				D99396811CE2D6760091DCE3 /* TimePicker.swift */,
+				D99396821CE2D6760091DCE3 /* TimePicker.xib */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		D993968F1CE2D8F30091DCE3 /* tempModel */ = {
+			isa = PBXGroup;
+			children = (
+				D99396941CE2D9540091DCE3 /* ClinicTiming.swift */,
+				D99396961CE2DA0D0091DCE3 /* Timing.swift */,
+			);
+			path = tempModel;
 			sourceTree = "<group>";
 		};
 		D9950E0A1CDD083400340EE9 /* Note */ = {
@@ -397,6 +484,17 @@
 				D9950E1F1CDDDF0400340EE9 /* AppointmentCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D9950E2A1CDDF53500340EE9 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D99396871CE2D7F30091DCE3 /* ClinicTimingCell.swift */,
+				D99396881CE2D7F30091DCE3 /* ClinicTimingCell.xib */,
+				D993968B1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift */,
+				D993968C1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,19 +558,28 @@
 			files = (
 				D967D9F61CD5B739002E4C0F /* LoginViewController.xib in Resources */,
 				D9950E181CDDA21900340EE9 /* ClinicalViewController.xib in Resources */,
+				D915C8C91CE188F100C499CD /* AppointmentStartViewController.xib in Resources */,
 				38758BB61CCE710C00AEC3BB /* LaunchScreen.storyboard in Resources */,
+				D915C8C11CE1888B00C499CD /* AppointmentTodayViewController.xib in Resources */,
 				D967DA201CD5C634002E4C0F /* AppointmentViewController.xib in Resources */,
 				D9950E211CDDDF0400340EE9 /* AppointmentCell.xib in Resources */,
 				D967DA151CD5C511002E4C0F /* MenuCell.xib in Resources */,
 				38758BB31CCE710C00AEC3BB /* Assets.xcassets in Resources */,
+				D993968E1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib in Resources */,
 				D967DA191CD5C511002E4C0F /* NavigationBarView.xib in Resources */,
 				38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */,
 				D9950E1C1CDDA22E00340EE9 /* PrescriptionViewController.xib in Resources */,
 				D967DA171CD5C511002E4C0F /* MenuView.xib in Resources */,
+				D99396861CE2D6760091DCE3 /* TimePicker.xib in Resources */,
+				D915C8C51CE188D000C499CD /* AppointmentApproveViewController.xib in Resources */,
 				D967DA251CD711BC002E4C0F /* ScheduleViewController.xib in Resources */,
+				D92166A71CE24298004FA64C /* NotificationViewController.xib in Resources */,
+				D993968A1CE2D7F30091DCE3 /* ClinicTimingCell.xib in Resources */,
 				D967DA001CD5BECE002E4C0F /* HomeCell.xib in Resources */,
 				D967DA021CD5BECE002E4C0F /* HomeViewController.xib in Resources */,
 				D9950E291CDDED7000340EE9 /* NoteStoryboard.storyboard in Resources */,
+				D92166B11CE2C6BF004FA64C /* AddClinicTimingView.xib in Resources */,
+				D99396841CE2D6760091DCE3 /* DataPicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,18 +593,23 @@
 				D967DA1F1CD5C634002E4C0F /* AppointmentViewController.swift in Sources */,
 				3876AB651CD492370087E5AC /* TimingsAPI.swift in Sources */,
 				38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */,
+				D915C8C41CE188D000C499CD /* AppointmentApproveViewController.swift in Sources */,
+				D915C8C81CE188F100C499CD /* AppointmentStartViewController.swift in Sources */,
 				38C95A501CDBA81C00A6CBA7 /* Prescription.swift in Sources */,
 				386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */,
+				D99396851CE2D6760091DCE3 /* TimePicker.swift in Sources */,
+				D92166B01CE2C6BF004FA64C /* AddClinicTimingView.swift in Sources */,
 				38C95A4C1CDBA0C000A6CBA7 /* CacheModel.swift in Sources */,
 				D967DA181CD5C511002E4C0F /* NavigationBarView.swift in Sources */,
 				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
-				3876AB6E1CD4C4F50087E5AC /* Reflectable.swift in Sources */,
 				D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
 				E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */,
 				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
+				D9C154641CDF2F570010B989 /* RealmHelper.swift in Sources */,
 				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
+				D99396951CE2D9540091DCE3 /* ClinicTiming.swift in Sources */,
 				D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */,
 				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,
 				D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */,
@@ -505,25 +617,32 @@
 				38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
 				D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */,
+				D915C8C01CE1888B00C499CD /* AppointmentTodayViewController.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */,
 				D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */,
+				D99396891CE2D7F30091DCE3 /* ClinicTimingCell.swift in Sources */,
 				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
 				D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */,
 				D9950E201CDDDF0400340EE9 /* AppointmentCell.swift in Sources */,
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
+				D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */,
 				38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */,
 				E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */,
+				D99396971CE2DA0D0091DCE3 /* Timing.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
 				E370F8ED1CDCF61F005BE9F0 /* NotificationAPI.swift in Sources */,
+				D92166A61CE24298004FA64C /* NotificationViewController.swift in Sources */,
 				E370F8E91CDCF03D005BE9F0 /* UserProfile.swift in Sources */,
 				E370F8EF1CDCF625005BE9F0 /* Notification.swift in Sources */,
+				D99396831CE2D6760091DCE3 /* DataPicker.swift in Sources */,
 				386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */,
 				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
 				D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */,
+				D993968D1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift in Sources */,
 				D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

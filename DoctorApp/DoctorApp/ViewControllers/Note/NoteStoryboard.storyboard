@@ -7,10 +7,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Dashboard View Controller-->
+        <!--Note View Controller-->
         <scene sceneID="kbr-U5-Aoc">
             <objects>
-                <viewController storyboardIdentifier="dashboard" id="4lh-Dl-aPl" customClass="NoteViewController" customModule="DoctorApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="noteDashboard" id="4lh-Dl-aPl" customClass="NoteViewController" customModule="DoctorApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="37s-yK-gXN"/>
                         <viewControllerLayoutGuide type="bottom" id="mqu-al-diK"/>
@@ -58,7 +58,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="fvW-2K-Cix" secondAttribute="height" multiplier="38:43" id="AJj-fs-lHF"/>
                                                         </constraints>
-                                                        <state key="normal" title="2" image="Medicine"/>
+                                                        <state key="normal" image="Medicine"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -9,14 +9,14 @@
 import UIKit
 import ObjectMapper
 
-class Profile: NSObject {
-    func getUserProfile(success: APIGenericHandler<UserProfile>.Single, failure: APIHandler.Failure?) {
+class ProfileAPI: NSObject {
+    class func getUserProfile(success: APIGenericHandler<UserProfile>.Single, failure: APIHandler.Failure?) {
         API.baseAPI(.GET, path: "/account/profile", body: nil,
                     success: APIHandler.toSuccess(genericHandler: success),
                     failure: failure)
     }
     
-    func getMedicarProfile(accountId: Int?, success: APIGenericHandler<MedicarProfile>.Single, failure: APIHandler.Failure?) {
+    class func getMedicarProfile(accountId: Int?, success: APIGenericHandler<MedicarProfile>.Single, failure: APIHandler.Failure?) {
         let accId = accountId == nil ? "me" : String(accountId)
         
         API.baseAPI(.GET, path: "/account/\(accId)/medicar_profile", body:nil,

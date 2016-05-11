@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import PKHUD
 
 class BaseMenuViewController: BaseViewController {
     @IBOutlet var v_navigation: NavigationBarView!
@@ -86,6 +87,9 @@ extension BaseMenuViewController : RightMenuDelegate {
         case .Schedule:
             goToSchedule()
             break
+        case .Notification:
+            goToNotification()
+            break
         case .SignOut:
             signout()
             break
@@ -109,11 +113,28 @@ extension BaseMenuViewController {
     func goToSchedule() {
         let navController = self.navigationController
         let vcDestination = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
-//        let vcDestination = MMClinicTimingViewController(nibName: "MMClinicTimingViewController", bundle: nil)
+        navController?.pushViewController(vcDestination, animated: true)
+    }
+    
+    func goToNotification() {
+        let navController = self.navigationController
+        let vcDestination = NotificationViewController(nibName: "NotificationViewController", bundle: nil)
         navController?.pushViewController(vcDestination, animated: true)
     }
     
     func signout() {
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+        LoginAPI.logout({ (data) in
+            PKHUD.sharedHUD.hide(animated: true, completion: nil)
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//            appDelegate.backToLogin()
+//            MMRealmHelper.sharedInstance.db_wipeDBOnSignout()
+            print(data)
+            }) { (code, msg, params) in
+                PKHUD.sharedHUD.hide(animated: true, completion: nil)
+                
+        }
         
     }
 }
