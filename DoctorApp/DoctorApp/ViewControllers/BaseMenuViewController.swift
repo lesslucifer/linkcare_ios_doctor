@@ -128,12 +128,12 @@ extension BaseMenuViewController {
         LoginAPI.logout({ (data) in
             PKHUD.sharedHUD.hide(animated: true, completion: nil)
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//            appDelegate.backToLogin()
-//            MMRealmHelper.sharedInstance.db_wipeDBOnSignout()
+            appDelegate.gotoLoginVC()
+            RealmHelper.sharedInstance.db_wipeDBOnSignout()
             print(data)
             }) { (code, msg, params) in
                 PKHUD.sharedHUD.hide(animated: true, completion: nil)
-                
+                Utils.showAlertWithError(msg)
         }
         
     }

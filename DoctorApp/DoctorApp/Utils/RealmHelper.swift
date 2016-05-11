@@ -8,8 +8,8 @@
 
 import RealmSwift
 
-class STRealmHelper{
-    static let shareInstance = STRealmHelper()
+class RealmHelper{
+    static let sharedInstance = RealmHelper()
     
     let realm = try! Realm()
     
