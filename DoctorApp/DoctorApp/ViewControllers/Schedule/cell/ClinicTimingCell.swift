@@ -48,9 +48,28 @@ class ClinicTimingCell: UITableViewCell {
 
 //MARK: Layout handle
 extension ClinicTimingCell {
-    func setButtonTime(currentView: UIView, status: DefineClinic) {
+    func setButtonTime(timingTemp: [Timings], currentView: UIView, status: DefineClinic) {
         currentView.removeAllSubviews()
         
+        for (var i = 0; i < timingTemp.count; i++){
+            let timing = timingTemp[i]
+            let frame = CGRect(x: 0, y: CGFloat(i * 35), width: currentView.frame.size.width, height: 34)
+            let button = UIButton(frame: frame)
+            //-------------
+            button.setTitle("\(timing.beginTime) - \(timing.endTime)", forState: UIControlState.Normal)
+            
+            button.backgroundColor = Utils.UIColorFromRGB(red: 243, green: 101, blue: 35)
+            
+            if(status == DefineClinic.TimeSlot){
+                button.addTarget(self, action: #selector(ClinicTimingCell.showTimingClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            }else{
+                button.removeTarget(self, action: nil, forControlEvents: UIControlEvents.AllEvents)
+            }
+            
+            currentView.addSubview(button)
+        }
+        
+        /*
         let frame = CGRect(x: 0, y: CGFloat(0 * 35), width: currentView.frame.size.width, height: 34)
         let button = UIButton(frame: frame)
         //-------------
@@ -64,6 +83,7 @@ extension ClinicTimingCell {
         }
         
         currentView.addSubview(button)
+        */
         
         if (status == DefineClinic.TimeSlot){
             let frame = CGRect(x: 0, y: CGFloat(1 * 35), width: currentView.frame.size.width, height: 35)

@@ -16,6 +16,10 @@ enum DefineClinic{
 }
 
 class ScheduleViewController: BaseMenuViewController {
+    var timmingHospitalList: Array<Timings> = []
+    var timmingHomeList: Array<Timings> = []
+    
+    
     @IBOutlet private var tv_clinicTiming: UITableView!
     @IBOutlet var v_popupOverlay: UIView!
     @IBOutlet var btn_defTimeSlot: UIButton!
@@ -45,15 +49,7 @@ class ScheduleViewController: BaseMenuViewController {
         //--
         v_timePicker = TimePicker(frame: CGRectMake(0, UIScreen.mainScreen().bounds.height, self.view.bounds.width, 300))
         
-        //-----------
-        reloadTableData()
-        //-----------
-        self.reloadData({ (Void) -> Void in
-            self.reloadTableData()
-        })
-        //---------
-
-
+        self.reloadData()
     }
     
     override func setupNavigationBar() {
@@ -64,36 +60,29 @@ class ScheduleViewController: BaseMenuViewController {
 
 //MARK: Data handler
 extension ScheduleViewController {
-    func reloadData(completion: (Void) -> Void) {
-//        MMAppDataHelper.sharedInstance.syncClinicTimings { (success) -> Void in
-//            completion()
-//        }
+    func reloadData() {
+        TimingsAPI.getTimings({ (arr) in
+            print(arr)
+            for tmpTimming: Timings in arr {
+                if tmpTimming.type == 0 {
+                    self.timmingHospitalList.append(tmpTimming)
+                } else{
+                    self.timmingHomeList.append(tmpTimming)
+                }
+            }
+            self.tv_clinicTiming.reloadData()
+        }) { (code, msg, params) in
+            Utils.showAlertWithError(msg)
+        }
     }
     
     func reloadTableData(){
-//        self.ma_clinicTimings = MMRealmHelper.sharedInstance.db_getArrObjects(ClinicTiming.self)
-        setTiming()
         self.tv_clinicTiming.reloadData()
-    }
-    
-    func setTiming(){
-//        ma_walkinTiming = []
-//        for clinicTiming in self.ma_clinicTimings! {
-//            for timing in clinicTiming.mct_timings {
-//                self.ma_walkinTiming.append(timing)
-//            }
-//        }
     }
 }
 
 //MARK: Action handler
 extension ScheduleViewController {
-//    func addClinicTapped(sender: AnyObject?) {
-//        self.view.endEditing(true)
-//        let vc_createClinic = MMCreateClinicViewController(nibName: "MMCreateClinicViewController", bundle: nil)
-//        self.navigationController?.pushViewController(vc_createClinic, animated: true)
-//    }
-
     @IBAction func AddTimeClinicTapped(sender: UIButton) {
         if tapAction != .TimeSlot {
             tapAction = .TimeSlot
@@ -104,36 +93,6 @@ extension ScheduleViewController {
         }
         self.tv_clinicTiming.reloadData()
     }
-    
-    
-//    func draggedView(sender: UIPanGestureRecognizer){
-//        let location = sender.locationInView(view)
-//        let translation = sender.translationInView(view)
-//        let velocity = sender.velocityInView(view)
-//        var viewToPan = self.v_addClinicTiming
-//        
-//        switch sender.state {
-//        case .Began :
-//            print("Began")
-//            originalLocation = location
-//            originalContentOrigin = viewToPan.frame.origin
-//        case .Changed:
-//            print("Changed")
-//            let newOriginY = originalContentOrigin.y + location.y - originalLocation.y
-//            let newOriginX = originalContentOrigin.x + location.x - originalLocation.x
-//            viewToPan.frame.origin.y = newOriginY
-//            viewToPan.frame.origin.x = newOriginX
-//            print(viewToPan.frame.origin.y)
-//        case .Ended:
-//            print("ended")
-//        case .Possible:
-//            print("possible")
-//        case .Cancelled:
-//            print("cancelled")
-//        case .Failed:
-//            print("failed")
-//        }
-//    }
 }
 
 //MARK: UITableViewDelegate
@@ -157,46 +116,53 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
 //        getArrayTimingTempForClinic(clinic)
 //        let max = maxNumTimingForArrayTemp(ma_timingTemps!)
         var height = 35 * 2
+        if indexPath.row == 0 {
+            height = 35 * (self.timmingHospitalList.count + 1)
+        } else {
+            height = 35 * (self.timmingHomeList.count + 1)
+        }
+        
         
         //-------------
         
-//        switch tapAction{
-//        case .TimeSlot:
-//            if (clinic.mct_timings.count > 0){
-//                height += (max * 35)
+        switch tapAction{
+        case .TimeSlot:
+//            if (timmingHospitalList.count > 0){
+//                height += 35
 //            }
-//            break
-//        case .WalkingSlot:
+            break
+        case .WalkingSlot:
 //            if (clinic.mct_timings.count > 0){
-//                height = (max * 35)
+//                height += 35
 //            }
-//            break
-//        default:
-//            if (clinic.mct_timings.count > 0){
-//                height = (max * 35)
-//            }
-//            break
-//        }
+            height = height + 35
+            break
+        default:
+            break
+        }
         
         return CGFloat(height)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //----------
-//        let clinic = ma_clinicTimings![indexPath.row]
-//        getArrayTimingTempForClinic(clinic)
-        //----------
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("ClinicTimingCell", forIndexPath: indexPath) as! ClinicTimingCell
         
-        cell.setButtonTime(cell.v_monday,status: tapAction)
-        cell.setButtonTime(cell.v_tueday,status: tapAction)
-        cell.setButtonTime(cell.v_wedday,status: tapAction)
-        cell.setButtonTime(cell.v_thurday,status: tapAction)
-        cell.setButtonTime(cell.v_friday,status: tapAction)
-        cell.setButtonTime(cell.v_satday,status: tapAction)
-        cell.setButtonTime(cell.v_sunday,status: tapAction)
-        //------------------------
-        cell.delegate = self
+        if indexPath.row == 0 {
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_monday,status: tapAction)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_tueday,status: tapAction)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_wedday,status: tapAction)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_thurday,status: tapAction)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_friday,status: tapAction)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_satday,status: tapAction)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_sunday,status: tapAction)
+            //------------------------
+            cell.delegate = self
+        }
+        
+        
+        
+        
 //        cell.lb_clinicName.text = clinic.mct_displayName == "" ? clinic.mct_name : clinic.mct_displayName
         
         return cell
@@ -234,9 +200,6 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         v_addClinicTiming.center = CGPointMake(screenSize.width/2, screenSize.height/2)
         v_addClinicTiming.view.applyShadow()
         
-//        panRec.addTarget(self, action: "draggedView:")
-//        self.v_addClinicTiming.addGestureRecognizer(panRec)
-        
         // Animation show Add time slot
         
         animateOverlayShow()
@@ -272,10 +235,8 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
     func hideAddClinicTimingView() {
 //        reloadTableData()
         //-----------
-        self.reloadData({ (Void) -> Void in
-            self.reloadTableData()
-        })
-        //-------
+        self.reloadData()
+        
         animateOverlayHide()
         v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeOut.rawValue
         v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
@@ -343,22 +304,22 @@ extension ScheduleViewController {
 
 //MARK: timing Temp
 
-extension ScheduleViewController {
-    func maxNumTimingForArrayTemp(arrTemp: Array<TimingTemp>) -> Int{
-        var max = 0
-        for timingTemp in arrTemp{
-            max = timingTemp.mtt_timingList.count > max ? timingTemp.mtt_timingList.count : max
-        }
-        return max
-    }
-    
-    func getArrayTimingTempForClinic (clinic: ClinicTiming) {
-        ma_timingTemps = []
-        var arrTiming = Array<Timing>()
-        for timing in clinic.mct_timings{
-            arrTiming.append(timing)
-        }
-        
-    }
-    
-}
+//extension ScheduleViewController {
+//    func maxNumTimingForArrayTemp(arrTemp: Array<TimingTemp>) -> Int{
+//        var max = 0
+//        for timingTemp in arrTemp{
+//            max = timingTemp.mtt_timingList.count > max ? timingTemp.mtt_timingList.count : max
+//        }
+//        return max
+//    }
+//    
+//    func getArrayTimingTempForClinic (clinic: ClinicTiming) {
+//        ma_timingTemps = []
+//        var arrTiming = Array<Timing>()
+//        for timing in clinic.mct_timings{
+//            arrTiming.append(timing)
+//        }
+//        
+//    }
+//    
+//}

@@ -108,8 +108,6 @@ extension AddClinicTimingView {
 
     }
     
-
-    
     func btnAddNewBlockPressed(sender: AnyObject?){
         //------------
 //        if screenType == .AddTimeSlot {
