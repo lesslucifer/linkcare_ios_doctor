@@ -6,8 +6,16 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="MyriadPro-Regular_0.otf">
+            <string>MyriadPro-Regular</string>
+            <string>MyriadPro-Regular</string>
+            <string>MyriadPro-Regular</string>
+            <string>MyriadPro-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppointmentTodayViewController" customModule="DoctorApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppointmentWaitingViewController" customModule="DoctorApp" customModuleProvider="target">
             <connections>
                 <outlet property="tbAppointment" destination="0Us-UJ-XiX" id="LRl-Jp-QxQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,39 +40,39 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thời gian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sv-Vc-MJm">
                                                     <rect key="frame" x="0.0" y="0.0" width="205" height="54"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Họ tên" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEy-eE-Khf">
                                                     <rect key="frame" x="205" y="0.0" width="512" height="54"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuổi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEr-jA-qJU">
-                                                    <rect key="frame" x="922" y="0.0" width="102" height="54"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giới tính" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si3-ot-xwx">
                                                     <rect key="frame" x="717" y="0.0" width="205" height="54"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuổi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEr-jA-qJU">
+                                                    <rect key="frame" x="922" y="0.0" width="102" height="54"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.33333333329999998" green="0.63137254899999995" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" secondItem="nxy-2U-IRS" secondAttribute="height" multiplier="512:27" id="2LU-ru-ye6"/>
                                                 <constraint firstItem="2Sv-Vc-MJm" firstAttribute="top" secondItem="nxy-2U-IRS" secondAttribute="top" id="7Bn-3C-hcH"/>
                                                 <constraint firstAttribute="trailing" secondItem="WEr-jA-qJU" secondAttribute="trailing" id="817-OV-imH"/>
-                                                <constraint firstAttribute="width" secondItem="nxy-2U-IRS" secondAttribute="height" multiplier="1004:53" id="8p1-32-RE8"/>
                                                 <constraint firstAttribute="bottom" secondItem="Si3-ot-xwx" secondAttribute="bottom" id="CFh-Ou-baH"/>
                                                 <constraint firstAttribute="bottom" secondItem="gEy-eE-Khf" secondAttribute="bottom" id="CJP-rr-ud0"/>
                                                 <constraint firstItem="Si3-ot-xwx" firstAttribute="top" secondItem="nxy-2U-IRS" secondAttribute="top" id="Dcl-O2-15H"/>
+                                                <constraint firstItem="WEr-jA-qJU" firstAttribute="width" secondItem="nxy-2U-IRS" secondAttribute="width" multiplier="1/10" id="GUn-2j-9IH"/>
                                                 <constraint firstItem="Si3-ot-xwx" firstAttribute="leading" secondItem="gEy-eE-Khf" secondAttribute="trailing" id="IGD-6P-LlZ"/>
-                                                <constraint firstItem="2Sv-Vc-MJm" firstAttribute="width" secondItem="nxy-2U-IRS" secondAttribute="width" multiplier="1/5" id="IRQ-7f-1jT"/>
                                                 <constraint firstItem="2Sv-Vc-MJm" firstAttribute="leading" secondItem="nxy-2U-IRS" secondAttribute="leading" id="J9C-oA-X0n"/>
                                                 <constraint firstItem="WEr-jA-qJU" firstAttribute="leading" secondItem="Si3-ot-xwx" secondAttribute="trailing" id="Nxc-EV-tWg"/>
                                                 <constraint firstItem="gEy-eE-Khf" firstAttribute="leading" secondItem="2Sv-Vc-MJm" secondAttribute="trailing" id="QZo-sn-cfY"/>

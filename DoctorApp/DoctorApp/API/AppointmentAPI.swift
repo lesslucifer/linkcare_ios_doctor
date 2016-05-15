@@ -8,15 +8,20 @@
 
 import UIKit
 class AppointmentAPI {
-    class func getAppointment(appointmentIds: Int..., success: APIGenericHandler<Appointment>.Arr, failure: APIHandler.Failure?) {
+    class func getAppointmentArr(appointmentIds: [Int], success: APIGenericHandler<Appointment>.Arr, failure: APIHandler.Failure?) {
         if appointmentIds.isEmpty {
             success(arr: [])
         }
         
         let query = appointmentIds.map({String($0)}).joinWithSeparator(",")
-        API.baseAPI(.GET, path: "/appoinments/\(query)", body: nil,
+        API.baseAPI(.GET, path: "/appointments/\(query)", body: nil,
                      success: APIHandler.toSuccess(genericHandler: success),
                      failure: failure)
+    }
+    
+    class func getAppointment(appointmentIds: Int..., success: APIGenericHandler<Appointment>.Arr, failure: APIHandler.Failure?) {
+        let arr = appointmentIds.map({$0})
+        self.getAppointmentArr(arr, success: success, failure: failure)
     }
     
     class func approveAppointment(appointmentId: Int, result: APIHandler.Result?) {
@@ -31,8 +36,11 @@ class AppointmentAPI {
                      failure: APIHandler.toFailure(result))
     }
     
-    class func cancelAppointment(appointmentId: Int, result: APIHandler.Result?) {
-        API.baseAPI(.PUT, path: "/appointments/\(appointmentId)/cancel", body: nil,
+    class func cancelAppointment(appointmentId: Int, reason: String, result: APIHandler.Result?) {
+        let body: APIData = [
+            "reason": reason
+        ]
+        API.baseAPI(.PUT, path: "/appointments/\(appointmentId)/cancel", body: body,
                      success: APIHandler.toSuccess(result),
                      failure: APIHandler.toFailure(result))
     }

@@ -12,8 +12,8 @@
                 <outlet property="v_placeholder" destination="mqY-sv-WhN" id="KyR-6S-sx4"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cg3-Ho-iRR"/>
                 <outletCollection property="a_tabBarButtons" destination="kgY-nI-6JO" collectionClass="NSMutableArray" id="VBm-UY-EWV"/>
-                <outletCollection property="a_tabBarButtons" destination="j2s-cf-six" collectionClass="NSMutableArray" id="nv1-PX-T1P"/>
-                <outletCollection property="a_tabBarButtons" destination="Mei-vn-a9g" collectionClass="NSMutableArray" id="fd7-sP-nPd"/>
+                <outletCollection property="a_tabBarButtons" destination="Mei-vn-a9g" collectionClass="NSMutableArray" id="2rz-or-Y7U"/>
+                <outletCollection property="a_tabBarButtons" destination="j2s-cf-six" collectionClass="NSMutableArray" id="bY9-kZ-MZ0"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -43,15 +43,15 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2s-cf-six">
-                            <rect key="frame" x="683.5" y="0.0" width="340" height="77"/>
-                            <state key="normal" title="Lịch hẹn chưa kết thúc">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-vn-a9g">
                             <rect key="frame" x="342" y="0.0" width="341.5" height="77"/>
                             <state key="normal" title="Lịch hẹn hôm nay">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2s-cf-six">
+                            <rect key="frame" x="683.5" y="0.0" width="340" height="77"/>
+                            <state key="normal" title="Lịch hẹn chưa kết thúc">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>

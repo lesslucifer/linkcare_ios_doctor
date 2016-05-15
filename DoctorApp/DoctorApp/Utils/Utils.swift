@@ -53,6 +53,21 @@ class Utils: NSObject {
         return true
     }
     
+    func randomString(len : Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        
+        let randomString : NSMutableString = NSMutableString(capacity: len)
+        
+        for _ in 0..<len {
+            let length = UInt32 (letters.length)
+            let rand = arc4random_uniform(length)
+            randomString.appendFormat("%C", letters.characterAtIndex(Int(rand)))
+        }
+        
+        return randomString as String
+    }
+    
     //MARK: Color
     class func UIColorFromRGB(red red: Int, green:Int, blue:Int) -> UIColor {
         return UIColor(
@@ -66,6 +81,10 @@ class Utils: NSObject {
 
     //
     class func invokeLater(block: dispatch_block_t) {
+        dispatch_async(dispatch_get_main_queue(), block)
+    }
+    
+    class func later(block: dispatch_block_t) {
         dispatch_async(dispatch_get_main_queue(), block)
     }
 }
@@ -82,6 +101,13 @@ extension Utils {
         let v_alert: UIAlertView = UIAlertView(title: "", message: error, delegate: delegate, cancelButtonTitle: "Yes", otherButtonTitles: "No")
         v_alert.tag = 20000
         v_alert.show()
+    }
+    
+    class func showOKAlertPanel(controller: UIViewController, title: String, msg: String, callback: ((UIAlertAction)->())? = nil) {
+        let alert = UIAlertController(title:title, message: msg, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: callback))
+        
+        controller.presentViewController(alert, animated: true, completion: nil)
     }
 }
 
@@ -115,5 +141,25 @@ extension Utils {
                 
                 return formatter.stringFromDate(d!)
         })
+    }
+    
+    class func age(date: NSDate) -> Int {
+        let now = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        
+        return calendar.components(.Year,
+                                   fromDate: date,
+                                   toDate: now,
+                                   options: []).year
+    }
+}
+
+extension String {
+    var emptyCheck: String? {
+        if Utils.isEmpty(self) {
+            return nil
+        }
+        
+        return self
     }
 }

@@ -5,6 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="MyriadPro-Regular_0.otf">
+            <string>MyriadPro-Regular</string>
+            <string>MyriadPro-Regular</string>
+            <string>MyriadPro-Regular</string>
+            <string>MyriadPro-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,7 +31,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7: 00 AM 01.02.2016" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-u7-O3L">
                                         <rect key="frame" x="15" y="0.0" width="164" height="99.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -41,7 +49,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Thị X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXA-O1-Oif">
                                         <rect key="frame" x="8" y="8" width="433" height="83"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -62,7 +70,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="qwJ-j1-xTe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -88,7 +96,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="XNY-YU-NVW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -123,6 +131,7 @@
                             <constraint firstItem="26e-O5-u2Q" firstAttribute="top" secondItem="OaA-ZM-K3f" secondAttribute="top" id="YGf-L1-i4H"/>
                             <constraint firstItem="0Px-Tu-2mt" firstAttribute="width" secondItem="OaA-ZM-K3f" secondAttribute="width" multiplier="1/10" id="a1u-ek-8Vl"/>
                             <constraint firstItem="y4C-mY-czt" firstAttribute="leading" secondItem="26e-O5-u2Q" secondAttribute="trailing" id="jcg-oT-DRQ"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="o9H-XE-6a0"/>
                             <constraint firstAttribute="bottom" secondItem="26e-O5-u2Q" secondAttribute="bottom" id="pni-cg-eRL"/>
                             <constraint firstItem="0Px-Tu-2mt" firstAttribute="top" secondItem="OaA-ZM-K3f" secondAttribute="top" id="sLZ-zp-eqd"/>
                             <constraint firstItem="BAX-vP-p5U" firstAttribute="leading" secondItem="y4C-mY-czt" secondAttribute="trailing" id="vLh-JH-zh1"/>
@@ -133,16 +142,39 @@
                             </mask>
                         </variation>
                     </view>
+                    <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7c-B5-xoe" userLabel="Waiting">
+                        <rect key="frame" x="0.0" y="0.0" width="900" height="99.5"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Nq3-TZ-SfM">
+                                <rect key="frame" x="431.5" y="31.5" width="37" height="37"/>
+                                <color key="color" red="0.098039215690000001" green="0.5450980392" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nq3-TZ-SfM" firstAttribute="centerY" secondItem="H7c-B5-xoe" secondAttribute="centerY" id="Sds-bA-evk"/>
+                            <constraint firstItem="Nq3-TZ-SfM" firstAttribute="centerX" secondItem="H7c-B5-xoe" secondAttribute="centerX" id="eBR-10-buY"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="H7c-B5-xoe" firstAttribute="top" secondItem="ilL-Mf-t16" secondAttribute="top" id="AJn-4z-2j3"/>
+                    <constraint firstAttribute="trailing" secondItem="H7c-B5-xoe" secondAttribute="trailing" id="C9c-6x-mob"/>
                     <constraint firstAttribute="bottom" secondItem="OaA-ZM-K3f" secondAttribute="bottom" id="KY2-sR-tBr"/>
+                    <constraint firstItem="H7c-B5-xoe" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" id="LoH-yb-vhF"/>
                     <constraint firstItem="OaA-ZM-K3f" firstAttribute="top" secondItem="ilL-Mf-t16" secondAttribute="top" id="VDB-Jf-Tb5"/>
                     <constraint firstAttribute="trailing" secondItem="OaA-ZM-K3f" secondAttribute="trailing" constant="1" id="grE-2L-Nim"/>
                     <constraint firstItem="OaA-ZM-K3f" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" constant="1" id="p1T-aa-w3g"/>
+                    <constraint firstAttribute="bottom" secondItem="H7c-B5-xoe" secondAttribute="bottom" id="t7P-j1-rKp"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="aiLoading" destination="Nq3-TZ-SfM" id="hnJ-NB-gGR"/>
+                <outlet property="lb_age" destination="Fw2-cd-VNr" id="Gdq-ib-C04"/>
+                <outlet property="lb_gender" destination="jl9-DW-TQW" id="5hJ-9O-GGh"/>
+                <outlet property="lb_name" destination="CXA-O1-Oif" id="FPp-tm-uBQ"/>
                 <outlet property="lb_time" destination="12Z-u7-O3L" id="B19-jn-U1U"/>
+                <outlet property="vWaiting" destination="H7c-B5-xoe" id="UfC-fm-puZ"/>
             </connections>
             <point key="canvasLocation" x="283" y="343"/>
         </tableViewCell>

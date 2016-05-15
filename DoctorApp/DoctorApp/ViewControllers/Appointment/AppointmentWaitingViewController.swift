@@ -1,5 +1,5 @@
 //
-//  AppointmentStartViewController.swift
+//  AppointmentWaitingViewController.swift
 //  DoctorApp
 //
 //  Created by Edward Nguyen on 5/10/16.
@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 
-class AppointmentStartViewController: UIViewController {
+class AppointmentWaitingViewController: UIViewController {
 
     @IBOutlet var tbAppointment: UITableView!
     var appointments: [CacheModel] = []
@@ -19,8 +19,6 @@ class AppointmentStartViewController: UIViewController {
         super.viewDidLoad()
 
         configureTableView()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +30,7 @@ class AppointmentStartViewController: UIViewController {
         super.viewWillAppear(animated)
         
         PKHUD.sharedHUD.show()
-        AppointmentAPI.getMedicarAppointment(.Processing, success: { (arr) in
+        AppointmentAPI.getMedicarAppointment(.Waiting, success: { (arr) in
             PKHUD.sharedHUD.hide(animated: false, completion: nil)
             self.appointments = arr
             self.tbAppointment.reloadData()
@@ -42,15 +40,9 @@ class AppointmentStartViewController: UIViewController {
                 self.tbAppointment.reloadData()
         })
     }
-    
-    func notedClicked() {
-        let storyboard = UIStoryboard(name: "NoteStoryboard", bundle: nil)
-        let vc_destination = storyboard.instantiateViewControllerWithIdentifier("noteDashboard") as! NoteViewController
-        self.navigationController?.pushViewController(vc_destination, animated: true)
-    }
 }
 
-extension AppointmentStartViewController: UITableViewDataSource, UITableViewDelegate {
+extension AppointmentWaitingViewController: UITableViewDataSource, UITableViewDelegate {
     func configureTableView() {
         tbAppointment.registerNib(UINib(nibName: "AppointmentCell", bundle: nil), forCellReuseIdentifier: "AppointmentCell")
         tbAppointment.registerNib(UINib(nibName: "AppointmentExpandedCell", bundle: nil), forCellReuseIdentifier: "AppointmentExpandedCell")
@@ -71,18 +63,14 @@ extension AppointmentStartViewController: UITableViewDataSource, UITableViewDele
         let cellIdentifier = (indexPath.row == expandedIndex) ? "AppointmentExpandedCell" : "AppointmentCell"
         let cell: AppointmentCellProtocol = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AppointmentCellProtocol
         
-        if let expCell = cell as? AppointmentExpandedCell {
-            expCell.configureToStartButton()
-            expCell.btnCancel.hidden = true
-        }
-        
         let cacheModel = appointments[indexPath.row]
         if let appointment = AppointmentCache.INST.get(cacheModel) {
             cell.waiting(false)
             cell.configure(appointment)
             
             if let expCell = cell as? AppointmentExpandedCell {
-                expCell.okHandler = {self.startAppointment(appointment)}
+                expCell.okHandler = {self.acceptAppointment(appointment)}
+                expCell.cancelHandler = {self.rejectAppointment(appointment)}
             }
         }
         else {
@@ -128,9 +116,38 @@ extension AppointmentStartViewController: UITableViewDataSource, UITableViewDele
         tableView.reloadRowsAtIndexPaths(reloads, withRowAnimation: .Automatic)
     }
     
-    func startAppointment(appointment: Appointment) {
-        self.notedClicked()
+    func acceptAppointment(appointment: Appointment) {
+        PKHUD.sharedHUD.show()
+        AppointmentAPI.approveAppointment(appointment.id, result: { succ, code, msg, pars in
+            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            
+            if succ {
+                if let index = self.appointments.indexOf({$0.id == appointment.id}) {
+                    self.appointments.removeAtIndex(index)
+                    self.tbAppointment.deleteRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
+                }
+            }
+            else {
+                Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Không thể chấp nhận cuộc hẹn! Xin vui lòng thử lại.")
+                
+            }
+        })
+    }
+    
+    func rejectAppointment(appointment: Appointment) {
+        PKHUD.sharedHUD.show()
+        AppointmentAPI.rejectAppointment(appointment.id, result: { succ, code, msg, pars in
+            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            
+            if succ {
+                if let index = self.appointments.indexOf({$0.id == appointment.id}) {
+                    self.appointments.removeAtIndex(index)
+                    self.tbAppointment.deleteRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
+                }
+            }
+            else {
+                Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Không thể từ chối cuộc hẹn! Xin vui lòng thử lại.")
+            }
+        })
     }
 }
-
-

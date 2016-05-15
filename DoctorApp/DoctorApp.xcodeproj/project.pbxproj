@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3817E7861CE4E726006E3B5A /* Persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7851CE4E726006E3B5A /* Persist.swift */; };
+		3817E7891CE4E906006E3B5A /* BaseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7881CE4E906006E3B5A /* BaseCache.swift */; };
+		3817E78B1CE4F1CC006E3B5A /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E78A1CE4F1CC006E3B5A /* Cacheable.swift */; };
+		3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */; };
+		3820F7621CE890B0005BEFA7 /* CancelReasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */; };
 		386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7A9F1CD798FE00BC28BA /* Appointment.swift */; };
 		386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7AA31CD7994700BC28BA /* Reflectable.swift */; };
 		38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38758BAB1CCE710C00AEC3BB /* AppDelegate.swift */; };
@@ -24,17 +29,23 @@
 		38947DDA1CCFE2050008049A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD61CCFE2050008049A /* Realm.framework */; };
 		38947DDB1CCFE2050008049A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; };
 		38947DDC1CCFE2050008049A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947DD81CCFE2050008049A /* SwiftyJSON.framework */; };
+		38A423201CE610ED004E2146 /* AppointmentCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A4231F1CE610ED004E2146 /* AppointmentCache.swift */; };
+		38A423231CE63AB0004E2146 /* AppointmentExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A423211CE63AB0004E2146 /* AppointmentExpandedCell.swift */; };
+		38A423241CE63AB0004E2146 /* AppointmentExpandedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A423221CE63AB0004E2146 /* AppointmentExpandedCell.xib */; };
+		38A423281CE63CF1004E2146 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 38A423261CE63CF1004E2146 /* Gotham-Medium.otf */; };
+		38A423291CE63CF1004E2146 /* MyriadPro-Regular_0.otf in Resources */ = {isa = PBXBuildFile; fileRef = 38A423271CE63CF1004E2146 /* MyriadPro-Regular_0.otf */; };
 		38B36E861CCFC763009820D2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; };
 		38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B370461CDCDA2F00B51011 /* BlockVacation.swift */; };
 		38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B370481CDCE52100B51011 /* BlockVacationAPI.swift */; };
 		38C95A4C1CDBA0C000A6CBA7 /* CacheModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */; };
 		38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */; };
 		38C95A501CDBA81C00A6CBA7 /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */; };
+		38CCDC841CE398F2001E0129 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCDC831CE398F2001E0129 /* DateFormat.swift */; };
 		38CEE8341CD26342000010D2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8331CD26342000010D2 /* Utils.swift */; };
 		38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8381CD269D0000010D2 /* LoginAPI.swift */; };
 		38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E61DB61CD72009008D1870 /* AppointmentAPI.swift */; };
-		D915C8C01CE1888B00C499CD /* AppointmentTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8BE1CE1888B00C499CD /* AppointmentTodayViewController.swift */; };
-		D915C8C11CE1888B00C499CD /* AppointmentTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915C8BF1CE1888B00C499CD /* AppointmentTodayViewController.xib */; };
+		D915C8C01CE1888B00C499CD /* AppointmentWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8BE1CE1888B00C499CD /* AppointmentWaitingViewController.swift */; };
+		D915C8C11CE1888B00C499CD /* AppointmentWaitingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915C8BF1CE1888B00C499CD /* AppointmentWaitingViewController.xib */; };
 		D915C8C41CE188D000C499CD /* AppointmentApproveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8C21CE188D000C499CD /* AppointmentApproveViewController.swift */; };
 		D915C8C51CE188D000C499CD /* AppointmentApproveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D915C8C31CE188D000C499CD /* AppointmentApproveViewController.xib */; };
 		D915C8C81CE188F100C499CD /* AppointmentStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8C61CE188F100C499CD /* AppointmentStartViewController.swift */; };
@@ -125,6 +136,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3817E7851CE4E726006E3B5A /* Persist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persist.swift; sourceTree = "<group>"; };
+		3817E7881CE4E906006E3B5A /* BaseCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCache.swift; sourceTree = "<group>"; };
+		3817E78A1CE4F1CC006E3B5A /* Cacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
+		3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
+		3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelReasonViewController.xib; sourceTree = "<group>"; };
 		386B7A9F1CD798FE00BC28BA /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		386B7AA31CD7994700BC28BA /* Reflectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reflectable.swift; sourceTree = "<group>"; };
 		38758BA81CCE710B00AEC3BB /* DoctorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,17 +159,23 @@
 		38947DD61CCFE2050008049A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		38947DD71CCFE2050008049A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		38947DD81CCFE2050008049A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		38A4231F1CE610ED004E2146 /* AppointmentCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentCache.swift; sourceTree = "<group>"; };
+		38A423211CE63AB0004E2146 /* AppointmentExpandedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentExpandedCell.swift; sourceTree = "<group>"; };
+		38A423221CE63AB0004E2146 /* AppointmentExpandedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentExpandedCell.xib; sourceTree = "<group>"; };
+		38A423261CE63CF1004E2146 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		38A423271CE63CF1004E2146 /* MyriadPro-Regular_0.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular_0.otf"; sourceTree = "<group>"; };
 		38B36E851CCFC763009820D2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		38B370461CDCDA2F00B51011 /* BlockVacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVacation.swift; sourceTree = "<group>"; };
 		38B370481CDCE52100B51011 /* BlockVacationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVacationAPI.swift; sourceTree = "<group>"; };
 		38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheModel.swift; sourceTree = "<group>"; };
 		38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionAPI.swift; sourceTree = "<group>"; };
 		38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
+		38CCDC831CE398F2001E0129 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		38CEE8331CD26342000010D2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38CEE8381CD269D0000010D2 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		38E61DB61CD72009008D1870 /* AppointmentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentAPI.swift; sourceTree = "<group>"; };
-		D915C8BE1CE1888B00C499CD /* AppointmentTodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentTodayViewController.swift; sourceTree = "<group>"; };
-		D915C8BF1CE1888B00C499CD /* AppointmentTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentTodayViewController.xib; sourceTree = "<group>"; };
+		D915C8BE1CE1888B00C499CD /* AppointmentWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentWaitingViewController.swift; sourceTree = "<group>"; };
+		D915C8BF1CE1888B00C499CD /* AppointmentWaitingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentWaitingViewController.xib; sourceTree = "<group>"; };
 		D915C8C21CE188D000C499CD /* AppointmentApproveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentApproveViewController.swift; sourceTree = "<group>"; };
 		D915C8C31CE188D000C499CD /* AppointmentApproveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentApproveViewController.xib; sourceTree = "<group>"; };
 		D915C8C61CE188F100C499CD /* AppointmentStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentStartViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +257,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3817E7871CE4E8BB006E3B5A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				3817E7881CE4E906006E3B5A /* BaseCache.swift */,
+				38A4231F1CE610ED004E2146 /* AppointmentCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		38758B9F1CCE710B00AEC3BB = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +278,7 @@
 				38B36E851CCFC763009820D2 /* Alamofire.framework */,
 				D967D9ED1CD5B702002E4C0F /* Reachability.framework */,
 				38758BAA1CCE710C00AEC3BB /* DoctorApp */,
+				38A423251CE63CDE004E2146 /* Resources */,
 				38758BA91CCE710B00AEC3BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -267,6 +299,7 @@
 				38CEE8321CD26335000010D2 /* Utils */,
 				3882FBFA1CD12278006B69FC /* API */,
 				3876AB681CD4BF810087E5AC /* Model */,
+				38CCDC851CE39EA9001E0129 /* Persist */,
 				D967DA0A1CD5C511002E4C0F /* Views */,
 				D967D9F11CD5B739002E4C0F /* ViewControllers */,
 				38758BAB1CCE710C00AEC3BB /* AppDelegate.swift */,
@@ -290,6 +323,7 @@
 				E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */,
 				E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */,
 				E370F8EE1CDCF625005BE9F0 /* Notification.swift */,
+				3817E78A1CE4F1CC006E3B5A /* Cacheable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +343,25 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		38A423251CE63CDE004E2146 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				38A423261CE63CF1004E2146 /* Gotham-Medium.otf */,
+				38A423271CE63CF1004E2146 /* MyriadPro-Regular_0.otf */,
+			);
+			name = Resources;
+			path = DoctorApp/Resources;
+			sourceTree = "<group>";
+		};
+		38CCDC851CE39EA9001E0129 /* Persist */ = {
+			isa = PBXGroup;
+			children = (
+				3817E7851CE4E726006E3B5A /* Persist.swift */,
+				3817E7871CE4E8BB006E3B5A /* Cache */,
+			);
+			path = Persist;
+			sourceTree = "<group>";
+		};
 		38CEE8321CD26335000010D2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				D967DA1A1CD5C581002E4C0F /* Constants.swift */,
+				38CCDC831CE398F2001E0129 /* DateFormat.swift */,
 			);
 			path = Glob;
 			sourceTree = "<group>";
@@ -420,12 +474,14 @@
 				D9950E1D1CDDDF0400340EE9 /* Cell */,
 				D967DA1D1CD5C634002E4C0F /* AppointmentViewController.swift */,
 				D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */,
-				D915C8BE1CE1888B00C499CD /* AppointmentTodayViewController.swift */,
-				D915C8BF1CE1888B00C499CD /* AppointmentTodayViewController.xib */,
+				D915C8BE1CE1888B00C499CD /* AppointmentWaitingViewController.swift */,
+				D915C8BF1CE1888B00C499CD /* AppointmentWaitingViewController.xib */,
 				D915C8C21CE188D000C499CD /* AppointmentApproveViewController.swift */,
 				D915C8C31CE188D000C499CD /* AppointmentApproveViewController.xib */,
 				D915C8C61CE188F100C499CD /* AppointmentStartViewController.swift */,
 				D915C8C71CE188F100C499CD /* AppointmentStartViewController.xib */,
+				3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */,
+				3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -482,6 +538,8 @@
 			children = (
 				D9950E1E1CDDDF0400340EE9 /* AppointmentCell.swift */,
 				D9950E1F1CDDDF0400340EE9 /* AppointmentCell.xib */,
+				38A423211CE63AB0004E2146 /* AppointmentExpandedCell.swift */,
+				38A423221CE63AB0004E2146 /* AppointmentExpandedCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -560,7 +618,7 @@
 				D9950E181CDDA21900340EE9 /* ClinicalViewController.xib in Resources */,
 				D915C8C91CE188F100C499CD /* AppointmentStartViewController.xib in Resources */,
 				38758BB61CCE710C00AEC3BB /* LaunchScreen.storyboard in Resources */,
-				D915C8C11CE1888B00C499CD /* AppointmentTodayViewController.xib in Resources */,
+				D915C8C11CE1888B00C499CD /* AppointmentWaitingViewController.xib in Resources */,
 				D967DA201CD5C634002E4C0F /* AppointmentViewController.xib in Resources */,
 				D9950E211CDDDF0400340EE9 /* AppointmentCell.xib in Resources */,
 				D967DA151CD5C511002E4C0F /* MenuCell.xib in Resources */,
@@ -570,7 +628,9 @@
 				38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */,
 				D9950E1C1CDDA22E00340EE9 /* PrescriptionViewController.xib in Resources */,
 				D967DA171CD5C511002E4C0F /* MenuView.xib in Resources */,
+				38A423281CE63CF1004E2146 /* Gotham-Medium.otf in Resources */,
 				D99396861CE2D6760091DCE3 /* TimePicker.xib in Resources */,
+				38A423241CE63AB0004E2146 /* AppointmentExpandedCell.xib in Resources */,
 				D915C8C51CE188D000C499CD /* AppointmentApproveViewController.xib in Resources */,
 				D967DA251CD711BC002E4C0F /* ScheduleViewController.xib in Resources */,
 				D92166A71CE24298004FA64C /* NotificationViewController.xib in Resources */,
@@ -578,7 +638,9 @@
 				D967DA001CD5BECE002E4C0F /* HomeCell.xib in Resources */,
 				D967DA021CD5BECE002E4C0F /* HomeViewController.xib in Resources */,
 				D9950E291CDDED7000340EE9 /* NoteStoryboard.storyboard in Resources */,
+				3820F7621CE890B0005BEFA7 /* CancelReasonViewController.xib in Resources */,
 				D92166B11CE2C6BF004FA64C /* AddClinicTimingView.xib in Resources */,
+				38A423291CE63CF1004E2146 /* MyriadPro-Regular_0.otf in Resources */,
 				D99396841CE2D6760091DCE3 /* DataPicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +655,7 @@
 				D967DA1F1CD5C634002E4C0F /* AppointmentViewController.swift in Sources */,
 				3876AB651CD492370087E5AC /* TimingsAPI.swift in Sources */,
 				38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */,
+				38A423201CE610ED004E2146 /* AppointmentCache.swift in Sources */,
 				D915C8C41CE188D000C499CD /* AppointmentApproveViewController.swift in Sources */,
 				D915C8C81CE188F100C499CD /* AppointmentStartViewController.swift in Sources */,
 				38C95A501CDBA81C00A6CBA7 /* Prescription.swift in Sources */,
@@ -605,6 +668,7 @@
 				D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
 				E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */,
+				38A423231CE63AB0004E2146 /* AppointmentExpandedCell.swift in Sources */,
 				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
 				D9C154641CDF2F570010B989 /* RealmHelper.swift in Sources */,
@@ -616,8 +680,9 @@
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
+				3817E7861CE4E726006E3B5A /* Persist.swift in Sources */,
 				D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */,
-				D915C8C01CE1888B00C499CD /* AppointmentTodayViewController.swift in Sources */,
+				D915C8C01CE1888B00C499CD /* AppointmentWaitingViewController.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */,
@@ -625,11 +690,13 @@
 				D99396891CE2D7F30091DCE3 /* ClinicTimingCell.swift in Sources */,
 				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
 				D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */,
+				3817E7891CE4E906006E3B5A /* BaseCache.swift in Sources */,
 				D9950E201CDDDF0400340EE9 /* AppointmentCell.swift in Sources */,
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
 				D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */,
 				38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */,
+				3817E78B1CE4F1CC006E3B5A /* Cacheable.swift in Sources */,
 				E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */,
 				D99396971CE2DA0D0091DCE3 /* Timing.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
@@ -641,8 +708,10 @@
 				D99396831CE2D6760091DCE3 /* DataPicker.swift in Sources */,
 				386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */,
 				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
+				3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */,
 				D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */,
 				D993968D1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift in Sources */,
+				38CCDC841CE398F2001E0129 /* DateFormat.swift in Sources */,
 				D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

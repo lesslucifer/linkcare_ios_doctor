@@ -54,6 +54,10 @@ extension APIData {
         
         return data
     }
+    
+    var print: String {
+        return self.rawString(NSUTF8StringEncoding)!
+    }
 }
 
 extension APIData {

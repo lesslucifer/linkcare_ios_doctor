@@ -21,32 +21,6 @@ enum RightMenu {
     case Notification
 }
 
-struct DateFormat {
-    static let dateTimeFormatFull = "dd MMMM yyyy          h : mm a"
-    static let dateFormat = "dd-MM-yyyy"
-    static let dateTimeFormat = "dd-MM-yyyy hh:mm"
-    
-    static var dateTimeFullFormatter: NSDateFormatter {
-        struct Static {
-            static var instance : NSDateFormatter? = nil
-            static var token : dispatch_once_t = 0
-        }
-        
-        dispatch_once(&Static.token) {
-            Static.instance = Utils.createFormatter(DateFormat.dateTimeFormatFull)
-        }
-        
-        return Static.instance!
-    }
-    
-    static let dateFormatter: NSDateFormatter = Utils.createFormatter(dateFormat)
-    static let dateTransformer = Utils.createDateTransformer(dateFormatter)
-    
-    
-    static let dateTimeFormatter = Utils.createFormatter(dateTimeFormat)
-    static let dateTimeTransformer = Utils.createDateTransformer(dateTimeFormatter)
-}
-
 class HC: NSObject {
     static let ROLE_DOCTOR = 2
     static let ROLE_NURSE = 3
@@ -55,6 +29,7 @@ class HC: NSObject {
     static let TYPE_PATIENT_HOME = 1
 }
 
+@objc
 enum AppointmentStatus: Int {
     case Waiting = 0
     case Approved = 1
@@ -73,6 +48,14 @@ enum Gender: Int {
     case Female = 1
     
     static let Transformer = TransformOf<Gender, Int>(fromJSON: {$0 == nil ? nil : Gender(rawValue: $0!)}, toJSON: {$0?.rawValue})
+    func str() -> String {
+        if self == .Male {
+            return "Nam"
+        }
+        else {
+            return "Nữ"
+        }
+    }
 }
 
 enum NotificationType: Int {
@@ -84,6 +67,24 @@ enum NotificationType: Int {
     case AppointmentFinished =  5
     
     static let Transformer = TransformOf<NotificationType, Int>(fromJSON: {$0 == nil ? nil : NotificationType(rawValue: $0!)}, toJSON: {$0?.rawValue})
+}
+
+@objc
+enum PositionType: Int {
+    case Clinic = 0
+    case PatientHome = 1
+    
+    static let TransformerInt = TransformOf<PositionType, Int>(fromJSON: {$0 == nil ? nil : PositionType(rawValue: $0!)}, toJSON: {$0?.rawValue})
+    static let TransformerBool = TransformOf<PositionType, Bool>(fromJSON: {($0 == nil || !$0!) ? PositionType.Clinic : PositionType.PatientHome}, toJSON: {$0 == .PatientHome})
+    
+    func str() -> String {
+        if self == .Clinic {
+            return "Phòng Khám"
+        }
+        else {
+            return "Nhà Bệnh Nhân"
+        }
+    }
 }
 
 struct MMColor {

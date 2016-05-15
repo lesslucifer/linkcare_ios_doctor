@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        API.config = API.Config(host: "concon.vn", basePath: "/clinic-api/biz/v1", port: 8080)
+        API.config = API.Config(host: "localhost", basePath: "/clinic-api/biz/v1", port: 8080)
         
         //go to Login ViewController
         gotoLoginVC()
