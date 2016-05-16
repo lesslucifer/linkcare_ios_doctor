@@ -15,10 +15,11 @@ protocol Cacheable {
 
 class BaseCache<T: Object where T: Cacheable>: NSObject {
     typealias FactoryFunc = (keys: [Int], fetcher: ([Int: T]) -> Void) -> Void
+    typealias ForkFunc = ((Int, T?)->Void)?
     
     let persist: Persist
     var factory: FactoryFunc
-    var fetching: Set<Int> = []
+    var fetching: [Int: [ForkFunc]] = [:]
     
     required init(persist: Persist, factory: FactoryFunc) {
         self.persist = persist
@@ -62,15 +63,8 @@ class BaseCache<T: Object where T: Cacheable>: NSObject {
         }
         
         if fetcher != nil {
-            fetching.insert(cacheModel.id)
-            self.factory(keys: [cacheModel.id], fetcher: { objs in
-                self.fetching.remove(cacheModel.id)
-                if let obj = objs[cacheModel.id] {
-                    self.persist.write {
-                        self.persist.realm.add(obj, update: true)
-                    }
-                }
-                fetcher!(objs[cacheModel.id])
+            self.furk([cacheModel.id], f: { _, obj in
+                fetcher!(obj)
             })
         }
         
@@ -99,20 +93,16 @@ class BaseCache<T: Object where T: Cacheable>: NSObject {
             return
         }
         
-        missing.forEach({self.fetching.insert($0)})
-        self.factory(keys: missing, fetcher: { objs in
-            var newObjs: [T] = []
-            for (id, obj) in objs {
-                result[id] = obj
-                newObjs.append(obj)
+        let ids = Set<Int>(cacheModels.map({$0.id}))
+        
+        self.furk(missing, f: { id, obj in
+            if obj != nil {
+                result[id] = obj!
             }
             
-            self.persist.write {
-                self.persist.realm.add(newObjs, update: true)
+            if result.count >= ids.count {
+                fetcher?(result)
             }
-            
-            missing.forEach({self.fetching.remove($0)})
-            fetcher?(result)
         })
     }
     
@@ -120,11 +110,45 @@ class BaseCache<T: Object where T: Cacheable>: NSObject {
         self.fetch(ids.map({CacheModel(id: $0)}), fetcher: fetcher)
     }
     
-    func reduceFetchingIds(ids: [Int]) -> [Int] {
-        return ids.filter({!self.fetching.contains($0)})
+    private func furk(ids: [Int], f: ForkFunc) {
+        var missing: [Int] = []
+        for id in ids {
+            if var fork = self.fetching[id] where !fork.isEmpty {
+                fork.append(f)
+                self.fetching[id] = fork
+            }
+            else {
+                self.fetching[id] = [f]
+                missing.append(id)
+            }
+        }
+        
+        if !missing.isEmpty {
+            self.factory(keys: missing, fetcher: { objs in
+                self.persist.write {
+                    self.persist.realm.add(objs.values, update: true)
+                }
+                
+                self.fork(ids, objs: objs)
+            })
+        }
     }
     
-    func reduceFetching(ids: [CacheModel]) -> [CacheModel] {
-        return ids.filter({!self.fetching.contains($0.id)})
+    private func fork(ids: [Int], objs: [Int: T]) {
+        var forks: [Int: [ForkFunc]] = [:]
+        for (id, _) in objs {
+            if let fork = self.fetching[id] {
+                forks[id] = fork
+                self.fetching.removeValueForKey(id)
+            }
+        }
+        
+        for (id, obj) in objs {
+            if let fork = forks[id] {
+                for ff in fork {
+                    ff?(id, obj)
+                }
+            }
+        }
     }
 }

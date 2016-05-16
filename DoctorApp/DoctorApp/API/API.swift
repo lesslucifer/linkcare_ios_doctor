@@ -53,7 +53,6 @@ struct APIHandler {
         return { (data: APIData) in
             let subData = data.query(keyPath)
             let arr: [T] = mapper.mapArray(subData.arrayObject) ?? []
-            debugPrint(arr)
             genericHandler(arr: arr)
         }
     }

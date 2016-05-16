@@ -103,9 +103,8 @@ extension AppointmentApproveViewController: UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        var bufferedCaches = (0..<10).map({indexPath.row + $0}).filter({$0 < appointments.count})
+        let bufferedCaches = (0..<10).map({indexPath.row + $0}).filter({$0 < appointments.count})
             .map({appointments[$0]})
-        bufferedCaches = AppointmentCache.INST.reduceFetching(bufferedCaches)
         
         if !bufferedCaches.isEmpty {
             AppointmentCache.INST.fetch(bufferedCaches, fetcher: nil)

@@ -13,6 +13,7 @@ class AppointmentAPI {
             success(arr: [])
         }
         
+        debugPrint(appointmentIds)
         let query = appointmentIds.map({String($0)}).joinWithSeparator(",")
         API.baseAPI(.GET, path: "/appointments/\(query)", body: nil,
                      success: APIHandler.toSuccess(genericHandler: success),
