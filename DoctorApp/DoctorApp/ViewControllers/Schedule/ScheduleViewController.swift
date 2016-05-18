@@ -63,6 +63,8 @@ extension ScheduleViewController {
     func reloadData() {
         TimingsAPI.getTimings({ (arr) in
             print(arr)
+            self.timmingHospitalList = []
+            self.timmingHomeList = []
             for tmpTimming: Timings in arr {
                 if tmpTimming.type == 0 {
                     self.timmingHospitalList.append(tmpTimming)
@@ -115,7 +117,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
 //        let clinic = ma_clinicTimings![indexPath.row]
 //        getArrayTimingTempForClinic(clinic)
 //        let max = maxNumTimingForArrayTemp(ma_timingTemps!)
-        var height = 35 * 2
+        var height = 0
         if indexPath.row == 0 {
             height = 35 * (self.timmingHospitalList.count + 1)
         } else {
@@ -149,13 +151,23 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("ClinicTimingCell", forIndexPath: indexPath) as! ClinicTimingCell
         
         if indexPath.row == 0 {
-            cell.setButtonTime(timmingHospitalList,currentView: cell.v_monday,status: tapAction)
-            cell.setButtonTime(timmingHospitalList,currentView: cell.v_tueday,status: tapAction)
-            cell.setButtonTime(timmingHospitalList,currentView: cell.v_wedday,status: tapAction)
-            cell.setButtonTime(timmingHospitalList,currentView: cell.v_thurday,status: tapAction)
-            cell.setButtonTime(timmingHospitalList,currentView: cell.v_friday,status: tapAction)
-            cell.setButtonTime(timmingHospitalList,currentView: cell.v_satday,status: tapAction)
-            cell.setButtonTime(timmingHospitalList,currentView: cell.v_sunday,status: tapAction)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_monday,status: tapAction, category: 0)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_tueday,status: tapAction, category: 0)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_wedday,status: tapAction, category: 0)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_thurday,status: tapAction, category: 0)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_friday,status: tapAction, category: 0)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_satday,status: tapAction, category: 0)
+            cell.setButtonTime(timmingHospitalList,currentView: cell.v_sunday,status: tapAction, category: 0)
+            //------------------------
+            cell.delegate = self
+        } else if indexPath.row == 1 {
+            cell.setButtonTime(timmingHomeList,currentView: cell.v_monday,status: tapAction, category: 1)
+            cell.setButtonTime(timmingHomeList,currentView: cell.v_tueday,status: tapAction, category: 1)
+            cell.setButtonTime(timmingHomeList,currentView: cell.v_wedday,status: tapAction, category: 1)
+            cell.setButtonTime(timmingHomeList,currentView: cell.v_thurday,status: tapAction, category: 1)
+            cell.setButtonTime(timmingHomeList,currentView: cell.v_friday,status: tapAction, category: 1)
+            cell.setButtonTime(timmingHomeList,currentView: cell.v_satday,status: tapAction, category: 1)
+            cell.setButtonTime(timmingHomeList,currentView: cell.v_sunday,status: tapAction, category: 1)
             //------------------------
             cell.delegate = self
         }
@@ -233,8 +245,6 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
     }
     
     func hideAddClinicTimingView() {
-//        reloadTableData()
-        //-----------
         self.reloadData()
         
         animateOverlayHide()

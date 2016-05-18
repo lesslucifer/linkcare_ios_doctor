@@ -11,11 +11,7 @@ import UIKit
 class ClinicTimeSlotCell: UITableViewCell {
     @IBOutlet weak var tf_timefrom: UITextField!
     @IBOutlet weak var tf_timeto: UITextField!
-    @IBOutlet weak var tf_timeSlot: UITextField!
-    @IBOutlet weak var tf_patientSlot: UITextField!
-    
-    @IBOutlet var iv_delete: UIImageView!
-//    @IBOutlet var iv_addNewSlot: UIImageView!
+
     @IBOutlet var lb_numberSlot:UILabel!
     
     @IBOutlet var btn_addNewBlock:UIButton!
@@ -45,9 +41,6 @@ extension ClinicTimeSlotCell {
 //        iv_addNewSlot.hidden = false
         tf_timefrom.hidden = true
         tf_timeto.hidden = true
-        tf_timeSlot.hidden = true
-        tf_patientSlot.hidden = true
-        iv_delete.hidden = true
         btn_addNewBlock.userInteractionEnabled = true
         btn_addNewBlock.hidden = false
         btn_deleteBlock.userInteractionEnabled = false
@@ -59,9 +52,6 @@ extension ClinicTimeSlotCell {
 //        iv_addNewSlot.hidden = true
         tf_timefrom.hidden = false
         tf_timeto.hidden = false
-        tf_timeSlot.hidden = false
-        tf_patientSlot.hidden = false
-        iv_delete.hidden = false
         btn_addNewBlock.userInteractionEnabled = false
         btn_addNewBlock.hidden = true
         btn_deleteBlock.userInteractionEnabled = true

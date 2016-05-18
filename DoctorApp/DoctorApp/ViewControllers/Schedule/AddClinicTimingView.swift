@@ -184,8 +184,6 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
                 let timing = ma_Timing[indexPath.row]
                 cell.tf_timefrom.text = timing.mt_timefrom
                 cell.tf_timeto.text = timing.mt_timeto
-                cell.tf_timeSlot.text = timing.mt_timeOfSlot > 0 ? "\(timing.mt_timeOfSlot)" : "15"
-                cell.tf_patientSlot.text = timing.mt_patientPerSlot > 0 ? "\(timing.mt_patientPerSlot)" : "1"
             }
 
             break
@@ -193,8 +191,6 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
             cell.configureDefaultCell()
             cell.tf_timefrom.text = mEditingTiming?.mt_timefrom
             cell.tf_timeto.text = mEditingTiming?.mt_timeto
-            cell.tf_timeSlot.text = String(mEditingTiming!.mt_timeOfSlot)
-            cell.tf_patientSlot.text = String(mEditingTiming!.mt_patientPerSlot)
             break
         }
         
@@ -205,10 +201,6 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
         cell.tf_timefrom.delegate = self
         cell.tf_timeto.tag = 4 * indexPath.row + 1
         cell.tf_timeto.delegate = self
-        cell.tf_timeSlot.tag = 4 * indexPath.row + 2
-        cell.tf_timeSlot.delegate = self
-        cell.tf_patientSlot.tag = 4 * indexPath.row + 3
-        cell.tf_patientSlot.delegate = self
         //--
         cell.btn_addNewBlock.addTarget(self, action: #selector(AddClinicTimingView.btnAddNewBlockPressed(_:)), forControlEvents: .TouchUpInside)
 //        cell.btn_deleteBlock.tag = indexPath.row

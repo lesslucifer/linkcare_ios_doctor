@@ -31,8 +31,6 @@ class ClinicTimingCell: UITableViewCell {
     var clinicTimingSelected = ClinicTiming()
     var timingSelected = Timing()
     //----
-    let arrDay = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -44,11 +42,23 @@ class ClinicTimingCell: UITableViewCell {
         super.layoutSubviews()
         
     }
+    
+    func converTimetoHour(time: Int) -> Int {
+        return (time - time%60) / 60
+    }
+    
+    func converTimetoMinute(time: Int) -> Int {
+        return time%60
+    }
+    
+    func conerTimetoString(time: Int) -> String {
+        return "\(converTimetoHour(time)) : \(converTimetoMinute(time))"
+    }
 }
 
 //MARK: Layout handle
 extension ClinicTimingCell {
-    func setButtonTime(timingTemp: [Timings], currentView: UIView, status: DefineClinic) {
+    func setButtonTime(timingTemp: [Timings], currentView: UIView, status: DefineClinic, category: Int) {
         currentView.removeAllSubviews()
         
         for (var i = 0; i < timingTemp.count; i++){
@@ -56,9 +66,16 @@ extension ClinicTimingCell {
             let frame = CGRect(x: 0, y: CGFloat(i * 35), width: currentView.frame.size.width, height: 34)
             let button = UIButton(frame: frame)
             //-------------
-            button.setTitle("\(timing.beginTime) - \(timing.endTime)", forState: UIControlState.Normal)
-            
+            button.setTitle("\(conerTimetoString(timing.beginTime)) - \(conerTimetoString(timing.endTime))", forState: UIControlState.Normal)
+            button.titleLabel!.font = UIFont(name: "HelveticaNeue", size: 10)
             button.backgroundColor = Utils.UIColorFromRGB(red: 243, green: 101, blue: 35)
+            
+            if category == 0 {
+               button.tag = i
+            } else {
+                button.tag = i * 1000
+            }
+            
             
             if(status == DefineClinic.TimeSlot){
                 button.addTarget(self, action: #selector(ClinicTimingCell.showTimingClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
@@ -86,7 +103,7 @@ extension ClinicTimingCell {
         */
         
         if (status == DefineClinic.TimeSlot){
-            let frame = CGRect(x: 0, y: CGFloat(1 * 35), width: currentView.frame.size.width, height: 35)
+            let frame = CGRect(x: 0, y: CGFloat(timingTemp.count * 35), width: currentView.frame.size.width, height: 35)
             
             let button = UIButton(frame: frame)
             button.setTitle("+", forState: UIControlState.Normal)
@@ -110,11 +127,11 @@ extension ClinicTimingCell {
     }
     
     @IBAction func showTimingClicked(sender: UIButton){
-        for timing in clinicTimingSelected.mct_timings{
-            if (timing.mt_Id == "\(sender.tag)"){
-                timingSelected = timing
-            }
-        }
+//        for timing in clinicTimingSelected.mct_timings{
+//            if (timing.mt_Id == "\(sender.tag)"){
+//                timingSelected = timing
+//            }
+//        }
         delegate.didTapTiming(clinicTimingSelected, timing: timingSelected)
     }
 }
