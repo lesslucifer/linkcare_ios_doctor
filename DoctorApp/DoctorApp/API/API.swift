@@ -125,6 +125,7 @@ public class API: NSObject {
                             let msg = err["msg"].safeString
                             let code = err["code"].safeInt
                             let params = err["params"].safeArray({$0.safeString})
+                            debugPrint("Error -- Code: \(code) -- Msg: \(msg) -- Pars: \(params)")
                             failure?(code: code, msg: msg, params: params)
                         }
                         else {
@@ -133,6 +134,7 @@ public class API: NSObject {
                     }
                     break
                 case .Failure(let error):
+                    debugPrint(error)
                     failure?(code: error.code, msg: error.localizedDescription, params: [])
                     break
                 }

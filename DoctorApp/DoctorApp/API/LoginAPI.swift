@@ -20,7 +20,7 @@ class LoginAPI {
             return
         }
         
-        API.baseAPI(.POST, path: "/account/logout", body: [:], success: { data in
+        API.baseAPI(.PUT, path: "/account/logout", body: [:], success: { data in
             API.auth = API.Auth()
             success(data: data)
             }, failure: failure)

@@ -18,8 +18,7 @@ enum DefineClinic{
 class ScheduleViewController: BaseMenuViewController {
     var timmingHospitalList: Array<Timings> = []
     var timmingHomeList: Array<Timings> = []
-    
-    
+
     @IBOutlet private var tv_clinicTiming: UITableView!
     @IBOutlet var v_popupOverlay: UIView!
     @IBOutlet var btn_defTimeSlot: UIButton!
@@ -33,7 +32,6 @@ class ScheduleViewController: BaseMenuViewController {
     //----
     var ma_clinicTimings: Array<ClinicTiming>?
     var ma_timingTemps: Array<TimingTemp>?
-    var ma_walkinTiming = Array<Timing>()
     
     //---
     let panRec = UIPanGestureRecognizer()
@@ -160,6 +158,8 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
             cell.setButtonTime(timmingHospitalList,currentView: cell.v_sunday,status: tapAction, category: 0)
             //------------------------
             cell.delegate = self
+            
+            cell.lb_clinicName.text = "Tại phòng khám"
         } else if indexPath.row == 1 {
             cell.setButtonTime(timmingHomeList,currentView: cell.v_monday,status: tapAction, category: 1)
             cell.setButtonTime(timmingHomeList,currentView: cell.v_tueday,status: tapAction, category: 1)
@@ -170,6 +170,8 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
             cell.setButtonTime(timmingHomeList,currentView: cell.v_sunday,status: tapAction, category: 1)
             //------------------------
             cell.delegate = self
+            
+            cell.lb_clinicName.text = "Tại nhà bệnh nhân"
         }
         
         

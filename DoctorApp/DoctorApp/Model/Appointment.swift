@@ -8,23 +8,31 @@
 
 import UIKit
 import ObjectMapper
+import RealmSwift
 
-class Appointment: NSObject, Mappable {
-    var id: Int = 0
-    var lastUpdated: Int64 = 0
+class Appointment: Object, Mappable {
+    dynamic var id: Int = 0
+    dynamic var lastUpdated: Int64 = 0
     // booker?
     // medicar?
     // address?
-    var date: NSDate = NSDate()
-    var time: Int = 0
-    var duration: Int = 0
-    var status: AppointmentStatus = .Waiting
-    var patient: AppointmentPatient!
+    dynamic var date: NSDate = NSDate()
+    dynamic var time: Int = 0
+    dynamic var duration: Int = 0
+    dynamic var status: AppointmentStatus = .Waiting
+    dynamic var patient: AppointmentPatient?
+    dynamic var type: PositionType = .Clinic
     
-    required init?(_ map: Map) {
-        if !Utils.validField(Appointment.self, map: map) {
+    required convenience init?(_ map: Map) {
+        self.init()
+        
+        if !Utils.validField(Appointment.self, map: map, ignoredFields: ["type"], required: ["atHome"]) {
             return nil
         }
+    }
+    
+    override class func primaryKey() -> String? {
+        return "id"
     }
     
     func mapping(map: Map) {
@@ -35,17 +43,21 @@ class Appointment: NSObject, Mappable {
         duration <- map["duration"]
         status <- (map["status"], AppointmentStatus.Transformer)
         patient <- map["patient"]
+        type <- (map["atHome"], PositionType.TransformerBool)
     }
 }
 
-class AppointmentPatient: NSObject, Mappable {
-    var name: String = ""
-    var birth: NSDate = NSDate()
-    var gender: Gender = .Male
-    var phone: String = ""
-    var symtoms: String = ""
+class AppointmentPatient: Object, Mappable {
+    dynamic var name: String = ""
+    dynamic var birth: NSDate = NSDate()
+    dynamic var gender: Gender = .Male
+    dynamic var address: String = ""
+    dynamic var phone: String = ""
+    dynamic var symtoms: String = ""
     
-    required init?(_ map: Map) {
+    required convenience init?(_ map: Map) {
+        self.init()
+        
         if !Utils.validField(AppointmentPatient.self, map: map) {
             return nil
         }
@@ -55,6 +67,7 @@ class AppointmentPatient: NSObject, Mappable {
         name <- map["name"]
         birth <- (map["birth"], DateFormat.dateTransformer)
         gender <- (map["gender"], Gender.Transformer)
+        address <- map["address"]
         phone <- map["phone"]
         symtoms <- map["symtoms"]
     }

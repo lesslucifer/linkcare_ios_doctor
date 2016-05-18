@@ -49,7 +49,7 @@ extension AppointmentViewController: BaseTabViewControllerDelegate{
     func createViewControllerForTabButton(btn: UIButton, atIndex index: Int) -> UIViewController? {
         switch (index) {
         case 0:
-            return AppointmentTodayViewController(nibName:"AppointmentTodayViewController", bundle: nil)
+            return AppointmentWaitingViewController(nibName:"AppointmentWaitingViewController", bundle: nil)
         case 1:
             return AppointmentApproveViewController(nibName: "AppointmentApproveViewController", bundle: nil)
         case 2:

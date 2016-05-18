@@ -26,7 +26,5 @@ class Timings: NSObject, Mappable {
         beginTime <- map["beginTime"]
         length <- map["length"]
         type <- map["type"]
-        
-        
     }
 }

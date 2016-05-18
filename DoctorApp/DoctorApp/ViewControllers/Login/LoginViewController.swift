@@ -116,7 +116,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
             }, failure: { code, msg, params in
                 PKHUD.sharedHUD.hide(animated: false, completion: nil)
                 Utils.showAlertWithError(msg)
-                
         })
         
     }
