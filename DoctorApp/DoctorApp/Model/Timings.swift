@@ -10,6 +10,7 @@ import UIKit
 import ObjectMapper
 
 class Timings: NSObject, Mappable {
+    var id: Int = 0
     var beginTime: Int = 0
     var length: Int = 0
     var endTime: Int {
@@ -23,6 +24,7 @@ class Timings: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
+        id <- map["id"]
         beginTime <- map["beginTime"]
         length <- map["length"]
         type <- map["type"]
