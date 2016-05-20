@@ -16,6 +16,7 @@ enum DefineClinic{
 }
 
 class ScheduleViewController: BaseMenuViewController {
+    var listTimmings: Array<Timings>?
     var timmingHospitalList: Array<Timings> = []
     var timmingHomeList: Array<Timings> = []
 
@@ -61,23 +62,45 @@ extension ScheduleViewController {
     func reloadData() {
         TimingsAPI.getTimings({ (arr) in
             print(arr)
-            self.timmingHospitalList = []
-            self.timmingHomeList = []
-            for tmpTimming: Timings in arr {
-                if tmpTimming.type == 0 {
-                    self.timmingHospitalList.append(tmpTimming)
-                } else{
-                    self.timmingHomeList.append(tmpTimming)
-                }
-            }
-            self.tv_clinicTiming.reloadData()
+            RealmHelper.sharedInstance.db_syncObjects(arr)
+            self.reloadTableData()
         }) { (code, msg, params) in
-            Utils.showAlertWithError(msg)
         }
     }
     
+//    func reloadData() {
+//        TimingsAPI.getTimings({ (arr) in
+//            print(arr)
+//            self.timmingHospitalList = []
+//            self.timmingHomeList = []
+//            for tmpTimming: Timings in arr {
+//                if tmpTimming.type == 0 {
+//                    self.timmingHospitalList.append(tmpTimming)
+//                } else{
+//                    self.timmingHomeList.append(tmpTimming)
+//                }
+//            }
+//            self.tv_clinicTiming.reloadData()
+//        }) { (code, msg, params) in
+//            Utils.showAlertWithError(msg)
+//        }
+//    }
+    
     func reloadTableData(){
+        listTimmings = RealmHelper.sharedInstance.db_getArrObjects(Timings.self)
+        print(listTimmings)
+        getTime()
         self.tv_clinicTiming.reloadData()
+    }
+    
+    func getTime() {
+        for tmpTimmings:Timings in listTimmings! {
+            if tmpTimmings.type == 0 {
+                self.timmingHospitalList.append(tmpTimmings)
+            } else{
+                self.timmingHomeList.append(tmpTimmings)
+            }
+        }
     }
 }
 
@@ -158,6 +181,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
             cell.setButtonTime(timmingHospitalList,currentView: cell.v_sunday,status: tapAction, category: 0)
             //------------------------
             cell.delegate = self
+            cell.clinicId = 0
             
             cell.lb_clinicName.text = "Tại phòng khám"
         } else if indexPath.row == 1 {
@@ -170,6 +194,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
             cell.setButtonTime(timmingHomeList,currentView: cell.v_sunday,status: tapAction, category: 1)
             //------------------------
             cell.delegate = self
+            cell.clinicId = 1
             
             cell.lb_clinicName.text = "Tại nhà bệnh nhân"
         }
@@ -189,7 +214,7 @@ extension ScheduleViewController: ClinicTimingCellDelegate {
         showAddClinicTimingView(clinicId)
     }
     
-    func didTapTiming(clinicTiming: ClinicTiming, timing: Timing){
+    func didTapTiming(clinicTiming: ClinicTiming, timing: Timings){
         showEditClinicTimingView(clinicTiming, timing: timing)
     }
     
@@ -206,10 +231,10 @@ extension ScheduleViewController: ClinicTimingCellDelegate {
 
 //MARK: Add Clinic Timing view
 extension ScheduleViewController: AddClinicTimingViewDelegate {
-    func showAddClinicTimingView(clinic: Int) {
+    func showAddClinicTimingView(clinicId: Int) {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let frame = CGRectMake(0, 0, screenSize.width * 0.9, screenSize.height/3*2)
-        v_addClinicTiming = AddClinicTimingView(type: .AddTimeSlot, clinicId: clinic, frame: frame)
+        v_addClinicTiming = AddClinicTimingView(type: .AddTimeSlot, clinicId: clinicId, frame: frame)
         v_addClinicTiming.delegate = self
         v_addClinicTiming.center = CGPointMake(screenSize.width/2, screenSize.height/2)
         v_addClinicTiming.view.applyShadow()
@@ -225,7 +250,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         v_addClinicTiming.view.animate()
     }
     
-    func showEditClinicTimingView(clinic: ClinicTiming, timing: Timing) {
+    func showEditClinicTimingView(clinic: ClinicTiming, timing: Timings) {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let frame = CGRectMake(0, 0, screenSize.width * 0.9, screenSize.height/3*2)
         v_addClinicTiming = AddClinicTimingView(type: .EditTimeSlot ,timing: timing, clinicTiming: clinic, frame: frame)
@@ -277,6 +302,8 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
 //            }) { (message) -> Void in
 //                
 //        }
+        
+//        self.reloadData()
         
         hideAddClinicTimingView()
     }

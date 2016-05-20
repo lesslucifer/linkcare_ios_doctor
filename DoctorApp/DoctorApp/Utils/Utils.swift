@@ -87,6 +87,32 @@ class Utils: NSObject {
     class func later(block: dispatch_block_t) {
         dispatch_async(dispatch_get_main_queue(), block)
     }
+    
+    class func converTimetoHour(time: Int) -> Int {
+        return (time - time%60) / 60
+    }
+    
+    class func converTimetoMinute(time: Int) -> String {
+        let minute = time%60
+        if minute < 10 {
+            return "0\(minute)"
+        } else {
+            return "\(minute)"
+        }
+    }
+    
+    class func converTimetoString(time: Int) -> String {
+        return "\(converTimetoHour(time)):\(converTimetoMinute(time))"
+    }
+    
+    class func converStringTimeToInt(stringTime: String) -> Int {
+        let timeArr = stringTime.characters.split{$0 == ":"}.map(String.init)
+        let hours = Int(timeArr[0])
+        let minute = Int(timeArr[1])
+        let intTime = hours! * 60 + minute!
+        
+        return intTime
+    }
 }
 
 
@@ -117,6 +143,12 @@ extension Utils {
         let currentDateTime = NSDate()
         
         return currentDateTime.timeIntervalSince1970
+    }
+    
+    class func getIdByTimes() -> Int {
+        let currentDateTime = NSDate()
+        
+        return Int(currentDateTime.timeIntervalSince1970)
     }
     
     

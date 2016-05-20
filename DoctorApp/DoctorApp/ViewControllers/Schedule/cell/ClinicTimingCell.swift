@@ -10,16 +10,18 @@ import UIKit
 
 protocol ClinicTimingCellDelegate {
     func didAddTiming(clinicId: Int)
-    func didTapTiming(clinicTiming: ClinicTiming, timing: Timing)
+    func didTapTiming(clinicTiming: ClinicTiming, timing: Timings)
 }
 
 class ClinicTimingCell: UITableViewCell {
     @IBOutlet weak var lb_clinicName: UILabel!
     var ma_Timing = Array<Timing>()
-    //---
     var delegate: ClinicTimingCellDelegate!
-    //---
-
+    var listTimmingSelected = [Timings]()
+    var timingSelected = Timings()
+    
+    var clinicId = 0
+    
     @IBOutlet var v_monday: UIView!
     @IBOutlet var v_tueday: UIView!
     @IBOutlet var v_wedday: UIView!
@@ -29,7 +31,7 @@ class ClinicTimingCell: UITableViewCell {
     @IBOutlet var v_sunday: UIView!
     
     var clinicTimingSelected = ClinicTiming()
-    var timingSelected = Timing()
+    
     //----
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,18 +43,6 @@ class ClinicTimingCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-    }
-    
-    func converTimetoHour(time: Int) -> Int {
-        return (time - time%60) / 60
-    }
-    
-    func converTimetoMinute(time: Int) -> Int {
-        return time%60
-    }
-    
-    func conerTimetoString(time: Int) -> String {
-        return "\(converTimetoHour(time)) : \(converTimetoMinute(time))"
     }
 }
 
@@ -66,22 +56,19 @@ extension ClinicTimingCell {
             let frame = CGRect(x: 0, y: CGFloat(i * 35), width: currentView.frame.size.width, height: 34)
             let button = UIButton(frame: frame)
             //-------------
-            button.setTitle("\(conerTimetoString(timing.beginTime)) - \(conerTimetoString(timing.endTime))", forState: UIControlState.Normal)
+            button.setTitle("\(Utils.converTimetoString(timing.beginTime)) - \(Utils.converTimetoString(timing.endTime))", forState: UIControlState.Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue", size: 10)
             button.backgroundColor = Utils.UIColorFromRGB(red: 243, green: 101, blue: 35)
             
-            if category == 0 {
-               button.tag = i
-            } else {
-                button.tag = i * 1000
-            }
-            
+            button.tag = timing.id
             
             if(status == DefineClinic.TimeSlot){
                 button.addTarget(self, action: #selector(ClinicTimingCell.showTimingClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             }else{
                 button.removeTarget(self, action: nil, forControlEvents: UIControlEvents.AllEvents)
             }
+            
+            listTimmingSelected = timingTemp
             
             currentView.addSubview(button)
         }
@@ -121,17 +108,15 @@ extension ClinicTimingCell {
 //MARK: Action handler
 extension ClinicTimingCell {
     @IBAction func addTimingClicked(sender: UIButton) {
-        let clinicId = sender.tag / 1000
-        let dayIndex = sender.tag % 1000
-        delegate.didAddTiming(clinicId)
+        delegate.didAddTiming(self.clinicId)
     }
     
-    @IBAction func showTimingClicked(sender: UIButton){
-//        for timing in clinicTimingSelected.mct_timings{
-//            if (timing.mt_Id == "\(sender.tag)"){
-//                timingSelected = timing
-//            }
-//        }
+    @IBAction func showTimingClicked(sender: UIButton){        
+        for timing in listTimmingSelected {
+            if (timing.id == sender.tag) {
+                timingSelected = timing
+            }
+        }
         delegate.didTapTiming(clinicTimingSelected, timing: timingSelected)
     }
 }

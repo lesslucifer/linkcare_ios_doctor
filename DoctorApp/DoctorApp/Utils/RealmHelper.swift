@@ -79,3 +79,52 @@ class RealmHelper{
     }
     
 }
+
+extension RealmHelper {
+    
+    func db_getObjects<T: Object>(type: T.Type, temp: Bool) -> Results<T> {
+        var objs = realm.objects(type)
+        
+        if !temp {
+            if let primaryKey = type.primaryKey() {
+                let mirror: Mirror!
+                mirror = Mirror(reflecting: T())
+                if let primaryField = mirror.children.filter({$0.0 == primaryKey}).first?.1 {
+                    if primaryField.dynamicType == String.self {
+                        objs = objs.filter("not (\(primaryKey) BEGINSWITH 'tempID')")
+                    }
+                }
+            }
+        }
+        
+        return objs
+    }
+    
+    func db_getArrObjects<T: Object>(type: T.Type, temp: Bool = false) -> Array<T> {
+        return Array<T>(db_getObjects(type, temp: temp))
+    }
+    
+    func db_syncObject<T: Object>(obj: T) {
+        self.db_addObject(obj, update: true)
+    }
+    
+    func db_syncObjects<T: Object>(objs: Array<T>, deleteUnexisted: Bool = false) {
+        self.db_addObjects(objs, update: true)
+
+    }
+    
+//    func db_syncObjects<T: Object>(objs: Array<T>, deleteUnexisted: Bool = false) {
+//        self.db_addObjects(objs, update: true)
+//        
+//        if (deleteUnexisted) {
+//            let unexisted = realm.objects(T).filter({e in !objs.contains({$0 == e})})
+//            
+//            if (unexisted.count > 0) {
+//                try! realm.write {
+//                    self.realm.delete(unexisted)
+//                }
+//            }
+//        }
+//    }
+
+}

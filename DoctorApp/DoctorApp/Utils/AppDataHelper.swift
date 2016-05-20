@@ -11,6 +11,10 @@ import RealmSwift
 import SwiftyJSON
 import Alamofire
 
-class AppDataHelper{ 
+class AppDataHelper{
+    static let sharedInstance = AppDataHelper()
     
+//    func syncTimmings() {
+//        
+//    }
 }

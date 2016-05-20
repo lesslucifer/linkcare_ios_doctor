@@ -31,11 +31,11 @@ class AddClinicTimingView: UIView {
 //    @IBOutlet var a_repeatDateButtons: Array<UIButton>!
     //---
     var delegate: AddClinicTimingViewDelegate!
-    //--
-    private var ma_ClinicTiming = Array<ClinicTiming>()
+
     var mClinicTiming: ClinicTiming!
-    var ma_Timing = Array<Timing>()
-    var mEditingTiming: Timing?
+    var ma_Timing = Array<Timings>()
+    var mEditingTiming: Timings?
+    var clinicId: Int = 0
 //    var repeatDates = [String]()
     //------
     var screenType = AddClinicTimingType.AddTimeSlot
@@ -69,28 +69,21 @@ class AddClinicTimingView: UIView {
         configureTableView()
         
         v_timePicker = TimePicker(frame: CGRectMake(0, UIScreen.mainScreen().bounds.height, UIScreen.mainScreen().bounds.width, 300))
-        //---
-//        Utils.invokeLater {
-//            self.btnAddNewBlockPressed(nil)
-//        }
     }
     
     convenience init(type: AddClinicTimingType, clinicId: Int, frame: CGRect){
         self.init(frame: frame)
-//        mClinicTiming = clinicTiming
         screenType = type
-//        repeatDates = [dayOfWeek]
-//        reloadDateButtons()
+        self.clinicId = clinicId
     }
     
-    convenience init(type: AddClinicTimingType, timing: Timing, clinicTiming: ClinicTiming, frame: CGRect){
+    convenience init(type: AddClinicTimingType, timing: Timings, clinicTiming: ClinicTiming, frame: CGRect){
         self.init(frame: frame)
         screenType = type
         //-----
         mClinicTiming = clinicTiming
         mEditingTiming = timing
-//        repeatDates = mEditingTiming!.mt_repeatDate
-//        reloadDateButtons()
+
     }
     
 }
@@ -102,10 +95,23 @@ extension AddClinicTimingView {
     
     @IBAction func confirmClicked(sender: UIButton) {
         self.endEditing(true)
-        //-------
         
-        ma_ClinicTiming = Array<ClinicTiming>()
-
+        if (screenType == .EditTimeSlot){
+            let cell = self.tv_addClinicTiming.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ClinicTimeSlotCell
+            
+            if cell.tf_timeto.text == "00:00" {
+                cell.tf_timeto.text = "24:00"
+            }
+            
+            let beginTime = Utils.converStringTimeToInt(cell.tf_timefrom.text!)
+            let endTime = Utils.converStringTimeToInt(cell.tf_timeto.text!)
+            var lengthTime = endTime - beginTime
+            
+            lengthTime = lengthTime < 0 ? lengthTime + 60 * 24 : lengthTime
+            
+            mEditingTiming?.editTimeFrom(beginTime)
+            mEditingTiming?.lengthTime(lengthTime)
+        }
     }
     
     func btnAddNewBlockPressed(sender: AnyObject?){
@@ -115,6 +121,20 @@ extension AddClinicTimingView {
 //            ma_Timing.append(timing)
 //            tv_addClinicTiming.insertRowsAtIndexPaths([NSIndexPath(forRow: ma_Timing.count-1, inSection: 0)], withRowAnimation: .Automatic)
 //        }
+        
+//        if clinicId == 0 {
+//            var newTimming = Timings(id: 0)
+//            let timing = Timings.addNew(newTimming)
+//            ma_Timing.append(timing)
+//            tv_addClinicTiming.insertRowsAtIndexPaths([NSIndexPath(forRow: ma_Timing.count-1, inSection: 0)], withRowAnimation: .Automatic)
+//        }
+        
+        let newTimming = Timings(type: clinicId)
+        let timing = Timings.addNew(newTimming)
+        ma_Timing.append(timing)
+        print(timing)
+        tv_addClinicTiming.insertRowsAtIndexPaths([NSIndexPath(forRow: ma_Timing.count-1, inSection: 0)], withRowAnimation: .Automatic)
+        
     }
     
     
@@ -142,7 +162,6 @@ extension AddClinicTimingView: UIAlertViewDelegate{
             self.tv_addClinicTiming.reloadData()
         }
     }
-
 }
 
 //MARK: UITableViewDelegate
@@ -172,25 +191,19 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
         
         switch screenType{
         case .AddTimeSlot:
-            cell.configureDefaultCell()
-//            if indexPath.row < ma_Timing.count{
-//                cell.configureDefaultCell()
-//            }
-//            else {
-//                cell.configureAsAddNewCell()
-//            }
+            cell.configureAsAddNewCell()
             
             if ma_Timing.count > 0  && indexPath.row < ma_Timing.count{
                 let timing = ma_Timing[indexPath.row]
-                cell.tf_timefrom.text = timing.mt_timefrom
-                cell.tf_timeto.text = timing.mt_timeto
+                cell.tf_timefrom.text = Utils.converTimetoString(timing.beginTime)
+                cell.tf_timeto.text = Utils.converTimetoString(timing.endTime)
             }
 
             break
         case .EditTimeSlot:
             cell.configureDefaultCell()
-            cell.tf_timefrom.text = mEditingTiming?.mt_timefrom
-            cell.tf_timeto.text = mEditingTiming?.mt_timeto
+            cell.tf_timefrom.text = Utils.converTimetoString(mEditingTiming!.beginTime)
+            cell.tf_timeto.text = Utils.converTimetoString(mEditingTiming!.endTime)
             break
         }
         

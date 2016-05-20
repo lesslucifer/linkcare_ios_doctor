@@ -39,8 +39,8 @@ extension ClinicTimeSlotCell {
     func configureAsAddNewCell() {
         lb_numberSlot.hidden = true
 //        iv_addNewSlot.hidden = false
-        tf_timefrom.hidden = true
-        tf_timeto.hidden = true
+//        tf_timefrom.hidden = true
+//        tf_timeto.hidden = true
         btn_addNewBlock.userInteractionEnabled = true
         btn_addNewBlock.hidden = false
         btn_deleteBlock.userInteractionEnabled = false
