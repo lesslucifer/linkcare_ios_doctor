@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import PKHUD
 
 enum DefineClinic{
     case Normal
@@ -66,23 +67,19 @@ extension ScheduleViewController {
         }
     }
     
-//    func reloadData() {
-//        TimingsAPI.getTimings({ (arr) in
-//            print(arr)
-//            self.timmingHospitalList = []
-//            self.timmingHomeList = []
-//            for tmpTimming: Timings in arr {
-//                if tmpTimming.type == 0 {
-//                    self.timmingHospitalList.append(tmpTimming)
-//                } else{
-//                    self.timmingHomeList.append(tmpTimming)
-//                }
-//            }
-//            self.tv_clinicTiming.reloadData()
-//        }) { (code, msg, params) in
-//            Utils.showAlertWithError(msg)
-//        }
-//    }
+    func uploadTimming() {
+        //listTimmings
+        PKHUD.sharedHUD.show()
+        TimingsAPI.setTimings(self.listTimmings!) { (success, code, msg, params) in
+            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            
+            if success {
+                print(msg)
+            } else {
+                Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Đặt lịch không thành công! Xin vui lòng thử lại.")
+            }
+        }
+    }
     
     func reloadTableData(){
         listTimmings = RealmHelper.sharedInstance.db_getArrObjects(Timings.self)
@@ -284,22 +281,11 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         tapAction = .Normal
         btn_defTimeSlot.backgroundColor = MMColor.SkyBlue
         self.reloadTableData()
+        
+        self.uploadTimming()
     }
     
     func addClinicTimingViewDidClose() {
-//        MMAPI.getClinicTiming({ (listClinicTiming) -> Void in
-//            MMRealmHelper.sharedInstance.db_syncObjects(listClinicTiming, deleteUnexisted: true)
-//            var timings = [Timing]()
-//            for clinicTiming in listClinicTiming {
-//                timings.appendContentsOf(clinicTiming.mct_timings)
-//            }
-//            
-//            MMRealmHelper.sharedInstance.db_syncObjects(timings, deleteUnexisted: true)
-//            }) { (message) -> Void in
-//                
-//        }
-        
-//        self.reloadData()
         
         hideAddClinicTimingView()
     }
