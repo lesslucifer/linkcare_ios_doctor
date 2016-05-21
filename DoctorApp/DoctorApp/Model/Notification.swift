@@ -29,11 +29,13 @@ class Notification: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        id <- map["id"]
-        sender <- map["sender"]
-        content <- map["content"]
-        type <- (map["type"], NotificationType.Transformer)
-        params <- (map["params"], Notification.ParamsTransformers)
-        read <- map["read"]
+        if self.id == 0 {
+            self.id <- map["id"]
+        }
+        self.sender <- map["sender"]
+        self.content <- map["content"]
+        self.type <- (map["type"], NotificationType.Transformer)
+        self.params <- (map["params"], Notification.ParamsTransformers)
+        self.read <- map["read"]
     }
 }

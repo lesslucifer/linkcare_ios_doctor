@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3817E7861CE4E726006E3B5A /* Persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7851CE4E726006E3B5A /* Persist.swift */; };
 		3817E7891CE4E906006E3B5A /* BaseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7881CE4E906006E3B5A /* BaseCache.swift */; };
-		3817E78B1CE4F1CC006E3B5A /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E78A1CE4F1CC006E3B5A /* Cacheable.swift */; };
 		3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */; };
 		3820F7621CE890B0005BEFA7 /* CancelReasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */; };
 		386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7A9F1CD798FE00BC28BA /* Appointment.swift */; };
@@ -37,6 +36,7 @@
 		38B36E861CCFC763009820D2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B36E851CCFC763009820D2 /* Alamofire.framework */; };
 		38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B370461CDCDA2F00B51011 /* BlockVacation.swift */; };
 		38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B370481CDCE52100B51011 /* BlockVacationAPI.swift */; };
+		38C8201C1CF08AD300A5095F /* RealmObject+Write.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C8201B1CF08AD300A5095F /* RealmObject+Write.swift */; };
 		38C95A4C1CDBA0C000A6CBA7 /* CacheModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */; };
 		38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */; };
 		38C95A501CDBA81C00A6CBA7 /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */; };
@@ -136,7 +136,6 @@
 /* Begin PBXFileReference section */
 		3817E7851CE4E726006E3B5A /* Persist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persist.swift; sourceTree = "<group>"; };
 		3817E7881CE4E906006E3B5A /* BaseCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCache.swift; sourceTree = "<group>"; };
-		3817E78A1CE4F1CC006E3B5A /* Cacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
 		3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
 		3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelReasonViewController.xib; sourceTree = "<group>"; };
 		386B7A9F1CD798FE00BC28BA /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
@@ -165,6 +164,7 @@
 		38B36E851CCFC763009820D2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		38B370461CDCDA2F00B51011 /* BlockVacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVacation.swift; sourceTree = "<group>"; };
 		38B370481CDCE52100B51011 /* BlockVacationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockVacationAPI.swift; sourceTree = "<group>"; };
+		38C8201B1CF08AD300A5095F /* RealmObject+Write.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RealmObject+Write.swift"; sourceTree = "<group>"; };
 		38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheModel.swift; sourceTree = "<group>"; };
 		38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionAPI.swift; sourceTree = "<group>"; };
 		38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
@@ -319,7 +319,6 @@
 				E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */,
 				E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */,
 				E370F8EE1CDCF625005BE9F0 /* Notification.swift */,
-				3817E78A1CE4F1CC006E3B5A /* Cacheable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +392,7 @@
 			children = (
 				D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */,
 				D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */,
+				38C8201B1CF08AD300A5095F /* RealmObject+Write.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -654,6 +654,7 @@
 				D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
 				E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */,
+				38C8201C1CF08AD300A5095F /* RealmObject+Write.swift in Sources */,
 				38A423231CE63AB0004E2146 /* AppointmentExpandedCell.swift in Sources */,
 				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
@@ -681,7 +682,6 @@
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
 				D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */,
 				38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */,
-				3817E78B1CE4F1CC006E3B5A /* Cacheable.swift in Sources */,
 				E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,

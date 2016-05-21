@@ -36,14 +36,18 @@ class Appointment: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        id <- map["id"]
-        lastUpdated <- map["lastUpdated"]
-        date <- (map["date"], DateFormat.dateTransformer)
-        time <- map["time"]
-        duration <- map["duration"]
-        status <- (map["status"], AppointmentStatus.Transformer)
-        patient <- map["patient"]
-        type <- (map["atHome"], PositionType.TransformerBool)
+        self.write {
+            if self.id == 0 {
+                self.id <- map["id"]
+            }
+            self.lastUpdated <- map["lastUpdated"]
+            self.date <- (map["date"], DateFormat.dateTransformer)
+            self.time <- map["time"]
+            self.duration <- map["duration"]
+            self.status <- (map["status"], AppointmentStatus.Transformer)
+            self.patient <- map["patient"]
+            self.type <- (map["atHome"], PositionType.TransformerBool)
+        }
     }
 }
 
@@ -64,11 +68,13 @@ class AppointmentPatient: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        name <- map["name"]
-        birth <- (map["birth"], DateFormat.dateTransformer)
-        gender <- (map["gender"], Gender.Transformer)
-        address <- map["address"]
-        phone <- map["phone"]
-        symtoms <- map["symtoms"]
+        self.write {
+            self.name <- map["name"]
+            self.birth <- (map["birth"], DateFormat.dateTransformer)
+            self.gender <- (map["gender"], Gender.Transformer)
+            self.address <- map["address"]
+            self.phone <- map["phone"]
+            self.symtoms <- map["symtoms"]
+        }
     }
 }

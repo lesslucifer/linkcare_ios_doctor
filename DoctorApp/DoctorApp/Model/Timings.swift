@@ -36,10 +36,14 @@ class Timings: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        id <- map["id"]
-        beginTime <- map["beginTime"]
-        length <- map["length"]
-        type <- map["type"]
+        self.write {
+            if self.id == 0 {
+                self.id <- map["id"]
+            }
+            self.beginTime <- map["beginTime"]
+            self.length <- map["length"]
+            self.type <- map["type"]
+        }
     }
     
     static func addNew(timing: Timings) -> Timings{
