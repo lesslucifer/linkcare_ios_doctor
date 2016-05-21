@@ -60,5 +60,11 @@ class Timings: Object, Mappable {
             self.length = length
         }
     }
+    
+    func addType(type: Int){
+        RealmHelper.sharedInstance.db_updateObject {
+            self.type = type
+        }
+    }
 
 }

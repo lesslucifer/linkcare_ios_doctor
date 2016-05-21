@@ -11,11 +11,14 @@ import UIKit
 class ClinicTimeSlotCell: UITableViewCell {
     @IBOutlet weak var tf_timefrom: UITextField!
     @IBOutlet weak var tf_timeto: UITextField!
-
+    @IBOutlet weak var lbTimeSlot: UILabel!
+    @IBOutlet weak var lbPatientSlot: UILabel!
     @IBOutlet var lb_numberSlot:UILabel!
     
     @IBOutlet var btn_addNewBlock:UIButton!
     @IBOutlet var btn_deleteBlock:UIButton!
+    @IBOutlet var iv_delete: UIImageView!
+    
     
     
     override func awakeFromNib() {
@@ -39,12 +42,15 @@ extension ClinicTimeSlotCell {
     func configureAsAddNewCell() {
         lb_numberSlot.hidden = true
 //        iv_addNewSlot.hidden = false
-//        tf_timefrom.hidden = true
-//        tf_timeto.hidden = true
+        tf_timefrom.hidden = true
+        tf_timeto.hidden = true
+        lbTimeSlot.hidden = true
+        lbPatientSlot.hidden = true
         btn_addNewBlock.userInteractionEnabled = true
         btn_addNewBlock.hidden = false
         btn_deleteBlock.userInteractionEnabled = false
         btn_deleteBlock.hidden = true
+        iv_delete.hidden = true
     }
     
     func configureDefaultCell() {

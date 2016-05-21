@@ -54,7 +54,6 @@
 		D92166A71CE24298004FA64C /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92166A51CE24298004FA64C /* NotificationViewController.xib */; };
 		D92166B01CE2C6BF004FA64C /* AddClinicTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92166AE1CE2C6BF004FA64C /* AddClinicTimingView.swift */; };
 		D92166B11CE2C6BF004FA64C /* AddClinicTimingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92166AF1CE2C6BF004FA64C /* AddClinicTimingView.xib */; };
-		D95E0EF81CEC307D0099DC0B /* ClinicTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E0EF71CEC307D0099DC0B /* ClinicTiming.swift */; };
 		D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */; };
 		D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */; };
 		D967D9EE1CD5B702002E4C0F /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D967D9ED1CD5B702002E4C0F /* Reachability.framework */; };
@@ -95,7 +94,6 @@
 		D993968A1CE2D7F30091DCE3 /* ClinicTimingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99396881CE2D7F30091DCE3 /* ClinicTimingCell.xib */; };
 		D993968D1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993968B1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift */; };
 		D993968E1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993968C1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib */; };
-		D99396971CE2DA0D0091DCE3 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99396961CE2DA0D0091DCE3 /* Timing.swift */; };
 		D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E151CDDA21900340EE9 /* ClinicalViewController.swift */; };
 		D9950E181CDDA21900340EE9 /* ClinicalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9950E161CDDA21900340EE9 /* ClinicalViewController.xib */; };
 		D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E191CDDA22E00340EE9 /* PrescriptionViewController.swift */; };
@@ -184,7 +182,6 @@
 		D92166A51CE24298004FA64C /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		D92166AE1CE2C6BF004FA64C /* AddClinicTimingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClinicTimingView.swift; path = DoctorApp/ViewControllers/Schedule/AddClinicTimingView.swift; sourceTree = SOURCE_ROOT; };
 		D92166AF1CE2C6BF004FA64C /* AddClinicTimingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddClinicTimingView.xib; path = DoctorApp/ViewControllers/Schedule/AddClinicTimingView.xib; sourceTree = SOURCE_ROOT; };
-		D95E0EF71CEC307D0099DC0B /* ClinicTiming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicTiming.swift; sourceTree = "<group>"; };
 		D967D9E91CD5B484002E4C0F /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		D967D9EB1CD5B5A5002E4C0F /* UITextField+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Helpers.swift"; sourceTree = "<group>"; };
 		D967D9ED1CD5B702002E4C0F /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
@@ -217,7 +214,6 @@
 		D99396881CE2D7F30091DCE3 /* ClinicTimingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClinicTimingCell.xib; sourceTree = "<group>"; };
 		D993968B1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicTimeSlotCell.swift; sourceTree = "<group>"; };
 		D993968C1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClinicTimeSlotCell.xib; sourceTree = "<group>"; };
-		D99396961CE2DA0D0091DCE3 /* Timing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
 		D9950E151CDDA21900340EE9 /* ClinicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalViewController.swift; sourceTree = "<group>"; };
 		D9950E161CDDA21900340EE9 /* ClinicalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClinicalViewController.xib; sourceTree = "<group>"; };
 		D9950E191CDDA22E00340EE9 /* PrescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionViewController.swift; sourceTree = "<group>"; };
@@ -316,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				3876AB691CD4C0C30087E5AC /* Timings.swift */,
-				D95E0EF71CEC307D0099DC0B /* ClinicTiming.swift */,
 				386B7A9F1CD798FE00BC28BA /* Appointment.swift */,
 				38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */,
 				38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */,
@@ -490,7 +485,6 @@
 		D967DA211CD71116002E4C0F /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				D993968F1CE2D8F30091DCE3 /* tempModel */,
 				D9950E2A1CDDF53500340EE9 /* cell */,
 				D92166AE1CE2C6BF004FA64C /* AddClinicTimingView.swift */,
 				D92166AF1CE2C6BF004FA64C /* AddClinicTimingView.xib */,
@@ -509,14 +503,6 @@
 				D99396821CE2D6760091DCE3 /* TimePicker.xib */,
 			);
 			path = Picker;
-			sourceTree = "<group>";
-		};
-		D993968F1CE2D8F30091DCE3 /* tempModel */ = {
-			isa = PBXGroup;
-			children = (
-				D99396961CE2DA0D0091DCE3 /* Timing.swift */,
-			);
-			path = tempModel;
 			sourceTree = "<group>";
 		};
 		D9950E0A1CDD083400340EE9 /* Note */ = {
@@ -696,9 +682,7 @@
 				D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */,
 				38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */,
 				3817E78B1CE4F1CC006E3B5A /* Cacheable.swift in Sources */,
-				D95E0EF81CEC307D0099DC0B /* ClinicTiming.swift in Sources */,
 				E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */,
-				D99396971CE2DA0D0091DCE3 /* Timing.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
 				E370F8ED1CDCF61F005BE9F0 /* NotificationAPI.swift in Sources */,

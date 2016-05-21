@@ -30,9 +30,7 @@ class ScheduleViewController: BaseMenuViewController {
     var tapAction = DefineClinic.Normal
     //---
     @IBOutlet private var v_timePicker: TimePicker!
-    //----
-    var ma_clinicTimings: Array<ClinicTiming>?
-    var ma_timingTemps: Array<TimingTemp>?
+
     
     //---
     let panRec = UIPanGestureRecognizer()
@@ -94,6 +92,8 @@ extension ScheduleViewController {
     }
     
     func getTime() {
+        self.timmingHospitalList = []
+        self.timmingHomeList = []
         for tmpTimmings:Timings in listTimmings! {
             if tmpTimmings.type == 0 {
                 self.timmingHospitalList.append(tmpTimmings)
@@ -209,17 +209,8 @@ extension ScheduleViewController: ClinicTimingCellDelegate {
         showAddClinicTimingView(clinicId)
     }
     
-    func didTapTiming(clinicTiming: ClinicTiming, timing: Timings){
-        showEditClinicTimingView(clinicTiming, timing: timing)
-    }
-    
-    func getTimingTemp(day: String)-> TimingTemp{
-        for timingTemp in self.ma_timingTemps!{
-            if timingTemp.mtt_day == day{
-                return timingTemp
-            }
-        }
-        return TimingTemp()
+    func didTapTiming(timing: Timings, clinicId: Int){
+        showEditClinicTimingView(timing, clinicId: clinicId)
     }
     
 }
@@ -245,10 +236,10 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         v_addClinicTiming.view.animate()
     }
     
-    func showEditClinicTimingView(clinic: ClinicTiming, timing: Timings) {
+    func showEditClinicTimingView(timing: Timings, clinicId: Int) {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let frame = CGRectMake(0, 0, screenSize.width * 0.9, screenSize.height/3*2)
-        v_addClinicTiming = AddClinicTimingView(type: .EditTimeSlot ,timing: timing, clinicTiming: clinic, frame: frame)
+        v_addClinicTiming = AddClinicTimingView(type: .EditTimeSlot ,timing: timing, clinicId: clinicId, frame: frame)
         v_addClinicTiming.delegate = self
         v_addClinicTiming.center = CGPointMake(screenSize.width/2, screenSize.height/2)
         //---
@@ -279,10 +270,20 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
     }
     
     func addClinicTimingViewDidConfirm() {
-        hideAddClinicTimingView()
+        //hide view
+        animateOverlayHide()
+        v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeOut.rawValue
+        v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
+        v_addClinicTiming.view.duration = 0.5
+        v_addClinicTiming.view.animateToNext { () -> () in
+            self.v_addClinicTiming.removeFromSuperview()
+        }
+        
+        
+        
         tapAction = .Normal
         btn_defTimeSlot.backgroundColor = MMColor.SkyBlue
-        self.tv_clinicTiming.reloadData()
+        self.reloadTableData()
     }
     
     func addClinicTimingViewDidClose() {

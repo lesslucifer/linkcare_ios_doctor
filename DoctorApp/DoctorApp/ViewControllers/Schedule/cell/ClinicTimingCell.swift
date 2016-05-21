@@ -10,12 +10,11 @@ import UIKit
 
 protocol ClinicTimingCellDelegate {
     func didAddTiming(clinicId: Int)
-    func didTapTiming(clinicTiming: ClinicTiming, timing: Timings)
+    func didTapTiming(timing: Timings, clinicId: Int)
 }
 
 class ClinicTimingCell: UITableViewCell {
     @IBOutlet weak var lb_clinicName: UILabel!
-    var ma_Timing = Array<Timing>()
     var delegate: ClinicTimingCellDelegate!
     var listTimmingSelected = [Timings]()
     var timingSelected = Timings()
@@ -29,8 +28,6 @@ class ClinicTimingCell: UITableViewCell {
     @IBOutlet var v_friday: UIView!
     @IBOutlet var v_satday: UIView!
     @IBOutlet var v_sunday: UIView!
-    
-    var clinicTimingSelected = ClinicTiming()
     
     //----
     override func awakeFromNib() {
@@ -117,7 +114,7 @@ extension ClinicTimingCell {
                 timingSelected = timing
             }
         }
-        delegate.didTapTiming(clinicTimingSelected, timing: timingSelected)
+        delegate.didTapTiming(timingSelected, clinicId: self.clinicId)
     }
 }
 

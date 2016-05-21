@@ -130,7 +130,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 phút" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tot-ns-ATd">
                                 <rect key="frame" x="0.0" y="0.0" width="161" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -164,7 +164,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7G3-CK-uwU">
                                 <rect key="frame" x="0.0" y="0.0" width="161" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -262,6 +262,9 @@
             <connections>
                 <outlet property="btn_addNewBlock" destination="JT0-cj-co8" id="Mik-Nu-DnX"/>
                 <outlet property="btn_deleteBlock" destination="66m-V3-KXm" id="7On-C4-CFO"/>
+                <outlet property="iv_delete" destination="1SH-tJ-WmI" id="BXh-FO-Ol6"/>
+                <outlet property="lbPatientSlot" destination="7G3-CK-uwU" id="P7t-Qe-jak"/>
+                <outlet property="lbTimeSlot" destination="Tot-ns-ATd" id="gsX-MZ-G6k"/>
                 <outlet property="lb_numberSlot" destination="cgi-RL-s7D" id="m8c-Y3-cdt"/>
                 <outlet property="tf_timefrom" destination="NCr-Oq-sOf" id="n87-Qf-5RI"/>
                 <outlet property="tf_timeto" destination="BHA-3D-rQj" id="syZ-r8-m2y"/>

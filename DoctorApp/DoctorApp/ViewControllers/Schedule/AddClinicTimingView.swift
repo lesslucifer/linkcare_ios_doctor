@@ -10,8 +10,6 @@ import UIKit
 import Spring
 import RealmSwift
 
-typealias repeatDateTag = repeatDate
-
 enum AddClinicTimingType {
     case AddTimeSlot
     case EditTimeSlot
@@ -32,7 +30,6 @@ class AddClinicTimingView: UIView {
     //---
     var delegate: AddClinicTimingViewDelegate!
 
-    var mClinicTiming: ClinicTiming!
     var ma_Timing = Array<Timings>()
     var mEditingTiming: Timings?
     var clinicId: Int = 0
@@ -77,13 +74,12 @@ class AddClinicTimingView: UIView {
         self.clinicId = clinicId
     }
     
-    convenience init(type: AddClinicTimingType, timing: Timings, clinicTiming: ClinicTiming, frame: CGRect){
+    convenience init(type: AddClinicTimingType, timing: Timings, clinicId: Int, frame: CGRect){
         self.init(frame: frame)
         screenType = type
         //-----
-        mClinicTiming = clinicTiming
         mEditingTiming = timing
-
+        self.clinicId = clinicId
     }
     
 }
@@ -107,11 +103,38 @@ extension AddClinicTimingView {
             let endTime = Utils.converStringTimeToInt(cell.tf_timeto.text!)
             var lengthTime = endTime - beginTime
             
-            lengthTime = lengthTime < 0 ? lengthTime + 60 * 24 : lengthTime
+//            lengthTime = lengthTime < 0 ? lengthTime + 60 * 24 : lengthTime
             
-            mEditingTiming?.editTimeFrom(beginTime)
-            mEditingTiming?.lengthTime(lengthTime)
+            if lengthTime < 0 {
+                Utils.showAlertWithError("thời gian không hợp lệ")
+            } else {
+                mEditingTiming?.editTimeFrom(beginTime)
+                mEditingTiming?.lengthTime(lengthTime)
+                self.delegate.addClinicTimingViewDidConfirm()
+            }
+        } else {
+            for (var i = 0 ; i < ma_Timing.count ; i += 1){
+                let cell = self.tv_addClinicTiming.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0)) as! ClinicTimeSlotCell
+                if cell.tf_timeto.text == "00:00" {
+                    cell.tf_timeto.text = "24:00"
+                }
+                
+                let beginTime = Utils.converStringTimeToInt(cell.tf_timefrom.text!)
+                let endTime = Utils.converStringTimeToInt(cell.tf_timeto.text!)
+                var lengthTime = endTime - beginTime
+                
+                if lengthTime < 0 {
+                    Utils.showAlertWithError("thời gian không hợp lệ")
+                } else {
+                    ma_Timing[i].editTimeFrom(beginTime)
+                    ma_Timing[i].lengthTime(lengthTime)
+                    ma_Timing[i].addType(self.clinicId)
+                    self.delegate.addClinicTimingViewDidConfirm()
+                }
+            }
+            
         }
+        
     }
     
     func btnAddNewBlockPressed(sender: AnyObject?){
@@ -129,7 +152,7 @@ extension AddClinicTimingView {
 //            tv_addClinicTiming.insertRowsAtIndexPaths([NSIndexPath(forRow: ma_Timing.count-1, inSection: 0)], withRowAnimation: .Automatic)
 //        }
         
-        let newTimming = Timings(type: clinicId)
+        let newTimming = Timings(type: self.clinicId)
         let timing = Timings.addNew(newTimming)
         ma_Timing.append(timing)
         print(timing)
@@ -191,7 +214,12 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
         
         switch screenType{
         case .AddTimeSlot:
-            cell.configureAsAddNewCell()
+            if indexPath.row < ma_Timing.count{
+                cell.configureDefaultCell()
+            }
+            else {
+                cell.configureAsAddNewCell()
+            }
             
             if ma_Timing.count > 0  && indexPath.row < ma_Timing.count{
                 let timing = ma_Timing[indexPath.row]
@@ -214,6 +242,12 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
         cell.tf_timefrom.delegate = self
         cell.tf_timeto.tag = 4 * indexPath.row + 1
         cell.tf_timeto.delegate = self
+        
+        if self.clinicId == 0 {
+            cell.lbTimeSlot.text = "10"
+        } else {
+            cell.lbTimeSlot.text = "30"
+        }
         //--
         cell.btn_addNewBlock.addTarget(self, action: #selector(AddClinicTimingView.btnAddNewBlockPressed(_:)), forControlEvents: .TouchUpInside)
 //        cell.btn_deleteBlock.tag = indexPath.row
