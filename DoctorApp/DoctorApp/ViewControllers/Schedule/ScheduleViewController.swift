@@ -62,7 +62,7 @@ extension ScheduleViewController {
     func reloadData() {
         TimingsAPI.getTimings({ (arr) in
             print(arr)
-            RealmHelper.sharedInstance.db_syncObjects(arr)
+            RealmHelper.sharedInstance.db_syncObjects(arr, deleteUnexisted:  true)
             self.reloadTableData()
         }) { (code, msg, params) in
         }
@@ -198,11 +198,6 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.lb_clinicName.text = "Tại nhà bệnh nhân"
         }
-        
-        
-        
-        
-//        cell.lb_clinicName.text = clinic.mct_displayName == "" ? clinic.mct_name : clinic.mct_displayName
         
         return cell
     }

@@ -110,21 +110,24 @@ extension RealmHelper {
     
     func db_syncObjects<T: Object>(objs: Array<T>, deleteUnexisted: Bool = false) {
         self.db_addObjects(objs, update: true)
-
+        
+        if (deleteUnexisted) {
+            let unexisted = realm.objects(T).filter({
+                
+                !objs.contains($0)
+            
+            })
+            
+            if (unexisted.count > 0) {
+                try! realm.write {
+                    self.realm.delete(unexisted)
+                }
+            }
+        }
     }
     
-//    func db_syncObjects<T: Object>(objs: Array<T>, deleteUnexisted: Bool = false) {
-//        self.db_addObjects(objs, update: true)
-//        
-//        if (deleteUnexisted) {
-//            let unexisted = realm.objects(T).filter({e in !objs.contains({$0 == e})})
-//            
-//            if (unexisted.count > 0) {
-//                try! realm.write {
-//                    self.realm.delete(unexisted)
-//                }
-//            }
-//        }
-//    }
+    func db_syncObjects<T, O: Object>(otype: O.Type, tobjs: Array<T>, transform: ((tobj: T) -> O)) {
+        self.db_addObjects(tobjs.map(transform), update: true)
+    }
 
 }
