@@ -29,6 +29,9 @@
                     <constraint firstAttribute="bottom" secondItem="QDy-tK-BFf" secondAttribute="bottom" id="htu-su-QaG"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lbNotification" destination="QDy-tK-BFf" id="sLg-yb-eFq"/>
+            </connections>
             <point key="canvasLocation" x="283" y="343"/>
         </tableViewCell>
     </objects>

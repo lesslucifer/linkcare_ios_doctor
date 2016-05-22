@@ -9,11 +9,14 @@
 import UIKit
 
 class NotificationCell: UITableViewCell {
-    @IBOutlet var lb_time: UILabel!
-    @IBOutlet var lb_noPatient: UILabel!
-    @IBOutlet var lb_noSlots: UILabel!
+    @IBOutlet var lbNotification: UILabel!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func configure(notification: Notification) {
+        self.lbNotification.text = notification.content
     }
 }

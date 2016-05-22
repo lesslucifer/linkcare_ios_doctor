@@ -58,6 +58,7 @@ enum Gender: Int {
     }
 }
 
+@objc
 enum NotificationType: Int {
     case Msg = 0
     case AppointmentBooking = 1

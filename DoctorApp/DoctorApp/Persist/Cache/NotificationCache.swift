@@ -8,9 +8,21 @@
 
 import Foundation
 
-class NotificationCache: NSObject {
-//    static let INST = NotificationCache()
-//    required init() {
-//        
-//    }
+class NotificationCache: BaseCache<Notification> {
+    static let INST = NotificationCache()
+    required init() {
+        super.init(persist: Persist.INST, factory: { ids, fetcher in
+            NotificationAPI.getNotifications(ids, success: { (arr) in
+                var objs: [Int: Notification] = [:]
+                for app in arr {
+                    objs[app.id] = app
+                }
+                
+                fetcher(objs)
+                
+                }, failure: { _, _, _ in
+                    fetcher([:])
+            })
+        })
+    }
 }
