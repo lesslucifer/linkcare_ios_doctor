@@ -81,6 +81,8 @@
 		D967DA201CD5C634002E4C0F /* AppointmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */; };
 		D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */; };
 		D967DA251CD711BC002E4C0F /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */; };
+		D97711CA1CF1723000F2DBC9 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97711C81CF1723000F2DBC9 /* NotificationCell.swift */; };
+		D97711CB1CF1723000F2DBC9 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97711C91CF1723000F2DBC9 /* NotificationCell.xib */; };
 		D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD51CCFE2050008049A /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD61CCFE2050008049A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -206,6 +208,8 @@
 		D967DA1E1CD5C634002E4C0F /* AppointmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
 		D967DA221CD7113A002E4C0F /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		D97711C81CF1723000F2DBC9 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		D97711C91CF1723000F2DBC9 /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
 		D993967F1CE2D6760091DCE3 /* DataPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
 		D99396801CE2D6760091DCE3 /* DataPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPicker.xib; sourceTree = "<group>"; };
 		D99396811CE2D6760091DCE3 /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 		D921669F1CE2423D004FA64C /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				D97711C71CF1723000F2DBC9 /* cell */,
 				D92166A41CE24298004FA64C /* NotificationViewController.swift */,
 				D92166A51CE24298004FA64C /* NotificationViewController.xib */,
 			);
@@ -492,6 +497,15 @@
 				D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		D97711C71CF1723000F2DBC9 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D97711C81CF1723000F2DBC9 /* NotificationCell.swift */,
+				D97711C91CF1723000F2DBC9 /* NotificationCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		D993967E1CE2D6760091DCE3 /* Picker */ = {
@@ -628,6 +642,7 @@
 				D92166B11CE2C6BF004FA64C /* AddClinicTimingView.xib in Resources */,
 				38A423291CE63CF1004E2146 /* MyriadPro-Regular_0.otf in Resources */,
 				D99396841CE2D6760091DCE3 /* DataPicker.xib in Resources */,
+				D97711CB1CF1723000F2DBC9 /* NotificationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +681,7 @@
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
+				D97711CA1CF1723000F2DBC9 /* NotificationCell.swift in Sources */,
 				3817E7861CE4E726006E3B5A /* Persist.swift in Sources */,
 				D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */,
 				D915C8C01CE1888B00C499CD /* AppointmentWaitingViewController.swift in Sources */,

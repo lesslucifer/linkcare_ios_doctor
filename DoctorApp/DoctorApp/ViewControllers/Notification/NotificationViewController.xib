@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationViewController">
             <connections>
+                <outlet property="tbNotification" destination="eX6-es-8A8" id="EB6-dJ-RSx"/>
                 <outlet property="v_navigation" destination="Bkn-de-fO6" id="jvf-nY-VrO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Zn8-Ev-smr"/>
             </connections>
@@ -29,12 +30,24 @@
                         </mask>
                     </variation>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eX6-es-8A8">
+                    <rect key="frame" x="0.0" y="100" width="1024" height="668"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="3XY-WF-T4O"/>
+                        <outlet property="delegate" destination="-1" id="kta-Al-aS0"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Bkn-de-fO6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="68x-Ui-Yvt"/>
+                <constraint firstItem="eX6-es-8A8" firstAttribute="top" secondItem="Bkn-de-fO6" secondAttribute="bottom" id="Ko9-jG-5fl"/>
                 <constraint firstAttribute="trailing" secondItem="Bkn-de-fO6" secondAttribute="trailing" id="OnJ-2q-sMR"/>
+                <constraint firstAttribute="bottom" secondItem="eX6-es-8A8" secondAttribute="bottom" id="PbM-tf-bxg"/>
                 <constraint firstItem="Bkn-de-fO6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QaB-Gx-coX"/>
+                <constraint firstItem="eX6-es-8A8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XjQ-dZ-5ps"/>
+                <constraint firstAttribute="trailing" secondItem="eX6-es-8A8" secondAttribute="trailing" id="iPi-cv-Tgy"/>
                 <constraint firstItem="Bkn-de-fO6" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.13" id="qFa-IH-vTi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

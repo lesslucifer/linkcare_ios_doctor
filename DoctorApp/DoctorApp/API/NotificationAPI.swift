@@ -8,8 +8,8 @@
 
 import UIKit
 
-class NotificationAPI: NSObject {
-    func getNotifications(success: APIGenericHandler<Int>.Arr, failure: APIHandler.Failure?) {
+class NotificationAPI {
+    class func getNotifications(success: APIGenericHandler<Int>.Arr, failure: APIHandler.Failure?) {
         API.baseAPI(.GET, path: "/notifications", body: nil,
                     success: { data in
                         let arr = data.safeArray({$0.int}).filter({$0 != nil}).map({$0!})
@@ -17,7 +17,7 @@ class NotificationAPI: NSObject {
             }, failure: failure)
     }
     
-    func getNotifications(ids: [Int], success: APIGenericHandler<Notification>.Arr, failure: APIHandler.Failure?) {
+    class func getNotifications(ids: [Int], success: APIGenericHandler<Notification>.Arr, failure: APIHandler.Failure?) {
         if ids.isEmpty {
             success(arr: [])
             return
@@ -28,7 +28,7 @@ class NotificationAPI: NSObject {
                     success: APIHandler.toSuccess(genericHandler: success), failure: failure)
     }
     
-    func setNotificationRead(ids: [Int], result: APIHandler.Result?) {
+    class func setNotificationRead(ids: [Int], result: APIHandler.Result?) {
         if ids.isEmpty {
             APIHandler.toSuccess(result)?(data: [:])
         }
