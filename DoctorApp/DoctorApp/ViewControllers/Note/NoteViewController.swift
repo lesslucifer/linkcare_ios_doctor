@@ -10,6 +10,8 @@ import UIKit
 
 class NoteViewController: BaseTabViewController {
     
+    var appointment: Appointment!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self

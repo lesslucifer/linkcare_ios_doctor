@@ -9,11 +9,16 @@
 import UIKit
 import PKHUD
 
+protocol AppointmentStartViewControllerDelegate: class {
+    func notedClicked(appointment: Appointment)
+}
+
 class AppointmentStartViewController: UIViewController {
 
     @IBOutlet var tbAppointment: UITableView!
     var appointments: [CacheModel] = []
     var expandedIndex: Int?
+    var delegate: AppointmentStartViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +46,6 @@ class AppointmentStartViewController: UIViewController {
                 self.appointments = []
                 self.tbAppointment.reloadData()
         })
-    }
-    
-    func notedClicked() {
-        let storyboard = UIStoryboard(name: "NoteStoryboard", bundle: nil)
-        let vc_destination = storyboard.instantiateViewControllerWithIdentifier("noteDashboard") as! NoteViewController
-        self.navigationController?.pushViewController(vc_destination, animated: true)
     }
 }
 
@@ -128,7 +127,7 @@ extension AppointmentStartViewController: UITableViewDataSource, UITableViewDele
     }
     
     func startAppointment(appointment: Appointment) {
-        self.notedClicked()
+        delegate.notedClicked(appointment)
     }
 }
 

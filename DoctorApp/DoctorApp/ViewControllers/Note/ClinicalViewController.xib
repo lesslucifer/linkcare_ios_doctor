@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClinicalViewController" customModule="DoctorApp" customModuleProvider="target">
@@ -17,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VdC-nK-6Af">
-                    <rect key="frame" x="0.0" y="0.0" width="586.5" height="662"/>
+                    <rect key="frame" x="0.0" y="0.0" width="879.5" height="662"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -29,7 +28,7 @@
                 <constraint firstItem="VdC-nK-6Af" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7kx-xQ-xYj"/>
                 <constraint firstAttribute="bottom" secondItem="VdC-nK-6Af" secondAttribute="bottom" id="WBj-PI-vee"/>
                 <constraint firstItem="VdC-nK-6Af" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iY9-Bf-NZI"/>
-                <constraint firstItem="VdC-nK-6Af" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2/3" id="ylM-mK-RCA"/>
+                <constraint firstItem="VdC-nK-6Af" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ylM-mK-RCA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

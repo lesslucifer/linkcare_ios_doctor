@@ -21,18 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUQ-vz-GCl" customClass="NavigationBarView" customModule="DoctorApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="1024" height="100"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="86" id="suD-gm-hb9"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="suD-gm-hb9"/>
-                        </mask>
-                    </variation>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQq-7x-ffo">
                     <rect key="frame" x="0.0" y="100" width="1024" height="77"/>
                     <subviews>
@@ -74,6 +62,18 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqY-sv-WhN" userLabel="content" customClass="ContainerView" customModule="DoctorApp" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="177" width="1024" height="591"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUQ-vz-GCl" customClass="NavigationBarView" customModule="DoctorApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="86" id="suD-gm-hb9"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="suD-gm-hb9"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
