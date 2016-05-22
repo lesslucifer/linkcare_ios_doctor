@@ -11,6 +11,7 @@ import UIKit
 
 class NotificationViewController: BaseMenuViewController {
     @IBOutlet var tbNotification: UITableView!
+    var notifications: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +20,35 @@ class NotificationViewController: BaseMenuViewController {
         
         self.configureTableView()
         
-
-        NotificationAPI.getNotifications({ (arr) in
-            print(arr)
-            
-            }) { (code, msg, params) in
-                print(msg)
-        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
+        self.getNotificationIds()
+    }
+    
+    func getNotificationIds() {
+        NotificationAPI.getNotifications({ (arr) in
+            self.notifications = arr
+            self.getnotificationDetail(arr)
+            
+            self.tbNotification.reloadData()
+            
+        }) { (code, msg, params) in
+            Utils.showOKAlertPanel(self, title: "Rất tiếc", msg: "Không tải được thông tin, xin vui lòng thử lại!")
+            self.notifications = []
+            self.tbNotification.reloadData()
+        }
+    }
+    
+    func getnotificationDetail(listNotification: [Int]) {
+        NotificationAPI.getNotifications(listNotification, success: { (arr) in
+            print(arr)
+        }) { (code, msg, params) in
+            print(msg)
+        }
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,11 +72,20 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return notifications.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NotificationCell", forIndexPath: indexPath) as! NotificationCell
+        
+        let idNotification = notifications[indexPath.row]
+        
+//        let notification = NotificationCache.shareInstance.get(idNotification) {
+//
+//            cell.configure(notification)
+//            
+//        }
+        
         return cell
     }
     

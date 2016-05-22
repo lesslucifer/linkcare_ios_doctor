@@ -83,6 +83,7 @@
 		D967DA251CD711BC002E4C0F /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */; };
 		D97711CA1CF1723000F2DBC9 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97711C81CF1723000F2DBC9 /* NotificationCell.swift */; };
 		D97711CB1CF1723000F2DBC9 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97711C91CF1723000F2DBC9 /* NotificationCell.xib */; };
+		D97711CD1CF18F9A00F2DBC9 /* NotificationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97711CC1CF18F9A00F2DBC9 /* NotificationCache.swift */; };
 		D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD51CCFE2050008049A /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD61CCFE2050008049A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D99378F41CD0BD0D00EEF391 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38947DD71CCFE2050008049A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -210,6 +211,7 @@
 		D967DA241CD711BC002E4C0F /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
 		D97711C81CF1723000F2DBC9 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		D97711C91CF1723000F2DBC9 /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
+		D97711CC1CF18F9A00F2DBC9 /* NotificationCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCache.swift; sourceTree = "<group>"; };
 		D993967F1CE2D6760091DCE3 /* DataPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
 		D99396801CE2D6760091DCE3 /* DataPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPicker.xib; sourceTree = "<group>"; };
 		D99396811CE2D6760091DCE3 /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				3817E7881CE4E906006E3B5A /* BaseCache.swift */,
 				38A4231F1CE610ED004E2146 /* AppointmentCache.swift */,
+				D97711CC1CF18F9A00F2DBC9 /* NotificationCache.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */,
 				38C95A4E1CDBA69A00A6CBA7 /* PrescriptionAPI.swift in Sources */,
 				E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */,
+				D97711CD1CF18F9A00F2DBC9 /* NotificationCache.swift in Sources */,
 				38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */,
 				38CEE8341CD26342000010D2 /* Utils.swift in Sources */,
 				E370F8ED1CDCF61F005BE9F0 /* NotificationAPI.swift in Sources */,
