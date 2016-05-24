@@ -69,9 +69,10 @@ extension ScheduleViewController {
     
     func uploadTimming() {
         //listTimmings
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         TimingsAPI.setTimings(self.listTimmings!) { (success, code, msg, params) in
-            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            PKHUD.sharedHUD.hide(animated: true, completion: nil)
             
             if success {
                 print(msg)

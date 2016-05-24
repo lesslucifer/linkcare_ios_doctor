@@ -10,7 +10,7 @@ import UIKit
 
 class NoteViewController: BaseTabViewController {
     
-    var appointment: Appointment!
+    var appointmentId: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +45,13 @@ extension NoteViewController: BaseTabViewControllerDelegate{
     func createViewControllerForTabButton(btn: UIButton, atIndex index: Int) -> UIViewController? {
         switch (index) {
         case 0:
-            return ClinicalViewController(nibName:"ClinicalViewController", bundle: nil)
+            let dentisnation_vc = ClinicalViewController(nibName:"ClinicalViewController", bundle: nil)
+            dentisnation_vc.appointmentId = appointmentId
+            return dentisnation_vc
         case 1:
-            return PrescriptionViewController(nibName: "PrescriptionViewController", bundle: nil)
+            let dentisnation_vc = PrescriptionViewController(nibName: "PrescriptionViewController", bundle: nil)
+            dentisnation_vc.appointmentId = appointmentId
+            return dentisnation_vc
         default:
             return nil
         }

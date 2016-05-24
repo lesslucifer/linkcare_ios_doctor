@@ -15,15 +15,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDy-tK-BFf">
-                        <rect key="frame" x="0.0" y="0.0" width="900" height="49.5"/>
+                        <rect key="frame" x="10" y="0.0" width="890" height="49.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.039215686270000001" green="0.2784313725" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="QDy-tK-BFf" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" id="3OP-bV-Y1y"/>
+                    <constraint firstItem="QDy-tK-BFf" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" constant="10" id="3OP-bV-Y1y"/>
                     <constraint firstAttribute="trailing" secondItem="QDy-tK-BFf" secondAttribute="trailing" id="412-n7-fog"/>
                     <constraint firstItem="QDy-tK-BFf" firstAttribute="top" secondItem="ilL-Mf-t16" secondAttribute="top" id="hXQ-p7-59j"/>
                     <constraint firstAttribute="bottom" secondItem="QDy-tK-BFf" secondAttribute="bottom" id="htu-su-QaG"/>

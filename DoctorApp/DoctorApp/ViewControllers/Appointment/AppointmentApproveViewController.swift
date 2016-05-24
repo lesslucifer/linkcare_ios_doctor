@@ -9,11 +9,16 @@
 import UIKit
 import PKHUD
 
+protocol AppointmentApproveViewControllerDelegate: class {
+    func notedClicked(appointmentId: Int)
+}
+
 class AppointmentApproveViewController: UIViewController {
 
     @IBOutlet var tbAppointment: UITableView!
     var appointments: [CacheModel] = []
     var expandedIndex: Int?
+    var delegate: AppointmentApproveViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +46,6 @@ class AppointmentApproveViewController: UIViewController {
         })
     }
     
-    func notedClicked() {
-        let storyboard = UIStoryboard(name: "NoteStoryboard", bundle: nil)
-        let vc_destination = storyboard.instantiateViewControllerWithIdentifier("noteDashboard") as! NoteViewController
-        self.navigationController?.pushViewController(vc_destination, animated: true)
-    }
 }
 
 extension AppointmentApproveViewController: UITableViewDataSource, UITableViewDelegate {
@@ -133,7 +133,7 @@ extension AppointmentApproveViewController: UITableViewDataSource, UITableViewDe
             PKHUD.sharedHUD.hide(animated: false, completion: nil)
             
             if succ {
-                self.notedClicked()
+                self.delegate.notedClicked(appointment.id)
             }
             else {
                 Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Không thể bắt đầu khám bệnh! Xin vui lòng thử lại.")

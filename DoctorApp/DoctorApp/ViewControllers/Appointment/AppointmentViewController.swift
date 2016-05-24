@@ -46,22 +46,24 @@ extension AppointmentViewController: BaseTabViewControllerDelegate{
         case 0:
             return AppointmentWaitingViewController(nibName:"AppointmentWaitingViewController", bundle: nil)
         case 1:
-            return AppointmentApproveViewController(nibName: "AppointmentApproveViewController", bundle: nil)
+            let dentisnation_vc = AppointmentApproveViewController(nibName: "AppointmentApproveViewController", bundle: nil)
+            dentisnation_vc.delegate = self
+            return dentisnation_vc
         case 2:
-            let des_vc = AppointmentStartViewController(nibName: "AppointmentStartViewController", bundle: nil)
-            des_vc.delegate = self
-            return des_vc
+            let dentisnation_vc = AppointmentStartViewController(nibName: "AppointmentStartViewController", bundle: nil)
+            dentisnation_vc.delegate = self
+            return dentisnation_vc
         default:
             return nil
         }
     }
 }
 
-extension AppointmentViewController: AppointmentStartViewControllerDelegate {
-    func notedClicked(appointment: Appointment) {
+extension AppointmentViewController: AppointmentStartViewControllerDelegate, AppointmentApproveViewControllerDelegate {
+    func notedClicked(appointmentId: Int) {
         let storyboard = UIStoryboard(name: "NoteStoryboard", bundle: nil)
         let vc_destination = storyboard.instantiateViewControllerWithIdentifier("noteDashboard") as! NoteViewController
-        vc_destination.appointment = appointment
+        vc_destination.appointmentId = appointmentId
         self.navigationController?.pushViewController(vc_destination, animated: true)
     }
 }

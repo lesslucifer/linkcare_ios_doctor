@@ -17,6 +17,12 @@ class NotificationCell: UITableViewCell {
     }
     
     func configure(notification: Notification) {
-        self.lbNotification.text = notification.content
+        var attrStr = try! NSAttributedString(
+            data: notification.content.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        
+//        self.lbNotification.text = notification.content
+        self.lbNotification.attributedText = attrStr
     }
 }

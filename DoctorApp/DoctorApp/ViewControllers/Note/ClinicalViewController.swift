@@ -9,27 +9,37 @@
 import UIKit
 
 class ClinicalViewController: UIViewController {
-
+    var appointmentId: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    func saveNote(string: String) {
+        let file = "\(self.appointmentId)_note.txt"
+        
+        if let dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            let path = NSURL(fileURLWithPath: dir).URLByAppendingPathComponent(file)
+            
+            //writing
+            do {
+                try string.writeToURL(path, atomically: false, encoding: NSUTF8StringEncoding)
+            }
+            catch {/* error handling here */}
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ClinicalViewController: UITextViewDelegate {
+    func textViewDidChange(textView: UITextView) {
+        saveNote(textView.text)
     }
-    */
-
 }

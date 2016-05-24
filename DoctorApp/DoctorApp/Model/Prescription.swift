@@ -16,7 +16,13 @@ class Prescription: NSObject, Mappable {
     var instruction: String = ""
     var medicines: [PrescriptionMedicine] = []
     
-    required init?(_ map: Map) {
+    override required init() {
+        
+    }
+    
+    convenience required init?(_ map: Map) {
+        self.init()
+        
         let ignored: Set<String> = ["note"]
         let required = ["note.text"]
         if !Utils.validField(Prescription.self, map: map, ignoredFields: ignored, required: required) {
@@ -42,7 +48,13 @@ class PrescriptionMedicine: NSObject, Mappable {
     var quantityNight: Double = 0
     var instr: String = ""
     
-    required init?(_ map: Map) {
+    override required init() {
+        
+    }
+    
+    convenience required init?(_ map: Map) {
+        self.init()
+        
         if !Utils.validField(PrescriptionMedicine.self, map: map) {
             return nil
         }

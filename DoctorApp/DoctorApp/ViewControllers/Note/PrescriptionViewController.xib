@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrescriptionViewController" customModule="DoctorApp" customModuleProvider="target">
             <connections>
+                <outlet property="tbPrescription" destination="7qg-J2-NhL" id="Alb-er-GjJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,9 +21,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ey9-XB-g48" userLabel="top">
                     <rect key="frame" x="0.0" y="0.0" width="879.5" height="529.5"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7qg-J2-NhL">
-                            <rect key="frame" x="0.0" y="0.0" width="879.5" height="529.5"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="7qg-J2-NhL">
+                            <rect key="frame" x="0.0" y="0.0" width="879.5" height="485.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="Rfc-1L-HFv"/>
+                                <outlet property="delegate" destination="-1" id="fol-5j-gth"/>
+                            </connections>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,7 +39,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odj-CS-etI" userLabel="foot">
-                    <rect key="frame" x="0.0" y="529.5" width="879.5" height="132.5"/>
+                    <rect key="frame" x="0.0" y="529" width="879.5" height="132.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9P-VE-se1">
                             <rect key="frame" x="687" y="21" width="162.5" height="91"/>
@@ -43,6 +48,9 @@
                             </constraints>
                             <state key="normal" image="submit"/>
                             <state key="selected" image="submit_choose"/>
+                            <connections>
+                                <action selector="submit:" destination="-1" eventType="touchUpInside" id="xXz-mI-yQb"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,10 +69,18 @@
                 <constraint firstAttribute="bottom" secondItem="odj-CS-etI" secondAttribute="bottom" id="Kda-eU-Ib1"/>
                 <constraint firstItem="odj-CS-etI" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="Px3-XU-hWP"/>
                 <constraint firstItem="Ey9-XB-g48" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kFh-vk-BQD"/>
+                <constraint firstItem="odj-CS-etI" firstAttribute="top" secondItem="Ey9-XB-g48" secondAttribute="bottom" id="mKF-GQ-DCL"/>
+                <constraint firstItem="Ey9-XB-g48" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ndR-9s-T00"/>
                 <constraint firstAttribute="trailing" secondItem="odj-CS-etI" secondAttribute="trailing" id="phd-kp-KF4"/>
-                <constraint firstItem="Ey9-XB-g48" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.8" id="tB0-gd-YHB"/>
+                <constraint firstItem="Ey9-XB-g48" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" id="tB0-gd-YHB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="17S-28-6R1"/>
+                    <exclude reference="tB0-gd-YHB"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>

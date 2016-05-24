@@ -10,7 +10,7 @@ import UIKit
 import PKHUD
 
 protocol AppointmentStartViewControllerDelegate: class {
-    func notedClicked(appointment: Appointment)
+    func notedClicked(appointmentId: Int)
 }
 
 class AppointmentStartViewController: UIViewController {
@@ -127,7 +127,7 @@ extension AppointmentStartViewController: UITableViewDataSource, UITableViewDele
     }
     
     func startAppointment(appointment: Appointment) {
-        delegate.notedClicked(appointment)
+        delegate.notedClicked(appointment.id)
     }
 }
 
