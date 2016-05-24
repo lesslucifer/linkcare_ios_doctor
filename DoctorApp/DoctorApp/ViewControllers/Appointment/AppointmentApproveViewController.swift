@@ -34,9 +34,10 @@ class AppointmentApproveViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         AppointmentAPI.getMedicarAppointment(.Approved, success: { (arr) in
-            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            PKHUD.sharedHUD.hide(animated: true, completion: nil)
             self.appointments = arr
             self.tbAppointment.reloadData()
             }, failure: { code, msg, pars in
@@ -128,9 +129,10 @@ extension AppointmentApproveViewController: UITableViewDataSource, UITableViewDe
     }
     
     func startAppointment(appointment: Appointment) {
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         AppointmentAPI.startAppointment(appointment.id, result: { succ, code, msg, pars in
-            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            PKHUD.sharedHUD.hide(animated: true, completion: nil)
             
             if succ {
                 self.delegate.notedClicked(appointment.id)
@@ -149,9 +151,10 @@ extension AppointmentApproveViewController: UITableViewDataSource, UITableViewDe
         alert.addAction(UIAlertAction(title: "Xong", style: UIAlertActionStyle.Default, handler: { _ in
             if let tf = alert.textFields?.first, let reason = tf.text?.emptyCheck {
                 
+                PKHUD.sharedHUD.contentView = PKHUDProgressView()
                 PKHUD.sharedHUD.show()
                 AppointmentAPI.cancelAppointment(appointment.id, reason: reason, result: { succ, _, _, _ in
-                    PKHUD.sharedHUD.hide(animated: false, completion: nil)
+                    PKHUD.sharedHUD.hide(animated: true, completion: nil)
                     
                     if succ {
                         if let index = self.appointments.indexOf({$0.id == appointment.id}) {
