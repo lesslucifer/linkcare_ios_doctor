@@ -9,9 +9,8 @@
 import UIKit
 
 class HomeCell: UITableViewCell {
-    @IBOutlet var lb_time: UILabel!
-    @IBOutlet var lb_noPatient: UILabel!
-    @IBOutlet var lb_noSlots: UILabel!
+    @IBOutlet var lbPatient: UILabel!
+    @IBOutlet var lbSlots: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

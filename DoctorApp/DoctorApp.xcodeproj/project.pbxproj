@@ -111,6 +111,7 @@
 		D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */; };
 		D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9950E261CDDED3B00340EE9 /* NoteViewController.swift */; };
 		D9950E291CDDED7000340EE9 /* NoteStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */; };
+		D9C03FC01CF55F4C00C08A70 /* TimmingSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C03FBF1CF55F4C00C08A70 /* TimmingSlot.swift */; };
 		D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C154611CDF205C0010B989 /* AppDataHelper.swift */; };
 		D9C154641CDF2F570010B989 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C154631CDF2F570010B989 /* RealmHelper.swift */; };
 		E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E61CDCF02F005BE9F0 /* Profile.swift */; };
@@ -238,6 +239,7 @@
 		D9950E241CDDEC4600340EE9 /* BaseTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
 		D9950E261CDDED3B00340EE9 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		D9950E281CDDED7000340EE9 /* NoteStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoteStoryboard.storyboard; sourceTree = "<group>"; };
+		D9C03FBF1CF55F4C00C08A70 /* TimmingSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimmingSlot.swift; sourceTree = "<group>"; };
 		D9C154611CDF205C0010B989 /* AppDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataHelper.swift; sourceTree = "<group>"; };
 		D9C154631CDF2F570010B989 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		E370F8E61CDCF02F005BE9F0 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				3876AB691CD4C0C30087E5AC /* Timings.swift */,
+				D9C03FBF1CF55F4C00C08A70 /* TimmingSlot.swift */,
 				386B7A9F1CD798FE00BC28BA /* Appointment.swift */,
 				38C95A4B1CDBA0C000A6CBA7 /* CacheModel.swift */,
 				38C95A4F1CDBA81C00A6CBA7 /* Prescription.swift */,
@@ -713,6 +716,7 @@
 				D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */,
 				D915C8C01CE1888B00C499CD /* AppointmentWaitingViewController.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
+				D9C03FC01CF55F4C00C08A70 /* TimmingSlot.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */,
 				D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */,

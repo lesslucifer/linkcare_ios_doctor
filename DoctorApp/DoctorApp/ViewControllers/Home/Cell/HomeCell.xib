@@ -138,9 +138,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="lb_noPatient" destination="zs7-mk-NUk" id="DaT-FX-bL1"/>
-                <outlet property="lb_noSlots" destination="1Dv-bw-kQV" id="8LI-kl-uzm"/>
-                <outlet property="lb_time" destination="12Z-u7-O3L" id="B19-jn-U1U"/>
+                <outlet property="lbPatient" destination="zs7-mk-NUk" id="Zj8-KG-omg"/>
+                <outlet property="lbSlots" destination="1Dv-bw-kQV" id="WQt-FY-zLu"/>
             </connections>
             <point key="canvasLocation" x="283" y="343"/>
         </tableViewCell>

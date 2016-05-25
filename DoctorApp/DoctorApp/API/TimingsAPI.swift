@@ -26,3 +26,16 @@ class TimingsAPI {
                             failure: APIHandler.toFailure(finish))
     }
 }
+
+class TimingSlotAPI {
+    class func getMedicarTimingSlot(date: NSDate? = nil, success: APIGenericHandler<TimmingSlot>.Arr, failure: APIHandler.Failure?) {
+        let dateParam = date == nil ? "today" : DateFormat.dateFormatter.stringFromDate(date!)
+        return API.baseAPI(.GET, path: "medicar/timings/slot/?date=\(dateParam)", body: nil,
+                           success: APIHandler.toSuccess("slots", genericHandler: success),
+                           failure: failure)
+    }
+}
+
+
+
+
