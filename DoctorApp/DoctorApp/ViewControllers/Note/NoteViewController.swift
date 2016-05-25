@@ -51,9 +51,16 @@ extension NoteViewController: BaseTabViewControllerDelegate{
         case 1:
             let dentisnation_vc = PrescriptionViewController(nibName: "PrescriptionViewController", bundle: nil)
             dentisnation_vc.appointmentId = appointmentId
+            dentisnation_vc.delegate = self
             return dentisnation_vc
         default:
             return nil
         }
+    }
+}
+
+extension NoteViewController: PrescriptionViewControllerDelegate {
+    func goBack() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }

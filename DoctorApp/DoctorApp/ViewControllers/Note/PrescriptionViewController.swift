@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import PKHUD
+
+protocol PrescriptionViewControllerDelegate {
+    func goBack()
+}
 
 class PrescriptionViewController: UIViewController {
     var appointmentId: Int!
@@ -18,6 +23,8 @@ class PrescriptionViewController: UIViewController {
     private var vdataPicker: DataPicker!
     private var listPickerdata: Array<String>!
     
+    var delegate: PrescriptionViewControllerDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +35,6 @@ class PrescriptionViewController: UIViewController {
     func addPrescription(){
         updateData()
         var newPrescription = PrescriptionMedicine()
-//        let indexPath = NSIndexPath(forRow: listPrescription.count, inSection: 0)
         listPrescription.append(newPrescription)
         
         tbPrescription.reloadData()
@@ -44,11 +50,17 @@ class PrescriptionViewController: UIViewController {
         prescription.note = self.getNote()
         prescription.date = currentDate
         prescription.instruction = ""
-//        prescription.medicines = [listPrescription].map({ ($0.copy() as! PrescriptionMedicine) })
         prescription.medicines = listPrescription
         
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
         PrescriptionAPI.submitPrescription(prescription) { (success, code, msg, params) in
-            print(msg)
+            PKHUD.sharedHUD.hide(animated: true, completion: nil)
+            if success {
+                self.delegate.goBack()
+            } else {
+                Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Kê toa không thành công! Xin vui lòng thử lại.")
+            }
         }
 
         

@@ -138,20 +138,6 @@ extension AddClinicTimingView {
     }
     
     func btnAddNewBlockPressed(sender: AnyObject?){
-        //------------
-//        if screenType == .AddTimeSlot {
-//            let timing = Timing.mt_addNew(mClinicTiming)
-//            ma_Timing.append(timing)
-//            tv_addClinicTiming.insertRowsAtIndexPaths([NSIndexPath(forRow: ma_Timing.count-1, inSection: 0)], withRowAnimation: .Automatic)
-//        }
-        
-//        if clinicId == 0 {
-//            var newTimming = Timings(id: 0)
-//            let timing = Timings.addNew(newTimming)
-//            ma_Timing.append(timing)
-//            tv_addClinicTiming.insertRowsAtIndexPaths([NSIndexPath(forRow: ma_Timing.count-1, inSection: 0)], withRowAnimation: .Automatic)
-//        }
-        
         let newTimming = Timings(type: self.clinicId)
         let timing = Timings.addNew(newTimming)
         ma_Timing.append(timing)
@@ -268,7 +254,7 @@ extension AddClinicTimingView: UITextFieldDelegate {
             idxTypeChange = type
             showTimePicker(textField)
         } else if type == 2 {
-            a_data = ["5", "10", "15", "20", "30", "40", "50", "60", "90"]
+            a_data = ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60"]
             showDataPicker(textField)
         } else if type == 3 {
             a_data = ["1", "2", "3"]
@@ -276,41 +262,11 @@ extension AddClinicTimingView: UITextFieldDelegate {
         }
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        
-        let type = textField.tag % 4
-        
-//        if (type >= 2){
-//            if !string.isNumeric() {
-//                return false
-//            }
-//        }
-        return true
-    }
 }
 
 //MARK: TimePickerDelegate
 extension AddClinicTimingView : TimePickerDelegate{
     func pickerDidSelectTime(time: String){
-//        switch screenType{
-//        case .AddTimeSlot:
-//            if idxTypeChange == 0 {
-//                ma_Timing[idxObjectChange].mt_editTimeFrom(time)
-//                
-//            } else if idxTypeChange == 1 {
-//                ma_Timing[idxObjectChange].mt_editTimeTo(time)
-//            }
-//            break
-//        case .EditTimeSlot:
-//            if idxTypeChange == 0 {
-//                mEditingTiming?.mt_editTimeFrom(time)
-//                
-//            } else if idxTypeChange == 1 {
-//                mEditingTiming?.mt_editTimeTo(time)
-//            }
-//            break
-//        }
-        
         
     }
 }
@@ -332,12 +288,3 @@ extension AddClinicTimingView{
     }
 }
 
-//extension Array{
-//    mutating func removeValue (value: String){
-//        for (var i = 0 ; i < self.count ; i++){
-//            if self[i] as! String == value{
-//                 self.removeAtIndex(i)
-//            }
-//        }
-//    }
-//}
