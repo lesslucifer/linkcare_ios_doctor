@@ -16,8 +16,9 @@ enum AddClinicTimingType {
 }
 
 protocol AddClinicTimingViewDelegate {
-    func addClinicTimingViewDidConfirm()
+    func editClinicTimingViewDidConfirm()
     func addClinicTimingViewDidClose()
+    func addClinicTimingViewDidConfirm(listTimming: Array<Timings>?)
 }
 
 class AddClinicTimingView: UIView {
@@ -25,16 +26,12 @@ class AddClinicTimingView: UIView {
     @IBOutlet var lb_clinicName: UILabel!
     @IBOutlet private var tv_addClinicTiming: UITableView!
     @IBOutlet var view: SpringView!
-    //--------
-//    @IBOutlet var a_repeatDateButtons: Array<UIButton>!
-    //---
+    
     var delegate: AddClinicTimingViewDelegate!
-
     var ma_Timing = Array<Timings>()
+    var listTimming: Array<Timings>?
     var mEditingTiming: Timings?
     var clinicId: Int = 0
-//    var repeatDates = [String]()
-    //------
     var screenType = AddClinicTimingType.AddTimeSlot
     
     @IBOutlet private var v_timePicker: TimePicker!
@@ -68,10 +65,11 @@ class AddClinicTimingView: UIView {
         v_timePicker = TimePicker(frame: CGRectMake(0, UIScreen.mainScreen().bounds.height, UIScreen.mainScreen().bounds.width, 300))
     }
     
-    convenience init(type: AddClinicTimingType, clinicId: Int, frame: CGRect){
+    convenience init(type: AddClinicTimingType, clinicId: Int, frame: CGRect, listTimming: Array<Timings>?){
         self.init(frame: frame)
         screenType = type
         self.clinicId = clinicId
+        self.listTimming = listTimming
     }
     
     convenience init(type: AddClinicTimingType, timing: Timings, clinicId: Int, frame: CGRect){
@@ -110,7 +108,7 @@ extension AddClinicTimingView {
             } else {
                 mEditingTiming?.editTimeFrom(beginTime)
                 mEditingTiming?.lengthTime(lengthTime)
-                self.delegate.addClinicTimingViewDidConfirm()
+                self.delegate.editClinicTimingViewDidConfirm()
             }
         } else {
             for (var i = 0 ; i < ma_Timing.count ; i += 1){
@@ -129,9 +127,12 @@ extension AddClinicTimingView {
                     ma_Timing[i].editTimeFrom(beginTime)
                     ma_Timing[i].lengthTime(lengthTime)
                     ma_Timing[i].addType(self.clinicId)
-                    self.delegate.addClinicTimingViewDidConfirm()
+                    
+                    self.listTimming?.append(ma_Timing[i])
                 }
             }
+            
+            self.delegate.addClinicTimingViewDidConfirm(self.listTimming)
             
         }
         

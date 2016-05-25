@@ -22,8 +22,25 @@ class PrescriptionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setLayout()
     }
     
-//    func configure() {
-//    }
+    func setLayout() {
+        let numberToolbar = UIToolbar(frame: CGRectMake(0, 0, self.frame.size.width, 50))
+        numberToolbar.barStyle = UIBarStyle.Default
+        
+        numberToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "dismissKeyboard")]
+        
+        numberToolbar.sizeToFit()
+        
+        tfQuantityTotal.inputAccessoryView = numberToolbar
+    }
+    
+    func dismissKeyboard() {
+        tfQuantityTotal.endEditing(true)
+    }
 }

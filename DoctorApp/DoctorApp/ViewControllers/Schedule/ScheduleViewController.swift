@@ -17,14 +17,13 @@ enum DefineClinic{
 }
 
 class ScheduleViewController: BaseMenuViewController {
-    var listTimmings: Array<Timings>?
+    var listTimmings: Array<Timings> = []
     var timmingHospitalList: Array<Timings> = []
     var timmingHomeList: Array<Timings> = []
 
     @IBOutlet private var tv_clinicTiming: UITableView!
     @IBOutlet var v_popupOverlay: UIView!
     @IBOutlet var btn_defTimeSlot: UIButton!
-    @IBOutlet var lb_messageTap: UILabel!
     //---
     private var v_addClinicTiming: AddClinicTimingView!
 
@@ -68,16 +67,16 @@ extension ScheduleViewController {
     }
     
     func uploadTimming() {
-        //listTimmings
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
-        TimingsAPI.setTimings(self.listTimmings!) { (success, code, msg, params) in
+        TimingsAPI.setTimings(self.listTimmings) { (success, code, msg, params) in
             PKHUD.sharedHUD.hide(animated: true, completion: nil)
-            
             if success {
                 print(msg)
+                self.reloadTableData()
             } else {
                 Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Đặt lịch không thành công! Xin vui lòng thử lại.")
+                self.reloadData()
             }
         }
     }
@@ -92,7 +91,7 @@ extension ScheduleViewController {
     func getTime() {
         self.timmingHospitalList = []
         self.timmingHomeList = []
-        for tmpTimmings:Timings in listTimmings! {
+        for tmpTimmings:Timings in listTimmings {
             if tmpTimmings.type == 0 {
                 self.timmingHospitalList.append(tmpTimmings)
             } else{
@@ -133,29 +132,17 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        let clinic = ma_clinicTimings![indexPath.row]
-//        getArrayTimingTempForClinic(clinic)
-//        let max = maxNumTimingForArrayTemp(ma_timingTemps!)
         var height = 0
         if indexPath.row == 0 {
             height = 35 * (self.timmingHospitalList.count + 1)
         } else {
             height = 35 * (self.timmingHomeList.count + 1)
         }
-        
-        
-        //-------------
-        
+
         switch tapAction{
         case .TimeSlot:
-//            if (timmingHospitalList.count > 0){
-//                height += 35
-//            }
             break
         case .WalkingSlot:
-//            if (clinic.mct_timings.count > 0){
-//                height += 35
-//            }
             height = height + 35
             break
         default:
@@ -218,7 +205,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
     func showAddClinicTimingView(clinicId: Int) {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let frame = CGRectMake(0, 0, screenSize.width * 0.9, screenSize.height/3*2)
-        v_addClinicTiming = AddClinicTimingView(type: .AddTimeSlot, clinicId: clinicId, frame: frame)
+        v_addClinicTiming = AddClinicTimingView(type: .AddTimeSlot, clinicId: clinicId, frame: frame, listTimming: self.listTimmings)
         v_addClinicTiming.delegate = self
         v_addClinicTiming.center = CGPointMake(screenSize.width/2, screenSize.height/2)
         v_addClinicTiming.view.applyShadow()
@@ -255,9 +242,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         v_addClinicTiming.view.animate()
     }
     
-    func hideAddClinicTimingView() {
-        self.reloadData()
-        
+    func hideClinicTimingView() {
         animateOverlayHide()
         v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeOut.rawValue
         v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
@@ -267,28 +252,31 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         }
     }
     
-    func addClinicTimingViewDidConfirm() {
+    func editClinicTimingViewDidConfirm() {
         //hide view
-        animateOverlayHide()
-        v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeOut.rawValue
-        v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
-        v_addClinicTiming.view.duration = 0.5
-        v_addClinicTiming.view.animateToNext { () -> () in
-            self.v_addClinicTiming.removeFromSuperview()
-        }
+        hideClinicTimingView()
+
+        tapAction = .Normal
+        btn_defTimeSlot.backgroundColor = MMColor.SkyBlue
         
-        
+        self.uploadTimming()
+    }
+    
+    func addClinicTimingViewDidConfirm(listTimming: Array<Timings>?) {
+        self.listTimmings = []
+        self.listTimmings = listTimming!
+        //hide view
+        hideClinicTimingView()
         
         tapAction = .Normal
         btn_defTimeSlot.backgroundColor = MMColor.SkyBlue
-        self.reloadTableData()
         
         self.uploadTimming()
     }
     
     func addClinicTimingViewDidClose() {
-        
-        hideAddClinicTimingView()
+        self.reloadData()
+        hideClinicTimingView()
     }
 }
 
@@ -323,25 +311,3 @@ extension ScheduleViewController {
         })
     }
 }
-
-//MARK: timing Temp
-
-//extension ScheduleViewController {
-//    func maxNumTimingForArrayTemp(arrTemp: Array<TimingTemp>) -> Int{
-//        var max = 0
-//        for timingTemp in arrTemp{
-//            max = timingTemp.mtt_timingList.count > max ? timingTemp.mtt_timingList.count : max
-//        }
-//        return max
-//    }
-//    
-//    func getArrayTimingTempForClinic (clinic: ClinicTiming) {
-//        ma_timingTemps = []
-//        var arrTiming = Array<Timing>()
-//        for timing in clinic.mct_timings{
-//            arrTiming.append(timing)
-//        }
-//        
-//    }
-//    
-//}

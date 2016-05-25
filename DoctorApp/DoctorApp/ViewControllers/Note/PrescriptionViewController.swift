@@ -88,13 +88,9 @@ class PrescriptionViewController: UIViewController {
     
     
     func deletePrescription(sender: UIButton) {
+        updateData()
         listPrescription.removeAtIndex(sender.tag)
-        print(sender.tag)
-        
-        let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
-        tbPrescription.beginUpdates()
-        tbPrescription.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        tbPrescription.endUpdates()
+        tbPrescription.reloadData()
         
     }
     

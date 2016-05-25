@@ -72,13 +72,5 @@ class AppointmentAPI {
                     failure: failure)
     }
     
-//    
-//    class func getMedicarAppointmentByType(type: Int, date: NSDate? = nil, success: (count: Int) -> Void, failure: APIHandler.Failure?) {
-//        let dateParam = date == nil ? "today" : DateFormat.dateFormatter.stringFromDate(date!)
-//        API.APIGetInt(.GET, path: "/medicar/appointments/\(dateParam)/type/\(type)/count", body: nil,
-//                    success: success,
-//                    failure: failure)
-//    }
-    
     
 }
