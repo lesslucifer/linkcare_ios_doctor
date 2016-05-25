@@ -150,4 +150,35 @@ public class API: NSObject {
                        path: String, success: APIHandler.Success?) {
         self.baseAPI(method, path: path, body: nil, success: success, failure: nil)
     }
+    
+    class func APIGetInt(method: APIMethod,
+                       path: String, body: APIData?, success: (count: Int) -> Void, failure: APIHandler.Failure?) {
+        Alamofire.request(method, url(path), parameters: body?.dictionaryObject, encoding: ParameterEncoding.JSON, headers: headers())
+            .responseJSON { resp in
+                switch resp.result {
+                case .Success(let respData):
+                    let data = APIData(respData)
+                    if let status = data["status"].bool {
+                        if status == false {
+                            let err = data["error"]
+                            let msg = err["msg"].safeString
+                            let code = err["code"].safeInt
+                            let params = err["params"].safeArray({$0.safeString})
+                            debugPrint("Error -- Code: \(code) -- Msg: \(msg) -- Pars: \(params)")
+                            failure?(code: code, msg: msg, params: params)
+                        }
+                        else {
+                            let dataValue = data["data"].dictionaryValue
+                            let countValue = dataValue["count"]?.intValue
+                            success(count: countValue!)
+                        }
+                    }
+                    break
+                case .Failure(let error):
+                    debugPrint(error)
+                    failure?(code: error.code, msg: error.localizedDescription, params: [])
+                    break
+                }
+        }
+    }
 }

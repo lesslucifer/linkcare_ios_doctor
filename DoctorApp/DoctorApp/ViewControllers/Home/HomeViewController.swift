@@ -19,9 +19,11 @@ class HomeViewController: BaseMenuViewController {
     @IBOutlet weak var lb_time: UILabel!
 
     var profile = UserProfile()
-    var listMedicar:[CacheModel] = []
     var listHospitalTimmingSlot:[TimmingSlot] = []
     var listHomeTimmingSlot:[TimmingSlot] = []
+    var patientHospital = AppointmentType()
+    var patientHome = AppointmentType()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,55 +32,18 @@ class HomeViewController: BaseMenuViewController {
         setupNavigationBar()
         updateTime()
         configureTableView()
-        
-        loadData()
-        
-        loadMedicarAppointment()
-        loadMedicarTimmingSlot()
-    }
 
-    func loadData() {
-        ProfileAPI.getUserProfile({ (obj) in
-            print(obj)
-            self.profile = obj!
-            
-            self.setupLayout()
-        }) { (code, msg, params) in
-            
-        }
-    }
-    
-    func loadMedicarAppointment(){
-        let date = NSDate()
-        
-        AppointmentAPI.getMedicarAppointments(date, success: { (arr) in
-            self.listMedicar = arr
-            self.tbHome.reloadData()
-            self.tbHospital.reloadData()
-            }, failure: { code, msg, pars in
-                self.listMedicar = []
-                self.tbHome.reloadData()
-                self.tbHospital.reloadData()
-        })
-    }
-    
-    func loadMedicarTimmingSlot() {
-        let date = NSDate()
-        
-        TimingSlotAPI.getMedicarTimingSlot(date, success: { (arr) in
-            self.listHospitalTimmingSlot = arr.filter({ $0.type == 0})
-            self.listHomeTimmingSlot = arr.filter({ $0.type == 1})
-            self.tbHome.reloadData()
-            self.tbHospital.reloadData()
-        }, failure: { code, msg, pars in
-            self.listHospitalTimmingSlot = []
-            self.tbHome.reloadData()
-            self.tbHospital.reloadData()
-        })
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        loadProfileData()
+        
+        loadMedicarTimmingSlot()
+        
+        loadPatientHospital(0)
+        loadPatientHospital(1)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -98,6 +63,54 @@ class HomeViewController: BaseMenuViewController {
         super.viewDidLayoutSubviews()
     }
 }
+
+//MARK: Load data
+extension HomeViewController {
+    func loadProfileData() {
+        ProfileAPI.getUserProfile({ (obj) in
+            print(obj)
+            self.profile = obj!
+            
+            self.setupLayout()
+        }) { (code, msg, params) in
+            
+        }
+    }
+    
+    func loadMedicarTimmingSlot() {
+        let date = NSDate()
+        
+        TimingSlotAPI.getMedicarTimingSlot(date, success: { (arr) in
+            self.listHospitalTimmingSlot = arr.filter({ $0.type == 0})
+            self.listHomeTimmingSlot = arr.filter({ $0.type == 1})
+            self.tbHome.reloadData()
+            self.tbHospital.reloadData()
+            }, failure: { code, msg, pars in
+                self.listHospitalTimmingSlot = []
+                self.tbHome.reloadData()
+                self.tbHospital.reloadData()
+        })
+    }
+    
+    func loadPatientHospital(type: Int) {
+        let date = NSDate()
+        
+        AppointmentAPI.getMedicarAppointmentByType(type, date: date, success: { (obj) in
+            if type == 0 {
+                self.patientHospital = obj!
+                self.tbHospital.reloadData()
+            } else if type == 1 {
+                self.patientHome = obj!
+                self.tbHospital.reloadData()
+            }
+        }) { (code, msg, params) in
+            print(msg)
+        }
+        
+    }
+    
+}
+
 //MARK: Set Layout
 extension HomeViewController{
     func setupLayout(){
@@ -135,12 +148,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if tableView == tbHospital {
             let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell", forIndexPath: indexPath) as! HomeCell
-            cell.lbPatient.text = "\(self.listMedicar.count)"
+            cell.lbPatient.text = "\(self.patientHospital.count)"
             cell.lbSlots.text = "\(self.listHospitalTimmingSlot.count)"
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell", forIndexPath: indexPath) as! HomeCell
-            cell.lbPatient.text = "\(self.listMedicar.count)"
+            cell.lbPatient.text = "\(self.patientHome.count)"
             cell.lbSlots.text = "\(self.listHomeTimmingSlot.count)"
             return cell
         }
