@@ -98,6 +98,8 @@ extension ScheduleViewController {
                 self.timmingHomeList.append(tmpTimmings)
             }
         }
+        self.timmingHospitalList = self.timmingHospitalList.sort({ $0.beginTime < $1.beginTime})
+        self.timmingHomeList = self.timmingHomeList.sort({ $0.beginTime < $1.beginTime})
     }
 }
 
@@ -106,10 +108,10 @@ extension ScheduleViewController {
     @IBAction func AddTimeClinicTapped(sender: UIButton) {
         if tapAction != .TimeSlot {
             tapAction = .TimeSlot
-            sender.backgroundColor = MMColor.DeepBlue
+            sender.backgroundColor = Color.DeepBlue
         } else {
             tapAction = .Normal
-            sender.backgroundColor = MMColor.SkyBlue
+            sender.backgroundColor = Color.SkyBlue
         }
         self.tv_clinicTiming.reloadData()
     }
@@ -257,7 +259,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         hideClinicTimingView()
 
         tapAction = .Normal
-        btn_defTimeSlot.backgroundColor = MMColor.SkyBlue
+        btn_defTimeSlot.backgroundColor = Color.SkyBlue
         
         self.uploadTimming()
     }
@@ -269,7 +271,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         hideClinicTimingView()
         
         tapAction = .Normal
-        btn_defTimeSlot.backgroundColor = MMColor.SkyBlue
+        btn_defTimeSlot.backgroundColor = Color.SkyBlue
         
         self.uploadTimming()
     }

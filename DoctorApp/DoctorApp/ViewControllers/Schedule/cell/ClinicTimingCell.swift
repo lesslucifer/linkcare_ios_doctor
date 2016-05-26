@@ -55,7 +55,7 @@ extension ClinicTimingCell {
             //-------------
             button.setTitle("\(Utils.converTimetoString(timing.beginTime)) - \(Utils.converTimetoString(timing.endTime))", forState: UIControlState.Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue", size: 10)
-            button.backgroundColor = Utils.UIColorFromRGB(red: 243, green: 101, blue: 35)
+            button.backgroundColor = Color.AppColor
             
             button.tag = timing.id
             
@@ -69,22 +69,6 @@ extension ClinicTimingCell {
             
             currentView.addSubview(button)
         }
-        
-        /*
-        let frame = CGRect(x: 0, y: CGFloat(0 * 35), width: currentView.frame.size.width, height: 34)
-        let button = UIButton(frame: frame)
-        //-------------
-        button.setTitle("9:00 - 10:00", forState: UIControlState.Normal)
-        button.backgroundColor = Utils.UIColorFromRGB(red: 243, green: 101, blue: 35)
-        
-        if(status == DefineClinic.TimeSlot){
-            button.addTarget(self, action: #selector(ClinicTimingCell.showTimingClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        }else{
-            button.removeTarget(self, action: nil, forControlEvents: UIControlEvents.AllEvents)
-        }
-        
-        currentView.addSubview(button)
-        */
         
         if (status == DefineClinic.TimeSlot){
             let frame = CGRect(x: 0, y: CGFloat(timingTemp.count * 35), width: currentView.frame.size.width, height: 35)

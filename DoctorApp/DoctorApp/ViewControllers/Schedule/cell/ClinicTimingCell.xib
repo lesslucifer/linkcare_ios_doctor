@@ -253,6 +253,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon-add-cell" width="35" height="35"/>
+        <image name="icon-add-cell" width="66" height="67"/>
     </resources>
 </document>

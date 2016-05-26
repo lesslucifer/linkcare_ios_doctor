@@ -27,10 +27,10 @@
                         <rect key="frame" x="1" y="0.0" width="898" height="99.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26e-O5-u2Q">
-                                <rect key="frame" x="0.0" y="0.0" width="179" height="99.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="176" height="99.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7: 00 AM 01.02.2016" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-u7-O3L">
-                                        <rect key="frame" x="12" y="11" width="162" height="51.5"/>
+                                        <rect key="frame" x="12" y="11" width="159" height="44"/>
                                         <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -50,10 +50,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4C-mY-czt">
-                                <rect key="frame" x="179" y="0.0" width="449" height="99.5"/>
+                                <rect key="frame" x="176" y="0.0" width="450" height="99.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Thị X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXA-O1-Oif">
-                                        <rect key="frame" x="0.0" y="11" width="441" height="26"/>
+                                        <rect key="frame" x="0.0" y="11" width="442" height="22"/>
                                         <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -73,10 +73,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAX-vP-p5U">
-                                <rect key="frame" x="628" y="0.0" width="180" height="99.5"/>
+                                <rect key="frame" x="626" y="0.0" width="180" height="99.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nữ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl9-DW-TQW">
-                                        <rect key="frame" x="0.0" y="11" width="172" height="26"/>
+                                        <rect key="frame" x="0.0" y="11" width="172" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="qwJ-j1-xTe"/>
                                         </constraints>
@@ -104,10 +104,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Px-Tu-2mt">
-                                <rect key="frame" x="808" y="0.0" width="90" height="99.5"/>
+                                <rect key="frame" x="806" y="0.0" width="92" height="99.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw2-cd-VNr">
-                                        <rect key="frame" x="0.0" y="11" width="82" height="26"/>
+                                        <rect key="frame" x="0.0" y="11" width="84" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="XNY-YU-NVW"/>
                                         </constraints>
@@ -142,14 +142,14 @@
                             <constraint firstAttribute="trailing" secondItem="0Px-Tu-2mt" secondAttribute="trailing" id="Bqs-bb-FH2"/>
                             <constraint firstAttribute="bottom" secondItem="y4C-mY-czt" secondAttribute="bottom" id="Fbf-uJ-Qa4"/>
                             <constraint firstAttribute="bottom" secondItem="0Px-Tu-2mt" secondAttribute="bottom" id="HHI-EQ-OUo"/>
-                            <constraint firstItem="y4C-mY-czt" firstAttribute="width" secondItem="OaA-ZM-K3f" secondAttribute="width" multiplier="1/2" id="JCV-zz-t6R"/>
-                            <constraint firstItem="BAX-vP-p5U" firstAttribute="width" secondItem="OaA-ZM-K3f" secondAttribute="width" multiplier="1/5" id="LIl-cq-xf0"/>
+                            <constraint firstItem="y4C-mY-czt" firstAttribute="width" secondItem="OaA-ZM-K3f" secondAttribute="width" multiplier="1/2" constant="1" id="JCV-zz-t6R"/>
+                            <constraint firstItem="BAX-vP-p5U" firstAttribute="width" secondItem="OaA-ZM-K3f" secondAttribute="width" multiplier="1/5" constant="1" id="LIl-cq-xf0"/>
                             <constraint firstItem="y4C-mY-czt" firstAttribute="top" secondItem="OaA-ZM-K3f" secondAttribute="top" id="Ri8-jx-TaJ"/>
                             <constraint firstItem="0Px-Tu-2mt" firstAttribute="leading" secondItem="y4C-mY-czt" secondAttribute="trailing" id="Sng-5u-6T2"/>
                             <constraint firstAttribute="bottom" secondItem="BAX-vP-p5U" secondAttribute="bottom" id="VQS-Cg-g3N"/>
                             <constraint firstItem="26e-O5-u2Q" firstAttribute="leading" secondItem="OaA-ZM-K3f" secondAttribute="leading" id="Xd5-Ue-1Qd"/>
                             <constraint firstItem="26e-O5-u2Q" firstAttribute="top" secondItem="OaA-ZM-K3f" secondAttribute="top" id="YGf-L1-i4H"/>
-                            <constraint firstItem="0Px-Tu-2mt" firstAttribute="width" secondItem="OaA-ZM-K3f" secondAttribute="width" multiplier="1/10" id="a1u-ek-8Vl"/>
+                            <constraint firstItem="0Px-Tu-2mt" firstAttribute="width" secondItem="OaA-ZM-K3f" secondAttribute="width" multiplier="1/10" constant="2" id="a1u-ek-8Vl"/>
                             <constraint firstItem="y4C-mY-czt" firstAttribute="leading" secondItem="26e-O5-u2Q" secondAttribute="trailing" id="jcg-oT-DRQ"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="900" constant="100" id="o9H-XE-6a0"/>
                             <constraint firstAttribute="bottom" secondItem="26e-O5-u2Q" secondAttribute="bottom" id="pni-cg-eRL"/>

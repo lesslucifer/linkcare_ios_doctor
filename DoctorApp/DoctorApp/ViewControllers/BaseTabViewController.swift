@@ -73,8 +73,8 @@ extension BaseTabViewController{
             let btn = a_tabBarButtons[i]
             
             if (i == selectedTabIndex) {
-                btn.backgroundColor = UIColor.yellowColor()
-                btn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+                btn.backgroundColor = UIColor.whiteColor()
+                btn.setTitleColor(Color.AppColor, forState: .Normal)
             }
             else {
                 btn.backgroundColor = UIColor.whiteColor()
