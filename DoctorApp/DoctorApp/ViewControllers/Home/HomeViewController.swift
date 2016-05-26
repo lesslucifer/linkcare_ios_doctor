@@ -16,21 +16,20 @@ class HomeViewController: BaseMenuViewController {
     @IBOutlet var vtop: UIView!
     @IBOutlet var v_ailmentContainer: BorderedView!
     @IBOutlet var img_doctor: UIImageView!
-    @IBOutlet weak var lb_time: UILabel!
+    @IBOutlet weak var lbTime: UILabel!
 
     var profile = UserProfile()
     var listHospitalTimmingSlot:[TimmingSlot] = []
     var listHomeTimmingSlot:[TimmingSlot] = []
     var patientHospital = AppointmentType()
     var patientHome = AppointmentType()
-    
+    var tempTimer: NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
         setupNavigationBar()
-        updateTime()
         configureTableView()
 
     }
@@ -44,10 +43,14 @@ class HomeViewController: BaseMenuViewController {
         
         loadPatientHospital(0)
         loadPatientHospital(1)
+        
+        self.tempTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(HomeViewController.updateTime), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        self.tempTimer.invalidate()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -130,7 +133,7 @@ extension HomeViewController {
         let formatter = DateFormat.dateTimeFullFormatter
         
         let text = "\(formatter.stringFromDate(time))"
-        self.lb_time.text = text
+        self.lbTime.text = text
     }
 }
 

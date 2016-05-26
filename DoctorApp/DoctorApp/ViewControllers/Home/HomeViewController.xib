@@ -18,7 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="DoctorApp" customModuleProvider="target">
             <connections>
                 <outlet property="img_doctor" destination="uNb-IJ-Bf2" id="gNw-uh-XkG"/>
-                <outlet property="lb_time" destination="2xJ-o8-gqA" id="qKD-GI-qDw"/>
+                <outlet property="lbTime" destination="2xJ-o8-gqA" id="PGD-EI-PfR"/>
                 <outlet property="lb_welcome" destination="NPl-SR-S4b" id="Kpi-Qr-F8o"/>
                 <outlet property="sv_container" destination="07d-c9-Dwy" id="BQ2-i0-2dt"/>
                 <outlet property="tbHome" destination="HmO-oM-nuf" id="PP4-Lu-81j"/>
@@ -110,7 +110,7 @@
                                                             <color key="textColor" red="0.33333333329999998" green="0.63137254899999995" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7: 00 AM ,17.04.2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xJ-o8-gqA">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xJ-o8-gqA">
                                                             <rect key="frame" x="138" y="56" width="925" height="41"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="19"/>
                                                             <color key="textColor" red="0.33333333329999998" green="0.63137254899999995" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
