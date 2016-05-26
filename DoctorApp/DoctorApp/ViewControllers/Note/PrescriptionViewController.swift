@@ -43,6 +43,11 @@ class PrescriptionViewController: UIViewController {
     @IBAction func submit(sender: UIButton) {
         updateData()
         
+        if !self.validateInput() {
+            Utils.showOKAlertPanel(self, title: "Rất tiếc...", msg: "Vui lòng điền các trường còn thiếu (tên thuốc, số lượng thuốc)")
+            return
+        }
+        
         let currentDate = NSDate()
         
         var prescription = Prescription()
@@ -62,8 +67,6 @@ class PrescriptionViewController: UIViewController {
                 Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Kê toa không thành công! Xin vui lòng thử lại.")
             }
         }
-
-        
     }
     
     
@@ -73,15 +76,15 @@ class PrescriptionViewController: UIViewController {
         for (var i = 0; i < sum; i += 1){
             let indexPath = NSIndexPath(forRow: i, inSection: 0)
             
-            let selectedCell = tbPrescription.cellForRowAtIndexPath(indexPath) as? PrescriptionCell
+            let selectedCell = tbPrescription.cellForRowAtIndexPath(indexPath) as! PrescriptionCell
             let medicine = PrescriptionMedicine()
-            medicine.name = selectedCell!.tfName.text!
-            medicine.quantityTotal = Int(selectedCell!.tfQuantityTotal.text!)!
-            medicine.quantityMorning = Double(selectedCell!.tfquantityMorning.text!)!
-            medicine.quantityNoon = Double(selectedCell!.tfquantityNoon.text!)!
-            medicine.quantityAfternoon = Double(selectedCell!.tfquantityAfterNoon.text!)!
-            medicine.quantityNight = Double(selectedCell!.tfquantityNight.text!)!
-            medicine.instr = selectedCell!.tfName.text!
+            medicine.name = selectedCell.tfName.text!
+            medicine.quantityTotal = selectedCell.tfQuantityTotal.text != "" ? Int(selectedCell.tfQuantityTotal.text!)! : 0
+            medicine.quantityMorning = selectedCell.tfquantityMorning.text != "" ? Double(selectedCell.tfquantityMorning.text!)! : 0
+            medicine.quantityNoon = selectedCell.tfquantityNoon.text != "" ? Double(selectedCell.tfquantityNoon.text!)! : 0
+            medicine.quantityAfternoon = selectedCell.tfquantityAfterNoon.text != "" ? Double(selectedCell.tfquantityAfterNoon.text!)! : 0
+            medicine.quantityNight = selectedCell.tfquantityNight.text != "" ? Double(selectedCell.tfquantityNight.text!)! : 0
+            medicine.instr = selectedCell.tfName.text!
             listPrescription.append(medicine)
         }
     }
@@ -116,6 +119,22 @@ class PrescriptionViewController: UIViewController {
         }
         
         return text
+    }
+    
+    func validateInput() -> Bool {
+        var isValidate = true
+        for prescription in listPrescription {
+            if prescription.quantityTotal == 0 {
+                isValidate = false
+                break
+            }
+            if prescription.name == "" {
+                isValidate = false
+                break
+            }
+        }
+        
+        return isValidate
     }
     
 }
@@ -156,15 +175,15 @@ extension PrescriptionViewController: UITableViewDataSource, UITableViewDelegate
             cell.tfquantityNoon.delegate = self
             cell.tfquantityMorning.delegate = self
             cell.tfquantityNight.delegate = self
-            
+
             cell.tfInstr.tag = 1
             cell.tfInstr.delegate = self
             
-            cell.tfQuantityTotal.text = "\(prescription.quantityTotal)"
-            cell.tfquantityAfterNoon.text = "\(prescription.quantityAfternoon)"
-            cell.tfquantityNoon.text = "\(prescription.quantityNoon)"
-            cell.tfquantityMorning.text = "\(prescription.quantityMorning)"
-            cell.tfquantityNight.text = "\(prescription.quantityNight)"
+            cell.tfQuantityTotal.text = prescription.quantityTotal != 0 ? "\(prescription.quantityTotal)" : ""
+            cell.tfquantityAfterNoon.text = prescription.quantityAfternoon != 0 ? "\(prescription.quantityAfternoon)" : ""
+            cell.tfquantityNoon.text = prescription.quantityNoon != 0 ? "\(prescription.quantityNoon)" : ""
+            cell.tfquantityMorning.text = prescription.quantityMorning != 0 ? "\(prescription.quantityMorning)" : ""
+            cell.tfquantityNight.text = prescription.quantityNight != 0 ? "\(prescription.quantityNight)" : ""
             cell.tfInstr.text = "\(prescription.instr)"
             cell.tfName.text = "\(prescription.name)"
             

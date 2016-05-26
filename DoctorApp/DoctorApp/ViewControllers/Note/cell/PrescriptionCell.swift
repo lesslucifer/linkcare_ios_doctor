@@ -33,7 +33,7 @@ class PrescriptionCell: UITableViewCell {
         numberToolbar.items = [
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "dismissKeyboard")]
+            UIBarButtonItem(title: "Xong", style: UIBarButtonItemStyle.Plain, target: self, action: "dismissKeyboard")]
         
         numberToolbar.sizeToFit()
         
@@ -43,4 +43,15 @@ class PrescriptionCell: UITableViewCell {
     func dismissKeyboard() {
         tfQuantityTotal.endEditing(true)
     }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if textField == tfQuantityTotal {
+            let newCharacters = NSCharacterSet(charactersInString: string)
+            return NSCharacterSet.decimalDigitCharacterSet().isSupersetOfSet(newCharacters)
+        }
+        
+        return true
+    }
+    
+    
 }
