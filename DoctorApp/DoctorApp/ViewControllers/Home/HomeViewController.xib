@@ -34,14 +34,14 @@
             <rect key="frame" x="0.0" y="0.0" width="1334" height="750"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IkW-TU-xJV" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="97" width="1334" height="653"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkW-TU-xJV" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="98" width="1334" height="652"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07d-c9-Dwy">
-                            <rect key="frame" x="30" y="10" width="1274" height="643"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07d-c9-Dwy">
+                            <rect key="frame" x="30" y="10" width="1274" height="642"/>
                             <subviews>
-                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tWX-iN-UOd" userLabel="Content scroll">
-                                    <rect key="frame" x="0.0" y="0.0" width="1274" height="643"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWX-iN-UOd" userLabel="Content scroll">
+                                    <rect key="frame" x="0.0" y="0.0" width="1274" height="642"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LsY-RG-Ehh">
                                             <rect key="frame" x="0.0" y="0.0" width="1274" height="122"/>
@@ -58,8 +58,8 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aj9-Q9-gse">
                                                                     <rect key="frame" x="65" y="22" width="30" height="30"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKx-IM-DoD">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKx-IM-DoD">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
@@ -168,14 +168,14 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDo-cJ-2Oz">
-                                            <rect key="frame" x="0.0" y="163" width="1274" height="480"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDo-cJ-2Oz">
+                                            <rect key="frame" x="0.0" y="163" width="1274" height="479"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIB-YL-GPh" customClass="BorderedView" customModule="DoctorApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1274" height="48"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1274" height="53"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Phòng khám" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k40-W4-J8k">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1274" height="48"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="1274" height="53"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="19"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -195,22 +195,40 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-W1-TSQ">
-                                                    <rect key="frame" x="0.0" y="48" width="1274" height="72"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcV-hv-vnH" customClass="BorderedView" customModule="DoctorApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="53" width="1274" height="62"/>
+                                                    <subviews>
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-W1-TSQ">
+                                                            <rect key="frame" x="0.0" y="0.5" width="1274" height="62"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="72" id="FZg-d1-ePx"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="FZg-d1-ePx"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="-1" id="iw3-0l-mYR"/>
+                                                                <outlet property="delegate" destination="-1" id="1WY-1i-xLx"/>
+                                                            </connections>
+                                                        </tableView>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="FZg-d1-ePx"/>
+                                                        <constraint firstAttribute="height" constant="62" id="94x-1X-c3p"/>
+                                                        <constraint firstAttribute="bottom" secondItem="fhn-W1-TSQ" secondAttribute="bottom" id="CZK-th-aXP"/>
+                                                        <constraint firstItem="fhn-W1-TSQ" firstAttribute="top" secondItem="AcV-hv-vnH" secondAttribute="top" id="f4Y-tU-uHi"/>
+                                                        <constraint firstItem="fhn-W1-TSQ" firstAttribute="leading" secondItem="AcV-hv-vnH" secondAttribute="leading" id="oSW-7c-OMj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fhn-W1-TSQ" secondAttribute="trailing" id="ude-U1-4RY"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="-1" id="iw3-0l-mYR"/>
-                                                        <outlet property="delegate" destination="-1" id="1WY-1i-xLx"/>
-                                                    </connections>
-                                                </tableView>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y05-J3-8o3" customClass="BorderedView" customModule="DoctorApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="130" width="1274" height="49"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y05-J3-8o3" customClass="BorderedView" customModule="DoctorApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="125" width="1274" height="53"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tại nhà bệnh nhân" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7r-iP-jU1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1274" height="49"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Tại nhà bệnh nhân" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7r-iP-jU1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="1274" height="53"/>
                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="19"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -232,54 +250,59 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="HmO-oM-nuf">
-                                                    <rect key="frame" x="0.0" y="179" width="1274" height="72"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xt8-y4-XHr" customClass="BorderedView" customModule="DoctorApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="178" width="1274" height="62"/>
+                                                    <subviews>
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="HmO-oM-nuf">
+                                                            <rect key="frame" x="0.0" y="0.5" width="1274" height="62"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="102" id="1yT-Jb-Leu"/>
+                                                                <constraint firstAttribute="height" constant="72" id="fMB-Mc-neX"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="1yT-Jb-Leu"/>
+                                                                    <exclude reference="fMB-Mc-neX"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="-1" id="cwx-n1-vnx"/>
+                                                                <outlet property="delegate" destination="-1" id="DPA-L1-sDo"/>
+                                                            </connections>
+                                                        </tableView>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="102" id="1yT-Jb-Leu"/>
-                                                        <constraint firstAttribute="height" constant="72" id="fMB-Mc-neX"/>
+                                                        <constraint firstAttribute="bottom" secondItem="HmO-oM-nuf" secondAttribute="bottom" id="P7h-o3-FCL"/>
+                                                        <constraint firstItem="HmO-oM-nuf" firstAttribute="top" secondItem="Xt8-y4-XHr" secondAttribute="top" id="Sim-V4-KmX"/>
+                                                        <constraint firstAttribute="height" constant="62" id="VrG-hr-vDd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="HmO-oM-nuf" secondAttribute="trailing" id="f7N-Ub-cCQ"/>
+                                                        <constraint firstItem="HmO-oM-nuf" firstAttribute="leading" secondItem="Xt8-y4-XHr" secondAttribute="leading" id="inZ-8O-lCf"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="1yT-Jb-Leu"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="-1" id="cwx-n1-vnx"/>
-                                                        <outlet property="delegate" destination="-1" id="DPA-L1-sDo"/>
-                                                    </connections>
-                                                </tableView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2e-YJ-IDC">
-                                                    <rect key="frame" x="-30" y="-282" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="testapi:" destination="-1" eventType="touchUpInside" id="JS9-ic-gNX"/>
-                                                    </connections>
-                                                </button>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="UIB-YL-GPh" firstAttribute="height" secondItem="EDo-cJ-2Oz" secondAttribute="height" multiplier="1/10" id="7Ze-Oe-0fc"/>
-                                                <constraint firstAttribute="trailing" secondItem="fhn-W1-TSQ" secondAttribute="trailing" id="8o8-Ga-F3o"/>
+                                                <constraint firstItem="AcV-hv-vnH" firstAttribute="top" secondItem="UIB-YL-GPh" secondAttribute="bottom" id="2bP-1z-gWd"/>
+                                                <constraint firstItem="UIB-YL-GPh" firstAttribute="height" secondItem="EDo-cJ-2Oz" secondAttribute="height" multiplier="1/9" id="7Ze-Oe-0fc"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xt8-y4-XHr" secondAttribute="trailing" id="9Hb-7N-Hjg"/>
                                                 <constraint firstItem="UIB-YL-GPh" firstAttribute="top" secondItem="EDo-cJ-2Oz" secondAttribute="top" id="FUC-Wj-gxR"/>
-                                                <constraint firstAttribute="bottom" secondItem="fhn-W1-TSQ" secondAttribute="bottom" id="Rjl-jT-7m1"/>
+                                                <constraint firstItem="AcV-hv-vnH" firstAttribute="leading" secondItem="EDo-cJ-2Oz" secondAttribute="leading" id="T13-TV-4J7"/>
                                                 <constraint firstAttribute="trailing" secondItem="UIB-YL-GPh" secondAttribute="trailing" id="VOL-Gg-0Tg"/>
-                                                <constraint firstAttribute="trailing" secondItem="HmO-oM-nuf" secondAttribute="trailing" id="XcD-s3-eO4"/>
                                                 <constraint firstItem="UIB-YL-GPh" firstAttribute="leading" secondItem="EDo-cJ-2Oz" secondAttribute="leading" id="Yi0-me-jv9"/>
                                                 <constraint firstAttribute="height" constant="200" id="Ypy-gk-nFK"/>
-                                                <constraint firstItem="y05-J3-8o3" firstAttribute="height" secondItem="EDo-cJ-2Oz" secondAttribute="height" multiplier="1/10" id="ZjU-dc-ERI"/>
-                                                <constraint firstItem="HmO-oM-nuf" firstAttribute="top" secondItem="y05-J3-8o3" secondAttribute="bottom" id="cdo-g1-v3u"/>
+                                                <constraint firstItem="y05-J3-8o3" firstAttribute="height" secondItem="EDo-cJ-2Oz" secondAttribute="height" multiplier="1/9" id="ZjU-dc-ERI"/>
+                                                <constraint firstAttribute="trailing" secondItem="AcV-hv-vnH" secondAttribute="trailing" id="bcD-1z-f9u"/>
                                                 <constraint firstAttribute="trailing" secondItem="y05-J3-8o3" secondAttribute="trailing" id="f1g-8X-l3L"/>
                                                 <constraint firstItem="y05-J3-8o3" firstAttribute="leading" secondItem="EDo-cJ-2Oz" secondAttribute="leading" id="fWM-1A-5l8"/>
-                                                <constraint firstItem="HmO-oM-nuf" firstAttribute="leading" secondItem="EDo-cJ-2Oz" secondAttribute="leading" id="lyC-mf-ifi"/>
-                                                <constraint firstItem="fhn-W1-TSQ" firstAttribute="top" secondItem="UIB-YL-GPh" secondAttribute="bottom" id="o6z-c1-Wgg"/>
-                                                <constraint firstItem="y05-J3-8o3" firstAttribute="top" secondItem="fhn-W1-TSQ" secondAttribute="bottom" constant="10" id="tJd-K1-7Zy"/>
-                                                <constraint firstItem="fhn-W1-TSQ" firstAttribute="leading" secondItem="EDo-cJ-2Oz" secondAttribute="leading" id="ymW-qq-uMU"/>
+                                                <constraint firstItem="Xt8-y4-XHr" firstAttribute="leading" secondItem="EDo-cJ-2Oz" secondAttribute="leading" id="hoH-aN-Xqd"/>
+                                                <constraint firstItem="Xt8-y4-XHr" firstAttribute="top" secondItem="y05-J3-8o3" secondAttribute="bottom" id="jhL-zN-3ch"/>
+                                                <constraint firstItem="y05-J3-8o3" firstAttribute="top" secondItem="AcV-hv-vnH" secondAttribute="bottom" constant="10" id="suZ-aj-68j"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Ypy-gk-nFK"/>
-                                                    <exclude reference="Rjl-jT-7m1"/>
                                                 </mask>
                                             </variation>
                                         </view>

@@ -15,13 +15,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="900" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaA-ZM-K3f" customClass="BorderedView" customModule="DoctorApp" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaA-ZM-K3f">
                         <rect key="frame" x="1" y="0.0" width="898" height="69.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Px-Tu-2mt">
                                 <rect key="frame" x="718" y="0.0" width="180" height="69.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slots Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw2-cd-VNr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thời gian trống" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw2-cd-VNr">
                                         <rect key="frame" x="8" y="47.5" width="164" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="XNY-YU-NVW"/>
@@ -95,10 +95,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26e-O5-u2Q">
-                                <rect key="frame" x="0.0" y="0.5" width="539" height="69.5"/>
+                                <rect key="frame" x="0.0" y="0.5" width="539" height="69"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-u7-O3L">
-                                        <rect key="frame" x="15" y="0.0" width="524" height="69.5"/>
+                                        <rect key="frame" x="15" y="0.0" width="524" height="69"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>

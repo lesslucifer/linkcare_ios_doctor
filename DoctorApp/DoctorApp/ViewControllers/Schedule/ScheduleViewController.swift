@@ -51,7 +51,7 @@ class ScheduleViewController: BaseMenuViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        v_navigation.setTitle(" Đặt Lịch Làm Việc")
+        v_navigation.setTitle(" ĐẶT LỊCH LÀM VIỆC")
     }
 }
 
@@ -136,9 +136,11 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height = 0
         if indexPath.row == 0 {
-            height = 35 * (self.timmingHospitalList.count + 1)
+            height = self.timmingHospitalList.count != 0 ? 35 * (self.timmingHospitalList.count + 1) : 70
+//            height = 35 * (self.timmingHospitalList.count + 1)
         } else {
-            height = 35 * (self.timmingHomeList.count + 1)
+            height = self.timmingHomeList.count != 0 ? 35 * (self.timmingHomeList.count + 1) : 70
+//            height = 35 * (self.timmingHomeList.count + 1)
         }
 
         switch tapAction{
@@ -267,6 +269,20 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
     func addClinicTimingViewDidConfirm(listTimming: Array<Timings>?) {
         self.listTimmings = []
         self.listTimmings = listTimming!
+        //hide view
+        hideClinicTimingView()
+        
+        tapAction = .Normal
+        btn_defTimeSlot.backgroundColor = Color.SkyBlue
+        
+        self.uploadTimming()
+    }
+    
+    func deleteClinicTimmingDidConform(timmings: Timings) {
+        
+        RealmHelper.sharedInstance.db_deleteObject(timmings)
+        self.listTimmings = self.listTimmings.filter{ $0 != timmings}
+
         //hide view
         hideClinicTimingView()
         

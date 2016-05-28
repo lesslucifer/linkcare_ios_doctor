@@ -11,6 +11,8 @@ import UIKit
 class NoteViewController: BaseTabViewController {
     
     var appointmentId: Int!
+    @IBOutlet var btnNote: UIButton!
+    @IBOutlet var btnPrescription: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ class NoteViewController: BaseTabViewController {
         super.setupNavigationBar()
         
         v_navigation.addBackButton()
-        v_navigation.setTitle("LỊCH HẸN")
+        v_navigation.setTitle("ĐƠN THUỐC")
     }
 
 }
@@ -40,6 +42,14 @@ extension NoteViewController: BaseTabViewControllerDelegate{
     
     func tabViewDidChanged(index: Int, tab: UIViewController?) {
         tab?.view.endEditing(true)
+        
+        if index == 0 {
+            btnNote.setImage(UIImage(named: "Note"), forState: UIControlState.Normal)
+            btnPrescription.setImage(UIImage(named: "Medicine_unchoose"), forState: UIControlState.Normal)
+        } else if index == 1 {
+            btnNote.setImage(UIImage(named: "Note_unchoose"), forState: UIControlState.Normal)
+            btnPrescription.setImage(UIImage(named: "Medicine"), forState: UIControlState.Normal)
+        }
     }
     
     func createViewControllerForTabButton(btn: UIButton, atIndex index: Int) -> UIViewController? {
