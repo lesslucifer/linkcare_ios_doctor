@@ -11,6 +11,7 @@
 		3817E7891CE4E906006E3B5A /* BaseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7881CE4E906006E3B5A /* BaseCache.swift */; };
 		3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */; };
 		3820F7621CE890B0005BEFA7 /* CancelReasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */; };
+		3846CB3B1CF9459D00A5B3E4 /* ProfileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */; };
 		386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7A9F1CD798FE00BC28BA /* Appointment.swift */; };
 		386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7AA31CD7994700BC28BA /* Reflectable.swift */; };
 		38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38758BAB1CCE710C00AEC3BB /* AppDelegate.swift */; };
@@ -115,7 +116,6 @@
 		D9C03FC21CF5DEEE00C08A70 /* AppointmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C03FC11CF5DEEE00C08A70 /* AppointmentType.swift */; };
 		D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C154611CDF205C0010B989 /* AppDataHelper.swift */; };
 		D9C154641CDF2F570010B989 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C154631CDF2F570010B989 /* RealmHelper.swift */; };
-		E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E61CDCF02F005BE9F0 /* Profile.swift */; };
 		E370F8E91CDCF03D005BE9F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */; };
 		E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */; };
 		E370F8ED1CDCF61F005BE9F0 /* NotificationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */; };
@@ -147,6 +147,7 @@
 		3817E7881CE4E906006E3B5A /* BaseCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCache.swift; sourceTree = "<group>"; };
 		3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
 		3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelReasonViewController.xib; sourceTree = "<group>"; };
+		3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAPI.swift; sourceTree = "<group>"; };
 		386B7A9F1CD798FE00BC28BA /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		386B7AA31CD7994700BC28BA /* Reflectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reflectable.swift; sourceTree = "<group>"; };
 		38758BA81CCE710B00AEC3BB /* DoctorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,7 +245,6 @@
 		D9C03FC11CF5DEEE00C08A70 /* AppointmentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentType.swift; sourceTree = "<group>"; };
 		D9C154611CDF205C0010B989 /* AppDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataHelper.swift; sourceTree = "<group>"; };
 		D9C154631CDF2F570010B989 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
-		E370F8E61CDCF02F005BE9F0 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicarProfile.swift; sourceTree = "<group>"; };
 		E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationAPI.swift; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 				38E61DB61CD72009008D1870 /* AppointmentAPI.swift */,
 				38C95A4D1CDBA69A00A6CBA7 /* PrescriptionAPI.swift */,
 				38B370481CDCE52100B51011 /* BlockVacationAPI.swift */,
-				E370F8E61CDCF02F005BE9F0 /* Profile.swift */,
+				3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */,
 				E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */,
 			);
 			path = API;
@@ -699,7 +699,6 @@
 				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
 				D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
-				E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */,
 				38C8201C1CF08AD300A5095F /* RealmObject+Write.swift in Sources */,
 				38A423231CE63AB0004E2146 /* AppointmentExpandedCell.swift in Sources */,
 				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
@@ -722,6 +721,7 @@
 				D9C03FC01CF55F4C00C08A70 /* TimmingSlot.swift in Sources */,
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */,
+				3846CB3B1CF9459D00A5B3E4 /* ProfileAPI.swift in Sources */,
 				D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */,
 				D9C03FC21CF5DEEE00C08A70 /* AppointmentType.swift in Sources */,
 				D99396891CE2D7F30091DCE3 /* ClinicTimingCell.swift in Sources */,
