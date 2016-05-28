@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class DateFormat: NSObject {
-    static let dateTimeFormatFull = "dd MMMM yyyy          h : mm a"
+    static let dateTimeFormatFull = "h:mm a,dd.MM.yyyy"
     static let dateFormat = "dd-MM-yyyy"
     static let dateTimeFormat = "dd-MM-yyyy hh:mm"
     static let shortTimeFormat = "hh:mm aa"

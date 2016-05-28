@@ -24,7 +24,7 @@
                     <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <items>
                         <navigationItem id="t23-aF-Wsw">
-                            <barButtonItem key="rightBarButtonItem" title="Done" id="It8-vt-x8e">
+                            <barButtonItem key="rightBarButtonItem" title="Xong" id="It8-vt-x8e">
                                 <connections>
                                     <action selector="doneClicked:" destination="-1" id="MEI-ae-ID2"/>
                                 </connections>

@@ -37,9 +37,7 @@ class AddClinicTimingView: UIView {
     @IBOutlet private var v_timePicker: TimePicker!
     private var v_dataPicker: DataPicker!
     private var a_data: Array<String>!
-    //--
-    var idxObjectChange: Int = -1
-    var idxTypeChange: Int = -1
+
     //---
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -99,7 +97,7 @@ extension AddClinicTimingView {
             
             let beginTime = Utils.converStringTimeToInt(cell.tf_timefrom.text!)
             let endTime = Utils.converStringTimeToInt(cell.tf_timeto.text!)
-            var lengthTime = endTime - beginTime
+            let lengthTime = endTime - beginTime
             
 //            lengthTime = lengthTime < 0 ? lengthTime + 60 * 24 : lengthTime
             
@@ -149,6 +147,7 @@ extension AddClinicTimingView {
     
     
     func showTimePicker(textField: UITextField){
+        v_timePicker.datePicker.minuteInterval = 10
         v_timePicker.currentTextField = textField
         textField.inputView = v_timePicker
         v_timePicker.delegate = self
@@ -249,18 +248,6 @@ extension AddClinicTimingView: UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         let index = textField.tag / 4
         let type = textField.tag % 4
-        
-        if (type < 2) {
-            idxObjectChange = index
-            idxTypeChange = type
-            showTimePicker(textField)
-        } else if type == 2 {
-            a_data = ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60"]
-            showDataPicker(textField)
-        } else if type == 3 {
-            a_data = ["1", "2", "3"]
-            showDataPicker(textField)
-        }
     }
     
 }

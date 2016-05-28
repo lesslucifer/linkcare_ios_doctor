@@ -134,6 +134,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
+                        <outlet property="btnNote" destination="3iA-ig-wVF" id="YLC-Pp-eSz"/>
+                        <outlet property="btnPrescription" destination="fvW-2K-Cix" id="ND3-fk-p29"/>
                         <outlet property="v_navigation" destination="aAi-gg-2hL" id="330-Xf-XIG"/>
                         <outlet property="v_placeholder" destination="0I0-JP-NpQ" id="vUb-EC-CRg"/>
                         <outletCollection property="a_tabBarButtons" destination="3iA-ig-wVF" collectionClass="NSMutableArray" id="xI4-Ln-qC7"/>

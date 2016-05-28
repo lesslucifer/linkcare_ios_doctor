@@ -109,9 +109,7 @@ extension HomeViewController {
         }) { (code, msg, params) in
             print(msg)
         }
-        
     }
-    
 }
 
 //MARK: Set Layout

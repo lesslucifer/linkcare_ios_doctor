@@ -148,7 +148,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="70" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBG-wV-4BI">
-                    <rect key="frame" x="0.0" y="148" width="1024" height="487"/>
+                    <rect key="frame" x="0.0" y="148" width="1024" height="535"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Erb-L3-0co"/>
@@ -156,13 +156,13 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBF-hN-D3o">
-                    <rect key="frame" x="35" y="691" width="214" height="47"/>
+                    <rect key="frame" x="35" y="718" width="149" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.67843137254901964" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="47" id="Dgn-vA-c4f"/>
+                        <constraint firstAttribute="height" constant="30" id="Dgn-vA-c4f"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                    <state key="normal" title="ĐẶT LỊCH LÀM VIỆC">
+                    <state key="normal" title="  CHỈNH LỊCH LÀM VIỆC  ">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -170,9 +170,9 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chạm vào '+' để tạo lịch làm việc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDM-A5-Dbe">
-                    <rect key="frame" x="35" y="670" width="216.5" height="16"/>
+                    <rect key="frame" x="35" y="697" width="216.5" height="16"/>
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -194,16 +194,17 @@
                 <constraint firstItem="vbn-ba-wFX" firstAttribute="leading" secondItem="RNV-lc-5dQ" secondAttribute="leading" id="gI2-lN-ICm"/>
                 <constraint firstItem="RNV-lc-5dQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hY8-nK-yQ1"/>
                 <constraint firstItem="hBF-hN-D3o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="iSf-fG-X1T"/>
-                <constraint firstItem="hBF-hN-D3o" firstAttribute="top" secondItem="pBG-wV-4BI" secondAttribute="bottom" constant="56" id="lP5-JF-CER"/>
+                <constraint firstItem="hBF-hN-D3o" firstAttribute="top" secondItem="pBG-wV-4BI" secondAttribute="bottom" constant="35" id="lP5-JF-CER"/>
                 <constraint firstAttribute="bottom" secondItem="WWM-Ec-f1p" secondAttribute="bottom" id="oIP-Qk-6xC"/>
                 <constraint firstItem="WWM-Ec-f1p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oaR-zB-KgP"/>
                 <constraint firstItem="vbn-ba-wFX" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="srQ-1g-VMY"/>
-                <constraint firstAttribute="bottom" secondItem="hBF-hN-D3o" secondAttribute="bottom" constant="30" id="xxh-oW-Z3N"/>
+                <constraint firstAttribute="bottom" secondItem="hBF-hN-D3o" secondAttribute="bottom" constant="20" id="xxh-oW-Z3N"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="KRR-WX-en8"/>
+                    <exclude reference="P09-pB-FK8"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="350" y="207"/>

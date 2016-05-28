@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="MyriadPro-Regular_0.otf">
+            <string>MyriadPro-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -14,9 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pre-V3-caY">
-                        <rect key="frame" x="15" y="11" width="261" height="21"/>
-                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pre-V3-caY">
+                        <rect key="frame" x="15" y="-0.5" width="41" height="44"/>
+                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
                         <color key="textColor" red="0.039215686274509803" green="0.27843137254901962" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -24,6 +29,7 @@
                 <constraints>
                     <constraint firstItem="Pre-V3-caY" firstAttribute="leading" secondItem="Dnm-cY-xhl" secondAttribute="leading" constant="15" id="0NH-Lb-ey5"/>
                     <constraint firstItem="Pre-V3-caY" firstAttribute="centerY" secondItem="Dnm-cY-xhl" secondAttribute="centerY" id="0i8-Uh-UCc"/>
+                    <constraint firstItem="Pre-V3-caY" firstAttribute="height" secondItem="Dnm-cY-xhl" secondAttribute="height" id="T9j-f6-EQQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
