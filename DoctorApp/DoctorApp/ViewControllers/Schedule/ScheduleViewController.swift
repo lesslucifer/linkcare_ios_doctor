@@ -278,6 +278,20 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         self.uploadTimming()
     }
     
+    func deleteClinicTimmingDidConform(timmings: Timings) {
+        
+        RealmHelper.sharedInstance.db_deleteObject(timmings)
+        self.listTimmings = self.listTimmings.filter{ $0 != timmings}
+
+        //hide view
+        hideClinicTimingView()
+        
+        tapAction = .Normal
+        btn_defTimeSlot.backgroundColor = Color.SkyBlue
+        
+        self.uploadTimming()
+    }
+    
     func addClinicTimingViewDidClose() {
         self.reloadData()
         hideClinicTimingView()

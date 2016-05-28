@@ -22,10 +22,11 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvn-iQ-Jtk">
                         <rect key="frame" x="0.0" y="0.0" width="672" height="29"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Thêm thuốc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbM-Oi-ybD">
-                        <rect key="frame" x="0.0" y="0.0" width="672" height="29.5"/>
-                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="19"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="   THÊM THUỐC  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbM-Oi-ybD">
+                        <rect key="frame" x="10" y="0.0" width="119" height="29.5"/>
+                        <color key="backgroundColor" red="0.0" green="0.67843137254901964" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -37,8 +38,13 @@
                     <constraint firstItem="rbM-Oi-ybD" firstAttribute="top" secondItem="ilL-Mf-t16" secondAttribute="top" id="fLM-Z6-xmO"/>
                     <constraint firstItem="kvn-iQ-Jtk" firstAttribute="top" secondItem="ilL-Mf-t16" secondAttribute="top" id="oZB-aj-cqo"/>
                     <constraint firstItem="kvn-iQ-Jtk" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" id="qkz-ct-bgJ"/>
-                    <constraint firstItem="rbM-Oi-ybD" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" id="wx7-QT-eKH"/>
+                    <constraint firstItem="rbM-Oi-ybD" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" constant="10" id="wx7-QT-eKH"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Nrw-3n-69e"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="btnAdd" destination="kvn-iQ-Jtk" id="u0V-JN-HEr"/>

@@ -203,10 +203,10 @@ extension PrescriptionViewController: UITextFieldDelegate {
         let type = textField.tag % 2
         
         if type == 0 {
-            listPickerdata = ["0.5", "1.0", "1.5", "2.0"]
+            listPickerdata = ["0", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5"]
             showDataPicker(textField)
         } else if type == 1 {
-            listPickerdata = ["Trước khi ăn", "Trước khi ngủ", "Ăn no trước khi uống"]
+            listPickerdata = ["", "Trước khi ăn", "Trước khi ngủ", "Ăn no trước khi uống"]
             showDataPicker(textField)
         }
     }

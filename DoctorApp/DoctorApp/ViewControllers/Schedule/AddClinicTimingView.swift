@@ -19,6 +19,7 @@ protocol AddClinicTimingViewDelegate {
     func editClinicTimingViewDidConfirm()
     func addClinicTimingViewDidClose()
     func addClinicTimingViewDidConfirm(listTimming: Array<Timings>?)
+    func deleteClinicTimmingDidConform(timmings: Timings)
 }
 
 class AddClinicTimingView: UIView {
@@ -33,6 +34,7 @@ class AddClinicTimingView: UIView {
     var mEditingTiming: Timings?
     var clinicId: Int = 0
     var screenType = AddClinicTimingType.AddTimeSlot
+    var idx_deleteTiming = 0
     
     @IBOutlet private var v_timePicker: TimePicker!
     private var v_dataPicker: DataPicker!
@@ -168,10 +170,19 @@ extension AddClinicTimingView {
 extension AddClinicTimingView: UIAlertViewDelegate{
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if (buttonIndex == 0) {
-            self.tv_addClinicTiming.reloadData()
-        }
+            if (screenType == .EditTimeSlot) {
+//                deleteTiming(mEditingTiming!)
+                delegate.deleteClinicTimmingDidConform(mEditingTiming!)
+            } else {
+                ma_Timing.removeAtIndex(idx_deleteTiming)
+                let indexPath = NSIndexPath(forRow: idx_deleteTiming, inSection: 0)
+                self.tv_addClinicTiming.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                
+                }
+            }
     }
 }
+
 
 //MARK: UITableViewDelegate
 extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
@@ -236,10 +247,15 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
         }
         //--
         cell.btn_addNewBlock.addTarget(self, action: #selector(AddClinicTimingView.btnAddNewBlockPressed(_:)), forControlEvents: .TouchUpInside)
-//        cell.btn_deleteBlock.tag = indexPath.row
-//        cell.btn_deleteBlock.addTarget(self, action: Selector("btnDeletePressed:"), forControlEvents: .TouchUpInside)
+        cell.btn_deleteBlock.tag = indexPath.row
+        cell.btn_deleteBlock.addTarget(self, action: Selector("btnDeletePressed:"), forControlEvents: .TouchUpInside)
         return cell
         
+    }
+    
+    func btnDeletePressed(sender: UIButton){
+        idx_deleteTiming = sender.tag
+        Utils.showAlertWithError("Bạn có muốn xóa?", delegate: self)
     }
 }
 
@@ -248,6 +264,10 @@ extension AddClinicTimingView: UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         let index = textField.tag / 4
         let type = textField.tag % 4
+        
+        if (type < 2) {
+            showTimePicker(textField)
+        }
     }
     
 }
