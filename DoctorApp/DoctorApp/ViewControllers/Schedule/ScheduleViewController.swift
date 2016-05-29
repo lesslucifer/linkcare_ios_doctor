@@ -67,6 +67,13 @@ extension ScheduleViewController {
     }
     
     func uploadTimming() {
+        if !checkValidateTimmings(self.listTimmings) {
+            Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Lịch bị trùng! Xin vui lòng kiểm tra lại.")
+            self.reloadData()
+            
+            return
+        }
+        
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         TimingsAPI.setTimings(self.listTimmings) { (success, code, msg, params) in
@@ -79,6 +86,22 @@ extension ScheduleViewController {
                 self.reloadData()
             }
         }
+    }
+    
+    func checkValidateTimmings(timmings: Array<Timings>) ->Bool {
+        if timmings.count < 2 {
+            return true
+        } else {
+            var tempList = timmings.sort({ $0.beginTime < $1.beginTime})
+            
+            for i in 1 ..< tempList.count - 1  {
+                if tempList[i].beginTime < tempList[i-1].endTime {
+                    return false
+                }
+            }
+        }
+        
+        return true
     }
     
     func reloadTableData(){
