@@ -54,7 +54,7 @@ class NotificationViewController: BaseMenuViewController {
     override func setupNavigationBar() {
         super.setupNavigationBar()
         
-        v_navigation.addBackButton()
+//        v_navigation.addBackButton()
         v_navigation.setTitle("THÔNG BÁO")
     }
     

@@ -114,7 +114,6 @@
 		D9C03FC01CF55F4C00C08A70 /* TimmingSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C03FBF1CF55F4C00C08A70 /* TimmingSlot.swift */; };
 		D9C03FC21CF5DEEE00C08A70 /* AppointmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C03FC11CF5DEEE00C08A70 /* AppointmentType.swift */; };
 		D9C154621CDF205C0010B989 /* AppDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C154611CDF205C0010B989 /* AppDataHelper.swift */; };
-		D9C154641CDF2F570010B989 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C154631CDF2F570010B989 /* RealmHelper.swift */; };
 		E370F8E71CDCF02F005BE9F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E61CDCF02F005BE9F0 /* Profile.swift */; };
 		E370F8E91CDCF03D005BE9F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */; };
 		E370F8EB1CDCF17C005BE9F0 /* MedicarProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */; };
@@ -243,7 +242,6 @@
 		D9C03FBF1CF55F4C00C08A70 /* TimmingSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimmingSlot.swift; sourceTree = "<group>"; };
 		D9C03FC11CF5DEEE00C08A70 /* AppointmentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentType.swift; sourceTree = "<group>"; };
 		D9C154611CDF205C0010B989 /* AppDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataHelper.swift; sourceTree = "<group>"; };
-		D9C154631CDF2F570010B989 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		E370F8E61CDCF02F005BE9F0 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicarProfile.swift; sourceTree = "<group>"; };
@@ -385,7 +383,6 @@
 				3876AB661CD4BDA30087E5AC /* APIData+Safe.swift */,
 				386B7AA31CD7994700BC28BA /* Reflectable.swift */,
 				D9C154611CDF205C0010B989 /* AppDataHelper.swift */,
-				D9C154631CDF2F570010B989 /* RealmHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -705,7 +702,6 @@
 				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
 				D90AE44C1CF4C2C60088860B /* AddPrescriptionCell.swift in Sources */,
-				D9C154641CDF2F570010B989 /* RealmHelper.swift in Sources */,
 				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
 				D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */,
 				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,

@@ -34,10 +34,9 @@ class AppointmentApproveViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         AppointmentAPI.getMedicarAppointment(.Approved, success: { (arr) in
-            PKHUD.sharedHUD.hide(animated: true, completion: nil)
+            PKHUD.sharedHUD.hide(animated: false, completion: nil)
             self.appointments = arr
             self.tbAppointment.reloadData()
             }, failure: { code, msg, pars in

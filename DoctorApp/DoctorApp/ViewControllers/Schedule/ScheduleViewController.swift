@@ -60,7 +60,7 @@ extension ScheduleViewController {
     func reloadData() {
         TimingsAPI.getTimings({ (arr) in
             print(arr)
-            RealmHelper.sharedInstance.db_syncObjects(arr, deleteUnexisted:  true)
+            Persist.INST.db_syncObjects(arr, deleteUnexisted:  true)
             self.reloadTableData()
         }) { (code, msg, params) in
         }
@@ -82,7 +82,7 @@ extension ScheduleViewController {
     }
     
     func reloadTableData(){
-        listTimmings = RealmHelper.sharedInstance.db_getArrObjects(Timings.self)
+        listTimmings = Persist.INST.db_getArrObjects(Timings.self)
         print(listTimmings)
         getTime()
         self.tv_clinicTiming.reloadData()
@@ -280,7 +280,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
     
     func deleteClinicTimmingDidConform(timmings: Timings) {
         
-        RealmHelper.sharedInstance.db_deleteObject(timmings)
+        Persist.INST.db_deleteObject(timmings)
         self.listTimmings = self.listTimmings.filter{ $0 != timmings}
 
         //hide view
