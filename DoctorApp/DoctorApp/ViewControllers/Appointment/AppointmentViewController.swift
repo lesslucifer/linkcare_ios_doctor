@@ -26,7 +26,7 @@ class AppointmentViewController: BaseTabViewController {
     override func setupNavigationBar() {
         super.setupNavigationBar()
         
-        v_navigation.addBackButton()
+//        v_navigation.addBackButton()
         v_navigation.setTitle("LỊCH HẸN")
     }
     
@@ -59,11 +59,18 @@ extension AppointmentViewController: BaseTabViewControllerDelegate{
     }
 }
 
+extension AppointmentViewController: NoteViewControllerDelegate{
+    func goBackToAppointment() {
+        self.selectTab(2)
+    }
+}
+
 extension AppointmentViewController: AppointmentStartViewControllerDelegate, AppointmentApproveViewControllerDelegate {
     func notedClicked(appointmentId: Int) {
         let storyboard = UIStoryboard(name: "NoteStoryboard", bundle: nil)
         let vc_destination = storyboard.instantiateViewControllerWithIdentifier("noteDashboard") as! NoteViewController
         vc_destination.appointmentId = appointmentId
+        vc_destination.nodeDelegate = self
         self.navigationController?.pushViewController(vc_destination, animated: true)
     }
 }

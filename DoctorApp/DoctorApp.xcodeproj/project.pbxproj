@@ -385,7 +385,6 @@
 				3876AB661CD4BDA30087E5AC /* APIData+Safe.swift */,
 				386B7AA31CD7994700BC28BA /* Reflectable.swift */,
 				D9C154611CDF205C0010B989 /* AppDataHelper.swift */,
-				D9C154631CDF2F570010B989 /* RealmHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -705,7 +704,6 @@
 				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
 				D90AE44C1CF4C2C60088860B /* AddPrescriptionCell.swift in Sources */,
-				D9C154641CDF2F570010B989 /* RealmHelper.swift in Sources */,
 				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
 				D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */,
 				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,

@@ -129,7 +129,7 @@ extension BaseMenuViewController {
             PKHUD.sharedHUD.hide(animated: true, completion: nil)
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.gotoLoginVC()
-            RealmHelper.sharedInstance.db_wipeDBOnSignout()
+            Persist.INST.db_wipeDBOnSignout()
             print(data)
             }) { (code, msg, params) in
                 PKHUD.sharedHUD.hide(animated: true, completion: nil)

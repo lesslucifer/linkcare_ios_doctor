@@ -40,6 +40,7 @@ class PrescriptionViewController: UIViewController {
         tbPrescription.reloadData()
         
     }
+    
     @IBAction func submit(sender: UIButton) {
         updateData()
         

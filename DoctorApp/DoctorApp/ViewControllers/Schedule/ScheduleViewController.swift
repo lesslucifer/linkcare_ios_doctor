@@ -60,13 +60,20 @@ extension ScheduleViewController {
     func reloadData() {
         TimingsAPI.getTimings({ (arr) in
             print(arr)
-            RealmHelper.sharedInstance.db_syncObjects(arr, deleteUnexisted:  true)
+            Persist.INST.db_syncObjects(arr, deleteUnexisted:  true)
             self.reloadTableData()
         }) { (code, msg, params) in
         }
     }
     
     func uploadTimming() {
+        if !checkValidateTimmings(self.listTimmings) {
+            Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Lịch bị trùng! Xin vui lòng kiểm tra lại.")
+            self.reloadData()
+            
+            return
+        }
+        
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         TimingsAPI.setTimings(self.listTimmings) { (success, code, msg, params) in
@@ -81,8 +88,24 @@ extension ScheduleViewController {
         }
     }
     
+    func checkValidateTimmings(timmings: Array<Timings>) ->Bool {
+        if timmings.count < 2 {
+            return true
+        } else {
+            var tempList = timmings.sort({ $0.beginTime < $1.beginTime})
+            
+            for i in 1 ..< tempList.count - 1  {
+                if tempList[i].beginTime < tempList[i-1].endTime {
+                    return false
+                }
+            }
+        }
+        
+        return true
+    }
+    
     func reloadTableData(){
-        listTimmings = RealmHelper.sharedInstance.db_getArrObjects(Timings.self)
+        listTimmings = Persist.INST.db_getArrObjects(Timings.self)
         print(listTimmings)
         getTime()
         self.tv_clinicTiming.reloadData()
@@ -280,7 +303,7 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
     
     func deleteClinicTimmingDidConform(timmings: Timings) {
         
-        RealmHelper.sharedInstance.db_deleteObject(timmings)
+        Persist.INST.db_deleteObject(timmings)
         self.listTimmings = self.listTimmings.filter{ $0 != timmings}
 
         //hide view

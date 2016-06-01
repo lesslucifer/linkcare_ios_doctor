@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol NoteViewControllerDelegate {
+    func goBackToAppointment()
+}
+
 class NoteViewController: BaseTabViewController {
     
     var appointmentId: Int!
     @IBOutlet var btnNote: UIButton!
     @IBOutlet var btnPrescription: UIButton!
+    var nodeDelegate: NoteViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +76,7 @@ extension NoteViewController: BaseTabViewControllerDelegate{
 
 extension NoteViewController: PrescriptionViewControllerDelegate {
     func goBack() {
+        nodeDelegate.goBackToAppointment()
         self.navigationController?.popViewControllerAnimated(true)
     }
 }

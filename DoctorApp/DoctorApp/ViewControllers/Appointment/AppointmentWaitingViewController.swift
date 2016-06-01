@@ -29,10 +29,9 @@ class AppointmentWaitingViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         AppointmentAPI.getMedicarAppointment(.Waiting, success: { (arr) in
-            PKHUD.sharedHUD.hide(animated: true, completion: nil)
+            PKHUD.sharedHUD.hide(animated: false, completion: nil)
             self.appointments = arr
             self.tbAppointment.reloadData()
             }, failure: { code, msg, pars in
@@ -126,6 +125,7 @@ extension AppointmentWaitingViewController: UITableViewDataSource, UITableViewDe
                 if let index = self.appointments.indexOf({$0.id == appointment.id}) {
                     self.appointments.removeAtIndex(index)
                     self.tbAppointment.deleteRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
+                    Utils.showOKAlertPanel(self, title: "Thông báo", msg: "Chấp nhận cuộc hẹn thành công!")
                 }
             }
             else {

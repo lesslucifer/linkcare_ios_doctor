@@ -49,24 +49,24 @@ class Timings: Object, Mappable {
     static func addNew(timing: Timings) -> Timings{
         let timing = Timings()
         timing.id = Utils.getIdByTimes()
-        RealmHelper.sharedInstance.db_createObject(timing)
+        Persist.INST.db_createObject(timing)
         return timing
     }
     
     func editTimeFrom(beginTime: Int){
-        RealmHelper.sharedInstance.db_updateObject {
+        Persist.INST.db_updateObject {
             self.beginTime = beginTime
         }
     }
     
     func lengthTime(length: Int){
-        RealmHelper.sharedInstance.db_updateObject {
+        Persist.INST.db_updateObject {
             self.length = length
         }
     }
     
     func addType(type: Int){
-        RealmHelper.sharedInstance.db_updateObject {
+        Persist.INST.db_updateObject {
             self.type = type
         }
     }
