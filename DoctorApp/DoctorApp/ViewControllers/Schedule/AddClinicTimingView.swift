@@ -104,7 +104,7 @@ extension AddClinicTimingView {
 //            lengthTime = lengthTime < 0 ? lengthTime + 60 * 24 : lengthTime
             
             if lengthTime < 0 {
-                Utils.showAlertWithError("thời gian không hợp lệ")
+                Utils.showAlertWithError("Thời gian không hợp lệ")
             } else {
                 mEditingTiming?.editTimeFrom(beginTime)
                 mEditingTiming?.lengthTime(lengthTime)
@@ -122,7 +122,7 @@ extension AddClinicTimingView {
                 var lengthTime = endTime - beginTime
                 
                 if lengthTime < 0 {
-                    Utils.showAlertWithError("thời gian không hợp lệ")
+                    Utils.showAlertWithError("Thời gian không hợp lệ")
                 } else {
                     ma_Timing[i].editTimeFrom(beginTime)
                     ma_Timing[i].lengthTime(lengthTime)

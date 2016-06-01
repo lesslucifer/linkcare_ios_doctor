@@ -51,7 +51,7 @@ class ScheduleViewController: BaseMenuViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        v_navigation.setTitle(" ĐẶT LỊCH LÀM VIỆC")
+        v_navigation.setTitle("ĐẶT LỊCH LÀM VIỆC")
     }
 }
 
