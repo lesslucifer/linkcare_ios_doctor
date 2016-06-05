@@ -870,7 +870,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = concon.vn.DoctorApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6341a83e-7695-46d6-98b3-97cd663eec75";
+				PROVISIONING_PROFILE = "d427a887-18fb-4b59-9078-40b80df6d3b8";
 			};
 			name = Debug;
 		};
@@ -888,7 +888,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = concon.vn.DoctorApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6341a83e-7695-46d6-98b3-97cd663eec75";
+				PROVISIONING_PROFILE = "d427a887-18fb-4b59-9078-40b80df6d3b8";
 			};
 			name = Release;
 		};

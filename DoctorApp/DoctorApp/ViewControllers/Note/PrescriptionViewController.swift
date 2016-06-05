@@ -34,7 +34,7 @@ class PrescriptionViewController: UIViewController {
 
     func addPrescription(){
         updateData()
-        var newPrescription = PrescriptionMedicine()
+        let newPrescription = PrescriptionMedicine()
         listPrescription.append(newPrescription)
         
         tbPrescription.reloadData()
@@ -51,7 +51,7 @@ class PrescriptionViewController: UIViewController {
         
         let currentDate = NSDate()
         
-        var prescription = Prescription()
+        let prescription = Prescription()
         prescription.appointmentId = appointmentId
         prescription.note = self.getNote()
         prescription.date = currentDate
@@ -74,7 +74,7 @@ class PrescriptionViewController: UIViewController {
     func updateData() {
         let sum = listPrescription.count
         listPrescription = []
-        for (var i = 0; i < sum; i += 1){
+        for i in 0 ..< sum {
             let indexPath = NSIndexPath(forRow: i, inSection: 0)
             
             let selectedCell = tbPrescription.cellForRowAtIndexPath(indexPath) as! PrescriptionCell
@@ -85,7 +85,7 @@ class PrescriptionViewController: UIViewController {
             medicine.quantityNoon = selectedCell.tfquantityNoon.text != "" ? Double(selectedCell.tfquantityNoon.text!)! : 0
             medicine.quantityAfternoon = selectedCell.tfquantityAfterNoon.text != "" ? Double(selectedCell.tfquantityAfterNoon.text!)! : 0
             medicine.quantityNight = selectedCell.tfquantityNight.text != "" ? Double(selectedCell.tfquantityNight.text!)! : 0
-            medicine.instr = selectedCell.tfName.text!
+            medicine.instr = selectedCell.tfInstr.text!
             listPrescription.append(medicine)
         }
     }

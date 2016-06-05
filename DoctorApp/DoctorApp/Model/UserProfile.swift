@@ -14,11 +14,13 @@ class UserProfile: Object, Mappable {
     
     dynamic var id = 0
     dynamic var fullName = ""
-    dynamic var age = 0
-    dynamic var yearOfBirth = 0
+    dynamic var birthDay = NSDate()
     dynamic var idCard = ""
     dynamic var sex: Gender = .Male
     dynamic var address = ""
+    dynamic var phoneNumber = ""
+    dynamic var longtitude = 0.0
+    dynamic var latitude = 0.0
     
     required convenience init?(_ map: Map) {
         self.init()
@@ -30,9 +32,11 @@ class UserProfile: Object, Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         fullName <- map["fullName"]
-        age <- map["age"]
-        yearOfBirth <- map["yearOfBirth"]
+        birthDay <- (map["birthDay"], DateFormat.dateTransformer)
         sex <- (map["sex"], Gender.Transformer)
         address <- map["address"]
+        phoneNumber <- map["phoneNumber"]
+        longtitude <- map["longtitude"]
+        latitude <- map["latitude"]
     }
 }
