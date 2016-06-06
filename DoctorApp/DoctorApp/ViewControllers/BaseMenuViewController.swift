@@ -133,7 +133,7 @@ extension BaseMenuViewController {
             print(data)
             }) { (code, msg, params) in
                 PKHUD.sharedHUD.hide(animated: true, completion: nil)
-                Utils.showAlertWithError(msg)
+                Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Không thoát được, xin vui lòng thử lại.")
         }
         
     }

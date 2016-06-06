@@ -122,4 +122,8 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
     
     @IBAction func forgotPasswordPressed(sender: AnyObject) {
     }
+    
+    @IBAction func notSupported(sender: AnyObject) {
+        Utils.showOKAlertPanel(self, title: "Chưa hỗ trợ", msg: "Chúng tôi đang cố gắng hoàn thiện tính năng này,  mong bạn thông cảm!")
+    }
 }
