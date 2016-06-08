@@ -105,8 +105,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
         let nav_mainApp = UINavigationController()
         let vc_dashboard = HomeViewController(nibName: "HomeViewController", bundle: nil)
         
+        HUD.show(.Progress)
         LoginAPI.login(self.tfUsername.text!, password: self.tfPassword.text!, success: { (data) in
-            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            HUD.hide()
             API.auth = API.Auth(sess: data["session"].safeString)
             nav_mainApp.viewControllers = [vc_dashboard]
             nav_mainApp.setNavigationBarHidden(true, animated: false)
@@ -114,7 +115,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
             self.presentViewController(nav_mainApp, animated: true, completion: nil)
             
             }, failure: { code, msg, params in
-                PKHUD.sharedHUD.hide(animated: false, completion: nil)
+                HUD.hide()
                 Utils.showAlertWithError(msg)
         })
         
