@@ -131,9 +131,11 @@ extension BaseMenuViewController {
             appDelegate.gotoLoginVC()
             Persist.INST.db_wipeDBOnSignout()
             print(data)
-            }) { (code, msg, params) in
-                PKHUD.sharedHUD.hide(animated: true, completion: nil)
-                Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Không thoát được, xin vui lòng thử lại.")
+        }) { (code, msg, params) in
+            PKHUD.sharedHUD.hide(animated: true, completion: nil)
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.gotoLoginVC()
+            Persist.INST.db_wipeDBOnSignout()
         }
         
     }
