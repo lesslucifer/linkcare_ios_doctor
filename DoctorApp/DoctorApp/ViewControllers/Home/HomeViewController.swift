@@ -84,8 +84,8 @@ extension HomeViewController {
         let date = NSDate()
         
         TimingSlotAPI.getMedicarTimingSlot(date, success: { (arr) in
-            self.listHospitalTimmingSlot = arr.filter({ $0.type == 0})
-            self.listHomeTimmingSlot = arr.filter({ $0.type == 1})
+            self.listHospitalTimmingSlot = arr.filter({ $0.type == 0 && $0.available})
+            self.listHomeTimmingSlot = arr.filter({ $0.type == 1 && $0.available})
             self.tbHome.reloadData()
             self.tbHospital.reloadData()
             }, failure: { code, msg, pars in
