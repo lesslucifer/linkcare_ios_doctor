@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DoctorApp" customModuleProvider="target">
             <connections>
+                <outlet property="btnShowPassword" destination="2Fz-bG-ZBW" id="bcs-0Y-suS"/>
                 <outlet property="scrollView" destination="wo7-gl-oqf" id="079-FD-hYa"/>
                 <outlet property="tfPassword" destination="50E-sW-xix" id="W9a-zI-akP"/>
                 <outlet property="tfUsername" destination="viW-b6-fD8" id="S6a-pp-Fz5"/>
@@ -26,7 +27,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-Yu-SSh" userLabel="vlogin">
                             <rect key="frame" x="0.0" y="0.0" width="1334" height="750"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TÀI KHOẢN" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="viW-b6-fD8">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SỐ CMND HOẶC HỘ CHIẾU" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="viW-b6-fD8">
                                     <rect key="frame" x="267" y="355" width="800.5" height="39"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -55,6 +56,21 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     </variation>
                                 </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fz-bG-ZBW" userLabel="Btn show password">
+                                    <rect key="frame" x="1067.5" y="411" width="43" height="39"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="2Fz-bG-ZBW" secondAttribute="height" multiplier="1.1:1" id="09b-Lp-77V"/>
+                                    </constraints>
+                                    <state key="normal" title="SHOW">
+                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnShowPasswordTouchedDown:" destination="-1" eventType="touchDown" id="hT2-KX-3bT"/>
+                                        <action selector="btnShowPasswordTouchedUp:" destination="-1" eventType="touchUpOutside" id="0HN-eX-M7W"/>
+                                        <action selector="btnShowPasswordTouchedUp:" destination="-1" eventType="touchUpInside" id="3ur-6m-6Ff"/>
+                                        <action selector="btnShowPasswordTouchedUp:" destination="-1" eventType="touchCancel" id="rTf-fP-LIH"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlf-t6-X9w">
                                     <rect key="frame" x="301.5" y="462" width="111" height="39"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -111,6 +127,7 @@
                                 <constraint firstItem="vlf-t6-X9w" firstAttribute="leading" secondItem="BHy-ro-fJ1" secondAttribute="trailing" constant="5" id="BGf-hK-sRh"/>
                                 <constraint firstItem="viW-b6-fD8" firstAttribute="width" secondItem="50E-sW-xix" secondAttribute="width" id="FAC-cw-Pw1"/>
                                 <constraint firstItem="BHy-ro-fJ1" firstAttribute="centerY" secondItem="vlf-t6-X9w" secondAttribute="centerY" id="FwU-AO-QWZ"/>
+                                <constraint firstItem="2Fz-bG-ZBW" firstAttribute="bottom" secondItem="50E-sW-xix" secondAttribute="bottom" id="HrK-Lw-WEH"/>
                                 <constraint firstItem="50E-sW-xix" firstAttribute="height" secondItem="viW-b6-fD8" secondAttribute="height" id="NFV-LK-4Nx"/>
                                 <constraint firstItem="rzv-93-YV1" firstAttribute="centerY" secondItem="doO-Yu-SSh" secondAttribute="centerY" multiplier="1.5" id="OdF-di-TkX"/>
                                 <constraint firstItem="vlf-t6-X9w" firstAttribute="height" secondItem="50E-sW-xix" secondAttribute="height" id="P16-Zz-ke1"/>
@@ -129,6 +146,8 @@
                                 <constraint firstItem="rzv-93-YV1" firstAttribute="height" secondItem="doO-Yu-SSh" secondAttribute="height" multiplier="43/768" id="dFQ-CB-UaP"/>
                                 <constraint firstItem="vlf-t6-X9w" firstAttribute="top" secondItem="50E-sW-xix" secondAttribute="bottom" constant="12" id="dYt-E8-1rQ"/>
                                 <constraint firstItem="JrB-8S-dsA" firstAttribute="centerY" secondItem="doO-Yu-SSh" secondAttribute="centerY" multiplier="0.6" id="fXn-mp-VV6"/>
+                                <constraint firstItem="2Fz-bG-ZBW" firstAttribute="top" secondItem="50E-sW-xix" secondAttribute="top" id="o9I-eg-r6s"/>
+                                <constraint firstItem="2Fz-bG-ZBW" firstAttribute="leading" secondItem="50E-sW-xix" secondAttribute="trailing" id="u1X-oP-EBR"/>
                             </constraints>
                         </view>
                     </subviews>

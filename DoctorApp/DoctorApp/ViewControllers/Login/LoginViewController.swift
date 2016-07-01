@@ -8,12 +8,14 @@
 
 import UIKit
 import PKHUD
+import GoogleMaterialIconFont
 
 class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     
     @IBOutlet var scrollView : UIScrollView!
     @IBOutlet var tfUsername: UITextField!
     @IBOutlet var tfPassword: UITextField!
+    @IBOutlet weak var btnShowPassword: UIButton!
     
     var activeField: UITextField?
     
@@ -22,6 +24,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        btnShowPassword.titleLabel?.font = UIFont.materialIconOfSize(20);
+        btnShowPassword.setTitle(String.materialIcon(.RemoveRedEye), forState: .Normal)
         
         registerForKeyboardNotifications()
     }
@@ -126,5 +131,13 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
     
     @IBAction func notSupported(sender: AnyObject) {
         Utils.showOKAlertPanel(self, title: "Chưa hỗ trợ", msg: "Chúng tôi đang cố gắng hoàn thiện tính năng này,  mong bạn thông cảm!")
+    }
+    
+    @IBAction func btnShowPasswordTouchedDown(sender: AnyObject) {
+        self.tfPassword.secureTextEntry = false;
+    }
+    
+    @IBAction func btnShowPasswordTouchedUp(sender: AnyObject) {
+        self.tfPassword.secureTextEntry = true;
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3817E7861CE4E726006E3B5A /* Persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7851CE4E726006E3B5A /* Persist.swift */; };
 		3817E7891CE4E906006E3B5A /* BaseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7881CE4E906006E3B5A /* BaseCache.swift */; };
+		38195FEB1D262767009C8F34 /* GoogleMaterialIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */; };
+		38195FEC1D262771009C8F34 /* GoogleMaterialIconFont.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */; };
 		3820F7621CE890B0005BEFA7 /* CancelReasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */; };
 		3846CB3B1CF9459D00A5B3E4 /* ProfileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */; };
@@ -128,6 +130,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				38195FEC1D262771009C8F34 /* GoogleMaterialIconFont.framework in CopyFiles */,
 				D967DA091CD5C46E002E4C0F /* Spring.framework in CopyFiles */,
 				3876AB711CD4CDB10087E5AC /* ObjectMapper.framework in CopyFiles */,
 				D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */,
@@ -144,6 +147,7 @@
 /* Begin PBXFileReference section */
 		3817E7851CE4E726006E3B5A /* Persist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persist.swift; sourceTree = "<group>"; };
 		3817E7881CE4E906006E3B5A /* BaseCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCache.swift; sourceTree = "<group>"; };
+		38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaterialIconFont.framework; path = Carthage/Build/iOS/GoogleMaterialIconFont.framework; sourceTree = "<group>"; };
 		3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
 		3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelReasonViewController.xib; sourceTree = "<group>"; };
 		3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAPI.swift; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38195FEB1D262767009C8F34 /* GoogleMaterialIconFont.framework in Frameworks */,
 				3876AB701CD4CDA30087E5AC /* ObjectMapper.framework in Frameworks */,
 				38947DD91CCFE2050008049A /* PKHUD.framework in Frameworks */,
 				38947DDA1CCFE2050008049A /* Realm.framework in Frameworks */,
@@ -282,6 +287,7 @@
 		38758B9F1CCE710B00AEC3BB = {
 			isa = PBXGroup;
 			children = (
+				38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */,
 				D967DA071CD5C455002E4C0F /* Spring.framework */,
 				3876AB6F1CD4CDA30087E5AC /* ObjectMapper.framework */,
 				38947DD51CCFE2050008049A /* PKHUD.framework */,
@@ -616,6 +622,11 @@
 					38758BA71CCE710B00AEC3BB = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 6YL39XNP5T;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
