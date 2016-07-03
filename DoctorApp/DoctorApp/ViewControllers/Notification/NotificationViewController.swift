@@ -12,7 +12,7 @@ import UIKit
 class NotificationViewController: BaseMenuViewController {
     @IBOutlet var tbNotification: UITableView!
     var notifications: [Int] = []
-    var listNotificationRead: [Int] = []
+    var unreadNotifs = Set<Int>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +41,6 @@ class NotificationViewController: BaseMenuViewController {
         }
     }
     
-    func sendNotificationRead(listNotificationRead: [Int]){
-        NotificationAPI.setNotificationRead(listNotificationRead) { (success, code, msg, params) in
-//            print(success)
-        }
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,8 +48,6 @@ class NotificationViewController: BaseMenuViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        
-//        v_navigation.addBackButton()
         v_navigation.setTitle("THÔNG BÁO")
     }
     
@@ -76,19 +69,13 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
         
         
         if let notification = NotificationCache.INST.get(idNotification) {
-            cell.configure(notification)
+            cell.configure(notification, isUnread: !notification.read || self.unreadNotifs.contains(idNotification))
         } else {
             NotificationCache.INST.get(idNotification, fetcher: { notification in
                 if notification != nil {
                     tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
                 }
             })
-        }
-        
-        //add id to  readlist
-        if !listNotificationRead.contains(idNotification){
-            listNotificationRead.append(idNotification)
-            self.sendNotificationRead(listNotificationRead)
         }
         
         return cell
@@ -99,6 +86,14 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
         
         if !bufferedCaches.isEmpty {
             NotificationCache.INST.fetch(bufferedCaches, fetcher: nil)
+        }
+        
+        if let notif = NotificationCache.INST.get(notifications[indexPath.row]) where notif.read == false {
+            notif.write {
+                notif.read = true
+            }
+            unreadNotifs.insert(notif.id);
+            NotificationAPI.setNotificationRead([notif.id], result: nil)
         }
     }
     

@@ -53,7 +53,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
     }
     
     func keyboardWasShown(notification: NSNotification){
-        print("keyhboard was shown")
         
         var userInfo = notification.userInfo!
         var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
@@ -62,22 +61,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
         var contentInset:UIEdgeInsets = scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height
         scrollView.contentInset = contentInset
-        
-//        //test
-//        var aRect : CGRect = self.view.frame
-//        aRect.size.height -= keyboardFrame.size.height
-//        if let _ = activeField
-//        {
-//            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
-//            {
-//                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
-//            }
-//        }
-
     }
     
     func keyboardWillBeHidden(notification: NSNotification){
-        print("keyboard will be hidden")
         
         let info : NSDictionary = notification.userInfo!
         let keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.frame
@@ -111,13 +97,18 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
         let vc_dashboard = HomeViewController(nibName: "HomeViewController", bundle: nil)
         
         HUD.show(.Progress)
-        LoginAPI.login(self.tfUsername.text!, password: self.tfPassword.text!, success: { (data) in
+        LoginAPI.login(self.tfUsername.text!, password: self.tfPassword.text!, success: { (loginResp) in
             HUD.hide()
-            API.auth = API.Auth(sess: data["session"].safeString)
-            nav_mainApp.viewControllers = [vc_dashboard]
-            nav_mainApp.setNavigationBarHidden(true, animated: false)
-            
-            self.presentViewController(nav_mainApp, animated: true, completion: nil)
+            if let session = loginResp?.session where loginResp!.roles.contains({$0.code == "DOCTOR_ROLE" || $0.code == "NURSE_ROLE"}) {
+                API.auth = API.Auth(sess: session)
+                nav_mainApp.viewControllers = [vc_dashboard]
+                nav_mainApp.setNavigationBarHidden(true, animated: false)
+                
+                self.presentViewController(nav_mainApp, animated: true, completion: nil)
+            }
+            else {
+                Utils.showAlertWithError("Tài khoản hoặc mật khẩu không chính xác! Xin vui lòng thử lại.")
+            }
             
             }, failure: { code, msg, params in
                 HUD.hide()

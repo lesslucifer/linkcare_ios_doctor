@@ -9,9 +9,10 @@
 import UIKit
 
 class LoginAPI {
-    class func login(idcard: String, password: String, success: APIHandler.Success, failure: APIHandler.Failure? = nil) {
+    class func login(idcard: String, password: String, success: APIGenericHandler<LoginResp>.Single, failure: APIHandler.Failure? = nil) {
         let body: APIData = ["loginName": idcard, "password": password]
-        API.baseAPI(.POST, path: "/account/login", body: body, success: success, failure: failure)
+        API.baseAPI(.POST, path: "/account/login", body: body,
+                    success: APIHandler.toSuccess(genericHandler: success), failure: failure)
     }
     
     class func logout(success: APIHandler.Success, failure: APIHandler.Failure? = nil) {

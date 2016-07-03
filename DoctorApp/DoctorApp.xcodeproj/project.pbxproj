@@ -47,6 +47,8 @@
 		38CEE8341CD26342000010D2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8331CD26342000010D2 /* Utils.swift */; };
 		38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8381CD269D0000010D2 /* LoginAPI.swift */; };
 		38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E61DB61CD72009008D1870 /* AppointmentAPI.swift */; };
+		38F2ADF81D276DB200C585E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2ADF71D276DB200C585E9 /* Color.swift */; };
+		38F2ADFA1D27726200C585E9 /* LoginRespdel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2ADF91D27726200C585E9 /* LoginRespdel.swift */; };
 		D90AE44C1CF4C2C60088860B /* AddPrescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AE44A1CF4C2C60088860B /* AddPrescriptionCell.swift */; };
 		D90AE44D1CF4C2C60088860B /* AddPrescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D90AE44B1CF4C2C60088860B /* AddPrescriptionCell.xib */; };
 		D915C8C01CE1888B00C499CD /* AppointmentWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8BE1CE1888B00C499CD /* AppointmentWaitingViewController.swift */; };
@@ -185,6 +187,8 @@
 		38CEE8331CD26342000010D2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38CEE8381CD269D0000010D2 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		38E61DB61CD72009008D1870 /* AppointmentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentAPI.swift; sourceTree = "<group>"; };
+		38F2ADF71D276DB200C585E9 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		38F2ADF91D27726200C585E9 /* LoginRespdel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRespdel.swift; sourceTree = "<group>"; };
 		D90AE44A1CF4C2C60088860B /* AddPrescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrescriptionCell.swift; sourceTree = "<group>"; };
 		D90AE44B1CF4C2C60088860B /* AddPrescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPrescriptionCell.xib; sourceTree = "<group>"; };
 		D915C8BE1CE1888B00C499CD /* AppointmentWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentWaitingViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +348,7 @@
 				E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */,
 				E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */,
 				E370F8EE1CDCF625005BE9F0 /* Notification.swift */,
+				38F2ADF91D27726200C585E9 /* LoginRespdel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 		38CEE8351CD2683B000010D2 /* Glob */ = {
 			isa = PBXGroup;
 			children = (
+				38F2ADF71D276DB200C585E9 /* Color.swift */,
 				D967DA1A1CD5C581002E4C0F /* Constants.swift */,
 				38CCDC831CE398F2001E0129 /* DateFormat.swift */,
 			);
@@ -735,6 +741,7 @@
 				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,
 				D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */,
 				D965CD7F1CF37D6800746C8F /* PrescriptionCell.swift in Sources */,
+				38F2ADFA1D27726200C585E9 /* LoginRespdel.swift in Sources */,
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
@@ -753,6 +760,7 @@
 				D967D9EA1CD5B484002E4C0F /* UIView+Helpers.swift in Sources */,
 				D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */,
 				3817E7891CE4E906006E3B5A /* BaseCache.swift in Sources */,
+				38F2ADF81D276DB200C585E9 /* Color.swift in Sources */,
 				D9950E201CDDDF0400340EE9 /* AppointmentCell.swift in Sources */,
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
