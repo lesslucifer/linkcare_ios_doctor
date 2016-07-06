@@ -9,19 +9,18 @@
 import UIKit
 
 class LoginAPI {
-//    class func login(idcard: String, password: String, success: APIGenericHandler<LoginResp>.Single, failure: APIHandler.Failure? = nil) {
-//        let body: APIData = ["loginName": idcard, "password": password]
-//        API.api1.baseAPI(.POST, path: "/account/login", body: body,
-//                    success: APIHandler.toSuccess(genericHandler: success), failure: failure)
-//    }
-    
     class func logout(success: APIHandler.Success? = nil, failure: APIHandler.Failure? = nil) {
         if Utils.isEmpty(API.api1.auth.session) {
             success?(data: [:])
             return
         }
         
-        API.api1.baseAPI(.PUT, path: "/account/logout", body: nil, success: success, failure: failure)
+        var body: APIData = [:]
+        if (!Utils.isEmpty(Glob.deviceToken)) {
+            body = ["device_token": Glob.deviceToken!]
+        }
+        
+        API.api2.baseAPI(.PUT, path: "/logout", body: body, success: success, failure: failure)
     }
     
     class func login2(idcard: String, password: String, success: APIGenericHandler<Login2Resp>.Single, failure: APIHandler.Failure? = nil) {
