@@ -19,6 +19,14 @@
 		383787631D2D52E8005445D9 /* PrepareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383787611D2D52E8005445D9 /* PrepareViewController.swift */; };
 		383787641D2D52E8005445D9 /* PrepareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383787621D2D52E8005445D9 /* PrepareViewController.xib */; };
 		383787661D2D5325005445D9 /* VersionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383787651D2D5325005445D9 /* VersionAPI.swift */; };
+		383787691D2D5923005445D9 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383787671D2D5923005445D9 /* UpdateProfileViewController.swift */; };
+		3837876A1D2D5923005445D9 /* UpdateProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383787681D2D5923005445D9 /* UpdateProfileViewController.xib */; };
+		3837876D1D2D5AAD005445D9 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837876B1D2D5AAD005445D9 /* KeyboardHandler.swift */; };
+		3837876E1D2D5AAD005445D9 /* TextBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837876C1D2D5AAD005445D9 /* TextBinder.swift */; };
+		383787701D2D5B04005445D9 /* UpdateProfileSubmit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837876F1D2D5B04005445D9 /* UpdateProfileSubmit.swift */; };
+		383787721D2D5B24005445D9 /* UpdateProfileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383787711D2D5B24005445D9 /* UpdateProfileAPI.swift */; };
+		383787741D2D5BCB005445D9 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383787731D2D5BCB005445D9 /* SwiftDate.framework */; };
+		383787751D2D5BD0005445D9 /* SwiftDate.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 383787731D2D5BCB005445D9 /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3846CB3B1CF9459D00A5B3E4 /* ProfileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */; };
 		386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7A9F1CD798FE00BC28BA /* Appointment.swift */; };
 		386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7AA31CD7994700BC28BA /* Reflectable.swift */; };
@@ -142,6 +150,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				383787751D2D5BD0005445D9 /* SwiftDate.framework in CopyFiles */,
 				38EFB46F1D2D32EE00F8E2B0 /* Masonry.framework in CopyFiles */,
 				38195FEC1D262771009C8F34 /* GoogleMaterialIconFont.framework in CopyFiles */,
 				D967DA091CD5C46E002E4C0F /* Spring.framework in CopyFiles */,
@@ -169,6 +178,13 @@
 		383787611D2D52E8005445D9 /* PrepareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareViewController.swift; sourceTree = "<group>"; };
 		383787621D2D52E8005445D9 /* PrepareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrepareViewController.xib; sourceTree = "<group>"; };
 		383787651D2D5325005445D9 /* VersionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionAPI.swift; sourceTree = "<group>"; };
+		383787671D2D5923005445D9 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		383787681D2D5923005445D9 /* UpdateProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateProfileViewController.xib; sourceTree = "<group>"; };
+		3837876B1D2D5AAD005445D9 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		3837876C1D2D5AAD005445D9 /* TextBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBinder.swift; sourceTree = "<group>"; };
+		3837876F1D2D5B04005445D9 /* UpdateProfileSubmit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileSubmit.swift; sourceTree = "<group>"; };
+		383787711D2D5B24005445D9 /* UpdateProfileAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileAPI.swift; sourceTree = "<group>"; };
+		383787731D2D5BCB005445D9 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAPI.swift; sourceTree = "<group>"; };
 		386B7A9F1CD798FE00BC28BA /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		386B7AA31CD7994700BC28BA /* Reflectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reflectable.swift; sourceTree = "<group>"; };
@@ -282,6 +298,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				383787741D2D5BCB005445D9 /* SwiftDate.framework in Frameworks */,
 				38EFB46E1D2D32E500F8E2B0 /* Masonry.framework in Frameworks */,
 				38195FEB1D262767009C8F34 /* GoogleMaterialIconFont.framework in Frameworks */,
 				3876AB701CD4CDA30087E5AC /* ObjectMapper.framework in Frameworks */,
@@ -312,6 +329,7 @@
 		38758B9F1CCE710B00AEC3BB = {
 			isa = PBXGroup;
 			children = (
+				383787731D2D5BCB005445D9 /* SwiftDate.framework */,
 				38EFB46D1D2D32E500F8E2B0 /* Masonry.framework */,
 				38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */,
 				D967DA071CD5C455002E4C0F /* Spring.framework */,
@@ -371,6 +389,7 @@
 				E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */,
 				E370F8EE1CDCF625005BE9F0 /* Notification.swift */,
 				3837875B1D2D4FA0005445D9 /* Login2Resp.swift */,
+				3837876F1D2D5B04005445D9 /* UpdateProfileSubmit.swift */,
 				3837875D1D2D4FA7005445D9 /* GetAccessTokenResp.swift */,
 			);
 			path = Model;
@@ -389,6 +408,7 @@
 				E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */,
 				38EFB4701D2D351400F8E2B0 /* ResetPasswordAPI.swift */,
 				383787651D2D5325005445D9 /* VersionAPI.swift */,
+				383787711D2D5B24005445D9 /* UpdateProfileAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -419,6 +439,8 @@
 				3876AB661CD4BDA30087E5AC /* APIData+Safe.swift */,
 				386B7AA31CD7994700BC28BA /* Reflectable.swift */,
 				D9C154611CDF205C0010B989 /* AppDataHelper.swift */,
+				3837876B1D2D5AAD005445D9 /* KeyboardHandler.swift */,
+				3837876C1D2D5AAD005445D9 /* TextBinder.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -477,6 +499,8 @@
 		D967D9F11CD5B739002E4C0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				383787671D2D5923005445D9 /* UpdateProfileViewController.swift */,
+				383787681D2D5923005445D9 /* UpdateProfileViewController.xib */,
 				38EFB4681D2D2FBB00F8E2B0 /* Popup */,
 				D921669F1CE2423D004FA64C /* Notification */,
 				D9950E0A1CDD083400340EE9 /* Note */,
@@ -733,6 +757,7 @@
 				38A423291CE63CF1004E2146 /* MyriadPro-Regular_0.otf in Resources */,
 				D99396841CE2D6760091DCE3 /* DataPicker.xib in Resources */,
 				D97711CB1CF1723000F2DBC9 /* NotificationCell.xib in Resources */,
+				3837876A1D2D5923005445D9 /* UpdateProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +799,7 @@
 				D967DA181CD5C511002E4C0F /* NavigationBarView.swift in Sources */,
 				D967D9F51CD5B739002E4C0F /* LoginViewController.swift in Sources */,
 				D9950E271CDDED3B00340EE9 /* NoteViewController.swift in Sources */,
+				3837876D1D2D5AAD005445D9 /* KeyboardHandler.swift in Sources */,
 				D967D9FF1CD5BECE002E4C0F /* HomeCell.swift in Sources */,
 				38C8201C1CF08AD300A5095F /* RealmObject+Write.swift in Sources */,
 				38A423231CE63AB0004E2146 /* AppointmentExpandedCell.swift in Sources */,
@@ -790,6 +816,9 @@
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
+				383787691D2D5923005445D9 /* UpdateProfileViewController.swift in Sources */,
+				383787721D2D5B24005445D9 /* UpdateProfileAPI.swift in Sources */,
+				3837876E1D2D5AAD005445D9 /* TextBinder.swift in Sources */,
 				D97711CA1CF1723000F2DBC9 /* NotificationCell.swift in Sources */,
 				3817E7861CE4E726006E3B5A /* Persist.swift in Sources */,
 				D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */,
@@ -800,6 +829,7 @@
 				38758BAC1CCE710C00AEC3BB /* AppDelegate.swift in Sources */,
 				38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */,
 				3846CB3B1CF9459D00A5B3E4 /* ProfileAPI.swift in Sources */,
+				383787701D2D5B04005445D9 /* UpdateProfileSubmit.swift in Sources */,
 				D967DA231CD7113A002E4C0F /* ScheduleViewController.swift in Sources */,
 				D9C03FC21CF5DEEE00C08A70 /* AppointmentType.swift in Sources */,
 				D99396891CE2D7F30091DCE3 /* ClinicTimingCell.swift in Sources */,

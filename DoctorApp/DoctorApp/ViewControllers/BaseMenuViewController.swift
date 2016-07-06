@@ -81,6 +81,9 @@ extension BaseMenuViewController : RightMenuDelegate {
         case .Home:
             goToHome()
             break
+        case .Profile:
+            gotoUpdateProfile()
+            break
         case .Appointments:
             goToAppointments()
             break
@@ -102,6 +105,13 @@ extension BaseMenuViewController {
     func goToHome() {
         if self is HomeViewController { return }
         else { self.navigationController?.popToRootViewControllerAnimated(true) }
+    }
+    
+    func gotoUpdateProfile() {
+        let navController = self.navigationController
+        let vcDestination = UpdateProfileViewController(nibName: "UpdateProfileViewController", bundle: nil)
+        vcDestination.lc_init(Glob.userProfile!)
+        navController?.pushViewController(vcDestination, animated: true)
     }
     
     func goToAppointments() {

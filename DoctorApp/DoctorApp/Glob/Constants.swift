@@ -13,12 +13,13 @@ struct Constants {
     
 }
 
-enum RightMenu {
-    case Home
-    case Appointments
-    case Schedule
-    case SignOut
-    case Notification
+enum RightMenu: Int {
+    case Home = 0
+    case Profile = 1
+    case Appointments = 2
+    case Schedule = 3
+    case Notification = 5
+    case SignOut = 4
 }
 
 class HC: NSObject {

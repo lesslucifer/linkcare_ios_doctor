@@ -8,3 +8,4 @@ github "MengTo/Spring" "swift2"
 github "psy2k/NMPopUpView" ~> 2.1
 github "kitasuke/GoogleMaterialIconFont"
 github "SnapKit/Masonry" == 1.0.0
+github "malcommac/SwiftDate"
