@@ -35,7 +35,8 @@
                     <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <items>
                         <navigationItem id="xdS-Zp-wnX">
-                            <barButtonItem key="rightBarButtonItem" title="Done" id="USQ-qI-W86">
+                            <barButtonItem key="rightBarButtonItem" title="Xong" id="USQ-qI-W86">
+                                <color key="tintColor" red="0.18823529410000001" green="0.64313725489999995" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="doneClicked:" destination="-1" id="fYg-JA-Le3"/>
                                 </connections>

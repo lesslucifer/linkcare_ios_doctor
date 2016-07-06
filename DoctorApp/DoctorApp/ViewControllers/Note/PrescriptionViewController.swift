@@ -18,6 +18,7 @@ class PrescriptionViewController: UIViewController {
     
     @IBOutlet var tbPrescription: UITableView!
     @IBOutlet var btnEdit: UIBarButtonItem!
+    @IBOutlet weak var btnSubmit: UIButton!
     
     var listPrescription = [PrescriptionMedicine()]
     private var vdataPicker: DataPicker!
@@ -29,7 +30,7 @@ class PrescriptionViewController: UIViewController {
         super.viewDidLoad()
 
         self.configureTableView()
-        
+        btnSubmit.linkcarelize()
     }
 
     func addPrescription(){

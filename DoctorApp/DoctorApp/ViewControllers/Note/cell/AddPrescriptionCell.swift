@@ -12,6 +12,8 @@ class AddPrescriptionCell: UITableViewCell {
     @IBOutlet var btnAdd: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        btnAdd.linkcarelize()
     }
     
 //    func configure() {
