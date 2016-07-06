@@ -13,6 +13,12 @@
 		38195FEC1D262771009C8F34 /* GoogleMaterialIconFont.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */; };
 		3820F7621CE890B0005BEFA7 /* CancelReasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */; };
+		3837875C1D2D4FA0005445D9 /* Login2Resp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837875B1D2D4FA0005445D9 /* Login2Resp.swift */; };
+		3837875E1D2D4FA7005445D9 /* GetAccessTokenResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837875D1D2D4FA7005445D9 /* GetAccessTokenResp.swift */; };
+		383787601D2D4FC9005445D9 /* Glob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837875F1D2D4FC9005445D9 /* Glob.swift */; };
+		383787631D2D52E8005445D9 /* PrepareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383787611D2D52E8005445D9 /* PrepareViewController.swift */; };
+		383787641D2D52E8005445D9 /* PrepareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383787621D2D52E8005445D9 /* PrepareViewController.xib */; };
+		383787661D2D5325005445D9 /* VersionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383787651D2D5325005445D9 /* VersionAPI.swift */; };
 		3846CB3B1CF9459D00A5B3E4 /* ProfileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */; };
 		386B7AA01CD798FE00BC28BA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7A9F1CD798FE00BC28BA /* Appointment.swift */; };
 		386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386B7AA31CD7994700BC28BA /* Reflectable.swift */; };
@@ -53,7 +59,6 @@
 		38EFB46F1D2D32EE00F8E2B0 /* Masonry.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38EFB46D1D2D32E500F8E2B0 /* Masonry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38EFB4711D2D351400F8E2B0 /* ResetPasswordAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFB4701D2D351400F8E2B0 /* ResetPasswordAPI.swift */; };
 		38F2ADF81D276DB200C585E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2ADF71D276DB200C585E9 /* Color.swift */; };
-		38F2ADFA1D27726200C585E9 /* LoginResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2ADF91D27726200C585E9 /* LoginResp.swift */; };
 		D90AE44C1CF4C2C60088860B /* AddPrescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AE44A1CF4C2C60088860B /* AddPrescriptionCell.swift */; };
 		D90AE44D1CF4C2C60088860B /* AddPrescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D90AE44B1CF4C2C60088860B /* AddPrescriptionCell.xib */; };
 		D915C8C01CE1888B00C499CD /* AppointmentWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C8BE1CE1888B00C499CD /* AppointmentWaitingViewController.swift */; };
@@ -158,6 +163,12 @@
 		38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaterialIconFont.framework; path = Carthage/Build/iOS/GoogleMaterialIconFont.framework; sourceTree = "<group>"; };
 		3820F75F1CE890B0005BEFA7 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
 		3820F7601CE890B0005BEFA7 /* CancelReasonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelReasonViewController.xib; sourceTree = "<group>"; };
+		3837875B1D2D4FA0005445D9 /* Login2Resp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login2Resp.swift; sourceTree = "<group>"; };
+		3837875D1D2D4FA7005445D9 /* GetAccessTokenResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAccessTokenResp.swift; sourceTree = "<group>"; };
+		3837875F1D2D4FC9005445D9 /* Glob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glob.swift; sourceTree = "<group>"; };
+		383787611D2D52E8005445D9 /* PrepareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareViewController.swift; sourceTree = "<group>"; };
+		383787621D2D52E8005445D9 /* PrepareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrepareViewController.xib; sourceTree = "<group>"; };
+		383787651D2D5325005445D9 /* VersionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionAPI.swift; sourceTree = "<group>"; };
 		3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAPI.swift; sourceTree = "<group>"; };
 		386B7A9F1CD798FE00BC28BA /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		386B7AA31CD7994700BC28BA /* Reflectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reflectable.swift; sourceTree = "<group>"; };
@@ -198,7 +209,6 @@
 		38EFB46D1D2D32E500F8E2B0 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = Carthage/Build/iOS/Masonry.framework; sourceTree = "<group>"; };
 		38EFB4701D2D351400F8E2B0 /* ResetPasswordAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordAPI.swift; sourceTree = "<group>"; };
 		38F2ADF71D276DB200C585E9 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		38F2ADF91D27726200C585E9 /* LoginResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResp.swift; sourceTree = "<group>"; };
 		D90AE44A1CF4C2C60088860B /* AddPrescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrescriptionCell.swift; sourceTree = "<group>"; };
 		D90AE44B1CF4C2C60088860B /* AddPrescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPrescriptionCell.xib; sourceTree = "<group>"; };
 		D915C8BE1CE1888B00C499CD /* AppointmentWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentWaitingViewController.swift; sourceTree = "<group>"; };
@@ -360,7 +370,8 @@
 				E370F8E81CDCF03D005BE9F0 /* UserProfile.swift */,
 				E370F8EA1CDCF17C005BE9F0 /* MedicarProfile.swift */,
 				E370F8EE1CDCF625005BE9F0 /* Notification.swift */,
-				38F2ADF91D27726200C585E9 /* LoginResp.swift */,
+				3837875B1D2D4FA0005445D9 /* Login2Resp.swift */,
+				3837875D1D2D4FA7005445D9 /* GetAccessTokenResp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,6 +388,7 @@
 				3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */,
 				E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */,
 				38EFB4701D2D351400F8E2B0 /* ResetPasswordAPI.swift */,
+				383787651D2D5325005445D9 /* VersionAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -414,6 +426,7 @@
 		38CEE8351CD2683B000010D2 /* Glob */ = {
 			isa = PBXGroup;
 			children = (
+				3837875F1D2D4FC9005445D9 /* Glob.swift */,
 				38F2ADF71D276DB200C585E9 /* Color.swift */,
 				D967DA1A1CD5C581002E4C0F /* Constants.swift */,
 				38CCDC831CE398F2001E0129 /* DateFormat.swift */,
@@ -481,6 +494,8 @@
 		D967D9F21CD5B739002E4C0F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				383787611D2D52E8005445D9 /* PrepareViewController.swift */,
+				383787621D2D52E8005445D9 /* PrepareViewController.xib */,
 				D967D9F31CD5B739002E4C0F /* LoginViewController.swift */,
 				D967D9F41CD5B739002E4C0F /* LoginViewController.xib */,
 			);
@@ -653,6 +668,9 @@
 						DevelopmentTeam = 6YL39XNP5T;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -693,6 +711,7 @@
 				D9950E211CDDDF0400340EE9 /* AppointmentCell.xib in Resources */,
 				D967DA151CD5C511002E4C0F /* MenuCell.xib in Resources */,
 				38758BB31CCE710C00AEC3BB /* Assets.xcassets in Resources */,
+				383787641D2D52E8005445D9 /* PrepareViewController.xib in Resources */,
 				D993968E1CE2D8960091DCE3 /* ClinicTimeSlotCell.xib in Resources */,
 				D967DA191CD5C511002E4C0F /* NavigationBarView.xib in Resources */,
 				38758BB11CCE710C00AEC3BB /* Main.storyboard in Resources */,
@@ -740,6 +759,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3837875E1D2D4FA7005445D9 /* GetAccessTokenResp.swift in Sources */,
 				D967DA1F1CD5C634002E4C0F /* AppointmentViewController.swift in Sources */,
 				3876AB651CD492370087E5AC /* TimingsAPI.swift in Sources */,
 				38758BAE1CCE710C00AEC3BB /* ViewController.swift in Sources */,
@@ -760,18 +780,20 @@
 				38B370491CDCE52100B51011 /* BlockVacationAPI.swift in Sources */,
 				D967DA1B1CD5C581002E4C0F /* Constants.swift in Sources */,
 				D90AE44C1CF4C2C60088860B /* AddPrescriptionCell.swift in Sources */,
+				383787631D2D52E8005445D9 /* PrepareViewController.swift in Sources */,
+				383787601D2D4FC9005445D9 /* Glob.swift in Sources */,
 				D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */,
 				D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */,
 				D967DA161CD5C511002E4C0F /* MenuView.swift in Sources */,
 				D9950E251CDDEC4600340EE9 /* BaseTabViewController.swift in Sources */,
 				D965CD7F1CF37D6800746C8F /* PrescriptionCell.swift in Sources */,
-				38F2ADFA1D27726200C585E9 /* LoginResp.swift in Sources */,
 				3882FBFC1CD122DA006B69FC /* API.swift in Sources */,
 				38B370471CDCDA2F00B51011 /* BlockVacation.swift in Sources */,
 				3876AB671CD4BDA30087E5AC /* APIData+Safe.swift in Sources */,
 				D97711CA1CF1723000F2DBC9 /* NotificationCell.swift in Sources */,
 				3817E7861CE4E726006E3B5A /* Persist.swift in Sources */,
 				D9950E231CDDEBF800340EE9 /* ContainerView.swift in Sources */,
+				3837875C1D2D4FA0005445D9 /* Login2Resp.swift in Sources */,
 				D915C8C01CE1888B00C499CD /* AppointmentWaitingViewController.swift in Sources */,
 				3876AB6A1CD4C0C30087E5AC /* Timings.swift in Sources */,
 				D9C03FC01CF55F4C00C08A70 /* TimmingSlot.swift in Sources */,
@@ -804,6 +826,7 @@
 				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
 				3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */,
 				D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */,
+				383787661D2D5325005445D9 /* VersionAPI.swift in Sources */,
 				D993968D1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift in Sources */,
 				38EFB4711D2D351400F8E2B0 /* ResetPasswordAPI.swift in Sources */,
 				38CCDC841CE398F2001E0129 /* DateFormat.swift in Sources */,
@@ -922,8 +945,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lĩnh Võ (6YL39XNP5T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lĩnh Võ (6YL39XNP5T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: linh.tritueviet@gmail.com (8663YSP2MY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: linh.tritueviet@gmail.com (8663YSP2MY)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -934,7 +957,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = concon.vn.DoctorApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4c8f688b-e554-4c92-9056-e1616967939e";
+				PROVISIONING_PROFILE = "b4fb47ac-aedc-4217-83a6-0088ee3c884c";
 			};
 			name = Debug;
 		};
@@ -942,8 +965,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lĩnh Võ (6YL39XNP5T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lĩnh Võ (6YL39XNP5T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: linh.tritueviet@gmail.com (8663YSP2MY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: linh.tritueviet@gmail.com (8663YSP2MY)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -954,7 +977,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = concon.vn.DoctorApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4c8f688b-e554-4c92-9056-e1616967939e";
+				PROVISIONING_PROFILE = "b4fb47ac-aedc-4217-83a6-0088ee3c884c";
 			};
 			name = Release;
 		};

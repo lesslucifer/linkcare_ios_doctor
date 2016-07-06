@@ -138,6 +138,11 @@ extension BaseMenuViewController {
             Persist.INST.db_wipeDBOnSignout()
         }
         
+        API.api1.auth = API.Auth()
+        API.api2.auth = API.Auth()
+        
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(HC.REFRESH_TOKEN)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }
 

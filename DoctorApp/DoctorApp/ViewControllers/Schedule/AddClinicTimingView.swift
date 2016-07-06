@@ -121,7 +121,7 @@ extension AddClinicTimingView {
                 
                 let beginTime = Utils.converStringTimeToInt(cell.tf_timefrom.text!)
                 let endTime = Utils.converStringTimeToInt(cell.tf_timeto.text!)
-                var lengthTime = endTime - beginTime
+                let lengthTime = endTime - beginTime
                 
                 if lengthTime < 0 {
                     let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -252,7 +252,7 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
         //--
         cell.btn_addNewBlock.addTarget(self, action: #selector(AddClinicTimingView.btnAddNewBlockPressed(_:)), forControlEvents: .TouchUpInside)
         cell.btn_deleteBlock.tag = indexPath.row
-        cell.btn_deleteBlock.addTarget(self, action: Selector("btnDeletePressed:"), forControlEvents: .TouchUpInside)
+        cell.btn_deleteBlock.addTarget(self, action: #selector(AddClinicTimingView.btnDeletePressed(_:)), forControlEvents: .TouchUpInside)
         return cell
         
     }
@@ -266,7 +266,7 @@ extension AddClinicTimingView: UITableViewDelegate, UITableViewDataSource{
 //MARK: text field delegate
 extension AddClinicTimingView: UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
-        let index = textField.tag / 4
+//        let index = textField.tag / 4
         let type = textField.tag % 4
         
         if (type < 2) {

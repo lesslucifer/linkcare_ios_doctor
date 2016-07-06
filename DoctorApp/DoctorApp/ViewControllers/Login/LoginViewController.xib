@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DoctorApp" customModuleProvider="target">
             <connections>
+                <outlet property="btnSavePassword" destination="BHy-ro-fJ1" id="6zg-1l-pu2"/>
                 <outlet property="btnShowPassword" destination="2Fz-bG-ZBW" id="bcs-0Y-suS"/>
                 <outlet property="scrollView" destination="wo7-gl-oqf" id="079-FD-hYa"/>
                 <outlet property="tfPassword" destination="50E-sW-xix" id="W9a-zI-akP"/>
@@ -81,9 +82,6 @@
                                     <variation key="heightClass=compact">
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     </variation>
-                                    <connections>
-                                        <action selector="notSupported:" destination="-1" eventType="touchUpInside" id="t6n-gp-Aj1"/>
-                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaG-6r-XHO">
                                     <rect key="frame" x="937.5" y="462" width="130" height="39"/>
@@ -107,15 +105,16 @@
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHy-ro-fJ1">
                                     <rect key="frame" x="267" y="467" width="29.5" height="29"/>
-                                    <color key="backgroundColor" red="0.34509803919999998" green="0.64705882349999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="BHy-ro-fJ1" secondAttribute="height" multiplier="1:1" id="elR-yW-9WQ"/>
                                     </constraints>
-                                    <state key="normal">
-                                        <color key="titleColor" red="0.34509803919999998" green="0.64705882349999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="✓">
+                                        <color key="titleColor" red="0.098039215690000001" green="0.5450980392" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="notSupported:" destination="-1" eventType="touchUpInside" id="cYp-hC-xfO"/>
+                                        <action selector="btnSavePasswordPressed:" destination="-1" eventType="touchUpInside" id="91q-Q5-E3F"/>
                                     </connections>
                                 </button>
                             </subviews>

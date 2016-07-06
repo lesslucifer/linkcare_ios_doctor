@@ -15,18 +15,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        API.api1.config = API.Config(host: "concon.vn", basePath: "/clinic-api/biz/v1", port: 8080)
-        API.api2.config = API.Config(host: "api2.concon.vn", basePath: "", port: 80)
+        registerForPushNotifications(application)
+        
+        API.api1.config = API.Config(schema: "http", host: "concon.vn", basePath: "/clinic-api/biz/v1", port: 8080)
+        API.api2.config = API.Config(schema: "http", host: "api2.concon.vn", basePath: "", port: 80)
         
         //go to Login ViewController
         gotoLoginVC()
         
         return true
     }
+    
+    func registerForPushNotifications(application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(
+            forTypes: [.Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != .None {
+            application.registerForRemoteNotifications()
+        }
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        for i in 0..<deviceToken.length {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+        Glob.deviceToken = tokenString
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Failed to register:", error)
+    }
 
     func gotoLoginVC(){
-        let vc_initial = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        let vc_initial = PrepareViewController(nibName: "PrepareViewController", bundle: nil)
         
         let c_navigation = UINavigationController(rootViewController: vc_initial)
         c_navigation.setNavigationBarHidden(true, animated: false)

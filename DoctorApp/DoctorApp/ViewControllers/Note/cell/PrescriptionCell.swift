@@ -33,7 +33,7 @@ class PrescriptionCell: UITableViewCell {
         numberToolbar.items = [
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(title: "Xong", style: UIBarButtonItemStyle.Plain, target: self, action: "dismissKeyboard")]
+            UIBarButtonItem(title: "Xong", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PrescriptionCell.dismissKeyboard))]
         
         numberToolbar.sizeToFit()
         

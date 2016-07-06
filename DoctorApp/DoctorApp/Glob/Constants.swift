@@ -27,6 +27,11 @@ class HC: NSObject {
     
     static let TYPE_CLINIC = 0
     static let TYPE_PATIENT_HOME = 1
+    
+    static let ANIM_DUR_DEFAULT = 0.3
+    static let ANIM_DUR_MENU = ANIM_DUR_DEFAULT
+    static let DEFAULT_LOCATION: Location = (10.77, 106.69)
+    static let REFRESH_TOKEN = "refresh_token"
 }
 
 @objc
@@ -93,4 +98,6 @@ struct Color {
     static let DeepBlue = Utils.UIColorFromRGB(red: 10, green: 71, blue: 118)
     static let SkyBlue = Utils.UIColorFromRGB(red: 0, green: 173, blue: 239)
 }
+
+typealias Location = (latitude: Double, longitude: Double)
 

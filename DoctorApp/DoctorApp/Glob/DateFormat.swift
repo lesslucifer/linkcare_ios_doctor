@@ -10,11 +10,13 @@ import UIKit
 import Foundation
 
 class DateFormat: NSObject {
-    static let dateTimeFormatFull = "h:mm a,dd.MM.yyyy"
+    static let dateTimeFormatFull = "dd MMMM yyyy          h : mm a"
     static let dateFormat = "dd-MM-yyyy"
     static let dateTimeFormat = "dd-MM-yyyy hh:mm"
+    static let dateTimeMsecFormat = "dd-MM-yyyy hh:mm:ss.SSS"
     static let shortTimeFormat = "hh:mm aa"
     static let dateDotFormat = "dd.MM.yyyy"
+    static let yearFormat = "yyyy"
     
     static var dateTimeFullFormatter: NSDateFormatter {
         struct Static {
@@ -36,6 +38,9 @@ class DateFormat: NSObject {
     static let dateTimeFormatter = Utils.createFormatter(dateTimeFormat)
     static let dateTimeTransformer = Utils.createDateTransformer(dateTimeFormatter)
     
+    static let dateTimeMsecFormatter = Utils.createFormatter(dateTimeMsecFormat)
+    static let dateTimeMsecTransformer = Utils.createDateTransformer(dateTimeMsecFormatter)
+    
     
     static let shortTimeFormatter = Utils.createFormatter(shortTimeFormat)
     static let shortTimeTransformer = Utils.createDateTransformer(shortTimeFormatter)
@@ -44,10 +49,36 @@ class DateFormat: NSObject {
     static let dateDotFormatter = Utils.createFormatter(dateDotFormat)
     static let dateDotTransformer = Utils.createDateTransformer(dateDotFormatter)
     
-    static func formatMinuteTime(minute: Int) -> String {
+    
+    static let yearFormatter = Utils.createFormatter(yearFormat)
+    static let yearTransformer = Utils.createDateTransformer(yearFormatter)
+    
+    
+    static func formatMinuteTime(minute: Int, separator: String = ":") -> String {
         let h = minute / 60
         let m = minute % 60
         
-        return "\(String(format: "%02d", h)).\(String(format: "%02d", m))"
+        return "\(String(format: "%02d", h))\(separator)\(String(format: "%02d", m))"
+    }
+    
+    static func weekDayName(weekDay: Int) -> String {
+        switch weekDay {
+        case 1:
+            return "Chủ Nhật"
+        case 2:
+            return "Thứ 2"
+        case 3:
+            return "Thứ 3"
+        case 4:
+            return "Thứ 4"
+        case 5:
+            return "Thứ 5"
+        case 6:
+            return "Thứ 6"
+        case 7:
+            return "Thứ 7"
+        default:
+            return ""
+        }
     }
 }
