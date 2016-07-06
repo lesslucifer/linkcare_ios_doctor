@@ -47,6 +47,11 @@
 		38CEE8341CD26342000010D2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8331CD26342000010D2 /* Utils.swift */; };
 		38CEE8391CD269D0000010D2 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE8381CD269D0000010D2 /* LoginAPI.swift */; };
 		38E61DB71CD72009008D1870 /* AppointmentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E61DB61CD72009008D1870 /* AppointmentAPI.swift */; };
+		38EFB46B1D2D2FCD00F8E2B0 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFB4691D2D2FCD00F8E2B0 /* ResetPasswordViewController.swift */; };
+		38EFB46C1D2D2FCD00F8E2B0 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EFB46A1D2D2FCD00F8E2B0 /* ResetPasswordViewController.xib */; };
+		38EFB46E1D2D32E500F8E2B0 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EFB46D1D2D32E500F8E2B0 /* Masonry.framework */; };
+		38EFB46F1D2D32EE00F8E2B0 /* Masonry.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38EFB46D1D2D32E500F8E2B0 /* Masonry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38EFB4711D2D351400F8E2B0 /* ResetPasswordAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFB4701D2D351400F8E2B0 /* ResetPasswordAPI.swift */; };
 		38F2ADF81D276DB200C585E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2ADF71D276DB200C585E9 /* Color.swift */; };
 		38F2ADFA1D27726200C585E9 /* LoginResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2ADF91D27726200C585E9 /* LoginResp.swift */; };
 		D90AE44C1CF4C2C60088860B /* AddPrescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AE44A1CF4C2C60088860B /* AddPrescriptionCell.swift */; };
@@ -132,6 +137,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				38EFB46F1D2D32EE00F8E2B0 /* Masonry.framework in CopyFiles */,
 				38195FEC1D262771009C8F34 /* GoogleMaterialIconFont.framework in CopyFiles */,
 				D967DA091CD5C46E002E4C0F /* Spring.framework in CopyFiles */,
 				3876AB711CD4CDB10087E5AC /* ObjectMapper.framework in CopyFiles */,
@@ -187,6 +193,10 @@
 		38CEE8331CD26342000010D2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38CEE8381CD269D0000010D2 /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		38E61DB61CD72009008D1870 /* AppointmentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentAPI.swift; sourceTree = "<group>"; };
+		38EFB4691D2D2FCD00F8E2B0 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		38EFB46A1D2D2FCD00F8E2B0 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		38EFB46D1D2D32E500F8E2B0 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = Carthage/Build/iOS/Masonry.framework; sourceTree = "<group>"; };
+		38EFB4701D2D351400F8E2B0 /* ResetPasswordAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordAPI.swift; sourceTree = "<group>"; };
 		38F2ADF71D276DB200C585E9 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		38F2ADF91D27726200C585E9 /* LoginResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResp.swift; sourceTree = "<group>"; };
 		D90AE44A1CF4C2C60088860B /* AddPrescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrescriptionCell.swift; sourceTree = "<group>"; };
@@ -262,6 +272,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38EFB46E1D2D32E500F8E2B0 /* Masonry.framework in Frameworks */,
 				38195FEB1D262767009C8F34 /* GoogleMaterialIconFont.framework in Frameworks */,
 				3876AB701CD4CDA30087E5AC /* ObjectMapper.framework in Frameworks */,
 				38947DD91CCFE2050008049A /* PKHUD.framework in Frameworks */,
@@ -291,6 +302,7 @@
 		38758B9F1CCE710B00AEC3BB = {
 			isa = PBXGroup;
 			children = (
+				38EFB46D1D2D32E500F8E2B0 /* Masonry.framework */,
 				38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */,
 				D967DA071CD5C455002E4C0F /* Spring.framework */,
 				3876AB6F1CD4CDA30087E5AC /* ObjectMapper.framework */,
@@ -364,6 +376,7 @@
 				38B370481CDCE52100B51011 /* BlockVacationAPI.swift */,
 				3846CB3A1CF9459D00A5B3E4 /* ProfileAPI.swift */,
 				E370F8EC1CDCF61F005BE9F0 /* NotificationAPI.swift */,
+				38EFB4701D2D351400F8E2B0 /* ResetPasswordAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -408,6 +421,15 @@
 			path = Glob;
 			sourceTree = "<group>";
 		};
+		38EFB4681D2D2FBB00F8E2B0 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				38EFB4691D2D2FCD00F8E2B0 /* ResetPasswordViewController.swift */,
+				38EFB46A1D2D2FCD00F8E2B0 /* ResetPasswordViewController.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 		D921669F1CE2423D004FA64C /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +464,7 @@
 		D967D9F11CD5B739002E4C0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				38EFB4681D2D2FBB00F8E2B0 /* Popup */,
 				D921669F1CE2423D004FA64C /* Notification */,
 				D9950E0A1CDD083400340EE9 /* Note */,
 				D967DA211CD71116002E4C0F /* Schedule */,
@@ -664,6 +687,7 @@
 				D915C8C91CE188F100C499CD /* AppointmentStartViewController.xib in Resources */,
 				D965CD801CF37D6800746C8F /* PrescriptionCell.xib in Resources */,
 				38758BB61CCE710C00AEC3BB /* LaunchScreen.storyboard in Resources */,
+				38EFB46C1D2D2FCD00F8E2B0 /* ResetPasswordViewController.xib in Resources */,
 				D915C8C11CE1888B00C499CD /* AppointmentWaitingViewController.xib in Resources */,
 				D967DA201CD5C634002E4C0F /* AppointmentViewController.xib in Resources */,
 				D9950E211CDDDF0400340EE9 /* AppointmentCell.xib in Resources */,
@@ -761,6 +785,7 @@
 				D9950E171CDDA21900340EE9 /* ClinicalViewController.swift in Sources */,
 				3817E7891CE4E906006E3B5A /* BaseCache.swift in Sources */,
 				38F2ADF81D276DB200C585E9 /* Color.swift in Sources */,
+				38EFB46B1D2D2FCD00F8E2B0 /* ResetPasswordViewController.swift in Sources */,
 				D9950E201CDDDF0400340EE9 /* AppointmentCell.swift in Sources */,
 				D967DA011CD5BECE002E4C0F /* HomeViewController.swift in Sources */,
 				D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */,
@@ -780,6 +805,7 @@
 				3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */,
 				D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */,
 				D993968D1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift in Sources */,
+				38EFB4711D2D351400F8E2B0 /* ResetPasswordAPI.swift in Sources */,
 				38CCDC841CE398F2001E0129 /* DateFormat.swift in Sources */,
 				D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */,
 			);

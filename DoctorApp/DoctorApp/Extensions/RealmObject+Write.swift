@@ -10,12 +10,12 @@ import UIKit
 import RealmSwift
 
 extension Object {
-    func write(block: ()->()) {
-        if let r = self.realm {
-            try! r.write(block)
-        }
-        else {
-            block()
-        }
-    }
+//    func write(block: ()->()) {
+//        if let r = self.realm {
+//            try! r.write(block)
+//        }
+//        else {
+//            block()
+//        }
+//    }
 }

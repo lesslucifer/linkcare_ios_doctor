@@ -92,10 +92,10 @@ public class API: NSObject {
         }
     }
     
-    public static var config = Config()
-    public static var auth = Auth()
+    public var config = Config()
+    public var auth = Auth()
     
-    class func url(path: String) -> String {
+    func url(path: String) -> String {
         var _path = path
         if (!path.hasPrefix("/")) {
             _path = "/\(path)"
@@ -104,16 +104,19 @@ public class API: NSObject {
         return "\(self.config.baseUrl)\(_path)"
     }
     
-    class func headers() -> [String: String]? {
+    func headers() -> [String: String]? {
         if (!Utils.isEmpty(auth.session)) {
-            return ["sess": auth.session]
+            return [
+                "sess": auth.session,
+                "Authorization": auth.session
+            ]
         }
         
         return [:]
     }
     
-    class func baseAPI(method: APIMethod,
-                       path: String, body: APIData?, success: APIHandler.Success?, failure: APIHandler.Failure?) {
+    func baseAPI(method: APIMethod,
+                 path: String, body: APIData?, success: APIHandler.Success?, failure: APIHandler.Failure?) {
         Alamofire.request(method, url(path), parameters: body?.dictionaryObject, encoding: ParameterEncoding.JSON, headers: headers())
             .responseJSON { resp in
                 switch resp.result {
@@ -135,19 +138,23 @@ public class API: NSObject {
                     break
                 case .Failure(let error):
                     debugPrint(error)
+                    debugPrint(String(data: resp.data!, encoding: NSUTF8StringEncoding))
                     failure?(code: error.code, msg: error.localizedDescription, params: [])
                     break
                 }
         }
     }
     
-    class func baseAPI(method: APIMethod,
-                       path: String, body: APIData?, success: APIHandler.Success?) {
+    func baseAPI(method: APIMethod,
+                 path: String, body: APIData?, success: APIHandler.Success?) {
         self.baseAPI(method, path: path, body: body, success: success, failure: nil)
     }
     
-    class func baseAPI(method: APIMethod,
-                       path: String, success: APIHandler.Success?) {
+    func baseAPI(method: APIMethod,
+                 path: String, success: APIHandler.Success?) {
         self.baseAPI(method, path: path, body: nil, success: success, failure: nil)
     }
+    
+    static let api1 = API()
+    static let api2 = API()
 }

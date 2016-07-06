@@ -96,7 +96,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     </variation>
                                     <connections>
-                                        <action selector="notSupported:" destination="-1" eventType="touchUpInside" id="QN8-pv-SGU"/>
+                                        <action selector="forgotPasswordPressed:" destination="-1" eventType="touchUpInside" id="yYx-eo-kZk"/>
                                     </connections>
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JrB-8S-dsA">

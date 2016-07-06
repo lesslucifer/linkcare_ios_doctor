@@ -104,14 +104,16 @@ extension AddClinicTimingView {
 //            lengthTime = lengthTime < 0 ? lengthTime + 60 * 24 : lengthTime
             
             if lengthTime < 0 {
-                Utils.showAlertWithError("Thời gian không hợp lệ")
+                let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
+                let rootViewController = appDelegate.window!.rootViewController! as UIViewController
+                Utils.showOKAlertPanel(rootViewController, title: "Lỗi", msg: "Thời gian không hợp lệ")
             } else {
                 mEditingTiming?.editTimeFrom(beginTime)
                 mEditingTiming?.lengthTime(lengthTime)
                 self.delegate.editClinicTimingViewDidConfirm()
             }
         } else {
-            for (var i = 0 ; i < ma_Timing.count ; i += 1){
+            for i in 0  ..< ma_Timing.count {
                 let cell = self.tv_addClinicTiming.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0)) as! ClinicTimeSlotCell
                 if cell.tf_timeto.text == "00:00" {
                     cell.tf_timeto.text = "24:00"
@@ -122,7 +124,9 @@ extension AddClinicTimingView {
                 var lengthTime = endTime - beginTime
                 
                 if lengthTime < 0 {
-                    Utils.showAlertWithError("Thời gian không hợp lệ")
+                    let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
+                    let rootViewController = appDelegate.window!.rootViewController! as UIViewController
+                    Utils.showOKAlertPanel(rootViewController, title: "Lỗi", msg: "Thời gian không hợp lệ")
                 } else {
                     ma_Timing[i].editTimeFrom(beginTime)
                     ma_Timing[i].lengthTime(lengthTime)

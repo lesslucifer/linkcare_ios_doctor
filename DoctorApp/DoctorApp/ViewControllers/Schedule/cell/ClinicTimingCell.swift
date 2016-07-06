@@ -48,7 +48,7 @@ extension ClinicTimingCell {
     func setButtonTime(timingTemp: [Timings], currentView: UIView, status: DefineClinic, category: Int) {
         currentView.removeAllSubviews()
         
-        for (var i = 0; i < timingTemp.count; i++){
+        for i in 0..<timingTemp.count {
             let timing = timingTemp[i]
             let frame = CGRect(x: 0, y: CGFloat(i * 35), width: currentView.frame.size.width, height: 34)
             let button = UIButton(frame: frame)

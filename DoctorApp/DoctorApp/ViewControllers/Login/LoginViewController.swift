@@ -100,24 +100,29 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
         LoginAPI.login(self.tfUsername.text!, password: self.tfPassword.text!, success: { (loginResp) in
             HUD.hide()
             if let session = loginResp?.session where loginResp!.roles.contains({$0.code == "DOCTOR_ROLE" || $0.code == "NURSE_ROLE"}) {
-                API.auth = API.Auth(sess: session)
+                API.api1.auth = API.Auth(sess: session)
                 nav_mainApp.viewControllers = [vc_dashboard]
                 nav_mainApp.setNavigationBarHidden(true, animated: false)
                 
                 self.presentViewController(nav_mainApp, animated: true, completion: nil)
             }
             else {
-                Utils.showAlertWithError("Tài khoản hoặc mật khẩu không chính xác! Xin vui lòng thử lại.")
+                Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Tài khoản hoặc mật khẩu không chính xác! Xin vui lòng thử lại.")
             }
             
             }, failure: { code, msg, params in
                 HUD.hide()
-                Utils.showAlertWithError(msg)
+                Utils.showOKAlertPanel(self, title: "Lỗi", msg: "Tài khoản hoặc mật khẩu không chính xác! Xin vui lòng thử lại.")
         })
         
     }
     
     @IBAction func forgotPasswordPressed(sender: AnyObject) {
+        let resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
+        let popup = self.rootVC?.showPopup(resetPasswordVC, heightRatio: 0.9, widthRatio: 0.4)
+        resetPasswordVC.onClose = { _ in
+            self.rootVC?.closePopup(popup!)
+        }
     }
     
     @IBAction func notSupported(sender: AnyObject) {

@@ -10,7 +10,7 @@ import UIKit
 
 class NotificationAPI {
     class func getNotifications(success: APIGenericHandler<Int>.Arr, failure: APIHandler.Failure?) {
-        API.baseAPI(.GET, path: "/notifications", body: nil,
+        API.api1.baseAPI(.GET, path: "/notifications", body: nil,
                     success: { data in
                         let arr = data.safeArray({$0.int}).filter({$0 != nil}).map({$0!})
                         success(arr: arr)
@@ -24,7 +24,7 @@ class NotificationAPI {
         }
         
         let query = ids.map({String($0)}).joinWithSeparator(",")
-        API.baseAPI(.GET, path: "/notifications/\(query)", body: nil,
+        API.api1.baseAPI(.GET, path: "/notifications/\(query)", body: nil,
                     success: APIHandler.toSuccess(genericHandler: success), failure: failure)
     }
     
@@ -34,7 +34,7 @@ class NotificationAPI {
         }
         
         let query = ids.map({String($0)}).joinWithSeparator(",")
-        API.baseAPI(.PUT, path: "/notifications/\(query)/read", body: nil,
+        API.api1.baseAPI(.PUT, path: "/notifications/\(query)/read", body: nil,
                     success: APIHandler.toSuccess(result),
                     failure: APIHandler.toFailure(result))
     }

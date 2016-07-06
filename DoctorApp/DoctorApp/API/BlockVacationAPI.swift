@@ -11,7 +11,7 @@ import UIKit
 class BlockVacationAPI {
     class func getBlockVacations(from: NSDate, to: NSDate, success: APIGenericHandler<BlockVacation>.Arr, failure: APIHandler.Failure?) {
         let query = "from=\(DateFormat.dateFormatter.stringFromDate(from))&to=\(DateFormat.dateFormatter.stringFromDate(to))"
-        API.baseAPI(.GET, path: "/block_vacations?\(query)", body: nil,
+        API.api1.baseAPI(.GET, path: "/block_vacations?\(query)", body: nil,
                     success: APIHandler.toSuccess(genericHandler: success), failure: failure)
     }
     
@@ -22,18 +22,18 @@ class BlockVacationAPI {
         }
         
         let query = ids.map({String($0)}).joinWithSeparator(",")
-        API.baseAPI(.GET, path: "/block_vacations/\(query)", body: nil,
+        API.api1.baseAPI(.GET, path: "/block_vacations/\(query)", body: nil,
                     success: APIHandler.toSuccess(genericHandler: success), failure: failure)
     }
     
     class func addBlockVacation(blockVacation: BlockVacation, result: APIHandler.Result?) {
-        API.baseAPI(.POST, path: "/block_vacations", body: nil,
+        API.api1.baseAPI(.POST, path: "/block_vacations", body: nil,
                     success: APIHandler.toSuccess(result),
                     failure: APIHandler.toFailure(result))
     }
     
     class func deleteBlockVacation(id: Int, result: APIHandler.Result?) {
-        API.baseAPI(.PUT, path: "/block_vacations/\(id)/delete", body: nil,
+        API.api1.baseAPI(.PUT, path: "/block_vacations/\(id)/delete", body: nil,
                     success: APIHandler.toSuccess(result),
                     failure: APIHandler.toFailure(result))
     }

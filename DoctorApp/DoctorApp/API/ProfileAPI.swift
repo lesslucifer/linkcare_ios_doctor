@@ -11,7 +11,7 @@ import ObjectMapper
 
 class ProfileAPI: NSObject {
     class func getUserProfile(success: APIGenericHandler<UserProfile>.Single, failure: APIHandler.Failure?) {
-        API.baseAPI(.GET, path: "/account/profile", body: nil,
+        API.api1.baseAPI(.GET, path: "/account/profile", body: nil,
                     success: APIHandler.toSuccess(genericHandler: success),
                     failure: failure)
     }
@@ -19,7 +19,7 @@ class ProfileAPI: NSObject {
     class func getMedicarProfile(accountId: Int?, success: APIGenericHandler<MedicarProfile>.Single, failure: APIHandler.Failure?) {
         let accId = accountId == nil ? "me" : String(accountId)
         
-        API.baseAPI(.GET, path: "/account/\(accId)/medicar_profile", body:nil,
+        API.api1.baseAPI(.GET, path: "/account/\(accId)/medicar_profile", body:nil,
                     success: APIHandler.toSuccess(genericHandler: success),
                     failure: failure)
     }

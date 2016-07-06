@@ -11,19 +11,16 @@ import UIKit
 class LoginAPI {
     class func login(idcard: String, password: String, success: APIGenericHandler<LoginResp>.Single, failure: APIHandler.Failure? = nil) {
         let body: APIData = ["loginName": idcard, "password": password]
-        API.baseAPI(.POST, path: "/account/login", body: body,
+        API.api1.baseAPI(.POST, path: "/account/login", body: body,
                     success: APIHandler.toSuccess(genericHandler: success), failure: failure)
     }
     
-    class func logout(success: APIHandler.Success, failure: APIHandler.Failure? = nil) {
-        if Utils.isEmpty(API.auth.session) {
-            success(data: [:])
+    class func logout(success: APIHandler.Success? = nil, failure: APIHandler.Failure? = nil) {
+        if Utils.isEmpty(API.api1.auth.session) {
+            success?(data: [:])
             return
         }
         
-        API.baseAPI(.PUT, path: "/account/logout", body: [:], success: { data in
-            API.auth = API.Auth()
-            success(data: data)
-            }, failure: failure)
+        API.api1.baseAPI(.PUT, path: "/account/logout", body: nil, success: success, failure: failure)
     }
 }

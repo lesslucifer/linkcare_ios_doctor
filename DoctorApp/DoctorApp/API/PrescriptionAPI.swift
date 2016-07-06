@@ -14,7 +14,7 @@ class PrescriptionAPI {
         let mapper = Mapper<Prescription>()
         let body = APIData(mapper.toJSON(prescription))
         
-        API.baseAPI(.POST, path: "/prescriptions", body: body,
+        API.api1.baseAPI(.POST, path: "/prescriptions", body: body,
                      success: APIHandler.toSuccess(result),
                      failure: APIHandler.toFailure(result))
     }
@@ -30,6 +30,6 @@ class PrescriptionAPI {
             success(arr: data.safeArray({$0.intValue}))
         }
         
-        API.baseAPI(.GET, path: "/prescriptions/\(query)", body: nil, success: succHandler, failure: failure)
+        API.api1.baseAPI(.GET, path: "/prescriptions/\(query)", body: nil, success: succHandler, failure: failure)
     }
 }

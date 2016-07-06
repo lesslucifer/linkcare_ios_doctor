@@ -11,7 +11,7 @@ import ObjectMapper
 
 class TimingsAPI {
     class func getTimings(success: APIGenericHandler<Timings>.Arr, failure: APIHandler.Failure?) {
-        return API.baseAPI(.GET, path: "/timings", body: nil,
+        return API.api1.baseAPI(.GET, path: "/timings", body: nil,
                             success: APIHandler.toSuccess("timings", genericHandler: success),
                             failure: failure)
     }
@@ -21,7 +21,7 @@ class TimingsAPI {
         let timingsJSON = mapper.toJSONArray(timings)
         let body: APIData = ["timings": timingsJSON]
         
-        return API.baseAPI(.POST, path: "/timings", body: body,
+        return API.api1.baseAPI(.POST, path: "/timings", body: body,
                             success: APIHandler.toSuccess(finish),
                             failure: APIHandler.toFailure(finish))
     }
@@ -30,7 +30,7 @@ class TimingsAPI {
 class TimingSlotAPI {
     class func getMedicarTimingSlot(date: NSDate? = nil, success: APIGenericHandler<TimmingSlot>.Arr, failure: APIHandler.Failure?) {
         let dateParam = date == nil ? "today" : DateFormat.dateFormatter.stringFromDate(date!)
-        return API.baseAPI(.GET, path: "medicar/timings/slot/?date=\(dateParam)", body: nil,
+        return API.api1.baseAPI(.GET, path: "medicar/timings/slot/?date=\(dateParam)", body: nil,
                            success: APIHandler.toSuccess("slots", genericHandler: success),
                            failure: failure)
     }
