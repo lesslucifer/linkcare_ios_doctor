@@ -17,27 +17,34 @@ class MedicarProfile: NSObject, Mappable {
     
     var graduatedSchool: String?
     var graduatedYear: Int?
+    var graduatedLevel: GraduatedType?
     
+    var masterSchool: String?
     var masterYear: Int?
-    var masterSpec: String?
+    var masterType: MasterType?
     
-    var doctorYear: Int?
-    var doctorSpec: String?
+    var workingPlace: String?
+    var study: String?
     
-    var specialist1Year: Int?
-    var specialist1Spec: String?
-    
-    var specialist2Year: Int?
-    var specialist2Spec: String?
-    
-    var otherSpecialistYear: Int?
-    var otherSpecialistSpec: String?
-    
-    var otherTraining: String?
-    
-    var level: Int?
     var clinicPrice: Int = 0
     var patientHomePrice: Int = 0
+    
+    func buildPrefix(title: String, name: String) -> String {
+        if let masterType = self.masterType {
+            switch masterType {
+            case .Master:
+                return "ThS. \(title) \(name)"
+            case .Doctor:
+                return "TS. \(title) \(name)"
+            case .Specialist1:
+                return "\(title) CK1 \(name)"
+            case .Specialist2:
+                return "\(title) CK2 \(name)"
+            }
+        }
+        
+        return "\(title) \(name)"
+    }
     
     required init?(_ map: Map) {
         if !Utils.checkMap(map, fields: "id", "clinicPrice", "patientHomePrice") {
@@ -53,25 +60,15 @@ class MedicarProfile: NSObject, Mappable {
         
         graduatedSchool <- map["graduatedSchool"]
         graduatedYear <- map["graduatedYear"]
+        graduatedLevel <- map["graduatedLevel"]
         
         masterYear <- map["masterYear"]
-        masterSpec <- map["masterSpec"]
+        masterSchool <- map["masterSchool"]
+        masterType <- map["masterType"]
         
-        doctorYear <- map["doctorYear"]
-        doctorSpec <- map["doctorSpec"]
+        workingPlace <- map["workingPlace"]
+        study <- map["study"]
         
-        specialist1Year <- map["specialist1Year"]
-        specialist1Spec <- map["specialist1Spec"]
-        
-        specialist2Year <- map["specialist2Year"]
-        specialist2Spec <- map["specialist2Spec"]
-        
-        otherSpecialistYear <- map["otherSpecialistYear"]
-        otherSpecialistSpec <- map["otherSpecialistSpec"]
-        
-        otherTraining <- map["otherTraining"]
-        
-        level <- map["level"]
         clinicPrice <- map["clinicPrice"]
         patientHomePrice <- map["patientHomePrice"]
     }

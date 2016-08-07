@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         registerForPushNotifications(application)
         
-        API.api1.config = API.Config(schema: "http", host: "concon.vn", basePath: "/clinic-api/biz/v1", port: 8080)
-        API.api2.config = API.Config(schema: "http", host: "api2.concon.vn", basePath: "", port: 80)
+        API.api1.config = API.Config(schema: "http", host: HOST.API1, basePath: "/clinic-api/biz/v1", port: 80)
+        API.api2.config = API.Config(schema: "http", host: HOST.API2, basePath: "", port: 80)
         
         //go to Login ViewController
         gotoLoginVC()

@@ -28,7 +28,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-Yu-SSh" userLabel="vlogin">
                             <rect key="frame" x="0.0" y="0.0" width="1334" height="750"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SỐ CMND HOẶC HỘ CHIẾU" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="viW-b6-fD8">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SỐ TÀI KHOẢN" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="viW-b6-fD8">
                                     <rect key="frame" x="267" y="355" width="800.5" height="39"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <textInputTraits key="textInputTraits"/>

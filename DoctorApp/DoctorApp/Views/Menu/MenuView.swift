@@ -22,7 +22,7 @@ class MenuView: UIView {
     
     var delegate: RightMenuDelegate!
     
-    var listMenuTitle: NSMutableArray = ["TRANG CHỦ", "THÔNG TIN CÁ NHÂN", "LỊCH HẸN", "LỊCH LÀM VIỆC", "THÔNG BÁO", "ĐĂNG XUẤT"]
+    var listMenuTitle: NSMutableArray = ["TRANG CHỦ", "NGƯỜI DÙNG", "LỊCH HẸN", "LỊCH LÀM VIỆC", "THÔNG BÁO", "ĐĂNG XUẤT"]
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

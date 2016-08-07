@@ -255,6 +255,10 @@ extension String {
         midleName = comps.map(String.init).joinWithSeparator(" ")
         return (lastName, midleName, firstName)
     }
+    
+    var trimmedString: String {
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    }
 }
 
 extension CGRect {

@@ -97,7 +97,7 @@ class UpdateProfileViewController: BaseMenuViewController {
         super.setupNavigationBar()
         
         //        v_navigation.addBackButton()
-        v_navigation.setTitle("THÔNG TIN CÁ NHÂN")
+        v_navigation.setTitle("NGƯỜI DÙNG")
     }
     
     @IBAction func btnChangePasswordPressed(sender: AnyObject) {

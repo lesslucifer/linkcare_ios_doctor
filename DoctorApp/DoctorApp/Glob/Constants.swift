@@ -9,6 +9,30 @@
 import Foundation
 import ObjectMapper
 
+class HOST {
+    static let PROD_API1 = "api.concon.vn"
+    static let PROD_API2 = "api2.concon.vn"
+    static let STAGING_API1 = "staging.api.concon.vn"
+    static let STAGING_API2 = "staging.api2.concon.vn"
+    
+    static let IS_PRODUCTION = false
+    
+    static var API1: String {
+        if (IS_PRODUCTION) {
+            return PROD_API1
+        }
+        
+        return STAGING_API1
+    }
+    static var API2: String {
+        if (IS_PRODUCTION) {
+            return PROD_API2
+        }
+        
+        return STAGING_API2
+    }
+}
+
 struct Constants {
     
 }
@@ -101,4 +125,19 @@ struct Color {
 }
 
 typealias Location = (latitude: Double, longitude: Double)
+
+@objc
+enum GraduatedType: Int {
+    case Vocational = 0
+    case College = 1
+    case Universe = 2
+}
+
+@objc
+enum MasterType: Int {
+    case Master = 0
+    case Specialist1 = 1
+    case Doctor = 2
+    case Specialist2 = 3
+}
 
