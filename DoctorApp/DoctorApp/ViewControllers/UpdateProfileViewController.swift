@@ -43,6 +43,7 @@ class UpdateProfileViewController: BaseMenuViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.dismissKeyboardOnTap()
         
         self.keyboardHandler = KeyboardHandler(view: self.svContent, bottomConstr: self.lcBottom)
         self.setupTextFields()

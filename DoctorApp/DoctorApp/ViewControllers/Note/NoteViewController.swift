@@ -21,6 +21,8 @@ class NoteViewController: BaseTabViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.dismissKeyboardOnTap()
+        
         self.delegate = self
         // Do any additional setup after loading the view.
         setupNavigationBar()

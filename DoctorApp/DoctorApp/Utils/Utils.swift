@@ -444,6 +444,18 @@ extension UIView {
             make.top.equalTo()(self.mas_bottom).valueOffset()(spacing)
         }
     }
+    
+    func dismissKeyboardOnTap(var target: UIView? = nil) {
+        if (target == nil) {
+            target = self
+        }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: target!, action: #selector(UIView._doDismissKeyboard))
+        self.addGestureRecognizer(tap)
+    }
+    
+    func _doDismissKeyboard() {
+        self.endEditing(true)
+    }
 }
 
 extension UIButton {

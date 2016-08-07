@@ -28,6 +28,7 @@ class PrescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.dismissKeyboardOnTap()
 
         self.configureTableView()
         btnSubmit.linkcarelize()

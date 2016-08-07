@@ -19,6 +19,7 @@ class ResetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.dismissKeyboardOnTap()
 
         self.tfIdCard.addUnderline(color: LCColor.LightCyan)
         
