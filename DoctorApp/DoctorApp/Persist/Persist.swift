@@ -12,8 +12,11 @@ import RealmSwift
 class Persist: NSObject {
     static let INST = Persist()
     
-//    let realm = try! Realm(configuration: Realm.Configuration(path: ""))
-    let realm = try! Realm()
+    let realm = try! Realm(configuration: Realm.Configuration(
+        fileURL: Realm.Configuration.defaultConfiguration.fileURL!
+            .URLByDeletingLastPathComponent?.URLByAppendingPathComponent("LinkCare_\(Utils.versionStr).realm"),
+        readOnly: false))
+//    let realm = try! Realm()
     
     func write(op: ()->()) {
         try! realm.write(op)

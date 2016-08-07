@@ -145,6 +145,13 @@ class Utils: NSObject {
         
         return Int(currentDateTime.timeIntervalSince1970)
     }
+    
+    class var versionStr: String {
+        let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as! String
+        let build = NSBundle.mainBundle().infoDictionary?[kCFBundleVersionKey as String] as! String
+        let versionStr = "\(version).\(build)"
+        return versionStr
+    }
 }
 
 
