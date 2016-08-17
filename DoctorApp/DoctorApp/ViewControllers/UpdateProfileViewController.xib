@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="MyriadPro-Regular_0.otf">
@@ -46,14 +47,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RuA-nd-pSJ" userLabel="Navigation" customClass="NavigationBarView" customModule="DoctorApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="86" id="AVA-xk-PWs"/>
-                    </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWh-3L-Wdf">
-                    <rect key="frame" x="0.0" y="86" width="600" height="514"/>
+                    <rect key="frame" x="0.0" y="78" width="600" height="522"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLl-d8-yBP" userLabel="Content View">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="688"/>
@@ -107,7 +105,7 @@
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jci-e7-1zA">
-                                                    <rect key="frame" x="204.5" y="159" width="150" height="33"/>
+                                                    <rect key="frame" x="205" y="159" width="150" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="DDD-u0-24I"/>
                                                     </constraints>
@@ -192,7 +190,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKI-ch-c5k">
-                                                    <rect key="frame" x="527" y="158.5" width="33" height="30"/>
+                                                    <rect key="frame" x="527" y="158" width="33" height="30"/>
                                                     <state key="normal" title="MAP">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -213,7 +211,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcr-J9-pYv">
-                                                    <rect key="frame" x="205.5" y="286" width="150" height="33"/>
+                                                    <rect key="frame" x="205" y="286" width="150" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="hh5-UO-n6b"/>
                                                     </constraints>
@@ -295,6 +293,7 @@
                 <constraint firstAttribute="trailing" secondItem="RuA-nd-pSJ" secondAttribute="trailing" id="iQa-nj-VLs"/>
                 <constraint firstItem="RuA-nd-pSJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lYD-Z6-i7V"/>
                 <constraint firstItem="RuA-nd-pSJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="m2e-sc-dQP"/>
+                <constraint firstItem="RuA-nd-pSJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.13" id="tzF-fr-XHy"/>
                 <constraint firstItem="dLl-d8-yBP" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="vVJ-ew-TxC"/>
             </constraints>
         </view>

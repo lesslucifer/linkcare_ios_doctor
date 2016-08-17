@@ -132,6 +132,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UITextFieldDe
                 
                 if let profile = profile {
                     Glob.userProfile = profile
+                    Glob.major = resp.roles.contains({$0.code == "NURSE_ROLE"}) ? .Nurse : .Doctor
                     
                     let nav_mainApp = UINavigationController()
                     let vc_dashboard = HomeViewController(nibName: "HomeViewController", bundle: nil)

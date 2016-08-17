@@ -10,5 +10,6 @@ import UIKit
 
 class Glob: AnyObject {
     static var userProfile: UserProfile?
+    static var major: Major?
     static var deviceToken: String?
 }

@@ -25,6 +25,7 @@ class BaseMenuViewController: BaseViewController {
         if (v_navigation != nil) {
             v_navigation.btn_menu.addTarget(self, action: #selector(BaseMenuViewController.menuClicked(_:)), forControlEvents: .TouchUpInside)
             v_navigation.btn_back.addTarget(self, action: #selector(BaseMenuViewController.backClicked(_:)), forControlEvents: .TouchUpInside)
+            self.v_navigation.superview?.bringSubviewToFront(self.v_navigation)
         }
     }
 }

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import StoreKit
 
-class PrepareViewController: UIViewController {
+class PrepareViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
     @IBOutlet weak var ivLogo: UIImageView!
     
@@ -24,7 +25,10 @@ class PrepareViewController: UIViewController {
                 self.gotoApp()
             }
             else {
-                Utils.showOKAlertPanel(self, title: "Phiên bản cũ", msg: "Phiên bản bạn đang dùng đã cũ. Xin vui lòng nâng cấp phiên bản mới.")
+                Utils.showOKAlertPanel(self, title: "Phiên bản cũ", msg: "Phiên bản bạn đang dùng đã cũ. Xin vui lòng nâng cấp phiên bản mới.",
+                    callback: { _ in
+                        self.openStoreProductWithiTunesItemIdentifier(HC.APP_ID)
+                })
             }
         });
     }
@@ -90,6 +94,23 @@ class PrepareViewController: UIViewController {
                 window?.rootViewController = c_navigation
                 window?.makeKeyAndVisible()
         })
+    }
+    
+    func openStoreProductWithiTunesItemIdentifier(identifier: String) {
+        let storeViewController = SKStoreProductViewController()
+        storeViewController.delegate = self
+        
+        let parameters = [ SKStoreProductParameterITunesItemIdentifier : identifier]
+        storeViewController.loadProductWithParameters(parameters) { [weak self] (loaded, error) -> Void in
+            if loaded {
+                // Parent class of self is UIViewContorller
+                self?.presentViewController(storeViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func productViewControllerDidFinish(viewController: SKStoreProductViewController) {
+        viewController.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

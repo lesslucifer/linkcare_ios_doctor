@@ -43,7 +43,8 @@ class UpdateProfileViewController: BaseMenuViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.dismissKeyboardOnTap()
+        //        self.view.dismissKeyboardOnTap()
+        setupNavigationBar()
         
         self.keyboardHandler = KeyboardHandler(view: self.svContent, bottomConstr: self.lcBottom)
         self.setupTextFields()
@@ -96,8 +97,6 @@ class UpdateProfileViewController: BaseMenuViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        
-        //        v_navigation.addBackButton()
         v_navigation.setTitle("NGƯỜI DÙNG")
     }
     

@@ -115,7 +115,7 @@ extension HomeViewController {
 //MARK: Set Layout
 extension HomeViewController{
     func setupLayout(){
-        self.lb_welcome.text = "Xin chào, Bác sĩ \(profile.fullName)!"
+        self.lb_welcome.text = "Xin chào, \(Glob.major?.str() ?? Major.Doctor.str()) \(profile.fullName)!"
     }
 }
 

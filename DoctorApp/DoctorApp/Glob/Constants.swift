@@ -15,7 +15,7 @@ class HOST {
     static let STAGING_API1 = "staging.api.concon.vn"
     static let STAGING_API2 = "staging.api2.concon.vn"
     
-    static let IS_PRODUCTION = false
+    static let IS_PRODUCTION = true
     
     static var API1: String {
         if (IS_PRODUCTION) {
@@ -57,6 +57,8 @@ class HC: NSObject {
     static let ANIM_DUR_MENU = ANIM_DUR_DEFAULT
     static let DEFAULT_LOCATION: Location = (10.77, 106.69)
     static let REFRESH_TOKEN = "refresh_token"
+    
+    static let APP_ID = "1120211399";
 }
 
 @objc
@@ -139,5 +141,22 @@ enum MasterType: Int {
     case Specialist1 = 1
     case Doctor = 2
     case Specialist2 = 3
+}
+
+@objc
+enum Major: Int {
+    case Doctor = 0
+    case Nurse = 1
+    
+    static let Transformer = TransformOf<Major, Int>(fromJSON: {$0 == nil ? nil : Major(rawValue: $0!)}, toJSON: {$0?.rawValue})
+    
+    func str() -> String {
+        if self == .Doctor {
+            return "Bác sĩ"
+        }
+        else {
+            return "Điều dưỡng"
+        }
+    }
 }
 
