@@ -135,6 +135,7 @@ public class API: NSObject {
                             success?(data: data["data"])
                         }
                     }
+                    debugPrint(data)
                     break
                 case .Failure(let error):
                     debugPrint(error)

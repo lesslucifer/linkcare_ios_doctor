@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol Reloadable {
+    func reload()
+}
+
 class AppointmentViewController: BaseTabViewController {
 
     override func viewDidLoad() {
@@ -25,11 +29,16 @@ class AppointmentViewController: BaseTabViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        
-//        v_navigation.addBackButton()
         v_navigation.setTitle("LỊCH HẸN")
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let reloadableVC = self.v_placeholder.embededController as? Reloadable {
+            reloadableVC.reload()
+        }
+    }
 }
 
 extension AppointmentViewController: BaseTabViewControllerDelegate{

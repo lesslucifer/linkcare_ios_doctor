@@ -69,4 +69,12 @@ class PrescriptionMedicine: NSObject, Mappable {
         quantityNight <- map["quantityNight"]
         instr <- map["instr"]
     }
+    
+    func isEmpty() -> Bool {
+        return name == "" || quantityTotal == 0;
+    }
+    
+    func isTotalEmpty() -> Bool {
+        return name == "" && quantityTotal == 0;
+    }
 }

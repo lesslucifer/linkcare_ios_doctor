@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="MyriadPro-Regular_0.otf">
-            <string>MyriadPro-Regular</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,31 +15,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvn-iQ-Jtk">
-                        <rect key="frame" x="0.0" y="0.0" width="672" height="29"/>
+                        <rect key="frame" x="20" y="0.0" width="120" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="3Se-b3-Y7V"/>
+                        </constraints>
+                        <state key="normal" title="THÊM THUỐC"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="   THÊM THUỐC  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbM-Oi-ybD">
-                        <rect key="frame" x="10" y="0.0" width="119" height="29.5"/>
-                        <color key="backgroundColor" red="0.0" green="0.67843137254901964" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="rbM-Oi-ybD" secondAttribute="trailing" id="Nrw-3n-69e"/>
                     <constraint firstAttribute="bottom" secondItem="kvn-iQ-Jtk" secondAttribute="bottom" id="Ppv-oz-YV2"/>
-                    <constraint firstAttribute="trailing" secondItem="kvn-iQ-Jtk" secondAttribute="trailing" id="XSS-ti-Ifc"/>
-                    <constraint firstAttribute="bottom" secondItem="rbM-Oi-ybD" secondAttribute="bottom" id="an0-cz-hSt"/>
-                    <constraint firstItem="rbM-Oi-ybD" firstAttribute="top" secondItem="ilL-Mf-t16" secondAttribute="top" id="fLM-Z6-xmO"/>
                     <constraint firstItem="kvn-iQ-Jtk" firstAttribute="top" secondItem="ilL-Mf-t16" secondAttribute="top" id="oZB-aj-cqo"/>
-                    <constraint firstItem="kvn-iQ-Jtk" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" id="qkz-ct-bgJ"/>
-                    <constraint firstItem="rbM-Oi-ybD" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" constant="10" id="wx7-QT-eKH"/>
+                    <constraint firstItem="kvn-iQ-Jtk" firstAttribute="leading" secondItem="ilL-Mf-t16" secondAttribute="leading" constant="20" id="qkz-ct-bgJ"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="Nrw-3n-69e"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="btnAdd" destination="kvn-iQ-Jtk" id="u0V-JN-HEr"/>

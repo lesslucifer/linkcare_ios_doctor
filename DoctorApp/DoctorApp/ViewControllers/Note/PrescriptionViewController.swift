@@ -31,6 +31,9 @@ class PrescriptionViewController: UIViewController {
         self.view.dismissKeyboardOnTap()
 
         self.configureTableView()
+    }
+    
+    override func viewDidLayoutSubviews() {
         btnSubmit.linkcarelize()
     }
 
@@ -58,7 +61,7 @@ class PrescriptionViewController: UIViewController {
         prescription.note = self.getNote()
         prescription.date = currentDate
         prescription.instruction = ""
-        prescription.medicines = listPrescription
+        prescription.medicines = listPrescription.filter({!$0.isTotalEmpty()})
         
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
@@ -127,11 +130,7 @@ class PrescriptionViewController: UIViewController {
     func validateInput() -> Bool {
         var isValidate = true
         for prescription in listPrescription {
-            if prescription.quantityTotal == 0 {
-                isValidate = false
-                break
-            }
-            if prescription.name == "" {
+            if prescription.isEmpty() && !prescription.isTotalEmpty() {
                 isValidate = false
                 break
             }

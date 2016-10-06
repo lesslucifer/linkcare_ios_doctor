@@ -13,7 +13,7 @@ protocol AppointmentApproveViewControllerDelegate: class {
     func notedClicked(appointmentId: Int)
 }
 
-class AppointmentApproveViewController: UIViewController {
+class AppointmentApproveViewController: UIViewController, Reloadable {
 
     @IBOutlet var tbAppointment: UITableView!
     var appointments: [CacheModel] = []
@@ -34,6 +34,10 @@ class AppointmentApproveViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.reload()
+    }
+    
+    func reload() {
         PKHUD.sharedHUD.show()
         AppointmentAPI.getMedicarAppointment(.Approved, success: { (arr) in
             PKHUD.sharedHUD.hide(animated: false, completion: nil)
@@ -45,7 +49,6 @@ class AppointmentApproveViewController: UIViewController {
                 self.tbAppointment.reloadData()
         })
     }
-    
 }
 
 extension AppointmentApproveViewController: UITableViewDataSource, UITableViewDelegate {

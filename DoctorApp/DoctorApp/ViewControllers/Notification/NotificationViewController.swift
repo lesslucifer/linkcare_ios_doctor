@@ -71,6 +71,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
         if let notification = NotificationCache.INST.get(idNotification) {
             cell.configure(notification, isUnread: !notification.read || self.unreadNotifs.contains(idNotification))
         } else {
+            cell.configure(nil, isUnread: false)
             NotificationCache.INST.get(idNotification, fetcher: { notification in
                 if notification != nil {
                     tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)

@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 
-class AppointmentWaitingViewController: UIViewController {
+class AppointmentWaitingViewController: UIViewController, Reloadable {
 
     @IBOutlet var tbAppointment: UITableView!
     var appointments: [CacheModel] = []
@@ -29,6 +29,10 @@ class AppointmentWaitingViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.reload()
+    }
+    
+    func reload() {
         PKHUD.sharedHUD.show()
         AppointmentAPI.getMedicarAppointment(.Waiting, success: { (arr) in
             PKHUD.sharedHUD.hide(animated: false, completion: nil)
