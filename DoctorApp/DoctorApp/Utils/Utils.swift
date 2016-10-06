@@ -148,9 +148,9 @@ class Utils: NSObject {
     
     class var versionStr: String {
         let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as! String
-        let build = NSBundle.mainBundle().infoDictionary?[kCFBundleVersionKey as String] as! String
-        let versionStr = "\(version).\(build)"
-        return versionStr
+//        let build = NSBundle.mainBundle().infoDictionary?[kCFBundleVersionKey as String] as! String
+//        let versionStr = "\(version).\(build)"
+        return version
     }
 }
 
