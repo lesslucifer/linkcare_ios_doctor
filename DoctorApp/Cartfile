@@ -1,11 +1,9 @@
-github "Alamofire/Alamofire" ~> 3.3
-github "SwiftyJSON/SwiftyJSON" ~> 2.3.0
-github "realm/realm-cocoa" ~> 0.99.1
+github "Alamofire/Alamofire" ~> 3.5.0
+github "SwiftyJSON/SwiftyJSON" "swift2"
+github "realm/realm-cocoa" == 1.1.0
 github "pkluz/PKHUD" ~> 3.0.0
-github "Hearst-DD/ObjectMapper" ~> 1.2
-github "ashleymills/Reachability.swift"
-github "MengTo/Spring" "swift2"
-github "psy2k/NMPopUpView" ~> 2.1
+github "Hearst-DD/ObjectMapper" ~> 1.5.0
+github "ashleymills/Reachability.swift" ~> 2.4
 github "kitasuke/GoogleMaterialIconFont"
 github "SnapKit/Masonry" == 1.0.0
-github "malcommac/SwiftDate"
+github "malcommac/SwiftDate" ~> 3.0.0

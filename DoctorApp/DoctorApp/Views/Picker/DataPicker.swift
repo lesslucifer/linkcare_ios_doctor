@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 
 protocol DataPickerDelegate {
     func DataPickerDidSelectData(data: String, didSelectRow row: Int)
@@ -15,7 +14,7 @@ protocol DataPickerDelegate {
 }
 
 class DataPicker: UIView {
-    @IBOutlet var view: SpringView!
+    @IBOutlet var view: UIView!
     @IBOutlet var v_picker: UIPickerView!
     var a_data: Array<String>!
     var delegate: DataPickerDelegate?

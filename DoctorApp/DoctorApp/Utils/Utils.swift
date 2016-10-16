@@ -37,13 +37,13 @@ class Utils: NSObject {
                 continue
             }
             
-            if !data.query(property).isExists() {
+            if !data.query(property).exists() {
                 return false
             }
         }
         
         for reqField in required {
-            if !data.query(reqField).isExists() {
+            if !data.query(reqField).exists() {
                 return false
             }
         }
@@ -54,7 +54,7 @@ class Utils: NSObject {
     class func checkMap(map: Map, fields: String...) -> Bool {
         let data = APIData(map.JSONDictionary)
         for field in fields {
-            if !data.query(field).isExists() {
+            if !data.query(field).exists() {
                 return false
             }
         }
@@ -357,7 +357,7 @@ public extension UIImage {
         
         MaterialFontUIImageCache.images[iconFont] = image
         
-        return image
+        return image!
     }
 }
 

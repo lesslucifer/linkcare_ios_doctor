@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 import PKHUD
 
 class BaseMenuViewController: BaseViewController {
@@ -60,10 +59,10 @@ extension BaseMenuViewController : RightMenuDelegate {
         
         let frame = CGRectMake(screenSize.width - screenSize.width/3, 0, screenSize.width/3, screenSize.height)
         v_rightMenu.frame = frame
-        v_rightMenu.view.animation = Spring.AnimationPreset.SlideLeft.rawValue
-        v_rightMenu.view.curve = Spring.AnimationCurve.EaseIn.rawValue
-        v_rightMenu.view.duration = 0.5
-        v_rightMenu.view.animate()
+//        v_rightMenu.view.animation = Spring.AnimationPreset.SlideLeft.rawValue
+//        v_rightMenu.view.curve = Spring.AnimationCurve.EaseIn.rawValue
+//        v_rightMenu.view.duration = 0.5
+//        v_rightMenu.view.animate()
     }
     
     func hideMenuClicked() {

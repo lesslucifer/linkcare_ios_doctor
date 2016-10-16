@@ -119,7 +119,7 @@ class PrescriptionViewController: UIViewController {
             let path = NSURL(fileURLWithPath: dir).URLByAppendingPathComponent(file)
             
             do {
-                text = try NSString(contentsOfURL: path, encoding: NSUTF8StringEncoding) as String
+                text = try NSString(contentsOfURL: path!, encoding: NSUTF8StringEncoding) as String
             }
             catch {/* error handling here */}
         }

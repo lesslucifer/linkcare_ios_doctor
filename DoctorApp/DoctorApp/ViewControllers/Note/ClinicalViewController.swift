@@ -25,7 +25,7 @@ class ClinicalViewController: UIViewController {
             
             //writing
             do {
-                try string.writeToURL(path, atomically: false, encoding: NSUTF8StringEncoding)
+                try string.writeToURL(path!, atomically: false, encoding: NSUTF8StringEncoding)
             }
             catch {/* error handling here */}
         }

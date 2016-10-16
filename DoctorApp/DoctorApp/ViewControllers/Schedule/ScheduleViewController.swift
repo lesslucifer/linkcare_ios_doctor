@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 import PKHUD
 
 enum DefineClinic{
@@ -242,10 +241,10 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         animateOverlayShow()
         self.view.addSubview(v_addClinicTiming)
         //--------
-        v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeInDown.rawValue
-        v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
-        v_addClinicTiming.view.duration = 0.5
-        v_addClinicTiming.view.animate()
+//        v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeInDown.rawValue
+//        v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
+//        v_addClinicTiming.view.duration = 0.5
+//        v_addClinicTiming.view.animate()
     }
     
     func showEditClinicTimingView(timing: Timings, clinicId: Int) {
@@ -263,20 +262,20 @@ extension ScheduleViewController: AddClinicTimingViewDelegate {
         self.view.addSubview(v_addClinicTiming)
         //-----
         //-----
-        v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeInDown.rawValue
-        v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
-        v_addClinicTiming.view.duration = 0.5
-        v_addClinicTiming.view.animate()
+//        v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeInDown.rawValue
+//        v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
+//        v_addClinicTiming.view.duration = 0.5
+//        v_addClinicTiming.view.animate()
     }
     
     func hideClinicTimingView() {
         animateOverlayHide()
-        v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeOut.rawValue
-        v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
-        v_addClinicTiming.view.duration = 0.5
-        v_addClinicTiming.view.animateToNext { () -> () in
-            self.v_addClinicTiming.removeFromSuperview()
-        }
+        self.v_addClinicTiming.removeFromSuperview()
+//        v_addClinicTiming.view.animation = Spring.AnimationPreset.FadeOut.rawValue
+//        v_addClinicTiming.view.curve = Spring.AnimationCurve.EaseIn.rawValue
+//        v_addClinicTiming.view.duration = 0.5
+//        v_addClinicTiming.view.animateToNext { () -> () in
+//        }
     }
     
     func editClinicTimingViewDidConfirm() {

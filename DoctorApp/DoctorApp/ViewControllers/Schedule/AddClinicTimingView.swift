@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 import RealmSwift
 
 enum AddClinicTimingType {
@@ -26,7 +25,7 @@ class AddClinicTimingView: UIView {
     // Test
     @IBOutlet var lb_clinicName: UILabel!
     @IBOutlet private var tv_addClinicTiming: UITableView!
-    @IBOutlet var view: SpringView!
+    @IBOutlet var view: UIView!
     
     var delegate: AddClinicTimingViewDelegate!
     var ma_Timing = Array<Timings>()

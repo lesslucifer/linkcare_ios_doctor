@@ -94,8 +94,6 @@
 		D967DA021CD5BECE002E4C0F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967D9FE1CD5BECE002E4C0F /* HomeViewController.xib */; };
 		D967DA051CD5BF56002E4C0F /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA031CD5BF56002E4C0F /* BaseMenuViewController.swift */; };
 		D967DA061CD5BF56002E4C0F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA041CD5BF56002E4C0F /* BaseViewController.swift */; };
-		D967DA081CD5C455002E4C0F /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D967DA071CD5C455002E4C0F /* Spring.framework */; };
-		D967DA091CD5C46E002E4C0F /* Spring.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D967DA071CD5C455002E4C0F /* Spring.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D967DA131CD5C511002E4C0F /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA0B1CD5C511002E4C0F /* BorderedView.swift */; };
 		D967DA141CD5C511002E4C0F /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DA0D1CD5C511002E4C0F /* MenuCell.swift */; };
 		D967DA151CD5C511002E4C0F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D967DA0E1CD5C511002E4C0F /* MenuCell.xib */; };
@@ -153,7 +151,6 @@
 				383787751D2D5BD0005445D9 /* SwiftDate.framework in CopyFiles */,
 				38EFB46F1D2D32EE00F8E2B0 /* Masonry.framework in CopyFiles */,
 				38195FEC1D262771009C8F34 /* GoogleMaterialIconFont.framework in CopyFiles */,
-				D967DA091CD5C46E002E4C0F /* Spring.framework in CopyFiles */,
 				3876AB711CD4CDB10087E5AC /* ObjectMapper.framework in CopyFiles */,
 				D99378F21CD0BD0D00EEF391 /* PKHUD.framework in CopyFiles */,
 				D99378F31CD0BD0D00EEF391 /* Realm.framework in CopyFiles */,
@@ -250,7 +247,6 @@
 		D967D9FE1CD5BECE002E4C0F /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D967DA031CD5BF56002E4C0F /* BaseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
 		D967DA041CD5BF56002E4C0F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		D967DA071CD5C455002E4C0F /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = Carthage/Build/iOS/Spring.framework; sourceTree = "<group>"; };
 		D967DA0B1CD5C511002E4C0F /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
 		D967DA0D1CD5C511002E4C0F /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		D967DA0E1CD5C511002E4C0F /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
@@ -306,7 +302,6 @@
 				38947DDA1CCFE2050008049A /* Realm.framework in Frameworks */,
 				D967D9EF1CD5B70C002E4C0F /* Reachability.framework in Frameworks */,
 				38947DDB1CCFE2050008049A /* RealmSwift.framework in Frameworks */,
-				D967DA081CD5C455002E4C0F /* Spring.framework in Frameworks */,
 				38947DDC1CCFE2050008049A /* SwiftyJSON.framework in Frameworks */,
 				38B36E861CCFC763009820D2 /* Alamofire.framework in Frameworks */,
 				D967D9EE1CD5B702002E4C0F /* Reachability.framework in Frameworks */,
@@ -332,7 +327,6 @@
 				383787731D2D5BCB005445D9 /* SwiftDate.framework */,
 				38EFB46D1D2D32E500F8E2B0 /* Masonry.framework */,
 				38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */,
-				D967DA071CD5C455002E4C0F /* Spring.framework */,
 				3876AB6F1CD4CDA30087E5AC /* ObjectMapper.framework */,
 				38947DD51CCFE2050008049A /* PKHUD.framework */,
 				38947DD61CCFE2050008049A /* Realm.framework */,
@@ -690,6 +684,7 @@
 					38758BA71CCE710B00AEC3BB = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 6YL39XNP5T;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -988,6 +983,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = concon.vn.DoctorApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4c8f688b-e554-4c92-9056-e1616967939e";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1008,6 +1004,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = concon.vn.DoctorApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4c8f688b-e554-4c92-9056-e1616967939e";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

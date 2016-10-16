@@ -9,7 +9,6 @@
 import Foundation
 
 import UIKit
-import Spring
 
 protocol RightMenuDelegate {
     func hideMenuClicked()
@@ -17,7 +16,7 @@ protocol RightMenuDelegate {
 }
 
 class MenuView: UIView {
-    @IBOutlet var view: SpringView!
+    @IBOutlet var view: UIView!
     @IBOutlet var tbl_menu: UITableView!
     
     var delegate: RightMenuDelegate!
