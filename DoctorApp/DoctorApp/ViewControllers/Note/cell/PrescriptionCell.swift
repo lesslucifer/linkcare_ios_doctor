@@ -9,6 +9,8 @@
 import UIKit
 
 class PrescriptionCell: UITableViewCell {
+    static let NTF = 7
+    
     @IBOutlet var tfQuantityTotal: UITextField!
     @IBOutlet var tfquantityMorning: UITextField!
     @IBOutlet var tfquantityNoon: UITextField!

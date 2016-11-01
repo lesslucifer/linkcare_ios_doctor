@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         API.api1.config = API.Config(schema: "http", host: HOST.API1, basePath: "/clinic-api/biz/v1", port: 80)
         API.api2.config = API.Config(schema: "http", host: HOST.API2, basePath: "", port: 80)
         
+//        API.api1.config = API.Config(schema: "http", host: "linkcare.local.com", basePath: "/clinic-api/biz/v1", port: 80)
+//        API.api2.config = API.Config(schema: "http", host: "localhost", basePath: "", port: 8200)
+        
         //go to Login ViewController
         gotoLoginVC()
         

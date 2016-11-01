@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DataPickerDelegate {
-    func DataPickerDidSelectData(data: String, didSelectRow row: Int)
+    func DataPickerDidSelectData(picker: DataPicker, data: String, didSelectRow row: Int)
     func DataPickerDidDismiss()
 }
 
@@ -51,7 +51,7 @@ extension DataPicker {
     @IBAction func doneClicked(sender: AnyObject) {
         if(!isDidselectRow && a_data != nil && a_data.count != 0){
             tf_current?.text = a_data[v_picker.selectedRowInComponent(0)]
-            delegate?.DataPickerDidSelectData(a_data[v_picker.selectedRowInComponent(0)], didSelectRow: v_picker.selectedRowInComponent(0))
+            delegate?.DataPickerDidSelectData(self, data: a_data[v_picker.selectedRowInComponent(0)], didSelectRow: v_picker.selectedRowInComponent(0))
         }
         delegate?.DataPickerDidDismiss()
         tf_current?.resignFirstResponder()
@@ -74,8 +74,8 @@ extension DataPicker: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if(a_data != nil && a_data.count != 0){
-            delegate?.DataPickerDidSelectData(a_data[row], didSelectRow: row)
             tf_current?.text = a_data[row]
+            delegate?.DataPickerDidSelectData(self, data: a_data[row], didSelectRow: row)
             isDidselectRow = true
         }
     }

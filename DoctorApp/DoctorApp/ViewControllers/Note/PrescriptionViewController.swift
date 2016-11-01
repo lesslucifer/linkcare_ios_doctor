@@ -38,7 +38,8 @@ class PrescriptionViewController: UIViewController {
     }
 
     func addPrescription(){
-        updateData()
+        self.view.endEditing(true)
+        
         let newPrescription = PrescriptionMedicine()
         listPrescription.append(newPrescription)
         
@@ -47,7 +48,7 @@ class PrescriptionViewController: UIViewController {
     }
     
     @IBAction func submit(sender: UIButton) {
-        updateData()
+        self.view.endEditing(true)
         
         if !self.validateInput() {
             Utils.showOKAlertPanel(self, title: "Rất tiếc...", msg: "Vui lòng điền các trường còn thiếu (tên thuốc, số lượng thuốc)")
@@ -75,32 +76,11 @@ class PrescriptionViewController: UIViewController {
         }
     }
     
-    
-    func updateData() {
-        let sum = listPrescription.count
-        listPrescription = []
-        for i in 0 ..< sum {
-            let indexPath = NSIndexPath(forRow: i, inSection: 0)
-            
-            let selectedCell = tbPrescription.cellForRowAtIndexPath(indexPath) as! PrescriptionCell
-            let medicine = PrescriptionMedicine()
-            medicine.name = selectedCell.tfName.text!
-            medicine.quantityTotal = selectedCell.tfQuantityTotal.text != "" ? Int(selectedCell.tfQuantityTotal.text!)! : 0
-            medicine.quantityMorning = selectedCell.tfquantityMorning.text != "" ? Double(selectedCell.tfquantityMorning.text!)! : 0
-            medicine.quantityNoon = selectedCell.tfquantityNoon.text != "" ? Double(selectedCell.tfquantityNoon.text!)! : 0
-            medicine.quantityAfternoon = selectedCell.tfquantityAfterNoon.text != "" ? Double(selectedCell.tfquantityAfterNoon.text!)! : 0
-            medicine.quantityNight = selectedCell.tfquantityNight.text != "" ? Double(selectedCell.tfquantityNight.text!)! : 0
-            medicine.instr = selectedCell.tfInstr.text!
-            listPrescription.append(medicine)
-        }
-    }
-    
-    
     func deletePrescription(sender: UIButton) {
-        updateData()
+        self.view.endEditing(true)
+        
         listPrescription.removeAtIndex(sender.tag)
         tbPrescription.reloadData()
-        
     }
     
     func showDataPicker(textField: UITextField){
@@ -173,12 +153,19 @@ extension PrescriptionViewController: UITableViewDataSource, UITableViewDelegate
             cell.btnDelete.tag = indexPath.row
             cell.btnDelete.addTarget(self, action: #selector(PrescriptionViewController.deletePrescription(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             
-            cell.tfquantityAfterNoon.delegate = self
-            cell.tfquantityNoon.delegate = self
+            cell.tfName.tag = indexPath.row * PrescriptionCell.NTF + 0
+            cell.tfName.delegate = self
+            cell.tfQuantityTotal.tag = indexPath.row * PrescriptionCell.NTF + 1
+            cell.tfQuantityTotal.delegate = self
+            cell.tfquantityMorning.tag = indexPath.row * PrescriptionCell.NTF + 2
             cell.tfquantityMorning.delegate = self
+            cell.tfquantityNoon.tag = indexPath.row * PrescriptionCell.NTF + 3
+            cell.tfquantityNoon.delegate = self
+            cell.tfquantityAfterNoon.tag = indexPath.row * PrescriptionCell.NTF + 4
+            cell.tfquantityAfterNoon.delegate = self
+            cell.tfquantityNight.tag = indexPath.row * PrescriptionCell.NTF + 5
             cell.tfquantityNight.delegate = self
-
-            cell.tfInstr.tag = 1
+            cell.tfInstr.tag = indexPath.row * PrescriptionCell.NTF + 6
             cell.tfInstr.delegate = self
             
             cell.tfQuantityTotal.text = prescription.quantityTotal != 0 ? "\(prescription.quantityTotal)" : ""
@@ -202,14 +189,58 @@ extension PrescriptionViewController: UITableViewDataSource, UITableViewDelegate
 
 extension PrescriptionViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
-        let type = textField.tag % 2
+        let type = textField.tag % PrescriptionCell.NTF
         
-        if type == 0 {
+        if [2, 3, 4, 5].contains(type) {
             listPickerdata = ["0", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5"]
             showDataPicker(textField)
-        } else if type == 1 {
+        } else if type == 6 {
             listPickerdata = ["", "Trước khi ăn", "Trước khi ngủ", "Ăn no trước khi uống"]
             showDataPicker(textField)
         }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        let row = textField.tag / PrescriptionCell.NTF
+        let text = textField.text ?? ""
+        if let medicine = listPrescription[safe: row] {
+            switch textField.tag % PrescriptionCell.NTF {
+            case 0:
+                medicine.name = text
+                break
+            case 1:
+                medicine.quantityTotal = Int(text) ?? 0
+                break
+            case 2:
+                medicine.quantityMorning = Double(text) ?? 0
+                break
+            case 3:
+                medicine.quantityNoon = Double(text) ?? 0
+                break
+            case 4:
+                medicine.quantityAfternoon = Double(text) ?? 0
+                break
+            case 5:
+                medicine.quantityNight = Double(text) ?? 0
+                break
+            case 6:
+                medicine.instr = text
+                break
+            default:
+                break
+            }
+        }
+    }
+}
+
+extension PrescriptionViewController: DataPickerDelegate {
+    func DataPickerDidSelectData(picker: DataPicker, data: String, didSelectRow row: Int) {
+        if let tf = picker.tf_current {
+            self.textFieldDidEndEditing(tf)
+        }
+    }
+    
+    func DataPickerDidDismiss() {
+        
     }
 }
