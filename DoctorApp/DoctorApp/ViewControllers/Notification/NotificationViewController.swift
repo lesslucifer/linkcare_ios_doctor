@@ -99,5 +99,18 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if let notif = NotificationCache.INST.get(notifications[indexPath.row]) {
+            if (notif.type == .URL) {
+                let url = notif.jsParams[safe: 0]?.string ?? "http://concon.vn"
+                let title = notif.jsParams[safe: 1]?.string ?? "LINKCARE"
+                
+                let vc = LCWebViewViewController(nibName: "LCWebViewViewController", bundle: nil)
+                vc.webTitle = title
+                vc.wvWebView.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
+                self.navigationController?.pushUniqueController(LCWebViewViewController.self, controller: vc, animated: true)
+            }
+        }
     }
 }

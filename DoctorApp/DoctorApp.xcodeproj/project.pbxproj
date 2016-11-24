@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38142CB71DE7402D0026381B /* LCWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38142CB51DE7402D0026381B /* LCWebViewViewController.swift */; };
+		38142CB81DE7402D0026381B /* LCWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38142CB61DE7402D0026381B /* LCWebViewViewController.xib */; };
 		3817E7861CE4E726006E3B5A /* Persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7851CE4E726006E3B5A /* Persist.swift */; };
 		3817E7891CE4E906006E3B5A /* BaseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817E7881CE4E906006E3B5A /* BaseCache.swift */; };
 		38195FEB1D262767009C8F34 /* GoogleMaterialIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */; };
@@ -164,6 +166,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		38142CB51DE7402D0026381B /* LCWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCWebViewViewController.swift; sourceTree = "<group>"; };
+		38142CB61DE7402D0026381B /* LCWebViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LCWebViewViewController.xib; sourceTree = "<group>"; };
 		3817E7851CE4E726006E3B5A /* Persist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persist.swift; sourceTree = "<group>"; };
 		3817E7881CE4E906006E3B5A /* BaseCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCache.swift; sourceTree = "<group>"; };
 		38195FEA1D262767009C8F34 /* GoogleMaterialIconFont.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaterialIconFont.framework; path = Carthage/Build/iOS/GoogleMaterialIconFont.framework; sourceTree = "<group>"; };
@@ -495,6 +499,8 @@
 			children = (
 				383787671D2D5923005445D9 /* UpdateProfileViewController.swift */,
 				383787681D2D5923005445D9 /* UpdateProfileViewController.xib */,
+				38142CB51DE7402D0026381B /* LCWebViewViewController.swift */,
+				38142CB61DE7402D0026381B /* LCWebViewViewController.xib */,
 				38EFB4681D2D2FBB00F8E2B0 /* Popup */,
 				D921669F1CE2423D004FA64C /* Notification */,
 				D9950E0A1CDD083400340EE9 /* Note */,
@@ -719,6 +725,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38142CB81DE7402D0026381B /* LCWebViewViewController.xib in Resources */,
 				D967D9F61CD5B739002E4C0F /* LoginViewController.xib in Resources */,
 				D9950E181CDDA21900340EE9 /* ClinicalViewController.xib in Resources */,
 				D915C8C91CE188F100C499CD /* AppointmentStartViewController.xib in Resources */,
@@ -850,6 +857,7 @@
 				386B7AA41CD7994700BC28BA /* Reflectable.swift in Sources */,
 				D967D9EC1CD5B5A5002E4C0F /* UITextField+Helpers.swift in Sources */,
 				3820F7611CE890B0005BEFA7 /* CancelReasonViewController.swift in Sources */,
+				38142CB71DE7402D0026381B /* LCWebViewViewController.swift in Sources */,
 				D9950E1B1CDDA22E00340EE9 /* PrescriptionViewController.swift in Sources */,
 				383787661D2D5325005445D9 /* VersionAPI.swift in Sources */,
 				D993968D1CE2D8960091DCE3 /* ClinicTimeSlotCell.swift in Sources */,
