@@ -102,7 +102,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if let notif = NotificationCache.INST.get(notifications[indexPath.row]) {
-            if (notif.type == .URL) {
+            if (notif.type == NotificationType.URL) {
                 let url = notif.jsParams[safe: 0]?.string ?? "http://concon.vn"
                 let title = notif.jsParams[safe: 1]?.string ?? "LINKCARE"
                 
