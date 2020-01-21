@@ -89,7 +89,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
             NotificationCache.INST.fetch(bufferedCaches, fetcher: nil)
         }
         
-        if let notif = NotificationCache.INST.get(notifications[indexPath.row]) where notif.read == false {
+        if let notif = NotificationCache.INST.get(notifications[indexPath.row]), notif.read == false {
             notif.write {
                 notif.read = true
             }
@@ -101,16 +101,16 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if let notif = NotificationCache.INST.get(notifications[indexPath.row]) {
-            if (notif.type == NotificationType.URL) {
-                let url = notif.jsParams[safe: 0]?.string ?? "http://concon.vn"
-                let title = notif.jsParams[safe: 1]?.string ?? "LINKCARE"
-                
-                let vc = LCWebViewViewController(nibName: "LCWebViewViewController", bundle: nil)
-                vc.webTitle = title
-                vc.wvWebView.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
-                self.navigationController?.pushUniqueController(LCWebViewViewController.self, controller: vc, animated: true)
-            }
-        }
+//        if let notif = NotificationCache.INST.get(notifications[indexPath.row]) {
+//            if (notif.type == NotificationType.URL) {
+//                let url = notif.jsParams[safe: 0]?.string ?? "http://concon.vn"
+//                let title = notif.jsParams[safe: 1]?.string ?? "LINKCARE"
+//
+//                let vc = LCWebViewViewController(nibName: "LCWebViewViewController", bundle: nil)
+//                vc.webTitle = title
+//                vc.wvWebView.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
+//                self.navigationController?.pushUniqueController(LCWebViewViewController.self, controller: vc, animated: true)
+//            }
+//        }
     }
 }
